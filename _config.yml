@@ -1,4 +1,6 @@
-name: afiestas.org
+name: Àlex Fiestas's blog
+description: Playground for hacking
+url: http://afiestas.org
 markdown: redcarpet
 pygments: true
 permalink: /:title/
