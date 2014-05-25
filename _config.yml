@@ -2,3 +2,4 @@ name: afiestas.org
 markdown: redcarpet
 pygments: true
 permalink: /:title/
+comments: true
