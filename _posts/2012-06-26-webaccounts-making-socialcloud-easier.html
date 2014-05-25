@@ -1,0 +1,54 @@
+---
+layout: post
+title: WebAccounts, making social/cloud easier
+categories:
+- KDE
+- Software Libre
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  dsq_thread_id: '2150472168'
+author:
+  login: afiestas
+  email: afiestas@kde.org
+  display_name: afiestas
+  first_name: Alex
+  last_name: Fiestas
+---
+<p>This blogpost was written 2 months ago, mind that !</p>
+<p>As you may know, for the last months I have been working on BlueSystems, one of my main projects has been creating a working prototype of "WebAccounts".</p>
+<p><strong>What is WebAccounts?<br />
+</strong>It is a centralize place where both, users and applications can configure accounts related to various social/cloud services such twitter, identi.ca, google, facebook, dropbox, owncloud, ftp servers...</p>
+<p><strong>How is it done?<br />
+</strong>We have implemented a KCM (module within System Settings) that allows the user to configure a set of accounts (at the moment Google, Facebook, Owncloud and runnersID), once the account is configured you can enable a few services for each account, for example for Google you can enable: email, calendar, contacts, tasks and chat.</p>
+<p>Right now, the only integration is from within WebAccounts towards the already existing subsystems such akonadi or telepathy. In the future will be those projects the ones providing plugins and asking WebAccounts for credentials and information.</p>
+<p><strong>Is it really worth it?<br />
+</strong>In Akademy-es 2012 we presented the project to the audience there. One of the points I added in the slide was the amount of steps needed to configure a Google account right now and how many steps were needed to do it in WebAccounts. I don't remember the exact number but it was something like 25 to 3.</p>
+<p>Places where to configure a Google account right now:</p>
+<ul>
+<li>Add the account to Telepathy (one wizard, add credentials)</li>
+<li>Use the KMail wizard to add the account (credentials asked again)</li>
+<li>Configure Contact  (again add the same credentials)</li>
+<li>Configure Calendar, select the account added when Contact was added</li>
+<li>Configure Tasks, can be done in the same step of Calendar</li>
+</ul>
+<p>With WebAcounts this would be:</p>
+<ul>
+<li>Click on "Add Google account"</li>
+<li>Introduce credentials (only once)</li>
+<li>Select all services (selected by default)</li>
+</ul>
+<p>As you can see, the amount of steps has been reduced drastically actually bringing the possibility of integrating these kind of accounts in the workspace in an easy and clean way.</p>
+<p><strong>How it looks like?</strong></p>
+<p>Be aware that this is a prototype! I expect the real version to look way nicer !</p>
+<p><a href="http://www.afiestas.org/wp-content/uploads/2012/06/webaccounts.png"><img class="alignnone" title="WebAccounts first GUI" src="http://www.afiestas.org/wp-content/uploads/2012/06/webaccounts_small.png" alt="WebAccounts first GUI" width="200" height="125" /></a><a href="http://www.afiestas.org/wp-content/uploads/2012/06/webaccounts1.png"><img class="alignnone" title="Google wizard" src="http://www.afiestas.org/wp-content/uploads/2012/06/webaccounts1_small.png" alt="Google wizard" width="200" height="125" /></a><a href="http://www.afiestas.org/wp-content/uploads/2012/06/webaccounts2_small.png"><img class="alignnone" title="Services all checked" src="http://www.afiestas.org/wp-content/uploads/2012/06/webaccounts2_small.png" alt="All services checked" width="200" height="126" /></a></p>
+<p><strong>And how it works?</strong><br />
+(Choose 1080 quality for better video)<br />
+<iframe src="http://player.vimeo.com/video/49618818" width="600" height="376" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<p><a href="http://vimeo.com/49618818">Vimeo link</a></p>
+<p> <a href="https://vimeo.com/49618818/download?t=1347908606&v=117908346&s=c7f4bb2323b727387d94c44067990dfe">Direct Link</a></p>
+<p><strong></strong><strong>Future?</strong></p>
+<p>Big part of WebAcounts future is going to be discussed at Akademy2012, where I hope to trace a roadmap together with the rest of people interested on it so we can push this concept further.</p>

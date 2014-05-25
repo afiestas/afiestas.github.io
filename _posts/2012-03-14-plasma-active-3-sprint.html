@@ -1,0 +1,79 @@
+---
+layout: post
+title: Plasma Active 3 sprint
+categories:
+- KDE
+- Software Libre
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  dsq_thread_id: '2226557352'
+author:
+  login: afiestas
+  email: afiestas@kde.org
+  display_name: afiestas
+  first_name: Alex
+  last_name: Fiestas
+---
+<p>A few days ago I attended to the PA3 sprint in Darmstadt, as always I enjoyed a few days with my friends not only working but also taking beers, going dinner etc. I have had a really good time there as I always do when KDE is in the formula.</p>
+<p>As far as I know this is the first PA sprint where a lot of community members external to the project attended, this is really great for opening the project to other areas of KDE, such Solid or KDEdu.  My work focus were:</p>
+<p><strong>Getting to know the inside of the project<br />
+</strong>Every project structure is different even between close projects such PowerDevil and BlueDevil. In the case of PA there are a few big differences that have to be taken into account:</p>
+<div>
+<ul>
+<li>Most people working on it are employed by companies (and most of them work on it full time).</li>
+<li>PA should be always ready for release, no unstable or untested stuff allowed in.</li>
+<li>Strong focus on well designed and usable interfaces.</li>
+<li>Everything QML</li>
+<li>There is a strong and shared Vision behind it</li>
+</ul>
+</div>
+<div> It is important that you agree with the rules of the game before you start to play it, I find PA a really good example of how a professional project can be done together with the community without sacrificing anything. I agree with this rules so I will play this game :)</div>
+<div><strong><br />
+Plan how Screen Management will be implemented in PA</strong></div>
+<div>As some of you may know, I'm currently working on a new implementation of Screen Management, even though I'm really delayed on the original schedule the project is not abandoned and I hope to make PA one of the first use cases for it.</div>
+<div>
+When Thomas Pfeiffer and I started to look at how we can implement Screen Management into PA we quickly identify one valid use case:</div>
+<div>
+A user is reviewing a set of pictures on its Tablet, at some points he decides to plug its tablet in the TV and watch them in there. Once the TV is plugged the pictures are shown in both screens so the user can use the tablet to control the application while watching the images in the TV.</div>
+<div>
+A user just bought a movie via Bodega, he wants to play it in its big TV. In this case the controls of the movies will be in the Tablet while the movie itself will be reproduced at the screen.</div>
+<div>
+A user connects the Tablet into a projector and intends to do a presentation using Calligra Active. The controls of the presentation (Notes, countdown, thumbnails) will be shown at the tablet while the Slides will be shown at the projector.</div>
+<div>
+As you can see it makes only sense to do something with the external screen if, and only if there is an application that will make use of it, or said in another way we discarded to show the shell into the external screen.</div>
+<div><strong><br />
+Plan how bluetooth should be implemented in PA</strong></div>
+<div>As Thomas and I did with Screen Management, we took a look at how Bluetooth should be integrated with PA. Some parts of it can be already used and other parts need a nice QML interface. Following some conclusions we reached:</div>
+<div>
+<ul>
+<li>We don't want a Wizard, it is not needed</li>
+<li>We need a Share Like Connect plugin</li>
+<li>We need a PA system settings panel</li>
+<li>Device configuration should be within the PA system settings</li>
+</ul>
+<div>When doing the analysis of how to implement Bluetooth into PA I realized mistakes done in the Desktop (I have been realizing those mistakes for quite some time now). I will implement them in a future BlueDevil 2.0 version.</div>
+<div><strong><br />
+Social / Sharing / shiny stuff in KDE software</strong></div>
+</div>
+<div>Sharing, social, cloud, buzzwords all over that's true but nonetheless important. There are different efforts going on in KDE to make this happen, and make it quick. We had a super interesting BoF about all things that needs to done to make Social/Sharing/Cloud a natural thing in KDE software, it should be as natural as creating a file or as launching an application.</div>
+<div></div>
+<div>List of points I remember:</div>
+<div>
+<ul>
+<li>Share/Like/Connect for the desktop must happen</li>
+<li>Having a centralized place for Sharing is important (probably in the shell)</li>
+<li>We need a centralized place to store Web/Online account information</li>
+<li>We need to have a shared platform for streams (twitter, identi.ca, facebook...)</li>
+<li>Having libkpeople finished is crucial, we must have unified personas to work with</li>
+</ul>
+<div>I will probably be working on the first point, but we will see about that later.</div>
+<div></div>
+<div>Finally, a mandatory picture took by Martin K.</div>
+<div><img class="alignnone" title="PA attendees working" src="http://www.afiestas.org/wp-content/uploads/2012/03/pa3.jpg" alt="PA attendees working" width="637" height="424" /></div>
+</div>
+<div></div>
+<div><strong>This post was written on Match 14, information can be outdated.</strong></div>

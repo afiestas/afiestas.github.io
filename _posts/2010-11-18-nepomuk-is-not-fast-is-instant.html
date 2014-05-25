@@ -1,0 +1,36 @@
+---
+layout: post
+title: Nepomuk is not fast, is instant!
+categories:
+- KDE
+- Software Libre
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  enclosure: "http://www.afiestas.org/wp-content/uploads/2010/11/instantNepomuk.ogv\r\n7504432\r\nvideo/ogg\r\n"
+  _wp_old_slug: '308'
+  dsq_thread_id: '2226555517'
+author:
+  login: afiestas
+  email: afiestas@kde.org
+  display_name: afiestas
+  first_name: Alex
+  last_name: Fiestas
+---
+<p>Everybody that has been a KDE user for the last 2 years knows Nepomuk and its bad reputation, maybe it was desired in the past, but no more. This morning I decided to get my Nepomuk up and running again, and I have to say that it is impresive! just take a look at </br><a href="http://www.afiestas.org/wp-content/uploads/2010/11/instantNepomuk.ogv">this video</a>:<br />
+<video width="600" height="350" controls="controls" tabindex="0" autobuffer="false" preload="metadata"><br />
+ <source type="video/ogg" src="http://www.afiestas.org/wp-content/uploads/2010/11/instantNepomuk.ogv"></source></video><br />
+The only thing I had to do is modify a kernel configuration, but I had to do it because my distributionb (ArchLinux) didn't for me, others like Ubuntu or OpenSuse have the correct value.</p>
+<blockquote><p>Execute:<br />
+sysctl fs.inotify.max_user_watches<br />
+fs.inotify.max_user_watches = 524288</p></blockquote>
+<p>If you get a value such 8000 then you have to change it, to do it:</p>
+<blockquote><p>echo "fs.inotify.max_user_watches = 524288" &gt;&gt; /etc/sysctl.conf</p></blockquote>
+<p>and restart.</p>
+<p>The only thing I'm missing now is a good plasmoid (Crystal to the rescue?).</p>
+<p>Update: I'm using trunk (4.6), but afaik Nepomuk should be as fast as in 4.5<br />
+Dolphin searchbar is a feature found in 4.6 (to be released in 2 months)<br />
+If you update the parameter using sysctl command remember to restart nepomuk.</p>
