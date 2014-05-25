@@ -130,6 +130,7 @@ a:hover {
 
 #info-container {
   margin-top: 3em;
+  max-width: 725px;
 }
 
 #title {
