@@ -36,7 +36,7 @@ author:
 Even though I set my account as "Disconnected IMAP", more or less 50% of my emails were not being downloaded so I kept getting this "loading email" message from KMail. This is specially annoying when I'm on my laptop since the internet availability while traveling is not reliable. We have not been able to identify the reason why 1 out 2 emails is not being downloaded but at least I learned how to diagnose this.</p>
 <p>Execute the debugging application "akonadiconsole" and go to the "DB console" tab and execute the following SQL query:</p>
 <p><!--StartFragment-->SELECT count(*) FROM parttable WHERE name = "PLD:RFC822" AND data is null;</p>
-<p><img class="aligncenter" title="Change notification log" src="http://www.afiestas.org/wp-content/uploads/2012/11/change-notification.png" alt="" width="399" height="622" /></p>
+<p><img class="aligncenter" title="Change notification log" src="http://cdn.afiestas.org/wp-content/uploads/2012/11/change-notification.png" alt="" width="399" height="622" /></p>
 <p><!--EndFragment--></p>
 <p>The result should be a small amount of your total email (in my workstation it is 4K while in my laptop it is 300K). If you set your account as "Disconnected IMAP" and you are getting a high number you may be suffering the same bug.</p>
 <p>Unfortunately there is no way to force Akonadi to download the missing body for all those emails... so you will have to either live with it or re-import your account.</p>
@@ -46,12 +46,12 @@ If all your email is offline and you do not suffer from the bug I mentioned befo
 <p>In most IMAP servers pushing this data is FAST, but for some reason in GMail each modification takes around 1/2 seconds... so if I set as read 100 email or I delete 2000 make the math :p</p>
 <p>The solution for this is conceptually quite easy, we should only block operations that affect email XXX instead of blocking everything. The technical implementation is a little more difficult than that :p</p>
 <p>You can use akonadiconsole to check this "todo list", open it go to "Agents" tab, and in there open the context menu on the agent you want to check and click on "show change-notification log".</p>
-<p><a href="http://www.afiestas.org/wp-content/uploads/2012/11/emails-without-payload.png"><img class="alignnone" title="Email without payload sql query" src="http://www.afiestas.org/wp-content/uploads/2012/11/emails-without-payload-small.png" alt="" width="640" height="371" /></a></p>
+<p><a href="http://cdn.afiestas.org/wp-content/uploads/2012/11/emails-without-payload.png"><img class="alignnone" title="Email without payload sql query" src="http://cdn.afiestas.org/wp-content/uploads/2012/11/emails-without-payload-small.png" alt="" width="640" height="371" /></a></p>
 <p><strong>Summary:</strong><br />
 Akonadi and Kontact2 are an awesome piece of software, I have no doubts that once the issues I mentioned here are fixed we will offer a better user experience than the one you get either in osx or Thunderbird.</p>
 <p>As a note, Thunderbird or iMail take also 15 hour to fetch all my email, with the difference that I can use my email right the way, we are not that far.</p>
 <p>Finally, a screenshot of how I'd like KMail to look like by default... and I'm not the only one asking this :p</p>
-<p><a href="http://www.afiestas.org/wp-content/uploads/2012/11/kmail.png"><img class="alignnone" title="KMail awesome config" src="http://www.afiestas.org/wp-content/uploads/2012/11/kmail-small.png" alt="" width="640" height="391" /></a></p>
+<p><a href="http://cdn.afiestas.org/wp-content/uploads/2012/11/kmail.png"><img class="alignnone" title="KMail awesome config" src="http://cdn.afiestas.org/wp-content/uploads/2012/11/kmail-small.png" alt="" width="640" height="391" /></a></p>
 <p>Edit: to have this config just do:</p>
 <p>Settings--&gt;Appearance--&gt;Layout--&gt;Show the message preview pane next to the message list<br />
 Settings-&gt;Appearance--&gt;Message List--&gt;Default Thene: Fancy with Clickable Status</p>
