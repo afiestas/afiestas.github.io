@@ -3,6 +3,7 @@ layout: default
 ---
 <div class="post">
 
+<a href="{{ site.baseurl }}">
 <div class="post-header-container {% if site.cover %}has-cover{% endif %}" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
 	<div class="scrim {% if site.cover %}has-cover{% endif %}">
 		<header class="post-header">
@@ -11,7 +12,7 @@ layout: default
 		</header>
 	</div>
 </div>
-
+</a>
 <div class="wrapper">
 
 {% unless page.cover %} {% include page_divider.html %} {% endunless %}
