@@ -1,7 +1,69 @@
 name: Àlex Fiestas's blog
+title: Àlex Fiestas's blog
 description: Playground for hacking
+subtitle: "Hacking: Playfull cleverness"
 url: http://afiestas.org
 markdown: redcarpet
 pygments: true
 permalink: /:title/
 comments: true
+email: afiestaso@gmail.com
+cover: "assets/header_image2.jpg"
+logo: "assets/logo2.png"
+baseurl: "/"
+
+# External gems
+gems:
+  - jekyll-sitemap
+
+exclude:
+  - "/vendor/"
+
+# Build settings
+markdown: kramdown
+paginate: 5
+paginate_path: "/page:num/"
+
+# Disqus comments
+disqus_shortname: bencentra
+
+# Google analytics
+# ga_tracking_id: "UA-XXXX-1"
+
+# Category descriptions (for archive pages)
+descriptions:
+  - cat: jekyll
+    desc: "Posts describing Jekyll setup techniques."
+
+  - cat: dummy
+    desc: "Just some placeholder posts, lorem ipsum and the rest."
+
+social:
+  - name: Twitter
+    icon: twitter
+    username: afiestas
+    url: https://twitter.com/afiestas
+    desc: Follow me on Twitter
+    share: true
+
+  - name: GitHub
+    icon: github
+    username: afiestas
+    url: https://github.com/afiestas
+    desc: Fork me on GitHub
+    share: false
+
+# Social sharing protocols
+# These are for automatically generating sharing metadata for FB and Twitter
+# OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
+protocols:
+    fb_image: "assets/logo.png"
+    fb_image_width: 612
+    fb_image_height: 605
+    fb_image_type: "image/png"
+
+    twitter_image: "assets/logo.png"
+
+    os_repo: "https://github.com/RichardLitt/wordhoardpress.com"
+    os_rcs_type: "git"
+    os_src: "git@github.com:RichardLitt/wordhoardpress.com.git"

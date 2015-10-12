@@ -1,71 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>{{ page.title }}</title>
-      <meta name="viewport" content="width=device-width">
 
-      <!-- syntax highlighting CSS -->
-      <link rel="stylesheet" href="/css/syntax.css">
+  {% include head.html %}
 
-      <!-- Custom CSS -->
-      <link rel="stylesheet" href="/css/main.css">
-
-      <!-- Responsive CSS -->
-      <link rel="stylesheet" href="/css/responsive.css">
-
-      <!-- Google Fonts -->
-      <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
-      <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,700' rel='stylesheet' type='text/css'>
-
-      <!-- Mostly to make / equal to /index.html to the outside world-->
-      <link rel="canonical" href="http://www.afiestas.org{{ page.url | replace:'index.html','' }}" />
-
-      <!-- RSS auto discover -->
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/feed.xml">
-  </head>
   <body>
-    <div class="site">
-      <div class="sidebar" id="sidebar">
-        <div class="header">
-          <h1 class="title" style="font-size: 10em;">À</a></h1>
-          <span class="tagline">Hacking: Playful cleverness</span>
-        </div>
-        <div class="posts">
-          <ul class="posts-list">
-            {% for post in site.posts %}
-              <li class="post-link">
-                <a class="post-title" href="{{ post.url }}">
-                  <span class="post-date">{{ post.date | date_to_string }}</span>
-                  {{ post.title }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="footer">
-          <span id="footer-links">
-            <a href="" class="footer-link">About</a> <span class="separator">&bull;</span>
-            <a href="" class="footer-link">Twitter</a> <span class="separator">&bull;</span>
-            <a href="" class="footer-link">GitHub</a>
-          </span>
-        </div>
-      </div>
 
+    {% include header.html %}
+
+    <div class="page-content">
         {{ content }}
-
     </div>
-    <script src="/scripts/responsive.js" type="text/javascript"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-51319654-1', 'afiestas.org');
-      ga('send', 'pageview');
+    {% include footer.html %}
 
-    </script>
   </body>
+
 </html>
