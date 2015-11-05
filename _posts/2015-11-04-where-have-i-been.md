@@ -33,24 +33,3 @@ I appreciate all the people that have been asking how I have been during this la
 notice.
 
 Cheers!
-
-
-
-
-
-
-
-======================================================================================
-A few days ago (2nd of November) I celebrated my birthday and many fellow KDE developers wished me, thank you everyone!
-Some of them asked me where am I hiding these days, which is a fair question I also sometimes get when hanging on IRC or in real life. I think
-you deserve an explanation!
-
-The first boss I ever had once told me: There shouldn't be anything tougher than waking up every day and thinking, what a bummer
-I have to go to work. That made an impression on me. We spend a third of our life at work and another third asleep. You can't control how much you need to sleep but you indeed can control whether you are happy or not at your job!
-
-Ever since, if I have not been happy with my job during an entire month I would resign. It is not worth it and luckly enough I can
-afford it. And this is what happend to me around a year back, my job at BlueSystems working full time on KDE was not fun anymore, the
-maintainership of every project I lead felt like a chore, I was no longer jumping out of bed to go to work... It was time for a change.
-
-
-
