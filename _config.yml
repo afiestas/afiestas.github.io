@@ -11,6 +11,7 @@ email: afiestaso@gmail.com
 cover: "assets/header_image2.jpg"
 logo: "assets/logo2.png"
 baseurl: "/"
+disqus_shortname: afiestas
 
 sass:
   sass_dir: _sass
