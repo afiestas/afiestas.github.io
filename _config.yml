@@ -4,7 +4,7 @@ description: Playground for hacking
 subtitle: "Hacking: Playful cleverness"
 url: http://afiestas.org
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 permalink: /:title/
 comments: true
 email: afiestaso@gmail.com
