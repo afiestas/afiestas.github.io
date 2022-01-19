@@ -1,0 +1,53 @@
+
+{{ $then := .Date }}
+{{ $now := now }}
+{{/*$then = "2023-01-02 00:51:00" | time.AsTime */}}
+{{/*$now = "2023-01-02 00:54:01" | time.AsTime */}}
+
+{{ $timediff := (partial "timediff.html" (dict "now" $now "then" $then))}}
+
+{{ $years := (add (float $timediff.Years) (div (float $timediff.Months) 12)) }}
+{{ $months := (add (float $timediff.Months) (div (float $timediff.Days) 30.4)) }}
+{{ $days := (add (float $timediff.Days) (div (float $timediff.Hours) 24)) }}
+{{ $hours := (add (float $timediff.Hours) (div (float $timediff.Minutes) 60)) }}
+{{ $minutes := (add (float $timediff.Minutes) (div (float $timediff.Seconds) 60)) }}
+
+{{ if ge $years 0.5}}
+    {{ partial "plural-human-friendly2.html" (dict "unit" "year" "value" $years)}}
+{{ else if ge $months 0.5 }}
+    {{ partial "plural-human-friendly2.html" (dict "unit" "month" "value" $months)}}
+{{ else if gt $days 0.75 }}
+    {{ $weeks := math.Floor (div $days 7) }}
+    {{ if ge $weeks 1}}
+        {{ partial "plural-human-friendly2.html" (dict "unit" "weeks" "value" $weeks)}}
+    {{ else }}
+        {{ if ge $days 3 }}
+            A few days ago
+        {{ else if ge $days 2 }}
+            A couple of days ago
+        {{ else }}
+            A day ago
+        {{ end }}
+    {{ end }}
+{{ else if ge $hours 0.5 }}
+    {{ partial "plural-human-friendly2.html" (dict "unit" "hour" "value" $hours)}}
+{{ else if gt $minutes 0 }}
+    Just now
+{{ end }}
+
+{{ define "partials/plural-human-friendly2.html" }}
+    {{ $left := sub .value (math.Floor .value)}}
+    {{if ge $left 0.75}}
+        Almost {{ math.Ceil .value }} {{ .unit }}{{if gt (math.Ceil .value) 1}}s{{end}} ago
+    {{ else if and (lt $left 0.75) (ge $left 0.3)}}
+        {{ if ge .value 1}}
+            Around {{ math.Floor .value }} {{ .unit }}{{if gt (math.Ceil .value) 1}}s{{end}} and a half ago
+        {{ else }}
+            Around half a {{ .unit }} ago
+        {{ end }}
+    {{ else if lt $left 0.3 }}
+        {{ if ge .value 1}}
+            Around {{ math.Floor .value }} {{ .unit }}{{if gt (math.Floor .value) 1}}s{{end}} ago
+        {{ end }}
+    {{ end }}
+{{ end }}

@@ -1,0 +1,31 @@
+{{/* This timediff is NOT precise since it uses month as a unit */}}
+{{/* The further ago you go, the less precise it gets */}}
+
+{{ $then := .then }}
+{{ $now := .now }}
+
+{{ $years := 0 }}
+{{ $months := 0 }}
+{{ $days := 0 }}
+{{ $hours := 0 }}
+{{ $minutes := 0 }}
+{{ $seconds := 0 }}
+
+{{ $totalSeconds := ($now.Sub $then).Seconds }}
+
+{{ $minutes :=  math.Floor ( div $totalSeconds 60) }}
+{{ $seconds :=  math.Mod $totalSeconds 60 }}
+
+{{ $hours = math.Floor (div $minutes 60) }}
+{{ $minutes = math.Mod $minutes 60 }}
+
+{{ $days = math.Floor (div $hours 24) }}
+{{ $hours = math.Mod $hours 24 }}
+
+{{ $months = math.Floor (div $days 30.4) }}
+{{ $days = math.Round (math.Mod $days 30.4) }}
+
+{{ $years = math.Floor (div $months 12) }}
+{{ $months = math.Round (math.Mod $months  12) }}
+
+{{ return (dict "Years" $years "Months" $months "Days" $days "Hours" $hours "Minutes" $minutes "Seconds" $seconds) }}

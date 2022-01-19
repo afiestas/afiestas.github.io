@@ -19,7 +19,15 @@
                         {{ end }}
                     </div>
                 </div>
-            </div>
+                </div>
+                {{ range first 1 (where .Site.RegularPages "Section" "==" "posts") }}
+                    <div>
+                        <article>
+                            <h2>{{ .Title }} </h2>
+                            <h3>{{ partial "timeago.html" . }}</h3>
+                        </article>
+                    </div>
+                {{ end }}
         </main>
         <footer>
             <div>footer</div>
