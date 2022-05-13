@@ -5,3 +5,30 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+menu:
+  top:
+  - identifier: home
+    name: Home
+    title: Home
+    pageref: "/"
+    weight: -900
+  - identifier: blog
+    name: Blog
+    title: Posts and musings
+    pageref: /blog
+    weight: -800
+  - identifier: projects
+    name: Projects
+    title: List of projects
+    pageref: /projects
+    weight: -700
+  - identifier: recipes
+    name: Recipes
+    title: List of recipes
+    pageref: /recipes
+    weight: -600
+  - identifier: experience
+    name: Experience
+    title: Profesional experience
+    pageref: /experience
+    weight: -500

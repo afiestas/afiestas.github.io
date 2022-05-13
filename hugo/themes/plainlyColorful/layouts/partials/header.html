@@ -1,6 +1,10 @@
-<div>
-    <ul>
-        <li>home</li>
-        <li>blog</li>
+<header>
+  <nav>
+    {{ $currentPage := . }}
+    <ul class="navigation-menu">
+      {{ range .Site.Menus.top }}
+        <a class="{{if or ($currentPage.IsMenuCurrent "top" .) ($currentPage.HasMenuCurrent "top" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+      {{ end }}
     </ul>
-</div>
+  </nav>
+</header>
