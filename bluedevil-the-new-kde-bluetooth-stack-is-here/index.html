@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BlueDevil, the new KDE bluetooth stack is here</title>
+  <meta name="description" content="We're proud to announce the first release of BlueDevil, the new bluetooth stack for KDE SC.Description:BlueDevil is a set of components, which integrates blu...">
+  
+  <meta name="author" content="Àlex Fiestas's blog">
+  <meta name="copyright" content="&copy; Àlex Fiestas's blog 2022">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <!--<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">-->
+<!-- 	<link rel="manifest" href="/assets/icons/manifest.json"> -->
+<!-- 	<meta name="msapplication-TileColor" content="#ffffff"> -->
+<!-- 	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png"> -->
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="We're proud to announce the first release of BlueDevil, the new bluetooth stack for KDE SC.Description:BlueDevil is a set of components, which integrates blu..." />
+  <meta property="og:url" content="http://afiestas.org" />
+  <meta property="og:site_name" content="Àlex Fiestas's blog" />
+  <meta property="og:title" content="BlueDevil, the new KDE bluetooth stack is here" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://afiestas.org/" />
+  <meta property="og:image:type" content="" />
+  <meta property="og:image:width" content="" />
+  <meta property="og:image:height" content="" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BlueDevil, the new KDE bluetooth stack is here">
+  <meta name="twitter:description" content="We're proud to announce the first release of BlueDevil, the new bluetooth stack for KDE SC.Description:BlueDevil is a set of components, which integrates blu...">
+  <meta name="twitter:image" content="http://afiestas.org/">
+  <meta name="twitter:url" content="http://afiestas.org">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://afiestas.org//bluedevil-the-new-kde-bluetooth-stack-is-here/">
+  <link rel="alternate" type="application/rss+xml" title="Àlex Fiestas's blog" href="http://afiestas.org//feed.xml" />
+</head>
+
+
+  <body>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51319654-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <header class="navigation" role="banner">
+  
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<a href="/">
+<div class="post-header-container has-cover" style="background-image: url(/assets/header_image2.jpg);">
+	<div class="scrim has-cover">
+		<header class="post-header">
+		  <h1 class="title">BlueDevil, the new KDE bluetooth stack is here</h1>
+		  <p class="info">by <strong>Àlex Fiestas</strong></p>
+		</header>
+	</div>
+</div>
+</a>
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+	<div class="post-date">July 28, 2010</div>
+	<div class="post-categories">
+	in 
+	  
+	  <span>Kde</span>, 
+	  
+	
+	  
+	  <span>Software libre</span>
+	  
+	
+	</div>
+</section>	
+
+<article class="post-content">
+  <p>We're proud to announce the first release of BlueDevil, the new bluetooth stack for KDE SC.</p>
+<p><strong>Description:</strong></p>
+<p>BlueDevil is a set of components, which integrates bluetooth within the KDE SC, for example adding a system preference module (KCM), or allowing to browse the files in a cell phone from you favorite file browser.</p>
+<p>The list of already implemented components is:</p>
+<ul>
+<li>System preference module (KCM) to configure all the options regarding Bluetooth (also fully activate/deactivate it)</li>
+<li>Integration with the KDE input/output system (KIO), which allows to discover and explore all bluetooth devices around from your favorite file browser</li>
+<li>A wizard to pair your devices, and connect directly to the compatible services, such input (mouse, keybaord, Wiimote) and audio (headsets, phones)</li>
+<li>Systray application integrated with the last KDE SC 4.5, from where all BlueDevil actions can be done (disconnect devices, send files, configure...)</li>
+<li>Daemon to listen incoming petitions, for example to receive files, or to introduce a requested PIN.</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li>bluez (to get it working)</li>
+<li>obex-data-server (for receiving files, and KIO's)</li>
+<li>obexd-client (for sending files)</li>
+<li>KDE SC 4.4 or greater</li>
+<li>PulseAudio, or a proper configured Alsa (with the bluetooth hook)</li>
+</ul>
+<p><strong>Errata:</strong></p>
+<ul>
+<li>When using kio_obexftp in dolphin on a KDE SC 4.4, some times it won't load the content because more than one kio is launched at the same time and it is not supported by the backend (Tip: Disable the previews or use konqueror)</li>
+<li>In KDE 4.5 SC, some times when a device is removed, the systray is not correctly updated (Seems to be a bug in QDBusMenu)</li>
+<li>When trying to open a file from a bluetooth device, the progress gets stucked at 99%</li>
+</ul>
+<p><strong>Target Audience:</strong></p>
+<p>This release should be stable enough to be used by everybody, but we're looking specially for advanced users with "compiling skills" so we can get quick feedback and fix as many bugs as possible. if you are Interested send an email to Àlex (at) ufocoders dot com.</p>
+<p><strong>Internationalization:</strong></p>
+<p>Currently BlueDevil is not ready to be translated (the strings are not final), and we're looking for native English speakers who can help us with the strings, interested people send an email to Àlex {at) ufocoders.com</p>
+<p><strong>Special thanks to (in no particular order):</strong></p>
+<ul>
+<li><a title="BlueZ site" href="http://www.bluez.org/" target="_blank">BlueZ</a> developers and community for their help during the development (and patience)</li>
+<li><a title="David Faure Page" href="http://www.davidfaure.fr/" target="_blank">David Faure</a> for his help during the development and infinite patience talking about KIO's</li>
+<li>To <a title="UFO coders page" href="http://www.ufocoders.com/" target="_blank">ufocoders</a> for sponsor half of the development</li>
+</ul>
+<p><strong>Obtaining the code:</strong></p>
+<p>To get the tag:</p>
+<p>git clone git://gitorious.org/bluedevil/bluedevil.git; git checkout v1.0-rc1</p>
+<p>In the next release we'll provide the proper tarball.</p>
+
+</article>
+
+
+
+<section class="rss">
+	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<section class="share">
+  <span>Share: </span>
+  
+</section>
+
+
+
+<section class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'afiestas';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Àlex Fiestas's blog</h3>
+
+    <div class="site-navigation">
+    	
+    	<p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+    	<p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+      	<li>
+      		<a href="mailto:afiestaso@gmail.com">
+	      		<i class="fa fa-envelope-o"></i>
+	      		<span class="username">afiestaso@gmail.com</span>
+      		</a>
+      	</li>
+
+      	
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+    	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Playground for hacking</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+</script>
+
+
+
+
+  </body>
+
+</html>
