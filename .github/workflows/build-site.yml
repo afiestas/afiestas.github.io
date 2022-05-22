@@ -6,14 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Jekyll build
-        run: |
-          make build
-      - name: Built files
-        run: |
-          ls -la ${{ github.workspace }}/jekyll/_site
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/master' }}
+        uses: helaili/jekyll-action@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./jekyll/_site
+          token: ${{ secrets.GITHUB_TOKEN }}
+          jekyll_src: 'jekyll'
+          target_branch: 'gh-pages'
