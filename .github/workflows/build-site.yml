@@ -7,16 +7,16 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true
-      - name: Hugo build
-        uses: afiestas/hugo-gh-pages@master
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          args: --gc --minify --cleanDestinationDir --theme=newsroom
-          siteDir: hugo
-          destination_directory: hugo
       - name: Jekyll build
         uses: helaili/jekyll-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           jekyll_src: 'jekyll'
           target_branch: 'gh-pages'
+      - name: Hugo build
+        uses: afiestas/hugo-gh-pages@master
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          args: --gc --minify --cleanDestinationDir --theme=newsroom
+          siteDir: hugo
+          destinationDir: hugo
