@@ -2,6 +2,5 @@ _site
 .sass-cache/
 vendor/
 .jekyll-cache/
-hugo/themes/
 hugo/resources/_gen/
 hugo/public/
