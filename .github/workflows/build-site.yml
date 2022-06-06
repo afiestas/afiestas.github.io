@@ -8,11 +8,12 @@ jobs:
         with:
           submodules: true
       - name: Hugo build
-        uses: chabad360/hugo-gh-pages@master
+        uses: afiestas/hugo-gh-pages@master
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           args: --gc --minify --cleanDestinationDir --theme=newsroom
-          siteDir: /hugo
+          siteDir: hugo
+          destination_directory: hugo
       - name: Jekyll build
         uses: helaili/jekyll-action@v2
         with:
