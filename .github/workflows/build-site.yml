@@ -5,6 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: Hugo build
+        uses: chabad360/hugo-gh-pages@master
+        with:
+          githubToken: ${{ secrets.PERSONAL_TOKEN }}
+          args: --gc --minify --cleanDestinationDir --theme=newsroom
+          siteDir: /hugo
       - name: Jekyll build
         uses: helaili/jekyll-action@v2
         with:
