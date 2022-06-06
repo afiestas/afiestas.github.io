@@ -10,7 +10,7 @@ jobs:
       - name: Hugo build
         uses: chabad360/hugo-gh-pages@master
         with:
-          githubToken: ${{ secrets.PERSONAL_TOKEN }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
           args: --gc --minify --cleanDestinationDir --theme=newsroom
           siteDir: /hugo
       - name: Jekyll build
