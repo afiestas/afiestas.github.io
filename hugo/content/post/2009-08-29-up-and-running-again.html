@@ -1,0 +1,49 @@
+---
+author:
+  display_name: afiestas
+  email: afiestas@kde.org
+  first_name: Àlex
+  last_name: Fiestas
+  login: afiestas
+categories:
+- KDE
+- offtopic
+- Software Libre
+date: "2009-08-29T00:00:00Z"
+meta:
+  _edit_last: "2"
+  dsq_thread_id: "2150403751"
+published: true
+status: publish
+tags: []
+title: Up and running again.
+type: post
+---
+<p>Hi everyone!<br />
+After a few days of "non-computer" I'm back with the batteries charged at 100% :) and with a small list of things to be done in the next days. This is the list:</p>
+<p><strong>Reach kamoso 1.0 version (I hope in 1week max):</strong><br />
+Kamoso is the codename for a project I'm doing with Aleix pol (apol) and in theory with ereslibre (he's kinda offline), is a Photobooth/Cheese clone, written in Qt/C++. The project is developed on gitorious and within a few days we hope reach the first stable version, which mainly will have this features:</p>
+<ol>
+<li>Take picutres.</li>
+<li>Choose which webcam to use.</li>
+<li>Record video.</li>
+<li>Record video with voice.</li>
+<li>Some web 2.0 exports (facebook, youtube etc).</li>
+<li>Maybe some effects too.</li>
+</ol>
+<p>Finally we're going to use libvlc for the video work, yes! vlc has an exported library which provide a quite straight forward api to deal with video stuff.<br />
+Currently we're working on cleaning the plugin structure and to port our current video code to libVlc. If anybody wants join us more developers are welcomed, so just drop an email to Àlex (at) eyeos (d0t) org or to aleixpol (at)kde (d0t) org or maybe even better, just clone the repository on gitorious :)!</p>
+<p><strong>Research kbluetooth4 (in 1 or 2 days)<br />
+</strong>I'm not only talking about a code research here, the main point is to know why kbluetooth4 is not part of kde trunk (or at least part of extragear), and try to fix this situation, with this I mean write wherever kbluetooth4 needs to become an application ready to be part of those "sections".<br />
+In the meanwhile I contact with the maintainers, I'll try to add some configuration menus to be able to specify where the received files are saved.</p>
+<p><strong>Phonon Audio/Video input<br />
+</strong>This is in my list, the most low priority point, and it is the most low priority point because it makes me feel small ._. I'll try to push some effort here, and with that aim other ppl to write input stuff in other backends, but from my most humble opinion, phonon needs more developers, and needs Krezt back :p. By the way, my TODO for phonon input is:</p>
+<ol>
+<li>Learn how gstreamer works (api level).</li>
+<li>Fill the current interface for avdevice (list devices etc, all using gstreamer).</li>
+<li>Start to expand the gstreamer backend to be able to output input content.</li>
+</ol>
+<p>I've chosen gstreamer because it already have input support, but maybe I'll switch to the VLC, since I'll use libvlc in kamoso.</p>
+<p>Well, this is more or less all! I'll try to keep the blog up to date with the progresses I made in those points.</p>
+<p>The last, but not less important, this is the drink I'm taking to celebrate my "come back" :)!</p>
+<p>[caption id="attachment_53" align="alignnone" width="300" caption="Duff beer"]<a href="http://cdn.afiestas.org/wp-content/uploads/2009/08/DSC01331.png"><img class="size-medium wp-image-53 " title="Duff beer :)" src="http://cdn.afiestas.org/wp-content/uploads/2009/08/DSC01331-300x200.png" alt="Duff beer picture" width="300" height="200" /></a>[/caption]</p>

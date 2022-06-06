@@ -1,0 +1,46 @@
+---
+author:
+  display_name: afiestas
+  email: afiestas@kde.org
+  first_name: Àlex
+  last_name: Fiestas
+  login: afiestas
+categories:
+- KDE
+- Software Libre
+date: "2013-03-24T00:00:00Z"
+meta:
+  _edit_last: "2"
+  dsq_thread_id: "2226558283"
+published: true
+status: publish
+tags: []
+title: 'BlueDevil: Changing the way we work'
+type: post
+---
+<p><strong>In short:<br />
+</strong>From now on we will be maintaining only one release instead of 4. We are going to focus on 1.3 and try to fix all remaining <a title="Bluedevil's bugs" href="https://bugs.kde.org/buglist.cgi?list_id=562341&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor&amp;bug_severity=task&amp;query_format=advanced&amp;bug_status=UNCONFIRMED&amp;bug_status=CONFIRMED&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_status=NEEDSINFO&amp;bug_status=VERIFIED&amp;component=bluetooth&amp;component=bluetooth-daemon&amp;component=bluetooth-kcm&amp;component=bluetooth-kio-bt&amp;component=bluetooth-kio-obex&amp;component=bluetooth-systray&amp;component=bluetooth-wizard&amp;product=solid" target="_blank">bugs</a>, then we will work on implementing some of the reported <a title="Bluedevil's wishes" href="https://bugs.kde.org/buglist.cgi?list_id=562342&amp;bug_severity=wishlist&amp;query_format=advanced&amp;bug_status=UNCONFIRMED&amp;bug_status=CONFIRMED&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_status=NEEDSINFO&amp;bug_status=VERIFIED&amp;component=bluetooth&amp;component=bluetooth-daemon&amp;component=bluetooth-kcm&amp;component=bluetooth-kio-bt&amp;component=bluetooth-kio-obex&amp;component=bluetooth-systray&amp;component=bluetooth-wizard&amp;product=solid" target="_blank">wishes</a> and release 1.4. Once that happens we will only maintain 1.4.</p>
+<p><strong>Explanation:<br />
+</strong>Since BlueDevil was released we have been updating all stable versions, which means:</p>
+<ul>
+<li>1.0 (currently at 1.0.5)</li>
+<li>1.1 (currently at 1.1.5)</li>
+<li>1.2 (currently at 1.2.4)</li>
+<li>1.3 (about to release 1.3.1)</li>
+</ul>
+<p>This has been possible because the code base did not change much between releases so we fixed the bugs in the oldest version and then forwarded the fix to all the other releases, this was the easy part.</p>
+<p>Before each release we like to do some intense testing to make sure that none of the basic functionality has been broken. In the hardware world quality is extremely important, we do not want to leave the user without a mouse, connectivity or an usable screen just because we are lazy or we don't feel like doing <a title="Wikipedia Quality assurance" href="http://en.wikipedia.org/wiki/Quality_assurance" target="_blank">QA</a>.</p>
+<p>In the case of BlueDevil we test most of this before each release (independently of what code has been modified): <a href="http://community.kde.org/Solid/Projects/BlueDevil/Tests">http://community.kde.org/Solid/Projects/BlueDevil/Tests</a></p>
+<p>This means that even if the "Send File" functionality was NOT modified in a new release, we test it just in case something broke.</p>
+<p>In the list there are more or less 60 items, lets say it takes 1 minute per item to test it (it takes more) that means that it will take roughly an hour to test an entire release. Now multiply this per 4 which is the number of releases we have been doing and you will get 4 hours we invest on QA.</p>
+<p>Besides the work we do before each release there is a constant effort of bug triaging that becomes way more difficult when you support a variety of versions since it makes you have to switch to a given version to try to reproduce and fix a bug you can't reproduce with the version you are using.</p>
+<p><strong>If it is that much trouble, why have you been doing it?</strong><br />
+<span style="line-height: 13px;">In one word: distributions. Each distribution has a different time table, each distribution has a different minor release policy, each distribution is a different world. At the time we started doing this, Bluetooth in KDE was a mess so the highest priority was to have a good experience in all distributions. It should not matter which Bluedevlil version they were using.</span></p>
+<p>Nowadays the situation has changed, we work quite well in all published versions so if a distribution does not upgrade (for whatever reason) the user won't die.</p>
+<p><strong>So, now what?<br />
+</strong>From now on we are going to maintain only one version, and we are not going to support (or give support) to any other. This means that if a bug is reported with an old version the first thing we are going to ask is to upgrade and test again (if the part that is supposedly broken has been updated).</p>
+<p>We are going to release 1.3.1 soon, and possibly another minor release for 1.3 if we have any bugs to fix. Then we will focus on implementing some of the wishes we have been ignoring for years (sorry for that :/)  and release 1.4. Once that happens 1.3 will be automatically deprecated and only 1.4 will be supported.</p>
+<p><strong>Personal thoughts:<br />
+</strong>I find it quite sad that after all this years going the extra mile so distributions can have a good Bluetooth experience, <a href="http://lists.kde.org/?l=kde-core-devel&amp;m=135689474501509&amp;w=4" target="_blank">nobody stepped up</a> to maintain stable releases. I guess this means that we are doing the right thing after all.</p>
+<p>So, if your distribution is not shipping the latest BlueDevil version or it is not upgrading to it ask them to do so!</p>
+<p>If after this blog post somebody feels like taking the job of maintaining the stable releases please, kde-hardware-devel@kde.org is your list !</p>

@@ -1,0 +1,35 @@
+---
+author:
+  display_name: afiestas
+  email: afiestas@kde.org
+  first_name: Àlex
+  last_name: Fiestas
+  login: afiestas
+categories:
+- Software Libre
+date: "2013-12-30T00:00:00Z"
+meta:
+  _edit_last: "2"
+published: false
+status: draft
+tags: []
+title: Presenting User Manager
+type: post
+---
+<p>We are happy to announce a new small project called User Manager that we hope will make less scary the administration of system users when running KDE Plasma desktop.</p>
+<p><strong>Background:<br />
+</strong>A few months back in one of the sessions of the last UDS I attended the Kubuntu team (me included) wondered if we could replace the old KUser with something more "user friendly" since doing the most basic task with it was difficult even for the attendees of that session. After looking at all alternatives we realized that all existing KDE-friendly solutions were thought for sysadmins rather than for the average user. So the only option we had left was creating our own new thing.</p>
+<p><strong>Design:<br />
+</strong>When designing User Manager we used the <a title="Solid persona's" href="https://community.kde.org/NetworkManagement" target="_blank">personas</a> we created for Solid and focused on Penny (as we do for Solid).</p>
+<p>First thing we realized is that Penny (the average user) does not care about Groups. In modern user-oriented distributions there is no need for having to mess with Groups, so let's not even try to make the concept of group management user friendly.</p>
+<p>Then we realized that from Users, not everything had to be shown, things like: system users (httpd, nobody, ftp, lightdm, rkit...), home folder or login shell are details of no interest for Penny, so we decided to just skip them in the new interface.</p>
+<p>Also we realized that we have some functionality duplication with "kcm_useraccount", we decided that we should merge most of that functionality on User Manager.</p>
+<p>Finally, we wanted to avoid popups as much as possible, so we decided to have a list of users on the left that allows you to show/edit information on the right.</p>
+<p><strong>Result:</strong></p>
+<p>&lt;Video here&gt;</p>
+<p><strong>To be done:</strong><br />
+We have to merge all interesting (for Penny) functionality from kcm_useraccount so we can remove it.</p>
+<p>In the future while we re-check some other System Settings modules we might add more functionality here, for example I'm thinking of the User language or locale, but we will see about that.</p>
+<p><strong>Release:<br />
+</strong>Kubuntu has been using it since 13.10, but it has not been officially released yet, it can be expected during January 2014.</p>
+<p>We hope you liked this new small project, Cheers !</p>
