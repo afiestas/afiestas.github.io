@@ -13,10 +13,17 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           jekyll_src: 'jekyll'
           target_branch: 'gh-pages'
-      - name: Hugo build
+      - name: Hugo build newsroom
         uses: afiestas/hugo-gh-pages@master
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           args: --gc --minify --cleanDestinationDir --theme=newsroom
           siteDir: hugo
           destinationDir: hugo
+      - name: Hugo build plainlyColorful
+        uses: afiestas/hugo-gh-pages@master
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          args: --gc --minify --cleanDestinationDir --theme=plainlyColorful
+          siteDir: hugo
+          destinationDir: hugo1
