@@ -24,8 +24,8 @@ type: post
 
 [![Awesome HiDPI on Xorg][2]][1]{:target="\_blank"}
 
-[1]: http://cdn.afiestas.org/posts/2017/02/hidpi_big.png
-[2]: http://cdn.afiestas.org/posts/2017/02/hidpi_small.png
+[1]: https://cdn.afiestas.org/posts/2017/02/hidpi_big.png
+[2]: https://cdn.afiestas.org/posts/2017/02/hidpi_small.png
 
 In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for
 a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most
@@ -42,15 +42,15 @@ This means that applications rendered for HiDPI look huge on normal screens:
 
 [![Open dialog looking huge][4]][3]{:target="\_blank"}
 
-[3]: http://cdn.afiestas.org/posts/2017/02/external_noscale_big.png
-[4]: http://cdn.afiestas.org/posts/2017/02/external_noscale_small.png
+[3]: https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png
+[4]: https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png
 
 #### Scaled HiDPI File dialog on regular screen
 
 [![Open dialog looking ok][6]][5]{:target="\_blank"}
 
-[5]: http://cdn.afiestas.org/posts/2017/02/external_scaled_big.png
-[6]: http://cdn.afiestas.org/posts/2017/02/external_scaled_small.png
+[5]: https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png
+[6]: https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png
 
 Here is where the internet seems to tell you that there is nothing to do but wait until Wayland arrives and saves us all
 (I can’t wait for that btw) but that’s actually not true, X can do it.
