@@ -1,3 +1,7 @@
 disablePathToLower: true
 languageCode: en-us
 title: Àlex Fiestas's blog
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
