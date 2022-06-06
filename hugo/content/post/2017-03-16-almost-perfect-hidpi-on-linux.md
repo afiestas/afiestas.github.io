@@ -22,7 +22,7 @@ title: Almost perfect HiDPI experience on Linux (Xorg)
 type: post
 ---
 
-[![Awesome HiDPI on Xorg][2]][1]{:target="\_blank"}
+[![Awesome HiDPI on Xorg][2]][1]
 
 [1]: https://cdn.afiestas.org/posts/2017/02/hidpi_big.png
 [2]: https://cdn.afiestas.org/posts/2017/02/hidpi_small.png
@@ -40,14 +40,14 @@ This means that applications rendered for HiDPI look huge on normal screens:
 
 #### HiDPI File dialog on regular screen
 
-[![Open dialog looking huge][4]][3]{:target="\_blank"}
+[![Open dialog looking huge][4]][3]
 
 [3]: https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png
 [4]: https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png
 
 #### Scaled HiDPI File dialog on regular screen
 
-[![Open dialog looking ok][6]][5]{:target="\_blank"}
+[![Open dialog looking ok][6]][5]
 
 [5]: https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png
 [6]: https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png
@@ -74,11 +74,11 @@ _Wow_! _Awesome_! This is so cool! Why is everybody not doing this? Where is the
 Mostly because of one bug: \\
 <https://bugs.freedesktop.org/show_bug.cgi?id=39949>
 
-If you read through the bug entry you will find a [patch](https://bugs.freedesktop.org/attachment.cgi?id=94929){:target="\_blank"} created by Chris Wilson in 2014
+If you read through the bug entry you will find a [patch](https://bugs.freedesktop.org/attachment.cgi?id=94929) created by Chris Wilson in 2014
 which is shipped by default in some distributions but it has never been integrated into master.
 
 If your distribution doesn’t ship with this patch by default (good for them!) you can build your own xorg-server, the patch should apply until 1.18 and for 1.19
-you have a ported version [here](https://raw.githubusercontent.com/afiestas/xorg-server-patches/master/cursor.patch){:target="\_blank"}.
+you have a ported version [here](https://raw.githubusercontent.com/afiestas/xorg-server-patches/master/cursor.patch).
 
 Although with this patch the experience is already way better since the applications will look correctly on all screens Qt has a few bugs
 that will create weird glitches specially by placing windows where they don’t belong.
@@ -87,19 +87,20 @@ that will create weird glitches specially by placing windows where they don’t 
 
 <div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/NegativeReadyBluebird' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
 <div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/MilkyTanFallowdeer' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+
 #### Shy tooltips
 <div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/SlushyUnitedGrison' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+
 #### Jumpy Drag And Drop
 <div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/DemandingFairBettong' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
 
-\\
 I have been working on 3 patches that solve most of these at least in my day to day use.
 
-These two still need to be reviewed and might not get accepted: \\
-<https://codereview.qt-project.org/#/c/182207/>{:target="\_blank"} \\
-<https://codereview.qt-project.org/#/c/182392/>{:target="\_blank"}
+These two still need to be reviewed and might not get accepted:
+<https://codereview.qt-project.org/#/c/182207/>
+<https://codereview.qt-project.org/#/c/182392/>
 
-This one seems to be on track to be merged (Drag and Drop): \\
-<https://codereview.qt-project.org/#/c/182391/>{:target="\_blank"}
+This one seems to be on track to be merged (Drag and Drop):
+<https://codereview.qt-project.org/#/c/182391/>
 
 With all this patches the HiDPI experience in any modern Linux distro is as good as in macOS and the best part is that we do not have to wait until Wayland.
