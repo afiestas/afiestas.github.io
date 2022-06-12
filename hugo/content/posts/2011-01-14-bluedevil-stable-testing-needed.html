@@ -1,0 +1,47 @@
+---
+author:
+  display_name: afiestas
+  email: afiestas@kde.org
+  first_name: Àlex
+  last_name: Fiestas
+  login: afiestas
+categories:
+- KDE
+- Software Libre
+date: "2011-01-14T00:00:00Z"
+meta:
+  _edit_last: "2"
+  dsq_thread_id: "2226555904"
+  enclosure: |
+    https://cdn.afiestas.org/posts/2011/01/bluedevil-wizard.ogv
+    12483187
+    video/ogg
+published: true
+status: publish
+tags: []
+title: BlueDevil (stable) testing needed
+
+---
+<p>Hi there</p>
+<p>Since we released 1.0, we've been working hard to stabilize BlueDevil as much as possible and after fixing a bunch of bugs in kio_obexftp, now it's turn for the wizard.</p>
+<p>This is the changelog:</p>
+<ul>
+<li>Added support for Bluetooth 2.1 (SSP pairing)</li>
+<li>Do not pair devices that don't need it</li>
+<li>Better automatic mode (Updated PIN database)</li>
+<li>Randomized the default PIN</li>
+<li>Random PIN of 6 characters, shrink if needed (depending on device)</li>
+<li>Improved the flow for lot of devices</li>
+</ul>
+<p>As you can see, there are plenty changes for a minor release and that's why we need some testing before release BlueDevil 1.0.2</p>
+<p>This is already packaged in OpenSuse KDE:Unstable:Playground and to build it from the source you have to:</p>
+<blockquote><p>git clone git://git.kde.org/bluedevil<br />
+cd bluedevil<br />
+git checkout stable<br />
+cmake ./ -DCMAKE_INSTALL_PREFIX=/usr (well this depends on your installation)<br />
+make -j3 install (you will probably need root for this).</p></blockquote>
+<p>Thanks!</p>
+<p>If you have arrived here, you've got extra credits:<br />
+<video width="600" height="350" controls="controls" tabindex="0"> <source type="video/ogg" src="https://cdn.afiestas.org/posts/2011/01/bluedevil-wizard.ogv"></source></video><a href="https://cdn.afiestas.org/posts/2011/01/bluedevil-wizard.ogv">Direct Link</a></p>
+<p>=-=-=-=-=<br />
+<em>Powered by <strong><a href="http://blogilo.gnufolks.org/">Blogilo</a></strong></em></p>

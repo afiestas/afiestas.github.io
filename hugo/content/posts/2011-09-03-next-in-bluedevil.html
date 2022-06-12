@@ -1,0 +1,37 @@
+---
+author:
+  display_name: afiestas
+  email: afiestas@kde.org
+  first_name: Àlex
+  last_name: Fiestas
+  login: afiestas
+categories:
+- KDE
+- Software Libre
+date: "2011-09-03T00:00:00Z"
+meta:
+  _edit_last: "2"
+  dsq_thread_id: "2226556913"
+published: true
+status: publish
+tags: []
+title: Next in BlueDevil
+
+---
+<p>Hi there!</p>
+<p>These last tree weeks have been crazy, apart from being busy sorting things out where I work, I have been doing an strict diet + sport to see if I can get rid of my extra weight, so far I'm not less Àlex than I was tree weeks ago, exactly 10Kg less (22 pounds says google...). Well stop of talking about myself, let's talk about BlueDevil!</p>
+<p><strong>BlueDevil 1.2:<br />
+</strong>Probably tomorrow we will be releasing the 1.2 version, since we released RC1/2 we have good good feedback, no new bugs seems to be reported so we think that we're good to go.</p>
+<p><strong>BlueDevil 1.3:<br />
+</strong>This version was not in the plan, but after starting to work in the 2.0 version we found something we think that have to be "backported" to the 1.X branch. Basically more than a year ago when we started to work in the new stack, we found ourselves in a situation where the use of a thread  seemed correct and needed, so we use it. Now after a year 100% of the crash reports we get apparently came from that thread and so far we have not been able to find a solution since the crash is kinda random... I can't reproduce it so I can't fix it basically. Well the good news are that we found a way of removing that thread so in theory after this change we will be virtually crash free, yay!</p>
+<p>So, to summarize: The 1.3 version will have only one change, which is the removal of the "AgentListener" thread in the BlueDevilDaemon (kded).</p>
+<p><strong>BlueDevil 2.0:<br />
+</strong>This is the next big version of BlueDevil, don't worry we won't be breaking anything :) Currently we're using obex-data-server for a few things such receiving files, the problem is that it is almost un-maintained for example <a href="http://bugs.muiline.com/view.php?id=647">this bug</a> which is quite critical for kio_oebxftp has not been touched though I pinged the author via bugtrack and email. But not worry, the BlueZ community has been working in a replacement for months or even years it is called obexd. We are already using obexd for sending files and so far it is working great so the idea is to port everythiing that uses obex-data-server to obexd.</p>
+<p>There is one problem though, obexd is not done by desktop in mind so we will have to do some patching there in order to add the needed settings we need.</p>
+<p>&nbsp;</p>
+<p>Dates, dates, dates, everybody love dates...  this is the non-strict non-hard schedule:</p>
+<p>1.2: Tomorrow<br />
+1.3: Next Friday<br />
+2.0: By the end of the month</p>
+<p>I will be focusing myself in BlueDevil the entire month, the sooner we finish these changes the sooner we can work in other stuff, personally I will work in KRandR.</p>
+<p>Cheers!</p>

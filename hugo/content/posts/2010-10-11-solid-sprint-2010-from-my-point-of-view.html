@@ -1,0 +1,57 @@
+---
+author:
+  display_name: afiestas
+  email: afiestas@kde.org
+  first_name: Àlex
+  last_name: Fiestas
+  login: afiestas
+categories:
+- KDE
+- Software Libre
+date: "2010-10-11T00:00:00Z"
+meta:
+  _edit_last: "2"
+  dsq_thread_id: "2226555304"
+published: true
+status: publish
+tags: []
+title: Solid Sprint 2010, from my Point Of View
+
+---
+<p>Almost 1 week has passed since Solid Sprint took place, and I'm already waiting for the next event, where I can hack side by side with KDE hackers from all the world again (Maybe in the Meego conference?). It was a short sprint but intense, productive and funny, on where we discussed and worked on some different topics. Let's began from the start.</p>
+<p><strong>Organisation</strong>:</p>
+<p>The organisation of a small Sprint doesn't require a huge amount of time (at least didn't this one) basically the tasks to do are:</p>
+<ol>
+<li>Be sure that you can attend to the sprinters and having a good place for the event (<a title="War Room" href="https://cdn.afiestas.org/posts/2010/10/5042758200_27c13020ea_z.jpg" target="_blank">office</a>)</li>
+<li>Propose the idea and the place to some KDE group (<a title="Mailing list" href="http://mail.kde.org/pipermail/kde-hardware-devel/2010-August/000962.html" target="_blank">mailist</a>)</li>
+<li>Decide a date doing a <a title="Doodle service" href="http://www.doodle.com/" target="_blank">poll</a></li>
+<li>Prepare a budget for the e.V board (<a title="Attendees list" href="http://community.kde.org/Solid/Sprint2010#Attendees_List">attendees list</a>)</li>
+<li>Send the budget to the board, together with the event explanation and wait.</li>
+<li>Finally book the rooms, and enjoy the event.</li>
+<li>Additionally, <a title="UFOCoders site" href="www.ufocoders.com" target="_blank">UFOCoders</a> and <a title="Interdominio's site" href="www.interdominios.com" target="_blank">Interdominios</a> sponsored catering for all the weekend (food and drinks), and Pizza for the Sunday lunch.</li>
+</ol>
+<p><strong>Start</strong>:</p>
+<p>After met everybody in the room where the event took place, we went to lunch. After it we began to organize the Sprint, or better said Kevin Ottens start to explain to the rest of the team all the things that were filling the whiteboard (an entire glass wall), in it we could differ between "Discussing goals" and "Coding goals", these last were managed by using a Kanban.</p>
+<p>The most important point we discussed (imho) is the "Solid as a Team" one. That was something that everybody had in his mind, but it was not official. Now it is, so welcome the new Solid, reborn as a community inside KDE, containing a lot of projects like (in no particular order): libsolid, powerdevil, networkmanagement, bluedevil... So, if you have a project which is related to KDE+Hardware, don't hesitate to contact us via kde-hardware-devel mailist).</p>
+<p>After having discussed all the topics, we started to hack. That night (Friday) we established the first interaction between NetworkManagement and BlueDevil, it not was event using an interface or any BD/NM code, but it demonstrated to us how hard/easy it was, and that it can be done.</p>
+<p>After a few hours of Hacking, Sebas, Dario, and I went to take some beers (Voll daaamn :D), near de hotel, and discuss about random things. I love these discussions! exchange opinions and ideas about our ecosystem is, a part of entertaining and funny, one learnt a lot of things by listening to other point of views, and make your global vision better. The bad thing (if I can say something) is that I slept 4h that night :p</p>
+<p><strong>Middle</strong>:</p>
+<p>The Saturday was the "Super Hacking Day", we where in front of the computer for around 18 hours only stopping for dinner. Each person on the sprint had lunch at a different time which shows how deep where were in our personal thought's.</p>
+<p>The first thing I decided to do that Saturday was finish my part of Bluetooth+NetworkManagement. If started to implement some plugins for BlueDevil, when doing it I noticed some interesting stuff from BlueZ, and discover how Network interface work. So, I explained to Will what I discovered and the issues I found, and he started to research how GNOME applet/wizard handle it. I don't remember when, but we ended up with a solution (Will did), so we hope that sooner than later we'll have Bluetooth+NetworkManagement interaction done.</p>
+<p>The next task I assigned to myself was a technical one (not directly user-related), add asynchronous API to libsolid. After discussin with Kevin his design, I used the next hours to learn how libsolid works, and to connect the current code with the Kevin explanation about the new design. Once I did that, I started to write some tests that will help me to design a good API and at the same time that this new API would be "unit tested" (basicaly I sued Test Driven Development). With the tsdgeos help, we got a PoC working, that helped us to decided which way we should take (use an internal QList instead of inherit it).</p>
+<p>An finally, I started to do some fine tune into BlueDevil Wizard, to get the pairing process more stable and perfect with a major number of devices (devices without PIN mainly). I tested the new code with: Apple* stuff I grabbed from the office, Nokia headset, HTC Magic and Wiimote.</p>
+<p>We finished the hacking session at 6am, and decided to come back at 10am, so basically I decided to do not sleep (wise decision).</p>
+<p><strong>End</strong>:</p>
+<p>All the ends are sad, even if it is a good end. In the sprint cases, it is sad because the people leave in dribs and drabs, however we managed to get a profitable time to put a good end to the Sprint.</p>
+<p>One of the objectives of this sprint was exchange projects or topics, so instead of continue hacking on BlueDevil, I decided to take another project task, in this case PowerDevil UPower Backend. So, as Dario was sitting just left to me, I asked him to explain me how to create a PowerDevil2 backend, and after he explained to me, I started to copy some code from the Hal backend and make it compile. After it we just ordered some pizza's (Sponsored too, as the tradition says) and well, we bought too much :p</p>
+<p>After lunch I continued with my research, this time focused on UPower, basically I compared UPower vs Hal features (the ones we are using) and noticed some things that have to be done by using another piece of software, like xrandr.</p>
+<p>Finally we end up Sebas, Ereslibre, and I. In one of the trips to the fridge we noticed something... there were 6 Volldamn left to drink! We decided to add a sticky note (Green + Red which meant Community and Urgency), and add it to "In Progress" column. After a hard work and a lot of chatting, we moved the task to the "Done" column :)</p>
+<p>While packing and cleaning everything, we end up at 02:00 AM talking about random stuff again, sharing ideas about KDE future, Sebas showing to us Lionmail and Crystal etc...</p>
+<p>To end the post, I'd like to thank for:</p>
+<p>-KDE e.V for sponsoring the event.</p>
+<p>-Community: people and companies, who donate money to e.V, so they can sponsor the sprints.</p>
+<p>-<a title="Interdominio's site" href="www.interdominios.com" target="_blank">Interdominios</a> for helping us with the organisation (Specially to Benito, who handled all the catering and Hotel booking)</p>
+<p>-Solid team to be awesome.</p>
+<p>This is pretty much all, I hope this post help you (reader) to realize how important these sprints are for us, and by extension how important the donations are.</p>
+<p><a title="Join the game link" href="http://jointhegame.kde.org/" target="_blank">Join the game!</a></p>
+<p><a href="http://www.flickr.com/photos/vizzzion/5048391846/sizes/l/in/set-72157624950127005/"><img class="alignnone" title="Solid Team" src="https://cdn.afiestas.org/posts/2010/10/5048391846_d4da10eb69_b.jpg" alt="Solid Team" width="600" height="400" /></a></p>

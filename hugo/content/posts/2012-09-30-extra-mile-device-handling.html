@@ -1,0 +1,27 @@
+---
+author:
+  display_name: afiestas
+  email: afiestas@kde.org
+  first_name: Àlex
+  last_name: Fiestas
+  login: afiestas
+categories:
+- KDE
+- Software Libre
+date: "2012-09-30T00:00:00Z"
+meta:
+  _edit_last: "2"
+  dsq_thread_id: "2226557594"
+published: true
+status: publish
+tags: []
+title: Extra-mile in hot-plug device handling
+
+---
+<p>Fixing mtp support for various pieces of the workspace I realized a small paper-cut I could do to improve the experience when handling external devices such pendrive or usb hard drive.</p>
+<p>The paper cut is quite simple, before these patches we were using the "device description" for all devices, which make sense for devices always plugged into the computer for example the normal Hard Drive where your operating system is usually installed, but it doesn't make sense for removable devices.</p>
+<p>You will understand this better and quicker with the following screenshots:</p>
+<p><a href="https://cdn.afiestas.org/posts/2012/09/before.png"><img class="alignnone" title="Screenshot before changes" src="https://cdn.afiestas.org/posts/2012/09/before_small.png" alt="Showing screenshot before changes" width="200" height="124" /></a> and after <a href="https://cdn.afiestas.org/posts/2012/09/after.png"><img class="alignnone" title="Screenshot after changes" src="https://cdn.afiestas.org/posts/2012/09/after_small.png" alt="Screenshot after changes" width="200" height="124" /></a></p>
+<p>Patches are under review, if everything goes ok and I'm not breaking anything (little bit concerned about freeBSD support) will backport this to 4.9.</p>
+<p>Cheerz !</p>
+<p>&nbsp;</p>

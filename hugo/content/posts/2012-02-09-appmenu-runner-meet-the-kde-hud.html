@@ -1,0 +1,41 @@
+---
+author:
+  display_name: afiestas
+  email: afiestas@kde.org
+  first_name: Àlex
+  last_name: Fiestas
+  login: afiestas
+categories:
+- KDE
+- Software Libre
+date: "2012-02-09T00:00:00Z"
+meta:
+  _edit_last: "2"
+  dsq_thread_id: "2226557083"
+  enclosure: "https://cdn.afiestas.org/posts/2012/02/appMenuRunner.ogv\r\n43311711\r\nvideo/ogg\r\n"
+published: true
+status: publish
+tags: []
+title: AppMenu Runner, meet the KDE's HUD
+
+---
+<p>A few days ago Mark Shuttleworth <a title="Mark's announcement" href="http://www.markshuttleworth.com/archives/939" target="_blank">announced the HUD menu,</a> a  Unity dialog that lets you trigger menu actions in the focused application like:</p>
+<ul>
+<li>look for bookmarks,</li>
+<li>change your IM status</li>
+<li>execute an action contained in the menu bar.</li>
+</ul>
+<div>This kind of features as well of how they are executed may sound familiar to you dear Plasma Worksapce user... Exactly! I'm referring to our beloved <a title="KRunner's userbase page" href="http://userbase.kde.org/Plasma/Krunner" target="_blank">KRunner</a>!</div>
+<div></div>
+<p>KRunner can do a lot of stuff in both global and active application scope (though it tends to offer more global features) , just to mention a few: Math, Bookmarks, Files, Calendar, Contacts, Emails, Devices, Change IM Status, Recent documents...</p>
+<p>I have to say that I'm glad to see Unity going into this direction since it is something that we (KDE Community) have believe in for years, so having Canonical and its designer team walking into the same direction may indicate that we are not wrong or at least we are not the only ones mistaken :)</p>
+<p>Despite KRunner being able to do a lot of things it couldn't do something the HUD does, execute actions contained in the menu. No less than 7 months ago I did my first attempt on achieve exactly that and of course <a title="My first attempt" href="http://www.afiestas.org/improving-kde-applications-help-menu-actions-lookup/" target="_blank">I blogged about it</a>. I didn't continue with the effort mainly because: kdelibs was frozen, it worked only for KDE applications, it worked only if the menu bar was shown within the window.</p>
+<p>After watching the HUD video I got inspired and motivated to create a Runner which will use the same technology as HUD (and the oxygen-appmenu or the plasma-menubar plasmoid) to look and execute menu bar actions, this is the result:</p>
+<p><iframe src="http://www.youtube.com/embed/9lGVy6GRbOc" frameborder="0" width="600" height="315"></iframe></p>
+<p><a title="KDE's appMenu Runner" href="https://cdn.afiestas.org/posts/2012/02/appMenuRunner.ogv" target="_blank">Direct link</a></p>
+<p>&nbsp;</p>
+<p>There are a few things to work on but I hope to put this in KDE Plasma Worksapce 4.9 if the Plasma teams like it of course.</p>
+<p>The code is in:</p>
+<p><!--StartFragment-->git://anongit.kde.org/scratch/afiestas/appmenu.git<!--EndFragment--></p>
+<p>Kubuntu packages are WIP<br />
+Would be nice if somebody can write a manual of how to setup appmenu in Qt and maybe other toolkits.</p>
