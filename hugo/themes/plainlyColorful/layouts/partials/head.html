@@ -1,9 +1,13 @@
 <head>
     <title>{{ with .Title }}{{ humanize . }} | {{ end }}{{ .Site.Title }}</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <style>
+    <style data-what="fonts">
         {{ $fontz := resources.Get "fonts/fonts.css" | resources.ExecuteAsTemplate "fonts/fonts.css" . }}
         {{ $fontz.Content | safeCSS }}
     </style>
+    <style data-what="svg-social">
+        {{ $svgSocial := resources.Get "icons/social-icons.css" | resources.ExecuteAsTemplate "fonts/fonts.css" . }}
+        {{ $svgSocial.Content | safeCSS }}
+    </style>
+    <link rel="stylesheet" href="/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>

@@ -1,10 +1,14 @@
 <header>
-  <nav>
+  <nav class="nav-top-menu">
     {{ $currentPage := . }}
-    <ul class="navigation-menu">
+    <ul>
       {{ range .Site.Menus.top }}
-        <a class="{{if or ($currentPage.IsMenuCurrent "top" .) ($currentPage.HasMenuCurrent "top" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+          <a class="{{if or ($currentPage.IsMenuCurrent "top" .) ($currentPage.HasMenuCurrent "top" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
       {{ end }}
     </ul>
+  </nav>
+  <nav class="nav-top-social">
+    <span class="social-icon-feed">
+    </span>
   </nav>
 </header>

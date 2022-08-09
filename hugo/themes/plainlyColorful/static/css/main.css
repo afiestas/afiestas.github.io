@@ -69,7 +69,13 @@
     min-height: 100%;
   }
 
-  nav {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .nav-top-menu {
     font-family: var(--primary-font-family);
     font-weight: var(--primary-font-weight);
     display: flex;
@@ -87,4 +93,3 @@
   footer {
     border: beige dashed 0.1px;
   }
-
