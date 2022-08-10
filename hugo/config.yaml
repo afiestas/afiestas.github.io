@@ -32,18 +32,18 @@ menu:
     title: Profesional experience
     pageref: /experience
     weight: -500
-  social:
+  secondary:
   - identifier: feed
     name: Feed
     title: feed
     pageref: "/"
     weight: -900
-  - identifier: github
+  - identifier: gh
     name: Github
     title: Github
     pageref: /blog
     weight: -800
-  - identifier: linkedin
+  - identifier: in
     name: Linkedin
     title: Linkedin
     pageref: /projects
@@ -53,14 +53,13 @@ menu:
     title: Twitter
     pageref: /recipes
     weight: -600
-  utils:
-  - identifier: colorScheme
+  - identifier: darkmode
     name: dark
     title: dark
     pageref: "/"
-    weight: -900
+    weight: -500
   - identifier: search
     name: Search
     title: Search
     pageref: /blog
-    weight: -800
+    weight: -400

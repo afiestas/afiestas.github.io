@@ -75,7 +75,7 @@
     padding: 20px;
   }
 
-  .nav-top-menu {
+  .nav-top-primary {
     font-family: var(--primary-font-family);
     font-weight: var(--primary-font-weight);
     display: flex;
