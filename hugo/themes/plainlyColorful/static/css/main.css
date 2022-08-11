@@ -63,7 +63,6 @@
   .global-container {
     max-width: var(--max-page-width);
     min-width: var(--max-page-width);
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     min-height: 100%;
