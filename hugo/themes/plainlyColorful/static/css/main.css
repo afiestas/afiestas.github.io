@@ -44,6 +44,7 @@
     --primary-font-family: 'League Spartan', sans-serif;
     --primary-font-weight: 700;
     --primary-font-size: 14px;
+    --header-size: 1em;
   }
 
   body {
@@ -79,6 +80,21 @@
     font-weight: var(--primary-font-weight);
     display: flex;
     justify-content: space-between;
+  }
+
+
+  .nav-top-secondary {
+    font-family: var(--primary-font-family);
+    font-weight: var(--primary-font-weight);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-top-secondary a {
+    background-color: var(--primary-color);
+    width: var(--header-size);
+    height: var(--header-size);
+    margin-right: 2em;
   }
 
   main {
