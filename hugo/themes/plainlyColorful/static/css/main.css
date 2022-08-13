@@ -44,6 +44,8 @@
     --primary-font-family: 'League Spartan', sans-serif;
     --primary-font-weight: 700;
     --primary-font-size: 14px;
+
+    --header-margin: 2em;
     --header-size: 1em;
   }
 
@@ -72,7 +74,7 @@
   header {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    margin: var(--header-margin);
   }
 
   .nav-top-primary {
@@ -82,6 +84,9 @@
     justify-content: space-between;
   }
 
+  .nav-top-primary a {
+    margin-right: var(--header-margin);
+  }
 
   .nav-top-secondary {
     font-family: var(--primary-font-family);
@@ -94,7 +99,7 @@
     background-color: var(--primary-color);
     width: var(--header-size);
     height: var(--header-size);
-    margin-right: 2em;
+    margin-right: var(--header-margin);
   }
 
   main {
