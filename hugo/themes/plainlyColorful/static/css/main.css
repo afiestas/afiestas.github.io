@@ -42,7 +42,7 @@
     --link-color: var(--primary-color);
 
     --primary-font-family: 'League Spartan', sans-serif;
-    --primary-font-weight: 700;
+    --primary-font-weight: 600;
     --primary-font-size: 14px;
 
     --header-margin: 2em;
@@ -80,6 +80,7 @@
   .nav-top-primary {
     font-family: var(--primary-font-family);
     font-weight: var(--primary-font-weight);
+    font-size: 18px;
     display: flex;
     justify-content: space-between;
   }
