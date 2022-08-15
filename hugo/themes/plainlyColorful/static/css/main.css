@@ -26,6 +26,7 @@
   a {
     text-decoration: none;
   }
+
   :root {
     --max-page-layout: 88rem;
     --max-content-layout: 75rem;
