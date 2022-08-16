@@ -101,7 +101,7 @@
     background-color: var(--primary-color);
     width: var(--header-size);
     height: var(--header-size);
-    margin-right: var(--header-margin);
+    margin-left: var(--header-margin);
   }
 
   main {
