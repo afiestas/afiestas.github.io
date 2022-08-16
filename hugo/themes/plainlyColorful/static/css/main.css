@@ -70,12 +70,14 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding-right: var(--header-margin);
+    padding-left: var(--header-margin);
   }
 
   header {
     display: flex;
     justify-content: space-between;
-    margin: var(--header-margin);
+    margin: var(--header-margin) 0;
   }
 
   .nav-top-primary {
