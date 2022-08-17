@@ -1,13 +1,18 @@
 <header>
   <nav class="nav-top-primary">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.top }}
-        <a class="{{if or ($currentPage.IsMenuCurrent "top" .) ($currentPage.HasMenuCurrent "top" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-    {{ end }}
-  </nav>
-  <nav class="nav-top-secondary">
-    {{ range .Site.Menus.secondary }}
-      <a class="social-icon-{{ .Identifier }}" href="{{ .URL }}" title="{{ .Title }}"></a>
-    {{ end }}
+    <ul>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.top }}
+        <li class="{{if or ($currentPage.IsMenuCurrent "top" .) ($currentPage.HasMenuCurrent "top" .) }} active{{end}}">
+          <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+        </li>
+      {{ end }}
+      <span class="flex-spacer"></span>
+      {{ range .Site.Menus.secondary }}
+        <li class="social-icon-{{ .Identifier }} icon-only">
+          <a href="{{ .URL }}" title="{{ .Title }}">{{.Name}}</a>
+        </li>
+      {{ end }}
+    </ul>
   </nav>
 </header>
