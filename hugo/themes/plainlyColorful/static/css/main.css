@@ -76,7 +76,6 @@
 
   header {
     display: flex;
-    justify-content: space-between;
     margin: var(--header-margin) 0;
   }
 
