@@ -47,7 +47,8 @@
     --primary-font-size: 14px;
 
     --header-margin: 2em;
-    --header-size: 1em;
+    --header-size: 1.125em;
+    --header-font-size: var(--header-size);
   }
 
   body {
@@ -86,7 +87,8 @@
   .nav-top-primary {
     font-family: var(--primary-font-family);
     font-weight: var(--primary-font-weight);
-    font-size: 18px;
+    font-size: var(--header-font-size);
+    line-height: var(--header-font-size);
     width: 100%;
   }
 
@@ -94,6 +96,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    max-height: var(--header-font-size);
     overflow: hidden;
   }
 
@@ -109,10 +112,10 @@
 
   .nav-top-primary  li.icon-only {
     background-color: var(--primary-color);
-    max-width: var(--header-size);
-    max-height: var(--header-size);
-    min-width: var(--header-size);
-    min-height: var(--header-size);
+    max-width: var(--header-font-size);
+    max-height: var(--header-font-size);
+    min-width: var(--header-font-size);
+    min-height: var(--header-font-size);
   }
 
   li.icon-only a{
