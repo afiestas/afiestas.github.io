@@ -2,8 +2,8 @@
   <nav class="nav-top-primary">
     <ul>
       {{ $currentPage := . }}
-      {{ range .Site.Menus.top }}
         <li class="{{if or ($currentPage.IsMenuCurrent "top" .) ($currentPage.HasMenuCurrent "top" .) }} active{{end}}">
+      {{ range .Site.Menus.primary }}
           <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
         </li>
       {{ end }}

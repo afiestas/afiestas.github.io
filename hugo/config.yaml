@@ -6,7 +6,7 @@ markup:
     renderer:
       unsafe: true
 menu:
-  top:
+  primary:
   - identifier: home
     name: Home
     title: Home
