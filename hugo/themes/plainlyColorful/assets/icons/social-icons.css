@@ -1,13 +1,13 @@
 :root {
 {{ range resources.Match "icons/*.svg" }}
-    --nav-social-{{path.BaseName .Name | safeCSS}}: url('data:image/svg+xml,{{ .Content }}');
+    --nav-icon-{{path.BaseName .Name | safeCSS}}: url('data:image/svg+xml,{{ .Content }}');
 {{ end }}
 }
 
 {{ range resources.Match "icons/*.svg" }}
-.social-icon-{{path.BaseName .Name | safeCSS}} {
-    mask-image: var(--nav-social-{{path.BaseName .Name | safeCSS}});
-    -webkit-mask-image: var(--nav-social-{{path.BaseName .Name | safeCSS}});
+.nav-icon-{{path.BaseName .Name | safeCSS}} {
+    mask-image: var(--nav-icon-{{path.BaseName .Name | safeCSS}});
+    -webkit-mask-image: var(--nav-icon-{{path.BaseName .Name | safeCSS}});
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
