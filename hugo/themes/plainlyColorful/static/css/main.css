@@ -30,7 +30,7 @@
   :root {
     --max-page-layout: 88rem;
     --max-content-layout: 75rem;
-    /* Gneric layout */
+    /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
     --max-content-width: min(100%, var(--max-content-layout));
 
