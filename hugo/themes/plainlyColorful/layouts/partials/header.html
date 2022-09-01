@@ -1,18 +1,25 @@
 <header>
   <nav class="nav-top-primary">
-    <ul>
+    <input type="checkbox" id="more" aria-hidden="true" tabindex="-1" class="toggle"/>
+    <ul class="links">
       {{ $currentPage := . }}
-        <li class="{{if or ($currentPage.IsMenuCurrent "top" .) ($currentPage.HasMenuCurrent "top" .) }} active{{end}}">
       {{ range .Site.Menus.primary }}
-          <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+        <li class="primary {{if or ($currentPage.IsMenuCurrent "top" .) ($currentPage.HasMenuCurrent "top" .) }} active{{end}}">
+          <div class="nav-icon-{{ .Identifier }} icon"></div>
+          <a href="{{ .URL }}" class="name" title="{{ .Title }}">{{ .Name }}</a>
         </li>
       {{ end }}
       <span class="flex-spacer"></span>
       {{ range .Site.Menus.secondary }}
-        <li class="social-icon-{{ .Identifier }} icon-only">
-          <a href="{{ .URL }}" title="{{ .Title }}">{{.Name}}</a>
+        <li class="secondary">
+          <div class="nav-icon-{{ .Identifier }} icon"></div>
+          <a href="{{ .URL }}" class="name" title="{{ .Title }}">{{.Name}}</a>
         </li>
       {{ end }}
     </ul>
+    <label for="more" aria-hidden="true" class="show-all">
+      <div class="nav-icon-menu icon"></div>
+      <a href="#" title="Show all">Show all</a>
+    </label>
   </nav>
 </header>

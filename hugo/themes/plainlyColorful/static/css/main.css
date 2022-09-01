@@ -48,6 +48,7 @@
 
     --header-margin: 2em;
     --header-size: 1.125em;
+    --header-icons: calc(var(--header-size) * 2);
     --header-font-size: var(--header-size);
   }
 
@@ -73,6 +74,7 @@
     height: 100%;
     padding-right: var(--header-margin);
     padding-left: var(--header-margin);
+    overflow-x: hidden;
   }
 
   header {
@@ -84,42 +86,104 @@
     flex-grow: 10;
   }
 
+  .toggle:checked ~ .links > .flex-spacer {
+    display: none;
+  }
+
   .nav-top-primary {
     font-family: var(--primary-font-family);
     font-weight: var(--primary-font-weight);
     font-size: var(--header-font-size);
     line-height: var(--header-font-size);
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
   }
 
-  .nav-top-primary ul {
+  .nav-top-primary .links {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    max-height: var(--header-font-size);
     overflow: hidden;
+    width: 100%;
+    max-height: var(--header-size);
+  }
+
+  .toggle:checked ~ .links {
+    overflow: visible;
+    max-height: none;
+    font-size: 0.8em;
+  }
+
+  .toggle:checked ~ .links > li {
+    margin: 0.5em;
+    min-width: 4em;
+    max-width: 4em;
+    align-items: center;
   }
 
   .nav-top-primary li {
     text-decoration: none;
     list-style: none;
-    margin-left: var(--header-margin);
+    margin-right: var(--header-margin);
+    display: flex;
+    flex-flow: column;
   }
 
-  .nav-top-primary li:first-child {
-    margin-left: 0;
+  .nav-top-primary li .secondary {
+    align-self: flex-end;
   }
 
-  .nav-top-primary  li.icon-only {
+  .nav-top-primary li .icon {
     background-color: var(--primary-color);
-    max-width: var(--header-font-size);
-    max-height: var(--header-font-size);
-    min-width: var(--header-font-size);
-    min-height: var(--header-font-size);
+    min-height: var(--header-size);
+    min-width: var(--header-size);
   }
 
-  li.icon-only a{
-    content-visibility: hidden;
+  .nav-top-primary li.primary .icon {
+    display: none;
+  }
+
+  .toggle:checked ~ .links li .icon {
+    display: block;
+    min-height: var(--header-icons);
+    min-width: var(--header-icons);
+    margin-bottom: 0.7em;
+  }
+
+  .nav-top-primary li.secondary .name {
+    display: none;
+  }
+
+  .toggle:checked~.links li.secondary .name {
+    display: block;
+  }
+
+  .show-all .icon {
+    background-color: var(--primary-color);
+    min-height: var(--header-size);
+    min-width: var(--header-size);
+    transition: transform .2s ease-in-out;
+    height: 100%;
+  }
+
+  .show-all a {
+    display: none;
+  }
+
+  .show-all {
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+  }
+
+  .toggle:checked ~ .show-all > .icon {
+    transform: rotate(-45deg);
+    min-height: var(--header-icons);
+    min-width: var(--header-icons);
+  }
+
+  nav .toggle {
+    display: none;
   }
 
   main {
