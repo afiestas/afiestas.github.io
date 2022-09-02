@@ -44,12 +44,20 @@
 
     --primary-font-family: 'League Spartan', sans-serif;
     --primary-font-weight: 600;
-    --primary-font-size: 14px;
+    --primary-font-size: var(--font-size-fluid-sm);
+
+    --font-size-fluid-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+    --font-size-fluid-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    --font-size-fluid-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+    --font-size-fluid-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+    --font-size-fluid-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+    --font-size-fluid-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+    --font-size-fluid-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
 
     --header-margin: 2em;
-    --header-size: 1.125em;
+    --header-size: var(--font-size-fluid-base);
     --header-icons: calc(var(--header-size) * 2);
-    --header-font-size: var(--header-size);
+    --header-font-size: var(--font-size-fluid-base);
   }
 
   body {
