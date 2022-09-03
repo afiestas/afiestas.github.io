@@ -17,13 +17,13 @@ jobs:
         uses: afiestas/hugo-gh-pages@master
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          args: --gc --minify --cleanDestinationDir --theme=newsroom --config confi.yaml,newsroom.yaml
+          args: --gc --minify --cleanDestinationDir --theme=newsroom --config config.yaml,newsroom.yaml
           siteDir: hugo
           destinationDir: newsroom
       - name: Hugo build plainlyColorful
         uses: afiestas/hugo-gh-pages@master
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          args: --gc --minify --cleanDestinationDir --theme=plainlyColorful --config confi.yaml,plainlyColorful.yaml
+          args: --gc --minify --cleanDestinationDir --theme=plainlyColorful --config config.yaml,plainlyColorful.yaml
           siteDir: hugo
           destinationDir: plainlyColorful
