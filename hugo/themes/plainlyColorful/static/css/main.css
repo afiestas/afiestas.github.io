@@ -36,6 +36,7 @@
 
     /* Generic palette */
     --bg-color: #182029;
+    --bg-color-2: #32333f22;
     --bg-color-light: #32333f22;
     --primary-color: #f7f9f9;
 
@@ -53,6 +54,10 @@
     --font-size-fluid-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
     --font-size-fluid-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
     --font-size-fluid-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+    --line-height-sm: 1.5;
+    --line-height-base: 1.6;
+    --line-height-md: 1.7;
 
     --header-size: var(--font-size-fluid-base);
     --header-margin: var(--header-size);
@@ -202,13 +207,65 @@
     margin-right: var(--font-size-fluid-base);
   }
 
+  main .whoami {
+    display: flex;
+    background-color: var(--bg-color-2);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  main .whoami .profile {
+    display: flex;
+    justify-content: center;
+  }
+
+  main .whoami .profile .portrait {
+    display:flex;
+    align-items: center;
+    margin-right: calc(var(--header-margin));
+    margin: calc(var(--header-margin));
+  }
+
+  main .whoami .profile .portrait .pic {
+    border-radius: 50%;
+    max-inline-size: 100%;
+  }
+
+  main .whoami .profile .description {
+    max-width: calc(var(--max-content-width) / 2);
+    margin: calc(var(--header-margin));
+  }
+
+  @media only screen and (max-width: 650px) {
+    main .whoami .profile .portrait {
+      display: none;
+    }
+    main .whoami .profile .description {
+      max-width: none;
+    }
+  }
+
   main {
-    border: aliceblue dashed 0.1px;
+    /* border: aliceblue dashed 0.1px;   */
     max-width: var(--max-content-width);
     min-width: var(--max-content-width);
     align-self: center;
     flex-grow: 1;
+    margin-top: var(--header-margin);
+    font-family: var(--primary-font-family);
+    line-height: var(--line-height-base);
+    font-size: var(--font-size-fluid-base);
   }
+
+  /* h1, h2, h3, h4, h5, h6 {
+    margin: 3em 0 1em;
+  } */
+
+  /* p, ul, ol {
+    margin-bottom: 2em;
+    color: #1d1d1d;
+    font-family: sans-serif;
+  } */
 
   footer {
     border: beige dashed 0.1px;
