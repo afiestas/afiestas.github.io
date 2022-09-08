@@ -254,7 +254,6 @@ main {
   min-width: var(--max-content-width);
   align-self: center;
   flex-grow: 1;
-  margin-top: var(--header-margin);
   font-family: var(--primary-font-family);
   line-height: var(--line-height-base);
   font-size: var(--font-size-fluid-base);
