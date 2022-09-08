@@ -14,10 +14,9 @@
                     <div class="description">
                         <h1>Hi there! I'm Àlex 👋</h1>
                         <div class="text">
-                        <p>I consider myself a Hacker, I have lot's of fun while working on different problems, not matter if they are computer based or not</p>
-                        <p>I used to work a lot on free software stuff, these days though I play CTO at a startup<p>
-                        <p>In this small corner of the internet I write my: findings, thoughts and musings just so I will not forget tomorrow
-                        You can also find me in Twitter, Linkedin or Github</p>
+                        {{ with .Site.GetPage "description.md" }}
+                            {{ .Content  }}
+                        {{ end }}
                     </div>
                 </div>
             </div>
