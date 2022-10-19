@@ -106,6 +106,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
   }
 
   .nav-top-primary .links {
@@ -171,7 +172,6 @@
     min-height: var(--header-size);
     min-width: var(--header-size);
     transition: transform .2s ease-in-out;
-    height: 100%;
   }
 
   .show-all a {
