@@ -132,7 +132,7 @@
   .nav-top-primary li {
     text-decoration: none;
     list-style: none;
-    margin-right: var(--header-margin);
+    margin-right: var(--header-icons);
     display: flex;
     flex-flow: column;
   }
