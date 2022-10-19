@@ -182,6 +182,9 @@
     display: flex;
     flex-flow: column;
     overflow: hidden;
+    height: 100%;
+    justify-content: center;
+    min-width: var(--header-size);
   }
 
   .toggle:checked ~ .show-all > .icon {
