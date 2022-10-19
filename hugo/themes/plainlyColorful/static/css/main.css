@@ -194,6 +194,11 @@
     display: none;
   }
 
+  nav .logo {
+    width: var(--header-icons);
+    margin-right: var(--font-size-fluid-base);
+  }
+
   main {
     border: aliceblue dashed 0.1px;
     max-width: var(--max-content-width);

@@ -1,6 +1,8 @@
 <header>
   <nav class="nav-top-primary">
     <input type="checkbox" id="more" aria-hidden="true" tabindex="-1" class="toggle"/>
+    {{ $logo := resources.GetMatch "logo.svg" }}
+    <img class="logo" src="{{ $logo.RelPermalink }}">
     <ul class="links">
       {{ $currentPage := . }}
       {{ range .Site.Menus.primary }}
