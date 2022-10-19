@@ -54,8 +54,8 @@
     --font-size-fluid-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
     --font-size-fluid-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
 
-    --header-margin: 2em;
     --header-size: var(--font-size-fluid-base);
+    --header-margin: var(--header-size);
     --header-icons: calc(var(--header-size) * 2);
     --header-font-size: var(--font-size-fluid-base);
   }
