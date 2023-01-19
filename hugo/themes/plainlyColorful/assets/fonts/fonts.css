@@ -4,7 +4,7 @@
 @font-face {
     font-family: 'League Spartan';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 100 900;
     font-display: swap;
     src: url("data:text/css;base64,{{ $spartanLatin }}") format('woff2');
 }
