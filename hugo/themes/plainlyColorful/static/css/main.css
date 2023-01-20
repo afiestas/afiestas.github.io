@@ -107,12 +107,16 @@ a {
   padding-right: var(--header-margin);
   padding-left: var(--header-margin);
   flex-grow: 1;
-  gap: calc(var(--header-margin) * 2);
 }
 
 header {
-  display: flex;
-  margin-top: calc(var(--header-margin) * 2);
+  position: sticky;
+  top: 0px;
+  padding: var(--header-margin) var(--header-margin);;
+  background-color: var(--bg-color);
+  /** we are using content-visibility which creates new stacks */
+  /** So we have to be sure that the header is first in the root stack*/
+  z-index: 1;
 }
 
 .flex-spacer {
