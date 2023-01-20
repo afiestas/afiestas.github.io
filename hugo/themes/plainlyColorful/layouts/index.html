@@ -16,8 +16,8 @@
             </div>
         </div>
     </div>
+    <h2 class="section-article">Latest Articles</h2>
     <div class="posts">
-        <h2 class="section-article">Latest Articles</h2>
         {{ range first 4 (where .Site.RegularPages "Section" "==" "posts") }}
             <article>
                 <h2>{{ .Title }} </h2>

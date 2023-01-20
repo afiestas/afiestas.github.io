@@ -309,17 +309,20 @@ main {
   font-family: var(--primary-font-family);
   line-height: var(--line-height-base);
   font-size: var(--font-size-fluid-base);
-  gap: calc(var(--header-margin) * 4);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.posts .section-article {
+.section-article {
   color: var(--accent-color-one);
   flex-basis: 100%;
   text-transform: uppercase;
-  letter-spacing: 2px ;
+  letter-spacing: 2px;
+  align-self: baseline;
+  margin-top: calc(var(--header-margin) * 5);
+  margin-bottom: calc(var(--header-margin) * 2);
+  font-weight: var(--secondary-font-weight);
 }
 
 .posts {
