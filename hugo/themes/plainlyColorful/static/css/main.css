@@ -392,5 +392,5 @@ article h3:hover {
 }
 
 footer {
-  border: beige dashed 0.1px;
+  padding: var(--header-size);
 }
