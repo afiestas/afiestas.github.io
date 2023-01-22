@@ -40,6 +40,7 @@ a {
   --bg-color-2: #32333f22;
   --bg-color-light: #32333f22;
   --primary-color: #f7f9f9;
+  --accent-color-one: #cc2b5eff;
 
   /* Specific colors */
   --link-color: var(--primary-color);
@@ -47,6 +48,8 @@ a {
   --primary-font-family: 'League Spartan', sans-serif;
   --primary-font-weight: 600;
   --primary-font-size: var(--font-size-fluid-sm);
+  --metadata-font-family: 'Noto Sans Mono', monospace;
+  --secondary-font-weight: 500;
 
   --font-size-fluid-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-fluid-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -262,6 +265,39 @@ main {
   flex-direction: column;
 }
 
+.posts .section-article {
+  color: var(--accent-color-one);
+  flex-basis: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2px ;
+}
+
+.posts {
+  display: flex;
+  gap: calc(var(--header-margin) * 3);
+  flex-wrap: wrap;
+}
+
+.posts article {
+  flex-basis: 100%;
+  max-inline-size: 75ch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--header-margin);
+}
+
+.summary {
+  font-family: var(--primary-font-family);
+  font-weight: var(--secondary-font-weight);
+  font-size: var(--font-size-fluid-base);
+  line-height: var(--line-height-base);
+}
+
+.metadata {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+}
 
 
 footer {
