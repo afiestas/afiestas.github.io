@@ -224,7 +224,7 @@ main .whoami .profile .portrait {
   display: flex;
   align-items: center;
   margin-right: calc(var(--header-margin));
-  margin: calc(var(--header-margin));
+  margin: var(--header-margin);
 }
 
 main .whoami .profile .portrait .pic {
