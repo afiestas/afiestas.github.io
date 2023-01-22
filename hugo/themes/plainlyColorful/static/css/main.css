@@ -281,7 +281,7 @@ main {
   flex-wrap: wrap;
 }
 
-.posts article {
+article {
   flex-basis: 100%;
   max-inline-size: 75ch;
   display: flex;
@@ -302,7 +302,7 @@ main {
   font-weight: var(--secondary-font-weight);
 }
 
-.posts article h3 {
+article h3 {
   cursor: pointer ;
   margin-right: auto;
   transition: scale 0.3s;
@@ -313,7 +313,7 @@ main {
   -webkit-text-fill-color: transparent;
 }
 
-.posts article h3:hover {
+article h3:hover {
   scale: 1.1;
   animation-iteration-count: 20;
   animation: move-bg 12s linear infinite;
