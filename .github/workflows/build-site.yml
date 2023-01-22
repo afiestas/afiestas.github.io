@@ -11,5 +11,5 @@ jobs:
         uses: afiestas/hugo-gh-pages@master
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          args: --gc --minify --cleanDestinationDir
+          args: --gc --cleanDestinationDir
           siteDir: hugo
