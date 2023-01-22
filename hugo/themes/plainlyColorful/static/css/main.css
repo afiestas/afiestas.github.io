@@ -266,6 +266,7 @@ main {
   gap: calc(var(--header-margin) * 4);
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .posts .section-article {
