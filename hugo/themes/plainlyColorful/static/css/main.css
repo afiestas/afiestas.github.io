@@ -1,3 +1,4 @@
+
 /* Resets */
 * {
   box-sizing: border-box;
@@ -41,6 +42,7 @@ a {
   --bg-color-light: #32333f22;
   --primary-color: #f7f9f9;
   --accent-color-one: #cc2b5eff;
+  --accent-color-two: #753a88ff;
 
   /* Specific colors */
   --link-color: var(--primary-color);
@@ -299,6 +301,34 @@ main {
   font-weight: var(--secondary-font-weight);
 }
 
+.posts article h3 {
+  cursor: pointer ;
+  margin-right: auto;
+  transition: scale 0.3s;
+  background: linear-gradient(90deg,
+      white,
+      white) 0 0 / 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.posts article h3:hover {
+  scale: 1.1;
+  animation-iteration-count: 20;
+  animation: move-bg 12s linear infinite;
+}
+
+@keyframes move-bg {
+  0% {
+    background-image: linear-gradient(90deg,var(--accent-color-one),var(--accent-color-two),var(--accent-color-one));
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
+  }
+}
 
 footer {
   border: beige dashed 0.1px;
