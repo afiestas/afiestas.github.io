@@ -18,6 +18,9 @@ tags:
   - linux
   - desktop
   - hidpi
+aliases:
+  - /almost-perfect-hidpi-on-linux
+slug: "almost-perfect-hidpi-on-linux"
 title: Almost perfect HiDPI experience on Linux (Xorg)
 
 ---

@@ -12,6 +12,9 @@ date: "2015-11-04T00:00:00Z"
 published: true
 status: publish
 tags: []
+aliases:
+  - /where-have-i-been
+slug: "where-have-i-been"
 title: Where have I been?
 
 ---

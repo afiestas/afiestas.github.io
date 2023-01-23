@@ -9,6 +9,8 @@ module:
   mounts:
   - source: assets
     target: assets
+permalinks:
+  posts: /articles/:slug/
 menu:
   primary:
   - identifier: home

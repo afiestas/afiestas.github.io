@@ -18,6 +18,9 @@ tags:
 - software libre
 - libreoffice
 - kontact
+aliases:
+  - /open365-lets-declare-war-at-microsoft-and-google
+slug: "open365-lets-declare-war-at-microsoft-and-google"
 title: open365, let's declare war at Google and Microsoft
 
 ---
