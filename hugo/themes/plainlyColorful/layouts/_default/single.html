@@ -1,0 +1,10 @@
+{{ define "main" }}
+<main>
+    <article>
+        <h2>{{ .Title }} </h2>
+        <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
+        <div class="summary">{{ .Content }} </div>
+        <div class="metadata">#linux #desktop #hidpi #X11</div>
+    </article>
+</main>
+{{ end }}

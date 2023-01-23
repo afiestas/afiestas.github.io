@@ -1,41 +1,32 @@
-
-<!DOCTYPE html>
-{{ partial "head.html" . }}
-<body>
-    <div class="global-container">
-        {{ partial "header.html" . }}
-        <main>
-            <div class="whoami">
-                <div class="profile">
-                    {{ $logo := resources.GetMatch "portrait.jpg" }}
-                    <div class="portrait">
-                        <img class="pic" src="{{ $logo.RelPermalink }}">
-                    </div>
-                    <div class="description">
-                        <h1>Hi there! I'm Àlex 👋</h1>
-                        <div class="text">
-                        {{ with .Site.GetPage "description.md" }}
-                            {{ .Content  }}
-                        {{ end }}
-                        </div>
-                    </div>
+{{ define "main" }}
+<main>
+    <div class="whoami">
+        <div class="profile">
+            {{ $logo := resources.GetMatch "portrait.jpg" }}
+            <div class="portrait">
+                <img class="pic" src="{{ $logo.RelPermalink }}">
+            </div>
+            <div class="description">
+                <h1>Hi there! I'm Àlex 👋</h1>
+                <div class="text">
+                {{ with .Site.GetPage "description.md" }}
+                    {{ .Content  }}
+                {{ end }}
                 </div>
-                </div>
-                <div class="posts">
-                    <h2 class="section-article">Latest Articles</h2>
-                    {{ range first 4 (where .Site.RegularPages "Section" "==" "posts") }}
-                        <article>
-                            <h2>{{ .Title }} </h2>
-                            <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
-                            <div class="summary">{{ .Summary }} </div>
-                            <div class="metadata">#linux #desktop #hidpi #X11</div>
-                            <h3><a href="{{ .Permalink }}">Read more</a></h3>
-                        </article>
-                    {{ end }}
-                </div>
-        </main>
-        <footer>
-            <div>footer</div>
-        </footer>
+            </div>
+        </div>
     </div>
-</body>
+    <div class="posts">
+        <h2 class="section-article">Latest Articles</h2>
+        {{ range first 4 (where .Site.RegularPages "Section" "==" "posts") }}
+            <article>
+                <h2>{{ .Title }} </h2>
+                <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
+                <div class="summary">{{ .Summary }} </div>
+                <div class="metadata">#linux #desktop #hidpi #X11</div>
+                <h3><a href="{{ .Permalink }}">Read more</a></h3>
+            </article>
+        {{ end }}
+    </div>
+</main>
+{{ end }}
