@@ -19,17 +19,17 @@ menu:
   - identifier: blog
     name: Blog
     title: Posts and musings
-    pageref: /blog
+    pageref: /posts/
     weight: -800
   - identifier: projects
     name: Projects
     title: List of projects
-    pageref: /projects
+    pageref: /projects/
     weight: -700
   - identifier: recipes
     name: Recipes
     title: List of recipes
-    pageref: /recipes
+    pageref: /recipes/
     weight: -600
   - identifier: experience
     name: Experience
