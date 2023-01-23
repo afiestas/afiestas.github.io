@@ -35,8 +35,8 @@ menu:
     weight: -600
   - identifier: experience
     name: Experience
-    title: Profesional experience
-    pageref: /experience
+    title: Professional experience
+    pageref: /experiences
     weight: -500
   secondary:
   - identifier: feed
