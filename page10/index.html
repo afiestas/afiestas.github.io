@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Àlex Fiestas's blog</title>
+  <meta name="description" content="Playground for hacking">
+  
+  <meta name="author" content="Àlex Fiestas's blog">
+  <meta name="copyright" content="&copy; Àlex Fiestas's blog 2023">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <!--<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">-->
+<!-- 	<link rel="manifest" href="/assets/icons/manifest.json"> -->
+<!-- 	<meta name="msapplication-TileColor" content="#ffffff"> -->
+<!-- 	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png"> -->
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="Playground for hacking" />
+  <meta property="og:url" content="http://afiestas.org" />
+  <meta property="og:site_name" content="Àlex Fiestas's blog" />
+  <meta property="og:title" content="Àlex Fiestas's blog" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://afiestas.org/" />
+  <meta property="og:image:type" content="" />
+  <meta property="og:image:width" content="" />
+  <meta property="og:image:height" content="" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Àlex Fiestas's blog">
+  <meta name="twitter:description" content="Playground for hacking">
+  <meta name="twitter:image" content="http://afiestas.org/">
+  <meta name="twitter:url" content="http://afiestas.org">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://afiestas.org//page10/">
+  <link rel="alternate" type="application/rss+xml" title="Àlex Fiestas's blog" href="http://afiestas.org//feed.xml" />
+</head>
+
+
+  <body>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51319654-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <header class="navigation" role="banner">
+  
+</header>
+
+
+    <div class="page-content">
+        <div class="home">
+
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image2.jpg);">
+	<div class="scrim has-cover">
+		<header class="site-header">
+		  <h1 class="title">Àlex Fiestas's blog</h1>
+		  <p class="subtitle">Hacking: Playful cleverness</p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper"">
+<ul class="post-list">
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/bluedevil-1-2-kio_bluetooth-configured-and-discovered-devices/">[BlueDevil 1.2] kio_bluetooth configured and discovered devices</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>After releasing stable versions (boooring) there is nothing better than publish new features, and it gets even better when those features are between the most requested/wanted.</p>
+<p>The feature I'm going to introduce may sound kinda useless for some people, but in all KDE software we offer different ways of doing things, so you can find which way integates better with your workflow.</p>
+<p>In BlueDevil 1.0 and 1.1 when you use the kio_bluetooth (bluetooh:// in your browser), what it did was start a bluetooth discovery, meaning that the only devices going to appear into the file browser were those who had the visible mode activated. This behavior is totally counterproductive since you have to: wait 10 seconds until the scan ends and/or turn on the visibility in your device. Well you won't have to do this anymore.</p>
+<p>Now the first thing that is shown in kio_bluetooth are the configured devices allowing you to quickly select one device, at the same time a discovery is perform in the background so new devices will appear when found (and not when the 10seconds scan ends).</p>
+<p>A picture say more than thousand words:</p>
+<p><a href="https://cdn.afiestas.org/posts/2011/07/kio_bluetoth12.png"><img class="alignnone" title="Kio Bluetooth on steroids" src="https://cdn.afiestas.org/posts/2011/07/kio_bluetoth12.png" alt="kio_bluetooth discovered and configured devices" width="600" height="375" /></a></p>
+<p>And now the mandatory video, watch it careful! I've put an Easter egg on it which shows about what I'm going to talk tomorrow.</p>
+<p>
+<video width="600" height="350" controls="controls" tabindex="0"><br><br />
+    <source type="video/ogg" src="https://cdn.afiestas.org/posts/2011/07/kio_bluetooth.ogv"><br><br />
+</video><br><br />
+<a href="https://cdn.afiestas.org/posts/2011/07/kio_bluetooth.ogv">Direct Link</a></p>
+<p>Cya and remember, this feature is going to be available in BlueDevil 1.2, to be released in 4/6 weeks.</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">July 27, 2011</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/bluedevil-1-0-5-and-1-1-1-released/">BlueDevil 1.0.5 and 1.1.1 released!</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>Between all the hard work we're doing within the Solid community (Networking, XRandR, Power Management...) we always find time to release patch releases which usually fix small issues and help to ease the waiting until the next big release is done.  Now it is time for BlueDevil to have some patch releases.</p>
+<p>BlueDevil 1.0.5:</p>
+<ul>
+<li>Fixed bug: 277451</li>
+<li>Fixed some bahaviors in kio_obexftp while copying files</li>
+<li>Show the file size and the speed in the file transfer (in kio)</li>
+<li>Start/Quit bluedevil-monolithic in online/offline mode</li>
+<li>Improved layout to look good in all Qt Styles</li>
+<li>Huge i18n improvements (fix's and more translations)</li>
+</ul>
+<div>BlueDevil 1.1.1:</div>
+<div>
+<ul>
+<li>Fixed  bug: 277665</li>
+<li>Fixed bug:  277451</li>
+<li>Fixed bug:  277878</li>
+<li>Fixed some bahaviors in kio_obexftp while copying files</li>
+<li>Show the file size and the speed in the file transfer (in kio)</li>
+</ul>
+<div>One thing about 1.0.5, it is going to be the last 1.0.X version with new translations, that doesn't mean that we will stop giving support to it, thanks for our good codebase it is quite easy for us to maintain different releases, as you can see we've 3 bug fixes applied in both releases.</div>
+</div>
+<div>If you're a distribution maintainer is quite important that you consider upgrading to this new versions, main reason? i18n!</div>
+<div>Downloads:</div>
+<div><a href="http://download.kde.org/download.php?url=stable/bluedevil/1.0.5/src/bluedevil-1.0.5.tar.bz2">http://download.kde.org/download.php?url=stable/bluedevil/1.0.5/src/bluedevil-1.0.5.tar.bz2</a></div>
+<div>And</div>
+<pre><a href="http://download.kde.org/download.php?url=stable/bluedevil/1.1.1/src/bluedevil-1.1.1.tar.bz2">http://download.kde.org/download.php?url=stable/bluedevil/1.1.1/src/bluedevil-1.1.1.tar.bz2</a></pre>
+<pre></pre>
+<pre>Enjoy!</pre>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">July 25, 2011</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/display-configuration-in-kde-workspace-4-7-1/">Display Configuration in KDE-Workspace 4.7.1</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>In my way home from work, talking with <a href="http://blog.ereslibre.es/" title="Ereslibre's blog" target="_blank">ereslibre</a> we concluded that would be awesome if I could fix the current "KRandR" code before starting to work on new one. With the "<a href="http://www.afiestas.org/an-extremely-productive-weekend-plasma-kwin-bluedevil/" target="_blank">adrenaline boost</a>" still in my blood I sat down and started to work on it.</p>
+<p>After a few days of working, I'm pleased to announce that for KDE-Workspace 4.7.1 the "Screen/Display/Whatever configuration" has been hugely improve, all bug fix though but now it even seems to work!</p>
+<p>The bugs I've fixed are hard to explain with words but I'm going to try anyway:</p>
+<p>KRandRTray:</p>
+<ul>
+<li>Won't react on external changes (won't force its configuration)</li>
+<li>Will update the menu (If you remove the VGA cable, VGA won't appear)</li>
+<li>Will show disconnected outputs as disconnected in the popup)</li>
+</ul>
+<div>Configuration Dialog (KCM):</div>
+<ul>
+<li>"Unify Output" option has been added (aka you will get always the expected behavior)</li>
+<li>Preview/Options will update on external changes</li>
+</ul>
+<div>Maybe I 'm forgetting something... but more or less that's it.</div>
+<div>And like almost always, the mandatory video explaining the bug fixes, comparing KDE Workspace 4.6.5 and 4.7.1:</div>
+<p>
+<video width="600" height="350" controls="controls" tabindex="0"><br />
+    <source type="video/ogg" src="https://cdn.afiestas.org/posts/2011/07/xrandr.webm"><br />
+</video><br />
+<a href="https://cdn.afiestas.org/posts/2011/07/xrandr.webm">Direct Link</a></p></p>
+<div>I hope you like it, and stay tuned if you're interested on "XRandR" support, because more is to come.</div>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">July 23, 2011</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/an-extremely-productive-weekend-plasma-kwin-bluedevil/">An extremely productive Weekend (Plasma, KWin, BlueDevil)</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>Is not a secret that the last few weeks (or even a month) I have been kind of unmotivated to work on KDE stuff, and that is a deal breaker to work on something you're not paid for and you do it only for the pleasure of doing it.</p>
+<p>Though the reasons why I was unmotivated (or how I like to call it, kde-depressed) are still there, last Friday after finishing 3 important projects at work I felt again the adrenalin boost that makes me hack like crazy, no matter on what, but I have to hack on something. This is how one of my most productive weekends begun :p</p>
+<p>The very same Friday at night I started hacking on some work stuff, nothing I can say here (because it doesn't matter at all) but I can assure you that my partners will be happy once they know :p</p>
+<p>Saturday, I started to hack on KDE stuff and decided that instead of developing BlueDevil or Solid I was going to fix these small details that annoy me every day, and so far I fixed everything I wanted to fix:</p>
+<p>Plasma:</p>
+<p><a href="https://git.reviewboard.kde.org/r/101968/">Panel auto-expand on XRandR events</a> (probably will go into 4.7)</p>
+<p>KWin:</p>
+<p><a href="https://git.reviewboard.kde.org/r/101969/">Not let any window off screen on XRandR events</a> (This will have to wait until 4.7.1)</p>
+<p>After fixing these two bugs was time to give some love to the old BlueDevil :p</p>
+<p>BlueDevil:</p>
+<ul>
+<li>Bug triage, quite a trivial task but time consuming</li>
+<li>Fixed bug <a href="https://bugs.kde.org/show_bug.cgi?id=277878">277878</a></li>
+<li>Fixed bug <a href="https://bugs.kde.org/show_bug.cgi?id=277451">277451</a></li>
+<li>Partial rewrite of kio_bluetooth (I will explain further in another post)</li>
+<li>Fixed bug <a href="https://bugs.kde.org/show_bug.cgi?id=245538">245538</a></li>
+<li>Fixed bug <a href="https://bugs.kde.org/show_bug.cgi?id=253810">253810</a></li>
+<li>Fixed bug <a href="https://bugs.kde.org/show_bug.cgi?id=277665">277665</a></li>
+<li>Show only "connection title" in systray if there are more than one service to connect to</li>
+</ul>
+<p>That's for Saturday :p</p>
+<p>Then today, Sunday I started the journey with some XRandR hacking, the plan to'em all is almost done and it will include a coulpe of fixes for 4.7.1 (though I'm not sure of it).</p>
+<p>Aaand finally another bug fix of these small annoying things:</p>
+<p><a href="https://git.reviewboard.kde.org/r/101981/">Fix notification behavior</a></p>
+<p>&nbsp;</p>
+<p>Now time to rest, who knows if tomorrow I will continue with this adrenaline boost.</p>
+<p>&nbsp;</p>
+<p>Cheers!</p>
+<p>&nbsp;</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">July 17, 2011</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/my-kde-e2-80-99s-priorities-for-the-next-6-months/">My KDE’s priorities (for the next 6 months)</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>Hi there !</p>
+<p>Once again it is time for me to organize my priorities within KDE for the next 6 months, I have had to drop a few things from the list since I'm not sure how much time Solid community and KDE-España are going to take from me since the work I will be doing there is rather not technical.</p>
+<p>So, this is my list of priorities:</p>
+<p><strong>Downstream:</strong></p>
+<p>Downstream people are those who use our stuff to produce something else, for example: distributions, developers using our libraries, designers using our icons...<br />
+A few months ago, motivated with the need of giving a better support of how BlueDevil should be packaged I started to interact a lot with people working on different distributions. Because of that I was sponsored to go to the UDS and there I finally could understand more or less how a distribution works, how Kubuntu team works/thinks etc.</p>
+<p>So, in the next 6 months I will continue working with "downstream" focusing my efforts in organize a meeting with people from all distributions so at least we can be synchronized in the lowest common denominator.</p>
+<p><strong>Solid:</strong></p>
+<p>Solid is now the sub-community within KDE that cares about hardware. We work in quite a few areas right now like Network/Power Management, irda ...<br />
+I have to say that since last November we've pretty much catch up with other workspaces for example now people assume that KDE NetworkManager interface should work, and you know what? it does! Also our UDisk/UPower/UDev support is in my humble opinion excelkenet.</p>
+<p>So, in the next 6 months, I want to see the Solid community growing and getting more projects into it, for example Printing or Input would be perfect candidates.</p>
+<p><strong>Kamoso:</strong></p>
+<p>Kamoso is a webcam application to take pictures and videos from cameras, this is what I call my "Pet Project". The status of Kamoso is quite good right now, we've reach the 2.0 version which is demonstrating to be a really rock solid release.</p>
+<p>Now that he project is providing the basics (it is stable and you can take pictures/videos) is time for us to move to the next step. which can be summarize in one word: <strong>effects</strong>. To get there we've defined this abstracted roadmap:</p>
+<ul>
+<li>Kamoso 2.5: Kamoso ported to use camerabin2 (technicall stuff)</li>
+<li>Kamoso 3.0: Effects and maybe some QML magic :)</li>
+</ul>
+<p><strong>BlueDevil:</strong></p>
+<p>BlueDevil is the codename of the KDE's Bluetooth integration on which we've been working for a year now. Though the project may seem complete since it is fulfilling all the Bluetooth needs a normal user could have it is not perfect, or putting it in another word it is not excellent. So the target for the next 6 month will be reaching excellence.</p>
+<ul>
+<li>1.0.5: i18n will be improved and a few bugs fixed.</li>
+<li>1.1.1: i18n will be hugely improve, and bug fixing.</li>
+<li>1.2: Most changes will be on the KIO's, also the wizard will be further improved.</li>
+<li>1.3: Port the project totally to obexd, deprecating the support for obex-data-server.</li>
+</ul>
+<p>Finally, between this versions we may work on plasma-active support, which basically means write QML interfaces around.</p>
+<p><strong>Project Silk:</strong></p>
+<p>From my humble point of view, the laptop/pc is becoming a complement of two things: Our gadgets (cell phones, tablets..) and the so called "Cloud". It is quite obvious that a computer without internet is only useful for those whom want to do some work on it, but for the rest of the users it would be useless. Because of that we've to accept our new role as a complement of something else and stop thinking that we're the central piece of software or that even the user care about us.</p>
+<p>KDE's projects are doing quite a fine job integrating with the cloud, for example:</p>
+<ul>
+<li>Akonadi supports exchange servers and of course Google</li>
+<li>KDE-Telepathy is near the corner bringing to the table IM integration</li>
+<li>Kipi-Plugins supporting facebook/picasa/...</li>
+<li>Kamoso supporting youtube</li>
+<li>Choqok and Plasma on microblogging...</li>
+</ul>
+<p>Despite all that, we're still failing on truly integrating these services into the desktop. To start fixing it here comes my proposal:</p>
+<p>We need  a central place (maybe a KCM) where the user can configure her/his online accounts and we will do the rest, for example:</p>
+<p>When I add my Google account, the KCM should offer me to auto-configure my account in: Telepathy (Chat), Akonadi (synchronize calendar, contact, rss, todo's...), Choqok (microblogging)... Also some applications like Kamoso should be able to access to that account and use it for example to upload videos to Youtube.</p>
+<p>Also, some good integration with Rekonq would be awesome.</p>
+<p>I don't have concrete plans of when or how I will do this but almost sure it will start just as a proof of concept (I don't have time to do more).</p>
+<p><strong>XRandR:</strong></p>
+<p>Last but not least here comes my new obsession: fix the overall kde-workspace XRandR support. Right now our workspace supports XRandR more or less well but it is far from being good enough for me. I will publish an entire blogspot about my plans here but bottom line: I will try to fix everything for 4.8.</p>
+<p>&nbsp;</p>
+<p>Well this is it, let's see how much I can finally accomplish and see you by the end of the year.</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">July 2, 2011</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+    
+    <a class="newer-posts" href="/page11">
+	    <span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x"></i>
+			  <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+			</span>
+		</a>
+    
+    <span class="page-number">Page 10 of 22</span>
+    
+      
+      <a class="newer-posts" href="/page9">
+		    <span class="fa-stack fa-lg">
+				  <i class="fa fa-square fa-stack-2x"></i>
+				  <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+      
+    
+  </p>
+  <p>
+    <a href="/posts">View All Posts by Category</a>
+  </p>
+</nav>
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Àlex Fiestas's blog</h3>
+
+    <div class="site-navigation">
+    	
+    	<p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+    	<p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+      	<li>
+      		<a href="mailto:afiestaso@gmail.com">
+	      		<i class="fa fa-envelope-o"></i>
+	      		<span class="username">afiestaso@gmail.com</span>
+      		</a>
+      	</li>
+
+      	
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+    	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Playground for hacking</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+</script>
+
+
+
+
+  </body>
+
+</html>

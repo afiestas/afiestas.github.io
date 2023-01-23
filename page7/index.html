@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Àlex Fiestas's blog</title>
+  <meta name="description" content="Playground for hacking">
+  
+  <meta name="author" content="Àlex Fiestas's blog">
+  <meta name="copyright" content="&copy; Àlex Fiestas's blog 2023">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <!--<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">-->
+<!-- 	<link rel="manifest" href="/assets/icons/manifest.json"> -->
+<!-- 	<meta name="msapplication-TileColor" content="#ffffff"> -->
+<!-- 	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png"> -->
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="Playground for hacking" />
+  <meta property="og:url" content="http://afiestas.org" />
+  <meta property="og:site_name" content="Àlex Fiestas's blog" />
+  <meta property="og:title" content="Àlex Fiestas's blog" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://afiestas.org/" />
+  <meta property="og:image:type" content="" />
+  <meta property="og:image:width" content="" />
+  <meta property="og:image:height" content="" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Àlex Fiestas's blog">
+  <meta name="twitter:description" content="Playground for hacking">
+  <meta name="twitter:image" content="http://afiestas.org/">
+  <meta name="twitter:url" content="http://afiestas.org">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://afiestas.org//page7/">
+  <link rel="alternate" type="application/rss+xml" title="Àlex Fiestas's blog" href="http://afiestas.org//feed.xml" />
+</head>
+
+
+  <body>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51319654-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <header class="navigation" role="banner">
+  
+</header>
+
+
+    <div class="page-content">
+        <div class="home">
+
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image2.jpg);">
+	<div class="scrim has-cover">
+		<header class="site-header">
+		  <h1 class="title">Àlex Fiestas's blog</h1>
+		  <p class="subtitle">Hacking: Playful cleverness</p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper"">
+<ul class="post-list">
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/bluedevil-1-0-7-1-1-4-1-2-3-and-1-3-rc2-bug-fixing-frenezy/">BlueDevil 1.0.7, 1.1.4, 1.2.3 and 1.3-rc2 bug fixing frenezy !</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>Finally I have had the energy and the time to hunt the damn crashes that have been affecting BlueDevil since the beginning, fixing them has been relatively easy, be able to reproduce them instead has been quite time exhausting.</p>
+<p>Once I fixed all those damn crashes I proceeded to do bug triage and managed to fix all of the confirmed bugs, or said in another way BlueDevil is virtually bug free <a title="Bug list of BlueDevil" href="http://goo.gl/WIeTz" target="_blank">bug list</a> :)</p>
+<p>There are still a <a title="iPhone bug 1" href="https://bugs.kde.org/show_bug.cgi?id=285637">couple </a>of bugs with <a title="iPhone bug 2" href="https://bugs.kde.org/show_bug.cgi?id=287195">iPhones</a>, but I will need one of those to be able to confirm and fix the issues. Any donation?</p>
+<p>The changelog looks as follow:</p>
+<p>Fixes for 1.0.7, 1.1.4, 1.2.3 and 1.3-rc2</p>
+<ul>
+<li>BUG: <a href="https://bugs.kde.org/show_bug.cgi?id=298633">298633</a> // Crash in kded daemon (ObexFtp module)</li>
+<li>BUG: <a href="https://bugs.kde.org/show_bug.cgi?id=279911">279911</a> // Crash after receiving a file</li>
+<li>BUG: <a href="https://bugs.kde.org/show_bug.cgi?id=297785">297785</a> //Not confirmed if it is fixed</li>
+<li>Updated pin databse for more automatic experience</li>
+</ul>
+<p>Fixes for 1.1.4. 1.2.3 and 1.3-rc2</p>
+<ul>
+<li>BUG: <a href="https://bugs.kde.org/show_bug.cgi?id=286466">286466</a> // Be able to pair WiiMotes (needs BlueZ 4.96)</li>
+<li>BUG: <a href="https://bugs.kde.org/show_bug.cgi?id=276911">276911</a> // Pairing Keyboards with SSPairing (Bluetooth 2.2)</li>
+<li>BUG: <a href="https://bugs.kde.org/show_bug.cgi?id=291708">291708</a> // Now we show again the small overlay icon</li>
+</ul>
+<p>Fixes only for 1.3-rc2</p>
+<ul>
+<li>BUG: <a href="https://bugs.kde.org/show_bug.cgi?id=284052">284052</a> // Nasty crash every time adapter is unplugged</li>
+</ul>
+<p>Now I can proceed and create new bugs by continuing with BlueDevil 2.0 and Screen Management.</p>
+<p><a href="http://download.kde.org/stable/libbluedevil/1.9.2/src/libbluedevil-1.9.2.tar.bz2" target="_blank">libbluedevil 1.9.2<br />
+</a>md5sum: b492db1825b239e5185c543badb21c26<br />
+sha256sum: 00d56fc671fecda1e60aa8231ba167f11002148098d6510df0a409d19e840d59</p>
+<p><a href="http://download.kde.org/stable/bluedevil/1.0.7/src/bluedevil-1.0.7.tar.bz2" target="_blank">bluedevil 1.0.7<br />
+</a>md5sum: 27e48595679bac72f6ea0d1f496ce524<br />
+sha256sum: 2294f921de0a2920dbfe8b3f824abd8b7d468da71a8bce5e4575be311bc0af65</p>
+<p><a href="http://download.kde.org/stable/bluedevil/1.1.4/src/bluedevil-1.1.4.tar.bz2" target="_blank">bluedevil 1.1.4<br />
+</a>md5sum: b485e0a710146536362cd607bcc3a418<br />
+sha256sum: c0bab0d6a505dbe96d3f6acaad8bdf4aea4de84c342e0e6e59b47e0d5bcba6d6</p>
+<p><a href="http://download.kde.org/stable/bluedevil/1.2.3/src/bluedevil-1.2.3.tar.bz2" target="_blank">bluedevil 1.2.3<br />
+</a>md5sum: e792576d34956d27cd0c3eb3c81a5923<br />
+sha256sum: 7744e0544d27960f21073cf4b48ba865162a2643b7e33f7f21fff43705b4e624</p>
+<p><a href="http://download.kde.org/unstable/bluedevil/1.3-rc2/src/bluedevil-1.3-rc2.tar.bz2" target="_blank">bluedevil 1.3-rc2<br />
+</a>md5sum: 20452c528ab04c0551f3d8bfc5075c4b<br />
+sha256sum: db6735d5a66634ce5d761c70df4ad7c4f39295ac4a6f9b59bcc25777dc720dd5</p>
+<p>Cheers !</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">April 30, 2012</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/plasma-active-3-sprint/">Plasma Active 3 sprint</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>A few days ago I attended to the PA3 sprint in Darmstadt, as always I enjoyed a few days with my friends not only working but also taking beers, going dinner etc. I have had a really good time there as I always do when KDE is in the formula.</p>
+<p>As far as I know this is the first PA sprint where a lot of community members external to the project attended, this is really great for opening the project to other areas of KDE, such Solid or KDEdu.  My work focus were:</p>
+<p><strong>Getting to know the inside of the project<br />
+</strong>Every project structure is different even between close projects such PowerDevil and BlueDevil. In the case of PA there are a few big differences that have to be taken into account:</p>
+<div>
+<ul>
+<li>Most people working on it are employed by companies (and most of them work on it full time).</li>
+<li>PA should be always ready for release, no unstable or untested stuff allowed in.</li>
+<li>Strong focus on well designed and usable interfaces.</li>
+<li>Everything QML</li>
+<li>There is a strong and shared Vision behind it</li>
+</ul>
+</div>
+<div> It is important that you agree with the rules of the game before you start to play it, I find PA a really good example of how a professional project can be done together with the community without sacrificing anything. I agree with this rules so I will play this game :)</div>
+<div><strong><br />
+Plan how Screen Management will be implemented in PA</strong></div>
+<div>As some of you may know, I'm currently working on a new implementation of Screen Management, even though I'm really delayed on the original schedule the project is not abandoned and I hope to make PA one of the first use cases for it.</div>
+<div>
+When Thomas Pfeiffer and I started to look at how we can implement Screen Management into PA we quickly identify one valid use case:</div>
+<div>
+A user is reviewing a set of pictures on its Tablet, at some points he decides to plug its tablet in the TV and watch them in there. Once the TV is plugged the pictures are shown in both screens so the user can use the tablet to control the application while watching the images in the TV.</div>
+<div>
+A user just bought a movie via Bodega, he wants to play it in its big TV. In this case the controls of the movies will be in the Tablet while the movie itself will be reproduced at the screen.</div>
+<div>
+A user connects the Tablet into a projector and intends to do a presentation using Calligra Active. The controls of the presentation (Notes, countdown, thumbnails) will be shown at the tablet while the Slides will be shown at the projector.</div>
+<div>
+As you can see it makes only sense to do something with the external screen if, and only if there is an application that will make use of it, or said in another way we discarded to show the shell into the external screen.</div>
+<div><strong><br />
+Plan how bluetooth should be implemented in PA</strong></div>
+<div>As Thomas and I did with Screen Management, we took a look at how Bluetooth should be integrated with PA. Some parts of it can be already used and other parts need a nice QML interface. Following some conclusions we reached:</div>
+<div>
+<ul>
+<li>We don't want a Wizard, it is not needed</li>
+<li>We need a Share Like Connect plugin</li>
+<li>We need a PA system settings panel</li>
+<li>Device configuration should be within the PA system settings</li>
+</ul>
+<div>When doing the analysis of how to implement Bluetooth into PA I realized mistakes done in the Desktop (I have been realizing those mistakes for quite some time now). I will implement them in a future BlueDevil 2.0 version.</div>
+<div><strong><br />
+Social / Sharing / shiny stuff in KDE software</strong></div>
+</div>
+<div>Sharing, social, cloud, buzzwords all over that's true but nonetheless important. There are different efforts going on in KDE to make this happen, and make it quick. We had a super interesting BoF about all things that needs to done to make Social/Sharing/Cloud a natural thing in KDE software, it should be as natural as creating a file or as launching an application.</div>
+<div></div>
+<div>List of points I remember:</div>
+<div>
+<ul>
+<li>Share/Like/Connect for the desktop must happen</li>
+<li>Having a centralized place for Sharing is important (probably in the shell)</li>
+<li>We need a centralized place to store Web/Online account information</li>
+<li>We need to have a shared platform for streams (twitter, identi.ca, facebook...)</li>
+<li>Having libkpeople finished is crucial, we must have unified personas to work with</li>
+</ul>
+<div>I will probably be working on the first point, but we will see about that later.</div>
+<div></div>
+<div>Finally, a mandatory picture took by Martin K.</div>
+<div><img class="alignnone" title="PA attendees working" src="https://cdn.afiestas.org/posts/2012/03/pa3.jpg" alt="PA attendees working" width="637" height="424" /></div>
+</div>
+<div></div>
+<div><strong>This post was written on Match 14, information can be outdated.</strong></div>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">March 14, 2012</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/appmenu-runner-meet-the-kde-hud/">AppMenu Runner, meet the KDE's HUD</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>A few days ago Mark Shuttleworth <a title="Mark's announcement" href="http://www.markshuttleworth.com/archives/939" target="_blank">announced the HUD menu,</a> a  Unity dialog that lets you trigger menu actions in the focused application like:</p>
+<ul>
+<li>look for bookmarks,</li>
+<li>change your IM status</li>
+<li>execute an action contained in the menu bar.</li>
+</ul>
+<div>This kind of features as well of how they are executed may sound familiar to you dear Plasma Worksapce user... Exactly! I'm referring to our beloved <a title="KRunner's userbase page" href="http://userbase.kde.org/Plasma/Krunner" target="_blank">KRunner</a>!</div>
+<div></div>
+<p>KRunner can do a lot of stuff in both global and active application scope (though it tends to offer more global features) , just to mention a few: Math, Bookmarks, Files, Calendar, Contacts, Emails, Devices, Change IM Status, Recent documents...</p>
+<p>I have to say that I'm glad to see Unity going into this direction since it is something that we (KDE Community) have believe in for years, so having Canonical and its designer team walking into the same direction may indicate that we are not wrong or at least we are not the only ones mistaken :)</p>
+<p>Despite KRunner being able to do a lot of things it couldn't do something the HUD does, execute actions contained in the menu. No less than 7 months ago I did my first attempt on achieve exactly that and of course <a title="My first attempt" href="http://www.afiestas.org/improving-kde-applications-help-menu-actions-lookup/" target="_blank">I blogged about it</a>. I didn't continue with the effort mainly because: kdelibs was frozen, it worked only for KDE applications, it worked only if the menu bar was shown within the window.</p>
+<p>After watching the HUD video I got inspired and motivated to create a Runner which will use the same technology as HUD (and the oxygen-appmenu or the plasma-menubar plasmoid) to look and execute menu bar actions, this is the result:</p>
+<p><iframe src="http://www.youtube.com/embed/9lGVy6GRbOc" frameborder="0" width="600" height="315"></iframe></p>
+<p><a title="KDE's appMenu Runner" href="https://cdn.afiestas.org/posts/2012/02/appMenuRunner.ogv" target="_blank">Direct link</a></p>
+<p>&nbsp;</p>
+<p>There are a few things to work on but I hope to put this in KDE Plasma Worksapce 4.9 if the Plasma teams like it of course.</p>
+<p>The code is in:</p>
+<p><!--StartFragment-->git://anongit.kde.org/scratch/afiestas/appmenu.git<!--EndFragment--></p>
+<p>Kubuntu packages are WIP<br />
+Would be nice if somebody can write a manual of how to setup appmenu in Qt and maybe other toolkits.</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">February 9, 2012</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/looking-forward-to-2012/">Looking forward to 2012</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>I'm sure 2012 is going to be an amazing year for Free Software and of course for the KDE community, a lot is happening within our community and we have just started the year ! Just to mention a few from the top of my mind: Calligra getting closer, Plasma Active2, 4.8 release, Frameworks 5, OwnCloud 3, Spark... I can go on for a while :) As every six month or so, here is the list of what I'm planing to work on:</p>
+<ul>
+<li>AppMenu KRunner (you will see it tomorrow)</li>
+<li>Finish <a href="http://community.kde.org/Solid/Projects/DisplayManagement/Design">new RandR supoprt </a></li>
+<li>libsolid in Frameworks5</li>
+<li>BlueDevil 3.0</li>
+<li>Kamoso-QML</li>
+<li>Community work on Solid</li>
+<li>Community work on KDE-España</li>
+</ul>
+<p>I hope to get all finished before <a href="http://akademy.kde.org/">Akademy-2012</a> and with a little bit of luck be able to work on more stuff. I promise, next post will be my "usual" post with pictures and videos :P!</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">January 18, 2012</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/looking-back-at-2011/">Looking Back At 2011</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p>w---
+layout: post
+title: Looking back at 2011
+categories:
+- KDE
+- Software Libre
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+  dsq_thread_id: '2226557068'
+author:
+  login: afiestas
+  email: afiestas@kde.org
+  display_name: afiestas
+  first_name: Àlex
+  last_name: Fiestas
+---
+<p>Where are a few hours away from ending the year 2011 (some countries are already in 2012) so I feel like it is the perfect moment to look back at what happened during 2011 so tomorrow I can write what I hope will happen during 2012 :)</p>
+<p>If I had to sum up in one word what I have done this year in KDE I'd say BlueDevil. In the first entry from 2011 I'm asking for help on testing the 1.0.2 version, now 12 month later we are ready to release 1.3 which fixes "all known bugs" and we are preparing ourselves for 1.4 and 2.0.</p>
+<p>Let's take a look month by month on what happened in this blog:</p>
+<ul>
+<li>January:<a href="http://www.afiestas.org/bluedevil-stable-testing-needed/" target="_blank"> we ask for help on testing 1.0.2</a>, we've fixed SSP pairing which is a super important Bluetooth feature.</li>
+<li>February: Aleix and I release first snapshot of <a href="http://www.afiestas.org/first-version-of-kamoso-2-0-velazquez-released/" target="_blank">Kamoso 2.0</a> which uses QtGstreamer and is demonstrated to be rock solid. By the end of the month we release <a href="http://www.afiestas.org/bluedevil-1-0-2-released/" target="_blank">BlueDevil 1.0.2</a>.</li>
+<li>March: <a href="http://www.afiestas.org/bluedevil-1-0-3-released/" target="_blank">BlueDevil 1.0.3</a> is released improving stability.</li>
+<li>April:<a href="http://www.afiestas.org/bluedevil-1-0-4-released/" target="_blank"> BlueDevil 1.0.4</a> is released and a lot BlueDevil 1.1 <a href="http://www.afiestas.org/bluedevil-1-1-the-new-systemtray/" target="_blank">features</a> are <a href="http://www.afiestas.org/bluedevil-1-1-three-different-ways-of-sending-files/" target="_blank">presented</a> to the community.</li>
+<li>June: Aleix and I release <a href="http://www.afiestas.org/kamoso-2-0-velazquez-released/" target="_blank">Kamoso 2.0</a>, currently it only has <a href="https://bugs.kde.org/buglist.cgi?quicksearch=kamoso" target="_blank">1 reported bug</a> we can't reproduce. Also I'm part of <a href="http://www.afiestas.org/i-cant-find-myself-though-i-can-be-anybody-else/" target="_blank">Platform 11</a> which for me was an turning point, since then <a href="http://www.afiestas.org/bits-of-platform11/" target="_blank">I really feel part</a> of the KDE community.</li>
+<li>July: <a href="http://www.afiestas.org/my-kde%e2%80%99s-priorities-for-the-next-6-months/" target="_blank">I explain my priorities </a>for the next 6 months, I consider that I've done 5/6 which is not a bad rate. I spent one weekend <a href="http://www.afiestas.org/an-extremely-productive-weekend-plasma-kwin-bluedevil/" target="_blank">fixing a few bothering bugs</a>. A few days after I sat down and decided to fix the current <a href="http://www.afiestas.org/display-configuration-in-kde-workspace-4-7-1/" target="_blank">XRandR</a> code before I start to write the new one, patches are included in 4.7.1. <a href="http://www.afiestas.org/bluedevil-1-0-5-and-1-1-1-released/" target="_blank">BlueDevil 1.0.5 and 1.1.1</a>  are released. I finish the firsts improvement of BlueDevil 1.2 <a href="http://www.afiestas.org/bluedevil-1-2-kio_bluetooth-configured-and-discovered-devices/" target="_blank">[1]</a> <a href="http://www.afiestas.org/bluedevil-1-2-support-for-dun-and-panu/" target="_blank">[2]</a> and made a video of <a href="http://www.afiestas.org/smart-folders-in-kde-workspace/" target="_blank">nepomuk awesomness</a>.</li>
+<li>August: Apart from attending<a href="https://desktopsummit.org/" target="_blank"> Berlin Desktop Summit,</a> <a href="http://www.afiestas.org/bluedevil-1-2-rc1-released/" target="_blank">BlueDevil 1.2 RC1</a> is released.</li>
+<li>September: New <a href="http://www.afiestas.org/next-in-bluedevil/" target="_blank">plans for BlueDevil</a> are done while I continue to work on it.  Another weekend fixing <a href="http://www.afiestas.org/two-annoying-bugs-fixed-in-kdirwatch-and-kuiserver/" target="_blank">annoying bugs</a> in kuiserver and KDirWatch. <a href="http://www.afiestas.org/forge-2011-day-1/" target="_blank">Forge 2011 take place</a>,</li>
+<li>October: The month started while Forge was taking place, we continue with <a href="http://www.afiestas.org/usability-at-forge-2011/" target="_blank">usability changes</a>, and though I didn't mentioned it in my blog I manage to understand a lot better libsolid as well of fixing few bugs here and there. Finally <a href="http://www.afiestas.org/bluedevil-1-1-2-and-1-2-1-released/" target="_blank">BlueDevil 1.1.2 and 1.2.1</a> are released.</li>
+<li>November: I attended to UDS (damn I have to blog about this) and found little time to release <a href="http://www.afiestas.org/bluedevil-1-0-6-1-1-3-1-2-2-and-1-3-rc1/" target="_blank">BlueDevil 1.0.6, 1.1.3, 1.2.2 and 1.3-rc1</a>. During this month I confirmed that I was moving back from Madrid to Barcelona.</li>
+<li>December: Even though I haven't blog that much I have been working on XRandR and more recently in some Calligra bits I will explain in a future post.</li>
+</ul>
+<p>&nbsp;</p>
+<p>I'd say this year has been quite intense in the KDE front, I have done less than I wanted (which is normal) but more than I expected so I'm happy with the result. Also it is worth to mention that I'm now "Solid Overlord" though I haven't done much yet I know for sure that 2012 will be the year to amend that.</p>
+<p>Happy new year 2012 which for sure, Is going to be a good year for KDE as it was 2011 :)</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">December 31, 2011</div>
+    	<div class="post-categories">
+    	in 
+    	</div>
+    </section>
+  </li>
+  
+  
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+    
+    <a class="newer-posts" href="/page8">
+	    <span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x"></i>
+			  <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+			</span>
+		</a>
+    
+    <span class="page-number">Page 7 of 22</span>
+    
+      
+      <a class="newer-posts" href="/page6">
+		    <span class="fa-stack fa-lg">
+				  <i class="fa fa-square fa-stack-2x"></i>
+				  <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+      
+    
+  </p>
+  <p>
+    <a href="/posts">View All Posts by Category</a>
+  </p>
+</nav>
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Àlex Fiestas's blog</h3>
+
+    <div class="site-navigation">
+    	
+    	<p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+    	<p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+      	<li>
+      		<a href="mailto:afiestaso@gmail.com">
+	      		<i class="fa fa-envelope-o"></i>
+	      		<span class="username">afiestaso@gmail.com</span>
+      		</a>
+      	</li>
+
+      	
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+    	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Playground for hacking</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+</script>
+
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Àlex Fiestas's blog</title>
+  <meta name="description" content="Playground for hacking">
+  
+  <meta name="author" content="Àlex Fiestas's blog">
+  <meta name="copyright" content="&copy; Àlex Fiestas's blog 2023">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <!--<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">-->
+<!-- 	<link rel="manifest" href="/assets/icons/manifest.json"> -->
+<!-- 	<meta name="msapplication-TileColor" content="#ffffff"> -->
+<!-- 	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png"> -->
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="Playground for hacking" />
+  <meta property="og:url" content="http://afiestas.org" />
+  <meta property="og:site_name" content="Àlex Fiestas's blog" />
+  <meta property="og:title" content="Àlex Fiestas's blog" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://afiestas.org/" />
+  <meta property="og:image:type" content="" />
+  <meta property="og:image:width" content="" />
+  <meta property="og:image:height" content="" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Àlex Fiestas's blog">
+  <meta name="twitter:description" content="Playground for hacking">
+  <meta name="twitter:image" content="http://afiestas.org/">
+  <meta name="twitter:url" content="http://afiestas.org">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://afiestas.org//page15/">
+  <link rel="alternate" type="application/rss+xml" title="Àlex Fiestas's blog" href="http://afiestas.org//feed.xml" />
+</head>
+
+
+  <body>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51319654-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <header class="navigation" role="banner">
+  
+</header>
+
+
+    <div class="page-content">
+        <div class="home">
+
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image2.jpg);">
+	<div class="scrim has-cover">
+		<header class="site-header">
+		  <h1 class="title">Àlex Fiestas's blog</h1>
+		  <p class="subtitle">Hacking: Playful cleverness</p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper"">
+<ul class="post-list">
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/one-step-closer-towards-a-kde-hal-free/">One step closer towards a KDE hal-free</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>One of the objectives that the solid team is currently working on, is the deprecation/removing of HAL as KDE dependency. We hope to accomplish it for KDE 4.6, but of course at the moment it is just that, a wish.</p>
+<p>Anyhow the complete remove is now a step closer, thanks to Dario Freddi and Lukas Tinkl I just committed the &quot;PowerDevil 2 UPower&quot; backend. Right now, it is build by default but is not used if the hal backend is compiled too, so in case you want to test it you have to edit powerdevilupowerbackend.desktop and set InitialPreference = 20 (lower than the hal one).</p>
+<p>Small entry for a small thing, but small things matter don't they?</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">October 13, 2010</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/solid-sprint-2010-from-my-point-of-view/">Solid Sprint 2010, from my Point Of View</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>Almost 1 week has passed since Solid Sprint took place, and I'm already waiting for the next event, where I can hack side by side with KDE hackers from all the world again (Maybe in the Meego conference?). It was a short sprint but intense, productive and funny, on where we discussed and worked on some different topics. Let's began from the start.</p>
+<p><strong>Organisation</strong>:</p>
+<p>The organisation of a small Sprint doesn't require a huge amount of time (at least didn't this one) basically the tasks to do are:</p>
+<ol>
+<li>Be sure that you can attend to the sprinters and having a good place for the event (<a title="War Room" href="https://cdn.afiestas.org/posts/2010/10/5042758200_27c13020ea_z.jpg" target="_blank">office</a>)</li>
+<li>Propose the idea and the place to some KDE group (<a title="Mailing list" href="http://mail.kde.org/pipermail/kde-hardware-devel/2010-August/000962.html" target="_blank">mailist</a>)</li>
+<li>Decide a date doing a <a title="Doodle service" href="http://www.doodle.com/" target="_blank">poll</a></li>
+<li>Prepare a budget for the e.V board (<a title="Attendees list" href="http://community.kde.org/Solid/Sprint2010#Attendees_List">attendees list</a>)</li>
+<li>Send the budget to the board, together with the event explanation and wait.</li>
+<li>Finally book the rooms, and enjoy the event.</li>
+<li>Additionally, <a title="UFOCoders site" href="www.ufocoders.com" target="_blank">UFOCoders</a> and <a title="Interdominio's site" href="www.interdominios.com" target="_blank">Interdominios</a> sponsored catering for all the weekend (food and drinks), and Pizza for the Sunday lunch.</li>
+</ol>
+<p><strong>Start</strong>:</p>
+<p>After met everybody in the room where the event took place, we went to lunch. After it we began to organize the Sprint, or better said Kevin Ottens start to explain to the rest of the team all the things that were filling the whiteboard (an entire glass wall), in it we could differ between "Discussing goals" and "Coding goals", these last were managed by using a Kanban.</p>
+<p>The most important point we discussed (imho) is the "Solid as a Team" one. That was something that everybody had in his mind, but it was not official. Now it is, so welcome the new Solid, reborn as a community inside KDE, containing a lot of projects like (in no particular order): libsolid, powerdevil, networkmanagement, bluedevil... So, if you have a project which is related to KDE+Hardware, don't hesitate to contact us via kde-hardware-devel mailist).</p>
+<p>After having discussed all the topics, we started to hack. That night (Friday) we established the first interaction between NetworkManagement and BlueDevil, it not was event using an interface or any BD/NM code, but it demonstrated to us how hard/easy it was, and that it can be done.</p>
+<p>After a few hours of Hacking, Sebas, Dario, and I went to take some beers (Voll daaamn :D), near de hotel, and discuss about random things. I love these discussions! exchange opinions and ideas about our ecosystem is, a part of entertaining and funny, one learnt a lot of things by listening to other point of views, and make your global vision better. The bad thing (if I can say something) is that I slept 4h that night :p</p>
+<p><strong>Middle</strong>:</p>
+<p>The Saturday was the "Super Hacking Day", we where in front of the computer for around 18 hours only stopping for dinner. Each person on the sprint had lunch at a different time which shows how deep where were in our personal thought's.</p>
+<p>The first thing I decided to do that Saturday was finish my part of Bluetooth+NetworkManagement. If started to implement some plugins for BlueDevil, when doing it I noticed some interesting stuff from BlueZ, and discover how Network interface work. So, I explained to Will what I discovered and the issues I found, and he started to research how GNOME applet/wizard handle it. I don't remember when, but we ended up with a solution (Will did), so we hope that sooner than later we'll have Bluetooth+NetworkManagement interaction done.</p>
+<p>The next task I assigned to myself was a technical one (not directly user-related), add asynchronous API to libsolid. After discussin with Kevin his design, I used the next hours to learn how libsolid works, and to connect the current code with the Kevin explanation about the new design. Once I did that, I started to write some tests that will help me to design a good API and at the same time that this new API would be "unit tested" (basicaly I sued Test Driven Development). With the tsdgeos help, we got a PoC working, that helped us to decided which way we should take (use an internal QList instead of inherit it).</p>
+<p>An finally, I started to do some fine tune into BlueDevil Wizard, to get the pairing process more stable and perfect with a major number of devices (devices without PIN mainly). I tested the new code with: Apple* stuff I grabbed from the office, Nokia headset, HTC Magic and Wiimote.</p>
+<p>We finished the hacking session at 6am, and decided to come back at 10am, so basically I decided to do not sleep (wise decision).</p>
+<p><strong>End</strong>:</p>
+<p>All the ends are sad, even if it is a good end. In the sprint cases, it is sad because the people leave in dribs and drabs, however we managed to get a profitable time to put a good end to the Sprint.</p>
+<p>One of the objectives of this sprint was exchange projects or topics, so instead of continue hacking on BlueDevil, I decided to take another project task, in this case PowerDevil UPower Backend. So, as Dario was sitting just left to me, I asked him to explain me how to create a PowerDevil2 backend, and after he explained to me, I started to copy some code from the Hal backend and make it compile. After it we just ordered some pizza's (Sponsored too, as the tradition says) and well, we bought too much :p</p>
+<p>After lunch I continued with my research, this time focused on UPower, basically I compared UPower vs Hal features (the ones we are using) and noticed some things that have to be done by using another piece of software, like xrandr.</p>
+<p>Finally we end up Sebas, Ereslibre, and I. In one of the trips to the fridge we noticed something... there were 6 Volldamn left to drink! We decided to add a sticky note (Green + Red which meant Community and Urgency), and add it to "In Progress" column. After a hard work and a lot of chatting, we moved the task to the "Done" column :)</p>
+<p>While packing and cleaning everything, we end up at 02:00 AM talking about random stuff again, sharing ideas about KDE future, Sebas showing to us Lionmail and Crystal etc...</p>
+<p>To end the post, I'd like to thank for:</p>
+<p>-KDE e.V for sponsoring the event.</p>
+<p>-Community: people and companies, who donate money to e.V, so they can sponsor the sprints.</p>
+<p>-<a title="Interdominio's site" href="www.interdominios.com" target="_blank">Interdominios</a> for helping us with the organisation (Specially to Benito, who handled all the catering and Hotel booking)</p>
+<p>-Solid team to be awesome.</p>
+<p>This is pretty much all, I hope this post help you (reader) to realize how important these sprints are for us, and by extension how important the donations are.</p>
+<p><a title="Join the game link" href="http://jointhegame.kde.org/" target="_blank">Join the game!</a></p>
+<p><a href="http://www.flickr.com/photos/vizzzion/5048391846/sizes/l/in/set-72157624950127005/"><img class="alignnone" title="Solid Team" src="https://cdn.afiestas.org/posts/2010/10/5048391846_d4da10eb69_b.jpg" alt="Solid Team" width="600" height="400" /></a></p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">October 11, 2010</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/solid-sprint-day-1-go/">Solid Sprint day 1, go!</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>So, almost everybody is here finally (Albert will come tomorrow Saturday), and it has been a very profitable day. We have finished the "boring" stuff like discussing who we are (We're the Solid team now! be aware of that :p), discussing how we can improve the upstream communication (driver developers, blueZ, u*disk/power etc) and stuff like that.</p>
+<p>After it, we've done some hacking (not a lot in my case), but we managed to get Bluetooth-DUN and Bluetooth-NAP working, and we did it in like 5minutes... is what Sprints are about, right? :) put Lamarque (modemmanager) and bluedevil developers together and you will get Bluetooth+Networking working :p</p>
+<p>Now, going to sleep since the hacking will be resumed in a few hours.</p>
+<p>Cyap!</p>
+<p>Todo wall-list:</p>
+<p><img class="alignnone" title="Solid Sprint-hacker-wall" src="https://cdn.afiestas.org/2010/10/hacker-wall.jpg" alt="" width="600" height="350" /></p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">October 2, 2010</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/solid-sprint-day-0/">Solid Sprint day 0</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>Surprisingly everything is ready for the Solid Sprint that is going to take place in Madrid, we got 1Gb connection, 50&quot; flat screen, food, drinks, beer, coffee and of course a lot of code &quot;hungry&quot; :)</p></p>
+<p>Sebas is already here to attend some KDE e.V stuff together with ereslibre (vice-president of KDE-España), we have had a good dinner (typical spanish bar) and now is time to sleep so tomorrow we can be with our hacker skills at 100%.</p></p>
+<p>So, see you tomorrow!</p></p>
+<p>PS: I wrote this post yesterday (Thursday).</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">October 2, 2010</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/bluedevil-1-0rc4-released/">BlueDevil 1.0rc4 released</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>After a lot of work, and a lot of testing done by a lot of people the RC4 is here and we hope it will be the last one before the final release.</p>
+<p><strong>Highlights:</strong></p>
+<ul>
+<li>Fix a crash in the file receiver</li>
+<li>Fix a crash in the KDED</li>
+<li>Cleaned audio UUID's (less false positives in the wizard)</li>
+<li>Added Audio Sink support in the systray application (Patch by Peter Korf)</li>
+<li>some i18n work (not perfect tough)</li>
+<li>A lot of work in kio_obexftp, it should be stable now, test it!</li>
+</ul>
+<p><strong>Errata:</strong></p>
+<ul>
+<li>Some times the systray application is not updated correctly</li>
+<li>kio_obexftp is stable, but some times has weird behaviours (testers needed!)</li>
+<li>kio_obexftp &quot;rename&quot; action is not working in some cases.</li>
+<li>Do not use the RC4 tag, use RC4-1 instead.</li>
+</ul>
+<p><strong>Download:</strong></p>
+<p>The tarball can be found <a href="https://cdn.afiestas.org/posts/2010/09/bluedevil-v1.0rc4-1.tgz">here</a> with md5: c967bce0edd20c2937db5071c7b735df</p>
+<p>And git tag: git clone git://gitorious.org/bluedevil/bluedevil.git; cd bluedevil; git checkout v1.0-rc4-1</p>
+<p><strong>Help needed:</strong></p>
+<p>Since we hope that this will be the last Release Candidate, we need a lot of test to get the final version rock solid, so please test test and test!</p>
+<p>Finally, a small video of what we can do with the kio's inside BlueDevil:</p>
+<p><video width="600" height="350" controls="controls" tabindex="0" autobuffer="false" preload="metadata"><br />
+ <source type="video/ogg" src="https://cdn.afiestas.org/posts/2010/09/obexftp.ogv"></source><br />
+</video><br /> <br />
+<a href="https://cdn.afiestas.org/posts/2010/09/obexftp.ogv">Download file</a></p></p>
+<p>Thanks!</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">September 23, 2010</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+    
+    <a class="newer-posts" href="/page16">
+	    <span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x"></i>
+			  <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+			</span>
+		</a>
+    
+    <span class="page-number">Page 15 of 22</span>
+    
+      
+      <a class="newer-posts" href="/page14">
+		    <span class="fa-stack fa-lg">
+				  <i class="fa fa-square fa-stack-2x"></i>
+				  <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+      
+    
+  </p>
+  <p>
+    <a href="/posts">View All Posts by Category</a>
+  </p>
+</nav>
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Àlex Fiestas's blog</h3>
+
+    <div class="site-navigation">
+    	
+    	<p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+    	<p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+      	<li>
+      		<a href="mailto:afiestaso@gmail.com">
+	      		<i class="fa fa-envelope-o"></i>
+	      		<span class="username">afiestaso@gmail.com</span>
+      		</a>
+      	</li>
+
+      	
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+    	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Playground for hacking</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+</script>
+
+
+
+
+  </body>
+
+</html>

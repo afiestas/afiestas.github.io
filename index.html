@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Àlex Fiestas's blog</title>
+  <meta name="description" content="Playground for hacking">
+  
+  <meta name="author" content="Àlex Fiestas's blog">
+  <meta name="copyright" content="&copy; Àlex Fiestas's blog 2023">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <!--<link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">-->
+<!-- 	<link rel="manifest" href="/assets/icons/manifest.json"> -->
+<!-- 	<meta name="msapplication-TileColor" content="#ffffff"> -->
+<!-- 	<meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png"> -->
+	<meta name="theme-color" content="#ffffff">
+
+	<!-- Facebook OGP cards -->
+  <meta property="og:description" content="Playground for hacking" />
+  <meta property="og:url" content="http://afiestas.org" />
+  <meta property="og:site_name" content="Àlex Fiestas's blog" />
+  <meta property="og:title" content="Àlex Fiestas's blog" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://afiestas.org/" />
+  <meta property="og:image:type" content="" />
+  <meta property="og:image:width" content="" />
+  <meta property="og:image:height" content="" />
+
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Àlex Fiestas's blog">
+  <meta name="twitter:description" content="Playground for hacking">
+  <meta name="twitter:image" content="http://afiestas.org/">
+  <meta name="twitter:url" content="http://afiestas.org">
+
+  
+
+	<!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://afiestas.org//">
+  <link rel="alternate" type="application/rss+xml" title="Àlex Fiestas's blog" href="http://afiestas.org//feed.xml" />
+</head>
+
+
+  <body>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51319654-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <header class="navigation" role="banner">
+  
+</header>
+
+
+    <div class="page-content">
+        <div class="home">
+
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image2.jpg);">
+	<div class="scrim has-cover">
+		<header class="site-header">
+		  <h1 class="title">Àlex Fiestas's blog</h1>
+		  <p class="subtitle">Hacking: Playful cleverness</p>
+		</header>
+	</div>
+</div>
+
+<div class="wrapper"">
+<ul class="post-list">
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/almost-perfect-hidpi-on-linux/">Almost perfect HiDPI experience on Linux (Xorg)</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p><a href="https://cdn.afiestas.org/posts/2017/02/hidpi_big.png" target="_blank"><img src="https://cdn.afiestas.org/posts/2017/02/hidpi_small.png" alt="Awesome HiDPI on Xorg" /></a></p>
+
+<p>In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for
+a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most
+applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino…) got support for higher DPIs as well.</p>
+
+<p>This would have meant perfect support for HiDPI on linux already in 2015 or so but we are missing one important thing which is supporting
+both HiDPI and normal DPI screens at the same time. In order to support HiDPI screens applications need to render themselves bigger than
+they used to, how much bigger depends on the screen pixel density which, for example, in the case of my laptop is from 1.75 to 2 times
+bigger.</p>
+
+<p>This means that applications rendered for HiDPI look huge on normal screens:</p>
+
+<h4 id="hidpi-file-dialog-on-regular-screen">HiDPI File dialog on regular screen</h4>
+<p><a href="https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png" target="_blank"><img src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Open dialog looking huge" /></a></p>
+
+<h4 id="scaled-hidpi-file-dialog-on-regular-screen">Scaled HiDPI File dialog on regular screen</h4>
+<p><a href="https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png" target="_blank"><img src="https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png" alt="Open dialog looking ok" /></a></p>
+
+<p>Here is where the internet seems to tell you that there is nothing to do but wait until Wayland arrives and saves us all
+(I can’t wait for that btw) but that’s actually not true, X can do it.</p>
+
+<p>XRandR allows us to apply transformations on the outputs, like for example rotation, and it also allows us to scale the screens.
+Scaling the screens means that X will virtually increase the amount of pixels available in the display and automatically adapt the final
+image size to the actual output resolution. For example:</p>
+
+<p>If a 2x2 scale transformation is applied to a 1920x1080 screen it will be seen as a 3840x2160 screen by the applications but X will magically cut that in half before sending
+the image to the monitor. So we have effectively turned our normal density screen into HiDPI.</p>
+
+<p>This is an example of how the xrandr command line looks like:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xrandr --output eDP1 --auto --output DP1 --auto --scale 2x2 --right-of eDP1
+</code></pre></div></div>
+
+<p>This will set DP1 to the default mode, scale it by 2 and place it at the right of the HiDPI laptop screen (eDP1).</p>
+
+<p><em>Wow</em>! <em>Awesome</em>! This is so cool! Why is everybody not doing this? Where is the catch? <br />
+Mostly because of one bug: <br />
+<a href="https://bugs.freedesktop.org/show_bug.cgi?id=39949">https://bugs.freedesktop.org/show_bug.cgi?id=39949</a></p>
+
+<p>If you read through the bug entry you will find a <a href="https://bugs.freedesktop.org/attachment.cgi?id=94929" target="_blank">patch</a> created by Chris Wilson in 2014
+which is shipped by default in some distributions but it has never been integrated into master.</p>
+
+<p>If your distribution doesn’t ship with this patch by default (good for them!) you can build your own xorg-server, the patch should apply until 1.18 and for 1.19
+you have a ported version <a href="https://raw.githubusercontent.com/afiestas/xorg-server-patches/master/cursor.patch" target="_blank">here</a>.</p>
+
+<p>Although with this patch the experience is already way better since the applications will look correctly on all screens Qt has a few bugs
+that will create weird glitches specially by placing windows where they don’t belong.</p>
+<h4 id="drunk-comboboxes">Drunk comboboxes</h4>
+<div style="position:relative;padding-bottom:57%"><iframe src="https://gfycat.com/ifr/NegativeReadyBluebird" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen=""></iframe></div>
+<div style="position:relative;padding-bottom:57%"><iframe src="https://gfycat.com/ifr/MilkyTanFallowdeer" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen=""></iframe></div>
+<h4 id="shy-tooltips">Shy tooltips</h4>
+<div style="position:relative;padding-bottom:57%"><iframe src="https://gfycat.com/ifr/SlushyUnitedGrison" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen=""></iframe></div>
+<h4 id="jumpy-drag-and-drop">Jumpy Drag And Drop</h4>
+<div style="position:relative;padding-bottom:57%"><iframe src="https://gfycat.com/ifr/DemandingFairBettong" frameborder="0" scrolling="no" width="100%" height="100%" style="position:absolute;top:0;left:0;" allowfullscreen=""></iframe></div>
+
+<p><br />
+I have been working on 3 patches that solve most of these at least in my day to day use.</p>
+
+<p>These two still need to be reviewed and might not get accepted: <br />
+<a href="https://codereview.qt-project.org/#/c/182207/" target="_blank">https://codereview.qt-project.org/#/c/182207/</a> <br />
+<a href="https://codereview.qt-project.org/#/c/182392/" target="_blank">https://codereview.qt-project.org/#/c/182392/</a></p>
+
+<p>This one seems to be on track to be merged (Drag and Drop): <br />
+<a href="https://codereview.qt-project.org/#/c/182391/" target="_blank">https://codereview.qt-project.org/#/c/182391/</a></p>
+
+<p>With all this patches the HiDPI experience in any modern Linux distro is as good as in macOS and the best part is that we do not have to wait until Wayland.</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">March 16, 2017</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Software libre</span>, 
+    	  
+    	
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Linux</span>, 
+    	  
+    	
+    	  
+    	  <span>Desktop</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/open365-lets-declare-war-at-microsoft-and-google/">open365, let's declare war at Google and Microsoft</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p><a href="https://open365.io/" target="_blank">Open365</a> is a public and/or private cloud designed to compete with the likes
+of Google Drive or Office365 by leveraging all the best free software out there.</p>
+
+<p>The service is designed to scale horizontally as well as to be resilient to components crashing or going crazy. In
+order to achieve this we have implemented a microservice architecure that communicate using a bus (<a href="https://www.rabbitmq.com" target="_blank">rabbitmq</a>) plus some
+other tricks so we can scale using commodity hardware horizontally. Nothing fancy, nothing revolutionary but it had to
+be done :)</p>
+
+<p>Finally, we’ve integrated under the same system very well know software solutions for File sinchronization,
+PIM (Email, calendar,contacts…) and office.</p>
+
+<p><strong>Specifically</strong></p>
+
+<ul>
+  <li><a href="https://www.seafile.com/en/home/" target="_blank">Seafile</a></li>
+  <li><a href="https://www.kde.org/applications/office/kontact/" target="_blank">Kontact</a></li>
+  <li><a href="https://www.libreoffice.org/" target="_blank">Libreoffice</a></li>
+</ul>
+
+<p>For the last two, we re using <a href="http://www.spice-space.org" target="_blank">SPICE</a> and our <a href="https://github.com/eyeos/spice-web-client" target="_blank">HTML5/Javascript</a> client to run those applications in the server and send only the interface to the Web browser
+in a really efficient way.</p>
+
+<h2 id="this-is-how-it-looks-like">This is how it looks like:</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2Xqn14OtcuQ" frameborder="0" allowfullscreen=""></iframe>
+
+<h2 id="status">Status</h2>
+<p>The public service is in open beta so you can go to <a href="https://open365.io/" target="_blank">Open365</a> and try it out for free.</p>
+
+<p>As I write this blogpost we are working hard to release all the code as <strong>free software</strong>. There is a lot to be done before we can
+release all the code such as: creating a simple installer, preparing documentation and accomodating the new repositories to our CI.</p>
+
+<p>We expect to release everything within days, but it will be done when it is done :)</p>
+
+<p>Cheers!</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">April 25, 2016</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Software libre</span>, 
+    	  
+    	
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Libreoffice</span>, 
+    	  
+    	
+    	  
+    	  <span>Seafile</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/where-have-i-been/">Where have I been?</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><blockquote>
+  <p>I can’t imagine anything worse than waking up every morning without any energy for going to work.</p>
+</blockquote>
+
+<p>The first time I heard that statement I was 17 and it made an impression on me. It made me think of how we use
+our limited time, which roughly is: 1/3 sleeping, 1/3 at work and 1/3 at what we call spare time. We can’t control how much
+we need to sleep, but we can take a stance on the other two thirds (work and spare time).</p>
+
+<p>And this is the reason behind my disappearance, my job at BlueSystems was not fun anymore and every project I mantained at KDE
+felt more like a chore than anything else. After a month of not jumping out of the bed to head to work it was time to move on.
+So I passed maintainership to the people that were actually doing the job (special mention to David) and I quit my job as a full
+time KDE hacker.</p>
+
+<p>Nowadays I am working at a company called eyeOS, but more on that in the next post :)</p>
+
+<p>I appreciate all the people that have been asking how I have been during this last year, my apologies for disappeararing without
+notice.</p>
+
+<p>Cheers!</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">November 4, 2015</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Software libre</span>, 
+    	  
+    	
+    	  
+    	  <span>Kde</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/for-community-free-of-trolls/">For community free of Trolls</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>In light of the last comments containing insults and other attacks to members of our community I have decided to make a video blog explaining my thoughts on the issue.</p>
+<p>The video contains two separate topics:</p>
+<ul>
+<li>Explanation of why we can't tolerate this behavior</li>
+<li>Some ideas on the actual matter (Baloo)</li>
+</ul>
+<p>Please, watch the whole thing before commenting and I hope we all work together to push away the trolls in our community.<br />
+<iframe src="https://www.youtube.com/embed/6ewPCbbN9yY" width="640" height="380" frameborder="0"></iframe><br />
+Cheers !</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">May 5, 2014</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Software libre</span>, 
+    	  
+    	
+    	  
+    	  <span>Kde</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/desktop-applications-of-tomorrow-i/">Desktop applications of tomorrow (I)</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <p><p>This is the first of three posts where I am going to share my vision for the desktop apps of the short-term future.</p>
+<p>When I am using my workstation or laptop I find myself spending most of my time in the browser, with it I do a lot of different tasks I used to be doing with many different native applications for example: listening to music, watching videos, chatting with friends, sending pictures...</p>
+<p>When I am using my tablet or phone though the situation changes. I find myself rarely using the browser, in fact I only use it to visit some site I saw on another app like Twitter or Facebook.<br />
+At the beginning (HTC Magic, my first Android phone) I thought this was because the browser was so unbearable that they had to come out with an alternative to the web, so they came out with "specific apps", that is one app per each internet service or purpose.</p>
+<p>But things have evolved since, and now my Nexus5 and 7 can render websites some times even better and faster than my laptop, but anyway I still prefer to use Android apps. Why?</p>
+<p><strong>Content</strong></p>
+<p>Both web and android apps are way better at managing content than we are.</p>
+<p>They always have something to show to you: perhaps something new that might interest you? perhaps a bold guess based on you previous search? or perhaps just what is "hot" nearby? Two of the best example are Youtube and Spotify.</p>
+<p>Your content is available everywhere, and I am not talking only about putting stuff into the "cloud" but I am talking about your online profile. Continuing with the example of Youtube and Spotify on both apps you will have your: playlist, subscriptions, radios, friend list on any device either via the app or the web.</p>
+<p>Sharing content is damn easy on both either by copying the url on the Web or by clicking the omnipresent share button in Android. As a matter of fact I don't remember the last time I shared a picture or an article using a desktop app... Probably it was really long ago.</p>
+<p>They know what content you like... They know your habits... They know everything and they use it to provide the most convenient content at all time. Oh look! It is Monday, perhaps you want to watch the new video uploaded in this Youtube channel as you do every week?</p>
+<p>Finally, both web and Android apps try to avoid making the user think too much which I find it to be a relief when I am using them. Again they do this by knowing what content you are interested on and by providing it to you in the best possible way.</p>
+<p>That is it for now, In part II I will explain the current situation of the desktop apps and in part III I will show a mockup of a video app I hope to work on someday. In the meanwhile what do you think? Is the same thing I describe in this article happening to you?</p>
+</p>
+    </section>
+    <section class="post-meta">
+    	<div class="post-date">March 13, 2014</div>
+    	<div class="post-categories">
+    	in 
+    	  
+    	  <span>Kde</span>, 
+    	  
+    	
+    	  
+    	  <span>Software libre</span>
+    	  
+    	
+    	</div>
+    </section>
+  </li>
+  
+  
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+    
+    <a class="newer-posts" href="/page2">
+	    <span class="fa-stack fa-lg">
+			  <i class="fa fa-square fa-stack-2x"></i>
+			  <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+			</span>
+		</a>
+    
+    <span class="page-number">Page 1 of 22</span>
+    
+    <span class="fa-stack fa-lg">
+		  <i class="fa fa-square fa-stack-2x"></i>
+		  <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+		</span>
+    
+  </p>
+  <p>
+    <a href="/posts">View All Posts by Category</a>
+  </p>
+</nav>
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">Àlex Fiestas's blog</h3>
+
+    <div class="site-navigation">
+    	
+    	<p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+    	<p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+      	<li>
+      		<a href="mailto:afiestaso@gmail.com">
+	      		<i class="fa fa-envelope-o"></i>
+	      		<span class="username">afiestaso@gmail.com</span>
+      		</a>
+      	</li>
+
+      	
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+    	<p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">Playground for hacking</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	// Syntax highlighting
+	hljs.initHighlightingOnLoad();
+
+	// Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+</script>
+
+
+
+
+  </body>
+
+</html>
