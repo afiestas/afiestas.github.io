@@ -55,7 +55,7 @@ menu:
     title: Linkedin
     pageref: /projects
     weight: -700
-  - identifier: twitter
+  - identifier: birdsite
     name: Twitter
     title: Twitter
     pageref: /recipes
