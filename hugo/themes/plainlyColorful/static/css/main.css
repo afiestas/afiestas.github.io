@@ -147,6 +147,7 @@ header {
   margin-right: var(--header-icons);
   display: flex;
   flex-flow: column;
+  line-height: 1;
 }
 
 .nav-top-primary li .secondary {
