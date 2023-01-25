@@ -118,6 +118,8 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
+  gap: var(--header-icons);
 }
 
 .nav-top-primary .links {
@@ -126,6 +128,7 @@ header {
   overflow: hidden;
   width: 100%;
   max-height: var(--header-size);
+  gap: var(--header-icons);
 }
 
 .toggle:checked~.links {
@@ -144,10 +147,9 @@ header {
 .nav-top-primary li {
   text-decoration: none;
   list-style: none;
-  margin-right: var(--header-icons);
   display: flex;
   flex-flow: column;
-  line-height: 1;
+
 }
 
 .nav-top-primary li .secondary {
@@ -211,7 +213,6 @@ nav .toggle {
 
 nav .logo {
   width: var(--header-icons);
-  margin-right: var(--font-size-fluid-base);
 }
 
 main .whoami {
