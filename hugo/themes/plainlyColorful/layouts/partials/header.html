@@ -6,7 +6,7 @@
     <ul class="links">
       {{ $currentPage := . }}
       {{ range .Site.Menus.primary }}
-        <li class="primary {{if or ($currentPage.IsMenuCurrent "top" .) ($currentPage.HasMenuCurrent "top" .) }} active{{end}}">
+        <li class="primary{{if or ($currentPage.IsMenuCurrent "primary" .) ($currentPage.HasMenuCurrent "primary" .) }} active{{end}}">
           <div class="nav-icon-{{ .Identifier }} icon"></div>
           <a href="{{ .URL }}" class="name" title="{{ .Title }}">{{ .Name }}</a>
         </li>

@@ -111,6 +111,7 @@ header {
 }
 
 .nav-top-primary {
+  --active-indicator-size: 1ex;
   font-family: var(--primary-font-family);
   font-weight: var(--primary-font-weight);
   font-size: var(--header-font-size);
@@ -127,8 +128,8 @@ header {
   flex-wrap: wrap;
   overflow: hidden;
   width: 100%;
-  max-height: var(--header-size);
-  gap: var(--header-icons);
+  max-height: calc(var(--header-size) + var(--active-indicator-size));
+  gap: calc(var(--header-icons) - 1ex);
 }
 
 .toggle:checked~.links {
@@ -149,7 +150,20 @@ header {
   list-style: none;
   display: flex;
   flex-flow: column;
+  position: relative;
+  margin-right: var(--active-indicator-size);
+  margin-top: var(--active-indicator-size);
+}
 
+.nav-top-primary li.primary.active::after {
+  content: "";
+  position: absolute;
+  width: var(--active-indicator-size);
+  height: var(--active-indicator-size);
+  border-radius: 100%;
+  background-color: var(--accent-color-one);
+  top: calc(var(--active-indicator-size) * -1);
+  right: calc(var(--active-indicator-size) * -1)
 }
 
 .nav-top-primary li .secondary {
@@ -186,6 +200,7 @@ header {
   min-height: var(--header-size);
   min-width: var(--header-size);
   transition: transform .2s ease-in-out;
+  margin-top: var(--active-indicator-size);
 }
 
 .show-all a {
