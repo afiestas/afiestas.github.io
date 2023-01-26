@@ -52,14 +52,15 @@ a {
   --primary-font-size: var(--font-size-fluid-sm);
   --metadata-font-family: 'Noto Sans Mono', monospace;
   --secondary-font-weight: 500;
+  --regular-font-weight: 400;
 
-  --font-size-fluid-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
-  --font-size-fluid-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-  --font-size-fluid-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
-  --font-size-fluid-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
-  --font-size-fluid-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
-  --font-size-fluid-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-  --font-size-fluid-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+  --font-size-fluid-sm: clamp(12.8px, 0.15vw + 12.36px, 14.25px);
+  --font-size-fluid-base: clamp(16px, 0.31vw + 15.08px, 19px);
+  --font-size-fluid-md: clamp(20px, 0.54vw + 18.37px, 25.33px);
+  --font-size-fluid-lg: clamp(25px, 0.89vw + 22.32px, 33.76px);
+  --font-size-fluid-xl: clamp(31.25px, 1.4vw + 27.04px, 45px);
+  --font-size-fluid-xxl: clamp(39.06px, 2.14vw + 32.66px, 59.99px);
+  --font-size-fluid-xxxl: clamp(48.83px, 3.18vw + 39.3px, 79.97px);
 
   --line-height-sm: 1.5;
   --line-height-base: 1.6;
@@ -320,7 +321,7 @@ article {
 
 .summary {
   font-family: var(--primary-font-family);
-  font-weight: var(--secondary-font-weight);
+  font-weight: var(--regular-font-weight);
   font-size: var(--font-size-fluid-base);
   line-height: var(--line-height-base);
 }
