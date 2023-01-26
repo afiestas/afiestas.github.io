@@ -144,7 +144,15 @@ header {
   max-width: 4em;
   align-items: center;
 }
-
+.toggle:checked~.links>li.primary.active::after {
+  display: none;
+}
+.toggle:checked~.links>li.primary.active .icon {
+  background-color: var(--accent-color-one);
+}
+.toggle:checked~.links>li.primary.active .name {
+  color: var(--accent-color-one);
+}
 .nav-top-primary li {
   text-decoration: none;
   list-style: none;
