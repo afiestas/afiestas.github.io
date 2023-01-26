@@ -72,6 +72,10 @@ a {
   --header-font-size: var(--font-size-fluid-base);
 }
 
+html {
+  color-scheme: dark;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--primary-color);
@@ -312,6 +316,7 @@ main {
 }
 
 article {
+  content-visibility: auto;
   flex-basis: 100%;
   max-inline-size: 75ch;
   display: flex;
