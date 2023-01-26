@@ -335,6 +335,7 @@ article h3 {
   cursor: pointer ;
   margin-right: auto;
   transition: scale 0.3s;
+  transform-origin: left;
   background: linear-gradient(90deg,
       white,
       white) 0 0 / 400% 100%;
