@@ -25,11 +25,11 @@ title: open365, let's declare war at Google and Microsoft
 
 ---
 
-[Open365](https://open365.io/){:target="_blank"} is a public and/or private cloud designed to compete with the likes
+[Open365](https://open365.io/) is a public and/or private cloud designed to compete with the likes
 of Google Drive or Office365 by leveraging all the best free software out there.
 
 The service is designed to scale horizontally as well as to be resilient to components crashing or going crazy. In
-order to achieve this we have implemented a microservice architecure that communicate using a bus ([rabbitmq](https://www.rabbitmq.com){:target="_blank"}) plus some
+order to achieve this we have implemented a microservice architecure that communicate using a bus ([rabbitmq](https://www.rabbitmq.com)) plus some
 other tricks so we can scale using commodity hardware horizontally. Nothing fancy, nothing revolutionary but it had to
 be done :)
 
@@ -38,11 +38,11 @@ PIM (Email, calendar,contacts...) and office.
 
 **Specifically**
 
-* [Seafile](https://www.seafile.com/en/home/){:target="_blank"}
-* [Kontact](https://www.kde.org/applications/office/kontact/){:target="_blank"}
-* [Libreoffice](https://www.libreoffice.org/){:target="_blank"}
+* [Seafile](https://www.seafile.com/en/home/)
+* [Kontact](https://www.kde.org/applications/office/kontact/)
+* [Libreoffice](https://www.libreoffice.org/)
 
-For the last two, we re using [SPICE](http://www.spice-space.org){:target="_blank"} and our [HTML5/Javascript](https://github.com/eyeos/spice-web-client){:target="_blank"} client to run those applications in the server and send only the interface to the Web browser
+For the last two, we re using [SPICE](http://www.spice-space.org) and our [HTML5/Javascript](https://github.com/eyeos/spice-web-client) client to run those applications in the server and send only the interface to the Web browser
 in a really efficient way.
 
 ## This is how it looks like:
@@ -50,7 +50,7 @@ in a really efficient way.
 
 
 ## Status
-The public service is in open beta so you can go to [Open365](https://open365.io/){:target="_blank"} and try it out for free.
+The public service is in open beta so you can go to [Open365](https://open365.io/) and try it out for free.
 
 As I write this blogpost we are working hard to release all the code as **free software**. There is a lot to be done before we can
 release all the code such as: creating a simple installer, preparing documentation and accomodating the new repositories to our CI.
