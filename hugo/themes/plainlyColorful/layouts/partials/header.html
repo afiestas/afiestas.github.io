@@ -7,15 +7,19 @@
       {{ $currentPage := . }}
       {{ range .Site.Menus.primary }}
         <li class="primary{{if or ($currentPage.IsMenuCurrent "primary" .) ($currentPage.HasMenuCurrent "primary" .) }} active{{end}}">
-          <div class="nav-icon-{{ .Identifier }} icon"></div>
-          <a href="{{ .URL }}" class="name" title="{{ .Title }}">{{ .Name }}</a>
+          <a href="{{ .URL }}" title="{{ .Title }}">
+            <div class="nav-icon-{{ .Identifier }} icon"></div>
+            <span class="name">{{ .Name }}</span>
+          </a>
         </li>
       {{ end }}
       <span class="flex-spacer"></span>
       {{ range .Site.Menus.secondary }}
         <li class="secondary">
-          <div class="nav-icon-{{ .Identifier }} icon"></div>
-          <a href="{{ .URL }}" class="name" title="{{ .Title }}">{{.Name}}</a>
+          <a href="{{ .URL }}" title="{{ .Title }}">
+            <div class="nav-icon-{{ .Identifier }} icon"></div>
+            <span class="name">{{ .Name }}</span>
+          </a>
         </li>
       {{ end }}
     </ul>
