@@ -131,6 +131,10 @@ header {
   gap: calc(var(--header-icons) - 1ex);
 }
 
+.nav-top-primary .links a{
+  text-align: center;
+}
+
 .toggle:checked~.links {
   overflow: visible;
   max-height: none;
