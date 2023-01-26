@@ -74,6 +74,7 @@ a {
 
 html {
   color-scheme: dark;
+  scrollbar-gutter: stable both-edges;
 }
 
 body {
