@@ -1,7 +1,7 @@
 <head>
     <title>{{ with .Title }}{{ humanize . }} | {{ end }}{{ .Site.Title }}</title>
     {{ $logo := resources.GetMatch "logo.svg" }}
-    <link rel="icon" href="{{ $logo.RelPermalink }}" type="{{ $logo.MediaType }}">
+    <link rel="icon" href="{{ $logo.RelPermalink }}" {{ $logo.MediaType | printf "type=%q"| safeHTMLAttr}}>
     <style data-what="fonts">
         {{ $fontz := resources.Get "fonts/fonts.css" | resources.ExecuteAsTemplate "fonts/fonts.css" . }}
         {{ $fontz.Content | safeCSS }}
