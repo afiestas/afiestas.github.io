@@ -11,6 +11,9 @@ module:
 permalinks:
   posts: /articles/:slug/
 theme: plainlyColorful
+outputFormats:
+  RSS:
+    baseName: "feed"
 menu:
   primary:
   - identifier: home
