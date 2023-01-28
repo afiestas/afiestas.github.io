@@ -29,6 +29,13 @@ a {
   text-decoration: none;
 }
 
+img,
+video,
+iframe {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
 :root {
   --max-page-layout: 88rem;
   --max-content-layout: 75rem;
@@ -320,17 +327,28 @@ main {
 article {
   content-visibility: auto;
   flex-basis: 100%;
-  max-inline-size: 75ch;
   display: flex;
   flex-direction: column;
   gap: var(--header-margin);
   font-family: var(--content-font-family);
+  max-width: 100%;
 }
 
 .summary {
   font-weight: var(--regular-font-weight);
   font-size: var(--font-size-fluid-base);
   line-height: var(--line-height-base);
+  max-inline-size: 75ch;
+}
+
+.summary pre {
+  overflow: auto;
+}
+
+.summary iframe {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
 }
 
 .metadata {
