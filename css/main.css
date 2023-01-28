@@ -40,7 +40,7 @@ a {
   --bg-color: #182029;
   --bg-color-2: #32333f22;
   --bg-color-light: #32333f22;
-  --primary-color: #f7f9f9;
+  --primary-color: #fff;
   --accent-color-one: #cc2b5eff;
   --accent-color-two: #753a88ff;
 
@@ -51,6 +51,7 @@ a {
   --primary-font-weight: 600;
   --primary-font-size: var(--font-size-fluid-sm);
   --metadata-font-family: 'Noto Sans Mono', monospace;
+  --content-font-family: 'Radio Canada', 'Open Sans', 'Noto Sans', sans-serif;
   --secondary-font-weight: 500;
   --regular-font-weight: 400;
 
@@ -323,10 +324,10 @@ article {
   display: flex;
   flex-direction: column;
   gap: var(--header-margin);
+  font-family: var(--content-font-family);
 }
 
 .summary {
-  font-family: var(--primary-font-family);
   font-weight: var(--regular-font-weight);
   font-size: var(--font-size-fluid-base);
   line-height: var(--line-height-base);
