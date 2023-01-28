@@ -88,14 +88,14 @@ that will create weird glitches specially by placing windows where they don’t 
 
 #### Drunk comboboxes
 
-<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/NegativeReadyBluebird' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
-<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/MilkyTanFallowdeer' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+<iframe src='https://gfycat.com/ifr/NegativeReadyBluebird' frameborder='0' scrolling='no' allowfullscreen></iframe>
+<iframe src='https://gfycat.com/ifr/MilkyTanFallowdeer' frameborder='0' scrolling='no' allowfullscreen></iframe>
 
 #### Shy tooltips
-<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/SlushyUnitedGrison' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+<iframe src='https://gfycat.com/ifr/SlushyUnitedGrison' frameborder='0' scrolling='no' allowfullscreen></iframe>
 
 #### Jumpy Drag And Drop
-<div style='position:relative;padding-bottom:57%'><iframe src='https://gfycat.com/ifr/DemandingFairBettong' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe></div>
+<iframe src='https://gfycat.com/ifr/DemandingFairBettong' frameborder='0' scrolling='no' allowfullscreen></iframe>
 
 I have been working on 3 patches that solve most of these at least in my day to day use.
 
