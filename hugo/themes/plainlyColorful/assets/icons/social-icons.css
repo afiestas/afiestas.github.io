@@ -1,16 +1,32 @@
+{{- $icons := slice -}}
+{{- range .Site.Menus -}}
+    {{- $menu := . -}}
+    {{- range $menu -}}
+        {{- $icon := "generic" -}}
+        {{- if isset .Params "icon" -}}
+            {{- $icon = .Params.icon -}}
+        {{- else -}}
+            {{- $icon = .Identifier -}}
+        {{- end -}}
+        {{- $icons = $icons | append $icon -}}
+    {{- end -}}
+{{- end -}}
+
 :root {
-{{ range resources.Match "icons/*.svg" }}
-    --nav-icon-{{path.BaseName .Name | safeCSS}}: url('data:image/svg+xml,{{ .Content }}');
+{{- range $icon := $icons -}}
+    {{ with resources.Get (print "icons/" $icon ".svg") }}
+        --nav-icon-{{ path.BaseName .Name | safeCSS }}: url('data:image/svg+xml,{{ .Content }}');
+    {{- end -}}
 {{ end }}
 }
 
-{{ range resources.Match "icons/*.svg" }}
-.nav-icon-{{path.BaseName .Name | safeCSS}} {
-    mask-image: var(--nav-icon-{{path.BaseName .Name | safeCSS}});
-    -webkit-mask-image: var(--nav-icon-{{path.BaseName .Name | safeCSS}});
+{{ range $icon := $icons }}
+.nav-icon-{{- $icon -}} {
+    mask-image: var(--nav-icon-{{- $icon -}});
+    -webkit-mask-image: var(--nav-icon-{{- $icon -}});
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
 }
-{{ end }}
+{{- end -}}

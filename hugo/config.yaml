@@ -14,61 +14,92 @@ theme: plainlyColorful
 outputFormats:
   RSS:
     baseName: "feed"
-menu:
-  primary:
-  - identifier: home
-    name: Home
-    title: Home
-    pageref: "/"
-    weight: -900
-  - identifier: blog
-    name: Blog
-    title: Posts and musings
-    pageref: /posts/
-    weight: -800
-  - identifier: projects
-    name: Projects
-    title: List of projects
-    pageref: /projects/
-    weight: -700
-  - identifier: recipes
-    name: Recipes
-    title: List of recipes
-    pageref: /recipes/
-    weight: -600
-  - identifier: experience
-    name: Experience
-    title: Professional experience
-    pageref: /experiences
-    weight: -500
-  secondary:
-  - identifier: feed
+link:
+- feed: &feed_link
+    identifier: feed
     name: Feed
     title: feed
-    pageref: "/"
+    url: "/feed.xml"
     weight: -900
-  - identifier: gh
+- github: &gh_link
+    identifier: gh
     name: Github
     title: Github
-    pageref: /blog
+    url: https://github.com/afiestas/
     weight: -800
-  - identifier: in
+- linkedin: &in_link
+    identifier: in
     name: Linkedin
     title: Linkedin
-    pageref: /projects
+    url: https://www.linkedin.com/in/afiestas/
     weight: -700
-  - identifier: birdsite
+- twitter: &twitter_link
+    identifier: birdsite
     name: Twitter
     title: Twitter
-    pageref: /recipes
+    url: https://twitter.com/afiestas
     weight: -600
-  - identifier: darkmode
+- darkmode: &darkmode_link
+    identifier: darkmode
     name: dark
     title: dark
     pageref: "/"
     weight: -500
-  - identifier: search
+-  search: &search_link
+    identifier: search
     name: Search
     title: Search
     pageref: /blog
     weight: -400
+page_links:
+- home: &home_link
+    identifier: home
+    name: Home
+    title: Home
+    pageref: "/"
+    weight: -900
+- blog: &blog_link
+    identifier: blog
+    name: Blog
+    title: Posts and musings
+    pageref: /posts/
+    weight: -800
+- project: &project_link
+    identifier: projects
+    name: Projects
+    title: List of projects
+    pageref: /projects/
+    weight: -700
+- recipes: &recipes_link
+    identifier: recipes
+    name: Recipes
+    title: List of recipes
+    pageref: /recipes/
+    weight: -600
+- experiences: &experience_link
+    identifier: experience
+    name: Experience
+    title: Professional experience
+    pageref: /experiences
+    weight: -500
+- showall: &show_all
+    identifier: menu
+    name: Show All
+    title: Shows the entire menu
+    pageref: "#showall"
+    weight: 0
+menu:
+  primary:
+  - <<: *home_link
+  - <<: *blog_link
+  - <<: *project_link
+  - <<: *recipes_link
+  - <<: *experience_link
+  secondary:
+  - <<: *feed_link
+  - <<: *gh_link
+  - <<: *in_link
+  - <<: *twitter_link
+  - <<: *darkmode_link
+  showall:
+  - <<: *show_all
