@@ -204,6 +204,12 @@ header {
   background-color: var(--primary-color);
   min-height: var(--header-size);
   min-width: var(--header-size);
+  transition: scale 0.3s;
+  transform-origin: left;
+  background: linear-gradient(90deg,
+      white,
+      white) 0 0 / 400% 100%;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav-top-primary li.primary .icon {
@@ -397,5 +403,5 @@ article h3:hover {
 }
 
 footer {
-  padding: var(--header-size);
+  padding: calc(var(--header-margin) * 4);
 }

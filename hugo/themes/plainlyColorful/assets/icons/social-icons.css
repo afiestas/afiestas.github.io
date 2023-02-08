@@ -25,3 +25,25 @@
     mask-position: center;
 }
 {{- end -}}
+
+{{- $color1 := "#cc2b5eff" -}}
+{{- $color2 := "#753a88ff" -}}
+{{- range $icon := $icons -}}
+{{- if $icon.Params.color1 -}}
+    {{- $color1 = $icon.Params.color1 -}}
+    {{- $color2 = $icon.Params.color2 -}}
+{{- end -}}
+.nav-{{.Identifier}}:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: {{ $color1 }};
+    --accent-color-two: {{ $color2 }};
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}
+{{- end -}}

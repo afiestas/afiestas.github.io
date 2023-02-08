@@ -21,24 +21,36 @@ link:
     title: feed
     url: "/feed.xml"
     weight: -900
+    params:
+      color1: 'rgb(250, 144, 58)'
+      color2: 'rgb(226, 40, 7)'
 - github: &gh_link
     identifier: gh
     name: Github
     title: Github
     url: https://github.com/afiestas/
     weight: -800
+    params:
+      color1: "#4078c0"
+      color2: "#6e40c9"
 - linkedin: &in_link
     identifier: in
     name: Linkedin
     title: Linkedin
     url: https://www.linkedin.com/in/afiestas/
     weight: -700
+    params:
+      color1: "#6fe0ff"
+      color2: "#0077B5"
 - twitter: &twitter_link
     identifier: birdsite
     name: Twitter
     title: Twitter
     url: https://twitter.com/afiestas
     weight: -600
+    params:
+      color1: "#009EF7"
+      color2: "#1D9BF0"
 - darkmode: &darkmode_link
     identifier: darkmode
     name: dark
