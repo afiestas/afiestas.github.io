@@ -380,6 +380,7 @@ article h3 {
   background: linear-gradient(90deg,
       white,
       white) 0 0 / 400% 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
