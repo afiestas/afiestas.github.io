@@ -12,8 +12,8 @@
 .nav:hover > * {
     scale: 1.1;
     background: linear-gradient(90deg,
-            white,
-            white) 0 0 / 400% 100%;
+            var(--primary-color),
+            var(--primary-color)) 0 0 / 400% 100%;
     animation-iteration-count: 20;
     -webkit-background-clip: text;
     background-clip: text;
