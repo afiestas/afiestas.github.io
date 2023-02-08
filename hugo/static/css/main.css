@@ -205,7 +205,6 @@ header {
   min-height: var(--header-size);
   min-width: var(--header-size);
   transition: scale 0.3s;
-  transform-origin: left;
   background: linear-gradient(90deg,
       white,
       white) 0 0 / 400% 100%;
