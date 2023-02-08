@@ -80,8 +80,19 @@ iframe {
   --header-font-size: var(--font-size-fluid-base);
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #FFF;
+    --bg-color-2: #cacad022;
+    --bg-color-light: #cacad022;
+    --primary-color: #182029;
+    --accent-color-one: #cc2b5eff;
+    --accent-color-two: #753a88ff;
+  }
+}
+
 html {
-  color-scheme: dark;
+  color-scheme: dark light;
   scrollbar-gutter: stable;
 }
 
