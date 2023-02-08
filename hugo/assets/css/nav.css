@@ -5,7 +5,11 @@
     mask-position: center;
 }
 
-.nav:hover>* {
+.nav > * {
+    transition: scale 0.3s;
+}
+
+.nav:hover > * {
     scale: 1.1;
     background: linear-gradient(90deg,
             white,
@@ -13,7 +17,8 @@
     animation-iteration-count: 20;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent
+    color: transparent;
+    display: inline-block;
 }
 
 {{- $icons := slice -}}

@@ -1,0 +1,10 @@
+{{- $class := "home" -}}
+{{- $link := . -}}
+{{- range $menu := .Page.Site.Menus -}}
+    {{- range $entry := $menu -}}
+        {{- if eq $entry.URL $link.Destination -}}
+            {{- $class = $entry.Identifier -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+<a class="nav {{$class}}" href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "https" }} target="_blank" rel="noopener"{{ end }}><span>{{ .Text | safeHTML }}</span></a>
