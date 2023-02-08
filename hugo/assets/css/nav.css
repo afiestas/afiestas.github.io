@@ -7,6 +7,7 @@
 
 .nav > * {
     transition: scale 0.3s;
+    display: inline-block;
 }
 
 .nav:hover > * {
@@ -18,7 +19,6 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    display: inline-block;
 }
 
 {{- $icons := slice -}}
