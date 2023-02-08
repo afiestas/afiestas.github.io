@@ -38,7 +38,11 @@
     mask-position: center;
 }
 
-.nav:hover>* {
+.nav > * {
+    transition: scale 0.3s;
+}
+
+.nav:hover > * {
     scale: 1.1;
     background: linear-gradient(90deg,
             white,
@@ -46,7 +50,8 @@
     animation-iteration-count: 20;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent
+    color: transparent;
+    display: inline-block;
 }:root {
         --nav-icon-gh: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="auto" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>');
         --nav-icon-in: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="auto" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 11v5m0-8v.01M12 16v-5m4 5v-3a2 2 0 0 0-4 0"/></svg>');
@@ -125,7 +130,7 @@
     --accent-color-two: #563ACC;
     animation: move-bg 12s linear infinite;
 }.nav.birdsite:hover > * {
-    --accent-color-one: #009EF7;
+    --accent-color-one: #9fd5f9;
     --accent-color-two: #1D9BF0;
     animation: move-bg 12s linear infinite;
 }.nav.home:hover > * {
@@ -165,7 +170,7 @@
     --accent-color-two: #563ACC;
     animation: move-bg 12s linear infinite;
 }.nav.birdsite:hover > * {
-    --accent-color-one: #009EF7;
+    --accent-color-one: #9fd5f9;
     --accent-color-two: #1D9BF0;
     animation: move-bg 12s linear infinite;
 }.nav.darkmode:hover > * {
@@ -178,7 +183,7 @@
     animation: move-bg 12s linear infinite;
 }
     </style>
-    <link rel="stylesheet" href="/css/main.css?v=1675866699">
+    <link rel="stylesheet" href="/css/main.css?v=1675875438">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
 </head>
@@ -281,7 +286,7 @@
     <article>
         <h2>Almost perfect HiDPI experience on Linux (Xorg) </h2>
         <div class="metadata">Almost 6 years ago - 3 minutes</div>
-        <div class="summary"><p><a href="https://cdn.afiestas.org/posts/2017/02/hidpi_big.png"><img src="https://cdn.afiestas.org/posts/2017/02/hidpi_small.png" alt="Awesome HiDPI on Xorg"></a></p>
+        <div class="summary"><p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/hidpi_big.png" target="_blank" rel="noopener"><span><img src="https://cdn.afiestas.org/posts/2017/02/hidpi_small.png" alt="Awesome HiDPI on Xorg"></span></a></p>
 <p>In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for
 a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most
 applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino&hellip;) got support for higher DPIs as well.</p>
@@ -291,9 +296,9 @@ they used to, how much bigger depends on the screen pixel density which, for exa
 bigger.</p>
 <p>This means that applications rendered for HiDPI look huge on normal screens:</p>
 <h4 id="hidpi-file-dialog-on-regular-screen">HiDPI File dialog on regular screen</h4>
-<p><a href="https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png"><img src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Open dialog looking huge"></a></p>
+<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png" target="_blank" rel="noopener"><span><img src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Open dialog looking huge"></span></a></p>
 <h4 id="scaled-hidpi-file-dialog-on-regular-screen">Scaled HiDPI File dialog on regular screen</h4>
-<p><a href="https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png"><img src="https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png" alt="Open dialog looking ok"></a></p>
+<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png" target="_blank" rel="noopener"><span><img src="https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png" alt="Open dialog looking ok"></span></a></p>
 <p>Here is where the internet seems to tell you that there is nothing to do but wait until Wayland arrives and saves us all
 (I can’t wait for that btw) but that’s actually not true, X can do it.</p>
 <p>XRandR allows us to apply transformations on the outputs, like for example rotation, and it also allows us to scale the screens.
@@ -306,11 +311,11 @@ the image to the monitor. So we have effectively turned our normal density scree
 </code></pre><p>This will set DP1 to the default mode, scale it by 2 and place it at the right of the HiDPI laptop screen (eDP1).</p>
 <p><em>Wow</em>! <em>Awesome</em>! This is so cool! Why is everybody not doing this? Where is the catch? \
 Mostly because of one bug: \
-<a href="https://bugs.freedesktop.org/show_bug.cgi?id=39949">https://bugs.freedesktop.org/show_bug.cgi?id=39949</a></p>
-<p>If you read through the bug entry you will find a <a href="https://bugs.freedesktop.org/attachment.cgi?id=94929">patch</a> created by Chris Wilson in 2014
+<a class="nav home" href="https://bugs.freedesktop.org/show_bug.cgi?id=39949" target="_blank" rel="noopener"><span>https://bugs.freedesktop.org/show_bug.cgi?id=39949</span></a></p>
+<p>If you read through the bug entry you will find a <a class="nav home" href="https://bugs.freedesktop.org/attachment.cgi?id=94929" target="_blank" rel="noopener"><span>patch</span></a> created by Chris Wilson in 2014
 which is shipped by default in some distributions but it has never been integrated into master.</p>
 <p>If your distribution doesn’t ship with this patch by default (good for them!) you can build your own xorg-server, the patch should apply until 1.18 and for 1.19
-you have a ported version <a href="https://raw.githubusercontent.com/afiestas/xorg-server-patches/master/cursor.patch">here</a>.</p>
+you have a ported version <a class="nav home" href="https://raw.githubusercontent.com/afiestas/xorg-server-patches/master/cursor.patch" target="_blank" rel="noopener"><span>here</span></a>.</p>
 <p>Although with this patch the experience is already way better since the applications will look correctly on all screens Qt has a few bugs
 that will create weird glitches specially by placing windows where they don’t belong.</p>
 <h4 id="drunk-comboboxes">Drunk comboboxes</h4>
@@ -322,10 +327,10 @@ that will create weird glitches specially by placing windows where they don’t 
 <iframe src='https://gfycat.com/ifr/DemandingFairBettong' frameborder='0' scrolling='no' allowfullscreen></iframe>
 <p>I have been working on 3 patches that solve most of these at least in my day to day use.</p>
 <p>These two still need to be reviewed and might not get accepted:
-<a href="https://codereview.qt-project.org/#/c/182207/">https://codereview.qt-project.org/#/c/182207/</a>
-<a href="https://codereview.qt-project.org/#/c/182392/">https://codereview.qt-project.org/#/c/182392/</a></p>
+<a class="nav home" href="https://codereview.qt-project.org/#/c/182207/" target="_blank" rel="noopener"><span>https://codereview.qt-project.org/#/c/182207/</span></a>
+<a class="nav home" href="https://codereview.qt-project.org/#/c/182392/" target="_blank" rel="noopener"><span>https://codereview.qt-project.org/#/c/182392/</span></a></p>
 <p>This one seems to be on track to be merged (Drag and Drop):
-<a href="https://codereview.qt-project.org/#/c/182391/">https://codereview.qt-project.org/#/c/182391/</a></p>
+<a class="nav home" href="https://codereview.qt-project.org/#/c/182391/" target="_blank" rel="noopener"><span>https://codereview.qt-project.org/#/c/182391/</span></a></p>
 <p>With all this patches the HiDPI experience in any modern Linux distro is as good as in macOS and the best part is that we do not have to wait until Wayland.</p>
  </div>
         <div class="metadata">#linux #desktop #hidpi #X11</div>

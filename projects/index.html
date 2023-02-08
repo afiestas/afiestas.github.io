@@ -39,7 +39,11 @@
     mask-position: center;
 }
 
-.nav:hover>* {
+.nav > * {
+    transition: scale 0.3s;
+}
+
+.nav:hover > * {
     scale: 1.1;
     background: linear-gradient(90deg,
             white,
@@ -47,7 +51,8 @@
     animation-iteration-count: 20;
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent
+    color: transparent;
+    display: inline-block;
 }:root {
         --nav-icon-gh: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="auto" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>');
         --nav-icon-in: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="auto" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 11v5m0-8v.01M12 16v-5m4 5v-3a2 2 0 0 0-4 0"/></svg>');
@@ -126,7 +131,7 @@
     --accent-color-two: #563ACC;
     animation: move-bg 12s linear infinite;
 }.nav.birdsite:hover > * {
-    --accent-color-one: #009EF7;
+    --accent-color-one: #9fd5f9;
     --accent-color-two: #1D9BF0;
     animation: move-bg 12s linear infinite;
 }.nav.home:hover > * {
@@ -166,7 +171,7 @@
     --accent-color-two: #563ACC;
     animation: move-bg 12s linear infinite;
 }.nav.birdsite:hover > * {
-    --accent-color-one: #009EF7;
+    --accent-color-one: #9fd5f9;
     --accent-color-two: #1D9BF0;
     animation: move-bg 12s linear infinite;
 }.nav.darkmode:hover > * {
@@ -179,7 +184,7 @@
     animation: move-bg 12s linear infinite;
 }
     </style>
-    <link rel="stylesheet" href="/css/main.css?v=1675866699">
+    <link rel="stylesheet" href="/css/main.css?v=1675875438">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
 </head>
@@ -280,46 +285,10 @@
 </header>
 
 <main>
-    <h2 class="section-article">Latest Articles</h2>
-    <div class="posts">
-        
-            <article>
-                <h2>Almost perfect HiDPI experience on Linux (Xorg) </h2>
-                <div class="metadata">Almost 6 years ago - 3 minutes</div>
-                <div class="summary">In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino&hellip;) got support for higher DPIs as well. </div>
-                <div class="metadata">#linux #desktop #hidpi #X11</div>
-                <h3><a href="/articles/almost-perfect-hidpi-on-linux/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2>open365, let&#39;s declare war at Google and Microsoft </h2>
-                <div class="metadata">Almost 7 years ago - 2 minutes</div>
-                <div class="summary">Open365 is a public and/or private cloud designed to compete with the likes of Google Drive or Office365 by leveraging all the best free software out there.
-The service is designed to scale horizontally as well as to be resilient to components crashing or going crazy. In order to achieve this we have implemented a microservice architecure that communicate using a bus (rabbitmq) plus some other tricks so we can scale using commodity hardware horizontally. </div>
-                <div class="metadata">#linux #desktop #hidpi #X11</div>
-                <h3><a href="/articles/open365-lets-declare-war-at-microsoft-and-google/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2>Where have I been? </h2>
-                <div class="metadata">Around 7 years ago - 1 minutes</div>
-                <div class="summary">I can&rsquo;t imagine anything worse than waking up every morning without any energy for going to work.
-The first time I heard that statement I was 17 and it made an impression on me. It made me think of how we use our limited time, which roughly is: 1/3 sleeping, 1/3 at work and 1/3 at what we call spare time. We can&rsquo;t control how much we need to sleep, but we can take a stance on the other two thirds (work and spare time). </div>
-                <div class="metadata">#linux #desktop #hidpi #X11</div>
-                <h3><a href="/articles/where-have-i-been/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2>For community free of Trolls </h2>
-                <div class="metadata">Almost 9 years ago - 1 minutes</div>
-                <div class="summary">In light of the last comments containing insults and other attacks to members of our community I have decided to make a video blog explaining my thoughts on the issue.
-The video contains two separate topics:
-Explanation of why we can't tolerate this behavior Some ideas on the actual matter (Baloo) Please, watch the whole thing before commenting and I hope we all work together to push away the trolls in our community. </div>
-                <div class="metadata">#linux #desktop #hidpi #X11</div>
-                <h3><a href="/articles/for-community-free-of-trolls/">Read more</a></h3>
-            </article>
-        
-    </div>
+    
+    <h2 class="section-article">Projects</h2>
+        WIP
+    
 </main>
 <footer></footer></div>
     </body>

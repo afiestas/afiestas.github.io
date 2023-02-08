@@ -185,6 +185,10 @@ header {
   margin-top: var(--active-indicator-size);
 }
 
+.nav-top-primary li:first-child {
+  margin-left: var(--active-indicator-size);
+}
+
 .nav-top-primary li.primary.active::after {
   content: "";
   position: absolute;
@@ -205,7 +209,6 @@ header {
   min-height: var(--header-size);
   min-width: var(--header-size);
   transition: scale 0.3s;
-  transform-origin: left;
   background: linear-gradient(90deg,
       white,
       white) 0 0 / 400% 100%;
@@ -380,6 +383,7 @@ article h3 {
   background: linear-gradient(90deg,
       white,
       white) 0 0 / 400% 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
