@@ -20,7 +20,7 @@
     <div class="posts">
         {{ range first 4 (where .Site.RegularPages "Section" "==" "posts") }}
             <article>
-                <h2>{{ .Title }} </h2>
+                <h2><a href="{{ .Permalink }}">{{ .Title }} </a></h2>
                 <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
                 <div class="summary">{{ .Summary }} </div>
                 <div class="metadata">#linux #desktop #hidpi #X11</div>
