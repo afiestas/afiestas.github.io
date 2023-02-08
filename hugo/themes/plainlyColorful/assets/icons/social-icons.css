@@ -26,9 +26,9 @@
 }
 {{- end -}}
 
+{{- range $icon := $icons -}}
 {{- $color1 := "#cc2b5eff" -}}
 {{- $color2 := "#753a88ff" -}}
-{{- range $icon := $icons -}}
 {{- if $icon.Params.color1 -}}
     {{- $color1 = $icon.Params.color1 -}}
     {{- $color2 = $icon.Params.color2 -}}
