@@ -181,6 +181,8 @@ header {
   display: flex;
   flex-flow: column;
   position: relative;
+}
+.nav-top-primary li.primary {
   margin-right: var(--active-indicator-size);
   margin-top: var(--active-indicator-size);
 }
@@ -206,8 +208,8 @@ header {
 
 .nav-top-primary li .icon {
   background-color: var(--primary-color);
-  min-height: var(--header-size);
-  min-width: var(--header-size);
+  min-height: var(--font-size-fluid-md);
+  min-width: var(--font-size-fluid-md);
   transition: scale 0.3s;
   background: linear-gradient(90deg,
       white,
