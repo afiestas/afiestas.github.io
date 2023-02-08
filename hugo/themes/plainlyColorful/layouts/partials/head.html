@@ -6,12 +6,12 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     <style data-what="fonts">
-        {{ $fontz := resources.Get "fonts/fonts.css" | resources.ExecuteAsTemplate "fonts/fonts.css" . }}
+        {{ $fontz := resources.Get "css/fonts.css" | resources.ExecuteAsTemplate "css/fonts.css" . }}
         {{ $fontz.Content | safeCSS }}
     </style>
-    <style data-what="nav-icons">
-        {{ $svgSocial := resources.Get "icons/social-icons.css" | resources.ExecuteAsTemplate "fonts/fonts.css" . }}
-        {{ $svgSocial.Content | safeCSS }}
+    <style data-what="nav">
+        {{ $navCSS := resources.Get "css/nav.css" | resources.ExecuteAsTemplate "css/nav.css" . }}
+        {{ $navCSS.Content | safeCSS }}
     </style>
     <link rel="stylesheet" href="{{.Site.BaseURL}}/css/main.css?v={{now.Unix}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
