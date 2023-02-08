@@ -58,7 +58,7 @@ link:
     url: https://twitter.com/afiestas
     weight: -500
     params:
-      color1: "#009EF7"
+      color1: "#9fd5f9"
       color2: "#1D9BF0"
 - darkmode: &darkmode_link
     identifier: darkmode
