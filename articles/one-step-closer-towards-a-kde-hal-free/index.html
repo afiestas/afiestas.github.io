@@ -43,99 +43,218 @@
         --nav-icon-birdsite: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="auto" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497-3.753C20.18 7.773 21.692 5.25 22 4.009z"/></svg>');
         --nav-icon-darkmode: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun-high" width="auto" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M14.828 14.828a4 4 0 1 0-5.656-5.656 4 4 0 0 0 5.656 5.656zm-8.485 2.829-1.414 1.414M6.343 6.343 4.929 4.929m12.728 1.414 1.414-1.414m-1.414 12.728 1.414 1.414M4 12H2m10-8V2m8 10h2m-10 8v2"/></svg>');
         --nav-icon-menu: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="auto" viewBox="0 0 24 24" class="icon icon-tabler icon-tabler-plus" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M0 0h24v24H0z" stroke="none"/><path d="M12 5v14m-7-7h14"/></svg>');
-}
-
-
-.nav-icon-home{
+}.nav-icon-home{
     mask-image: var(--nav-icon-home);
     -webkit-mask-image: var(--nav-icon-home);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-blog{
+}.nav-icon-blog{
     mask-image: var(--nav-icon-blog);
     -webkit-mask-image: var(--nav-icon-blog);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-projects{
+}.nav-icon-projects{
     mask-image: var(--nav-icon-projects);
     -webkit-mask-image: var(--nav-icon-projects);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-recipes{
+}.nav-icon-recipes{
     mask-image: var(--nav-icon-recipes);
     -webkit-mask-image: var(--nav-icon-recipes);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-experience{
+}.nav-icon-experience{
     mask-image: var(--nav-icon-experience);
     -webkit-mask-image: var(--nav-icon-experience);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-feed{
+}.nav-icon-feed{
     mask-image: var(--nav-icon-feed);
     -webkit-mask-image: var(--nav-icon-feed);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-gh{
+}.nav-icon-gh{
     mask-image: var(--nav-icon-gh);
     -webkit-mask-image: var(--nav-icon-gh);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-in{
+}.nav-icon-in{
     mask-image: var(--nav-icon-in);
     -webkit-mask-image: var(--nav-icon-in);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-birdsite{
+}.nav-icon-birdsite{
     mask-image: var(--nav-icon-birdsite);
     -webkit-mask-image: var(--nav-icon-birdsite);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-darkmode{
+}.nav-icon-darkmode{
     mask-image: var(--nav-icon-darkmode);
     -webkit-mask-image: var(--nav-icon-darkmode);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-}
-.nav-icon-menu{
+}.nav-icon-menu{
     mask-image: var(--nav-icon-menu);
     -webkit-mask-image: var(--nav-icon-menu);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
+}.nav-home:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #cc2b5eff;
+    --accent-color-two: #753a88ff;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-blog:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #cc2b5eff;
+    --accent-color-two: #753a88ff;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-projects:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #cc2b5eff;
+    --accent-color-two: #753a88ff;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-recipes:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #cc2b5eff;
+    --accent-color-two: #753a88ff;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-experience:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #cc2b5eff;
+    --accent-color-two: #753a88ff;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-feed:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: rgb(250, 144, 58);
+    --accent-color-two: rgb(226, 40, 7);
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-gh:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #4078c0;
+    --accent-color-two: #6e40c9;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-in:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #6fe0ff;
+    --accent-color-two: #0077B5;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-birdsite:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #009EF7;
+    --accent-color-two: #1D9BF0;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-darkmode:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #009EF7;
+    --accent-color-two: #1D9BF0;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
+}.nav-menu:hover > * {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+                white,
+                white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    --accent-color-one: #009EF7;
+    --accent-color-two: #1D9BF0;
+    animation: move-bg 12s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color:transparent
 }
     </style>
-    <link rel="stylesheet" href="/css/main.css?v=1675707766">
+    <link rel="stylesheet" href="/css/main.css?v=1675859988">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
 </head>
@@ -149,35 +268,35 @@
       
       
         <li class="primary">
-          <a href="/" title="Home">
+          <a href="/" class="nav-home" title="Home">
             <div class="nav-icon-home icon"></div>
             <span class="name">Home</span>
           </a>
         </li>
       
         <li class="primary active">
-          <a href="/posts/" title="Posts and musings">
+          <a href="/posts/" class="nav-blog" title="Posts and musings">
             <div class="nav-icon-blog icon"></div>
             <span class="name">Blog</span>
           </a>
         </li>
       
         <li class="primary">
-          <a href="/projects/" title="List of projects">
+          <a href="/projects/" class="nav-projects" title="List of projects">
             <div class="nav-icon-projects icon"></div>
             <span class="name">Projects</span>
           </a>
         </li>
       
         <li class="primary">
-          <a href="/recipes/" title="List of recipes">
+          <a href="/recipes/" class="nav-recipes" title="List of recipes">
             <div class="nav-icon-recipes icon"></div>
             <span class="name">Recipes</span>
           </a>
         </li>
       
         <li class="primary">
-          <a href="/experiences/" title="Professional experience">
+          <a href="/experiences/" class="nav-experience" title="Professional experience">
             <div class="nav-icon-experience icon"></div>
             <span class="name">Experience</span>
           </a>
@@ -186,35 +305,35 @@
       <span class="flex-spacer"></span>
       
         <li class="secondary">
-          <a href="/feed.xml" title="feed">
+          <a href="/feed.xml" class="nav-feed" title="feed">
             <div class="nav-icon-feed icon"></div>
             <span class="name">Feed</span>
           </a>
         </li>
       
         <li class="secondary">
-          <a href="https://github.com/afiestas/" title="Github">
+          <a href="https://github.com/afiestas/" class="nav-gh" title="Github">
             <div class="nav-icon-gh icon"></div>
             <span class="name">Github</span>
           </a>
         </li>
       
         <li class="secondary">
-          <a href="https://www.linkedin.com/in/afiestas/" title="Linkedin">
+          <a href="https://www.linkedin.com/in/afiestas/" class="nav-in" title="Linkedin">
             <div class="nav-icon-in icon"></div>
             <span class="name">Linkedin</span>
           </a>
         </li>
       
         <li class="secondary">
-          <a href="https://twitter.com/afiestas" title="Twitter">
+          <a href="https://twitter.com/afiestas" class="nav-birdsite" title="Twitter">
             <div class="nav-icon-birdsite icon"></div>
             <span class="name">Twitter</span>
           </a>
         </li>
       
         <li class="secondary">
-          <a href="/" title="dark">
+          <a href="/" class="nav-darkmode" title="dark">
             <div class="nav-icon-darkmode icon"></div>
             <span class="name">dark</span>
           </a>
@@ -249,7 +368,7 @@
     
     
         
-            Around 12 years ago
+            Around 12 years and a half ago
         
     
 
