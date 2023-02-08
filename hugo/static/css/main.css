@@ -185,6 +185,10 @@ header {
   margin-top: var(--active-indicator-size);
 }
 
+.nav-top-primary li:first-child {
+  margin-left: var(--active-indicator-size);
+}
+
 .nav-top-primary li.primary.active::after {
   content: "";
   position: absolute;
