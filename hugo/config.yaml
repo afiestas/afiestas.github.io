@@ -10,7 +10,6 @@ module:
     target: assets
 permalinks:
   posts: /articles/:slug/
-theme: plainlyColorful
 outputFormats:
   RSS:
     baseName: "feed"
