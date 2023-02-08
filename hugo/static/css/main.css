@@ -238,10 +238,9 @@ header {
 
 .show-all .icon {
   background-color: var(--primary-color);
-  min-height: var(--header-size);
-  min-width: var(--header-size);
+  min-height: var(--font-size-fluid-md);
+  min-width: var(--font-size-fluid-md);
   transition: transform .2s ease-in-out;
-  margin-top: var(--active-indicator-size);
 }
 
 .show-all a {
