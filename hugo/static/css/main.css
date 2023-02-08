@@ -325,15 +325,17 @@ main {
   margin-top: var(--header-size);
 }
 
-.section-article {
+.h2 {
   color: var(--accent-color-one);
-  flex-basis: 100%;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: var(--secondary-font-weight);
+}
+.section-article {
+  flex-basis: 100%;
   align-self: baseline;
   margin-top: calc(var(--header-margin) * 5);
   margin-bottom: calc(var(--header-margin) * 2);
-  font-weight: var(--secondary-font-weight);
 }
 
 .posts {

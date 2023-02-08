@@ -2,7 +2,7 @@
 
 <main>
     {{ if eq .CurrentSection.Name "Posts" }}
-    <h2 class="section-article">Latest Articles</h2>
+    <h2 class="h2 section-article">Latest Articles</h2>
     <div class="posts">
         {{ range (where .Site.RegularPages "Section" "==" "posts") }}
             <article>
