@@ -42,12 +42,21 @@ link:
     params:
       color1: "#6fe0ff"
       color2: "#0077B5"
+- mastodon: &mastodon_link
+    identifier: mastodon
+    name: Mastodon
+    title: Mastodon
+    url: https://fosstodon.org/@afiestas
+    weight: -600
+    params:
+      color1: "#858AFA"
+      color2: "#563ACC"
 - twitter: &twitter_link
     identifier: birdsite
     name: Twitter
     title: Twitter
     url: https://twitter.com/afiestas
-    weight: -600
+    weight: -500
     params:
       color1: "#009EF7"
       color2: "#1D9BF0"
@@ -56,13 +65,13 @@ link:
     name: dark
     title: dark
     pageref: "/"
-    weight: -500
+    weight: -400
 -  search: &search_link
     identifier: search
     name: Search
     title: Search
     pageref: /blog
-    weight: -400
+    weight: -300
 page_links:
 - home: &home_link
     identifier: home
@@ -111,6 +120,7 @@ menu:
   - <<: *feed_link
   - <<: *gh_link
   - <<: *in_link
+  - <<: *mastodon_link
   - <<: *twitter_link
   - <<: *darkmode_link
   showall:
