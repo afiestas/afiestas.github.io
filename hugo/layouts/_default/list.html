@@ -1,6 +1,7 @@
 {{ define "main" }}
 
 <main>
+    {{ if eq .CurrentSection.Name "Posts" }}
     <h2 class="section-article">Latest Articles</h2>
     <div class="posts">
         {{ range first 4 (where .Site.RegularPages "Section" "==" "posts") }}
@@ -13,5 +14,9 @@
             </article>
         {{ end }}
     </div>
+    {{ else }}
+    <h2 class="section-article">{{.CurrentSection.Name}}</h2>
+        WIP
+    {{ end }}
 </main>
 {{ end }}
