@@ -7,8 +7,8 @@
       {{ $currentPage := . }}
       {{ range .Site.Menus.primary }}
         <li class="primary{{if or ($currentPage.IsMenuCurrent "primary" .) ($currentPage.HasMenuCurrent "primary" .) }} active{{end}}">
-          <a href="{{ .URL }}" class="nav-{{.Identifier}}" title="{{ .Title }}">
-            <div class="nav-icon-{{ .Identifier }} icon"></div>
+          <a href="{{ .URL }}" class="nav {{.Identifier}}" title="{{ .Title }}">
+            <div class="nav-icon {{ .Identifier }} icon"></div>
             <span class="name">{{ .Name }}</span>
           </a>
         </li>
@@ -16,15 +16,15 @@
       <span class="flex-spacer"></span>
       {{ range .Site.Menus.secondary }}
         <li class="secondary">
-          <a href="{{ .URL }}" class="nav-{{.Identifier}}" title="{{ .Title }}">
-            <div class="nav-icon-{{ .Identifier }} icon"></div>
+          <a href="{{ .URL }}" class="nav {{.Identifier}}" title="{{ .Title }}">
+            <div class="nav-icon {{ .Identifier }} icon"></div>
             <span class="name">{{ .Name }}</span>
           </a>
         </li>
       {{ end }}
     </ul>
     <label for="more" aria-hidden="true" class="show-all">
-      <div class="nav-icon-menu icon"></div>
+      <div class="nav-icon menu icon"></div>
       <a href="#" title="Show all">Show all</a>
     </label>
   </nav>

@@ -1,3 +1,21 @@
+.nav-icon {
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+
+.nav:hover>* {
+    scale: 1.1;
+    background: linear-gradient(90deg,
+            white,
+            white) 0 0 / 400% 100%;
+    animation-iteration-count: 20;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
 {{- $icons := slice -}}
 {{- range $menu := .Site.Menus -}}
     {{- range $icon := $menu -}}
@@ -13,16 +31,11 @@
 {{ end }}
 }
 
-
 {{- range $icon := $icons -}}
 {{- $iconName := $icon.Identifier -}}
-.nav-icon-{{- $iconName -}} {
+.nav-icon.{{- $iconName -}} {
     mask-image: var(--nav-icon-{{- $iconName -}});
     -webkit-mask-image: var(--nav-icon-{{- $iconName -}});
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
 }
 {{- end -}}
 
@@ -33,17 +46,10 @@
     {{- $color1 = $icon.Params.color1 -}}
     {{- $color2 = $icon.Params.color2 -}}
 {{- end -}}
-.nav-{{.Identifier}}:hover > * {
-    scale: 1.1;
-    background: linear-gradient(90deg,
-                white,
-                white) 0 0 / 400% 100%;
-    animation-iteration-count: 20;
+
+.nav.{{.Identifier}}:hover > * {
     --accent-color-one: {{ $color1 }};
     --accent-color-two: {{ $color2 }};
     animation: move-bg 12s linear infinite;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color:transparent
 }
 {{- end -}}
