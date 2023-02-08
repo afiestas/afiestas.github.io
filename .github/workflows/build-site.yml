@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true
-      - name: Hugo build plainlyColorful
+      - name: Hugo build
         uses: afiestas/hugo-gh-pages@master
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
