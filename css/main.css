@@ -80,9 +80,20 @@ iframe {
   --header-font-size: var(--font-size-fluid-base);
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #FFF;
+    --bg-color-2: #cacad022;
+    --bg-color-light: #cacad022;
+    --primary-color: #182029;
+    --accent-color-one: #cc2b5eff;
+    --accent-color-two: #753a88ff;
+  }
+}
+
 html {
-  color-scheme: dark;
-  scrollbar-gutter: stable both-edges;
+  color-scheme: dark light;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -181,6 +192,8 @@ header {
   display: flex;
   flex-flow: column;
   position: relative;
+}
+.nav-top-primary li.primary {
   margin-right: var(--active-indicator-size);
   margin-top: var(--active-indicator-size);
 }
@@ -206,12 +219,12 @@ header {
 
 .nav-top-primary li .icon {
   background-color: var(--primary-color);
-  min-height: var(--header-size);
-  min-width: var(--header-size);
+  min-height: var(--font-size-fluid-md);
+  min-width: var(--font-size-fluid-md);
   transition: scale 0.3s;
   background: linear-gradient(90deg,
-      white,
-      white) 0 0 / 400% 100%;
+      var(--primary-color),
+      var(--primary-color)) 0 0 / 400% 100%;
   -webkit-text-fill-color: transparent;
 }
 
@@ -236,10 +249,9 @@ header {
 
 .show-all .icon {
   background-color: var(--primary-color);
-  min-height: var(--header-size);
-  min-width: var(--header-size);
+  min-height: var(--font-size-fluid-md);
+  min-width: var(--font-size-fluid-md);
   transition: transform .2s ease-in-out;
-  margin-top: var(--active-indicator-size);
 }
 
 .show-all a {
@@ -254,6 +266,7 @@ header {
   justify-content: center;
   align-items: center;
   min-width: var(--header-size);
+  cursor: pointer;
 }
 
 .toggle:checked~.show-all>.icon {
@@ -325,15 +338,17 @@ main {
   margin-top: var(--header-size);
 }
 
-.section-article {
+.h2 {
   color: var(--accent-color-one);
-  flex-basis: 100%;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: var(--secondary-font-weight);
+}
+.section-article {
+  flex-basis: 100%;
   align-self: baseline;
   margin-top: calc(var(--header-margin) * 5);
   margin-bottom: calc(var(--header-margin) * 2);
-  font-weight: var(--secondary-font-weight);
 }
 
 .posts {
@@ -381,8 +396,8 @@ article h3 {
   transition: scale 0.3s;
   transform-origin: left;
   background: linear-gradient(90deg,
-      white,
-      white) 0 0 / 400% 100%;
+      var(--primary-color),
+      var(--primary-color)) 0 0 / 400% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

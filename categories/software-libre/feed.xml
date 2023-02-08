@@ -1014,6 +1014,18 @@ The official name is now &amp;quot;KBluetooth&amp;quot;. A lot of crashes have b
     </item>
     
     <item>
+      <title>À bientôt, Paris</title>
+      <link>/articles/a-bientot-paris/</link>
+      <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/articles/a-bientot-paris/</guid>
+      <description>At home!
+After my &#34;small&#34; holidays in Paris, I&#39;m back home. Despite my intentions of finishing some ktuberling/kamoso/kbluetooth work on this holidays
+as you may have noticed I didn&#39;t, sorry for that :( I only had time to keep myself up to date with kde planet/mailist/commits, leaving only the last 3 days of kde activities as homework to when I&#39;ll come back.
+So now, I&#39;ve read everything I had to, as well as answering dozens of emails and I&#39;m ready to hack on KDE again and to finish my kde homework&#39;s.</description>
+    </item>
+    
+    <item>
       <title>I don&#39;t like why, but I&#39;m the new maintainer of KTuberling</title>
       <link>/articles/new-ktuberling-maintaine/</link>
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
@@ -1086,18 +1098,6 @@ You can download the video from here</description>
       <guid>/articles/ok-so-here-we-go/</guid>
       <description>My name is Alejandro Fiestas, and I have a problem... I&#39;m a addicted to the free software. People could ask, why? what the software libre give to you? I&#39;m not sure but I&#39;ve some theories :)
 The software libre gives to me the motivation I need to jump of the bed each morning thinking: come on Àlex! you&#39;ve code to write! or come on Àlex, you&#39;ve a community to help, to talk with, to work with!</description>
-    </item>
-    
-    <item>
-      <title>À bientôt, Paris</title>
-      <link>/articles/a-bientot-paris/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/articles/a-bientot-paris/</guid>
-      <description>At home!
-After my &#34;small&#34; holidays in Paris, I&#39;m back home. Despite my intentions of finishing some ktuberling/kamoso/kbluetooth work on this holidays
-as you may have noticed I didn&#39;t, sorry for that :( I only had time to keep myself up to date with kde planet/mailist/commits, leaving only the last 3 days of kde activities as homework to when I&#39;ll come back.
-So now, I&#39;ve read everything I had to, as well as answering dozens of emails and I&#39;m ready to hack on KDE again and to finish my kde homework&#39;s.</description>
     </item>
     
   </channel>
