@@ -82,7 +82,7 @@ iframe {
 
 html {
   color-scheme: dark;
-  scrollbar-gutter: stable both-edges;
+  scrollbar-gutter: stable;
 }
 
 body {
