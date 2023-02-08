@@ -256,6 +256,7 @@ header {
   justify-content: center;
   align-items: center;
   min-width: var(--header-size);
+  cursor: pointer;
 }
 
 .toggle:checked~.show-all>.icon {
