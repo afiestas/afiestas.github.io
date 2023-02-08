@@ -4,7 +4,7 @@
     {{ if eq .CurrentSection.Name "Posts" }}
     <h2 class="section-article">Latest Articles</h2>
     <div class="posts">
-        {{ range first 4 (where .Site.RegularPages "Section" "==" "posts") }}
+        {{ range (where .Site.RegularPages "Section" "==" "posts") }}
             <article>
                 <h2>{{ .Title }} </h2>
                 <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
