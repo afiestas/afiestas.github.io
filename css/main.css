@@ -281,6 +281,7 @@ nav .toggle {
 
 nav .logo {
   width: var(--header-icons);
+  height: var(--header-icons);
 }
 
 main .whoami {
@@ -290,37 +291,29 @@ main .whoami {
   flex-wrap: wrap;
 }
 
-main .whoami .profile {
-  display: flex;
-  justify-content: center;
-}
-
-main .whoami .profile .portrait {
+main .whoami .portrait {
   display: flex;
   align-items: center;
   margin-right: calc(var(--header-margin));
   margin: var(--header-margin);
 }
 
-main .whoami .profile .portrait .pic {
+main .whoami .portrait .pic {
   border-radius: 50%;
-  max-inline-size: 100%;
+  flex-basis: calc(var(--header-margin) * 20);
+  flex-grow: 1;
 }
 
-main .whoami .profile .description {
-  max-width: calc(var(--max-content-width) / 2);
+main .whoami .description {
   margin: calc(var(--header-margin));
   transition: max-width 0.3s ease-out 0s;
+  flex-basis: 31ch;
+  flex-grow: 2;
 }
 
-@media only screen and (max-width: 650px) {
-  main .whoami .profile .portrait {
-    display: none;
-  }
-
-  main .whoami .profile .description {
-    max-width: 100%;
-  }
+main .whoami .description .text > * {
+  max-inline-size: 75ch;
+  font-family: var(--content-font-family);
 }
 
 main {
