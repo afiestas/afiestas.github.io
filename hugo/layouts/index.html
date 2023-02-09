@@ -1,18 +1,16 @@
 {{ define "main" }}
 <main>
     <div class="whoami">
-        <div class="profile">
-            {{ $logo := resources.GetMatch "portrait.jpg" }}
-            <div class="portrait">
-                <img class="pic" src="{{ $logo.RelPermalink }}">
-            </div>
-            <div class="description">
-                <h1>Hi there! I'm Àlex 👋</h1>
-                <div class="text">
-                {{ with .Site.GetPage "description.md" }}
-                    {{ .Content  }}
-                {{ end }}
-                </div>
+        {{ $logo := resources.GetMatch "portrait.jpg" }}
+        <div class="portrait">
+            <img class="pic" src="{{ $logo.RelPermalink }}">
+        </div>
+        <div class="description">
+            <h1>Hi there! I'm Àlex 👋</h1>
+            <div class="text">
+            {{ with .Site.GetPage "description.md" }}
+                {{ .Content  }}
+            {{ end }}
             </div>
         </div>
     </div>
