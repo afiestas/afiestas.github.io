@@ -24,7 +24,6 @@ a {
   flex-direction: column;
   padding-right: var(--header-margin);
   padding-left: var(--header-margin);
-  flex-grow: 1;
 }
 
 main .whoami {
