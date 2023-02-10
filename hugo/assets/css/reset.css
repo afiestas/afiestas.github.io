@@ -1,0 +1,36 @@
+/* Resets */
+* {
+    box-sizing: border-box;
+    padding-inline-start: 0px;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+ul,
+ol,
+dd {
+    margin: 0;
+}
+
+p {
+    margin: 20px auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img,
+video,
+iframe {
+    max-inline-size: 100%;
+    block-size: auto;
+}

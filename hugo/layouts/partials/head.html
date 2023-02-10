@@ -13,8 +13,12 @@
         {{ $navCSS := resources.Get "css/nav.css" | resources.ExecuteAsTemplate "css/nav.css" . }}
         {{ $navCSS.Content | safeCSS }}
     <style data-what="main">
-        {{- $mainCSS := resources.Get "css/main.css" | resources.ExecuteAsTemplate "css/main.css" . -}}
-        {{- $mainCSS.Content | safeCSS -}}
+        {{- $resetCSS := resources.Get "css/reset.css" -}}
+        {{- $tokensCSS := resources.Get "css/tokens.css" -}}
+        {{- $headerCSS := resources.Get "css/header.css" -}}
+        {{- $mainCSS := resources.Get "css/main.css" -}}
+        {{- $css := slice $resetCSS $tokensCSS $headerCSS $mainCSS | resources.Concat "main.css" -}}
+        {{- $css.Content | safeCSS -}}
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">

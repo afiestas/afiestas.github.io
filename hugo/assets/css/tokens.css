@@ -1,0 +1,54 @@
+:root {
+    --max-page-layout: 88rem;
+    --max-content-layout: 75rem;
+    /* Generic layout */
+    --max-page-width: min(100%, var(--max-page-layout));
+    --max-content-width: min(100%, var(--max-content-layout));
+
+    /* Generic palette */
+    --bg-color: #182029;
+    --bg-color-2: #32333f22;
+    --bg-color-light: #32333f22;
+    --primary-color: #fff;
+    --accent-color-one: #cc2b5eff;
+    --accent-color-two: #753a88ff;
+
+    /* Specific colors */
+    --link-color: var(--primary-color);
+
+    --primary-font-family: 'League Spartan', sans-serif;
+    --primary-font-weight: 600;
+    --primary-font-size: var(--font-size-fluid-sm);
+    --metadata-font-family: 'Noto Sans Mono', monospace;
+    --content-font-family: 'Radio Canada', 'Open Sans', 'Noto Sans', sans-serif;
+    --secondary-font-weight: 500;
+    --regular-font-weight: 400;
+
+    --font-size-fluid-sm: clamp(12.8px, 0.15vw + 12.36px, 14.25px);
+    --font-size-fluid-base: clamp(16px, 0.31vw + 15.08px, 19px);
+    --font-size-fluid-md: clamp(20px, 0.54vw + 18.37px, 25.33px);
+    --font-size-fluid-lg: clamp(25px, 0.89vw + 22.32px, 33.76px);
+    --font-size-fluid-xl: clamp(31.25px, 1.4vw + 27.04px, 45px);
+    --font-size-fluid-xxl: clamp(39.06px, 2.14vw + 32.66px, 59.99px);
+    --font-size-fluid-xxxl: clamp(48.83px, 3.18vw + 39.3px, 79.97px);
+
+    --line-height-sm: 1.5;
+    --line-height-base: 1.6;
+    --line-height-md: 1.7;
+
+    --header-size: var(--font-size-fluid-base);
+    --header-margin: var(--header-size);
+    --header-icons: calc(var(--header-size) * 2);
+    --header-font-size: var(--font-size-fluid-base);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #FFF;
+        --bg-color-2: #cacad022;
+        --bg-color-light: #cacad022;
+        --primary-color: #182029;
+        --accent-color-one: #cc2b5eff;
+        --accent-color-two: #753a88ff;
+    }
+}
