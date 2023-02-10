@@ -12,8 +12,10 @@
     <style data-what="nav">
         {{ $navCSS := resources.Get "css/nav.css" | resources.ExecuteAsTemplate "css/nav.css" . }}
         {{ $navCSS.Content | safeCSS }}
+    <style data-what="main">
+        {{- $mainCSS := resources.Get "css/main.css" | resources.ExecuteAsTemplate "css/main.css" . -}}
+        {{- $mainCSS.Content | safeCSS -}}
     </style>
-    <link rel="stylesheet" href="{{.Site.BaseURL}}/css/main.css?v={{now.Unix}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">
 </head>
