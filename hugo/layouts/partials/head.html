@@ -1,17 +1,18 @@
 <head>
     <title>{{ with .Title }}{{ humanize . }} | {{ end }}{{ .Site.Title }}</title>
-    {{ $logo := resources.GetMatch "logo.svg" }}
+    {{- $logo := resources.GetMatch "logo.svg" -}}
     <link rel="icon" href="{{ $logo.RelPermalink }}" {{ $logo.MediaType | printf "type=%q"| safeHTMLAttr}}>
     {{ range .AlternativeOutputFormats -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     <style data-what="fonts">
-        {{ $fontz := resources.Get "css/fonts.css" | resources.ExecuteAsTemplate "css/fonts.css" . }}
-        {{ $fontz.Content | safeCSS }}
+        {{- $fontz := resources.Get "css/fonts.css" | resources.ExecuteAsTemplate "css/fonts.css" . -}}
+        {{- $fontz.Content | safeCSS -}}
     </style>
     <style data-what="nav">
-        {{ $navCSS := resources.Get "css/nav.css" | resources.ExecuteAsTemplate "css/nav.css" . }}
-        {{ $navCSS.Content | safeCSS }}
+        {{- $navCSS := resources.Get "css/nav-icons.css" | resources.ExecuteAsTemplate "css/nav-icons.css" . -}}
+        {{- $navCSS.Content | safeCSS -}}
+    </style>
     <style data-what="main">
         {{- $resetCSS := resources.Get "css/reset.css" -}}
         {{- $tokensCSS := resources.Get "css/tokens.css" -}}
