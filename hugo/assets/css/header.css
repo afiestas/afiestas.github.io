@@ -1,168 +1,159 @@
 header {
-    position: sticky;
-    top: calc(var(--header-margin) * -1);
-    padding-top: calc(var(--header-margin) * 2);
-    padding-bottom: calc(var(--header-margin) * 1);
-    background-color: var(--bg-color);
-    /** we are using content-visibility which creates new stacks */
-    /** So we have to be sure that the header is first in the root stack*/
-    z-index: 1;
+  position: sticky;
+  top: calc(var(--header-margin) * -1);
+  padding-top: calc(var(--header-margin) * 2);
+  padding-bottom: calc(var(--header-margin) * 1);
+  background-color: var(--bg-color);
+  /** we are using content-visibility which creates new stacks */
+  /** So we have to be sure that the header is first in the root stack*/
+  z-index: 1;
 }
 
 .flex-spacer {
-    flex-grow: 10;
-}
-
-.toggle:checked~.links>.flex-spacer {
-    display: none;
+  flex-grow: 10;
 }
 
 .nav-top-primary {
-    --active-indicator-size: 1ex;
-    font-family: var(--primary-font-family);
-    font-weight: var(--primary-font-weight);
-    font-size: var(--header-font-size);
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    gap: var(--header-icons);
+  --active-indicator-size: 1ex;
+  font-family: var(--primary-font-family);
+  font-weight: var(--primary-font-weight);
+  font-size: var(--header-font-size);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--header-icons);
 }
 
 .nav-top-primary .links {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    width: 100%;
-    max-height: calc(var(--header-size) + var(--active-indicator-size));
-    gap: calc(var(--header-icons) - 1ex);
-}
-
-.nav-top-primary .links a {
-    text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  width: 100%;
+  max-height: calc(var(--header-size) + var(--active-indicator-size));
+  gap: calc(var(--header-icons) - 1ex);
 }
 
 .toggle:checked~.links {
-    overflow: visible;
-    max-height: none;
-    font-size: 0.8em;
+  overflow: visible;
+  max-height: none;
+  font-size: 0.8em;
+}
+
+.toggle:checked~.links>.flex-spacer {
+  display: none;
 }
 
 .toggle:checked~.links>li {
-    width: var(--header-icons);
-    align-items: center;
-    margin-right: 0;
-    margin-top: 0;
+  width: var(--header-icons);
+  align-items: center;
+  margin-right: 0;
+  margin-top: 0;
 }
 
 .toggle:checked~.links>li.primary.active::after {
-    display: none;
+  display: none;
 }
 
 .toggle:checked~.links>li.primary.active .icon {
-    background-color: var(--accent-color-one);
+  background-color: var(--accent-color-one);
 }
 
 .toggle:checked~.links>li.primary.active .name {
-    color: var(--accent-color-one);
+  color: var(--accent-color-one);
 }
 
 .nav-top-primary li {
-    text-decoration: none;
-    list-style: none;
-    display: flex;
-    flex-flow: column;
-    position: relative;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  position: relative;
 }
 
 .nav-top-primary li.primary {
-    margin-right: var(--active-indicator-size);
-    margin-top: var(--active-indicator-size);
+  margin-right: var(--active-indicator-size);
+  margin-top: var(--active-indicator-size);
 }
 
 .nav-top-primary li:first-child {
-    margin-left: var(--active-indicator-size);
+  margin-left: var(--active-indicator-size);
 }
 
 .nav-top-primary li.primary.active::after {
-    content: "";
-    position: absolute;
-    width: var(--active-indicator-size);
-    height: var(--active-indicator-size);
-    border-radius: 100%;
-    background-color: var(--accent-color-one);
-    top: calc(var(--active-indicator-size) * -1);
-    right: calc(var(--active-indicator-size) * -1)
-}
-
-.nav-top-primary li .secondary {
-    align-self: flex-end;
+  content: "";
+  position: absolute;
+  width: var(--active-indicator-size);
+  height: var(--active-indicator-size);
+  border-radius: 100%;
+  background-color: var(--accent-color-one);
+  top: calc(var(--active-indicator-size) * -1);
+  right: calc(var(--active-indicator-size) * -1)
 }
 
 .nav-top-primary li .icon {
-    background-color: var(--primary-color);
-    min-height: var(--font-size-fluid-md);
-    min-width: var(--font-size-fluid-md);
-    transition: scale 0.3s;
-    background: linear-gradient(90deg,
-            var(--primary-color),
-            var(--primary-color)) 0 0 / 400% 100%;
-    -webkit-text-fill-color: transparent;
+  background-color: var(--primary-color);
+  min-height: var(--font-size-fluid-md);
+  min-width: var(--font-size-fluid-md);
+  transition: scale 0.3s;
+  background: linear-gradient(90deg,
+          var(--primary-color),
+          var(--primary-color)) 0 0 / 400% 100%;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav-top-primary li.primary .icon {
-    display: none;
+  display: none;
 }
 
 .toggle:checked~.links li .icon {
-    display: block;
-    min-height: var(--header-icons);
-    min-width: var(--header-icons);
-    margin-bottom: 0.7em;
+  display: block;
+  min-height: var(--header-icons);
+  min-width: var(--header-icons);
+  margin-bottom: 0.7em;
 }
 
 .nav-top-primary li.secondary .name {
-    display: none;
+  display: none;
 }
 
 .toggle:checked~.links li.secondary .name {
-    display: block;
+  display: block;
 }
 
 .show-all .icon {
-    background-color: var(--primary-color);
-    min-height: var(--font-size-fluid-md);
-    min-width: var(--font-size-fluid-md);
-    transition: transform .2s ease-in-out;
+  background-color: var(--primary-color);
+  min-height: var(--font-size-fluid-md);
+  min-width: var(--font-size-fluid-md);
+  transition: transform .2s ease-in-out;
 }
 
 .show-all a {
-    display: none;
+  display: none;
 }
 
 .show-all {
-    display: flex;
-    flex-flow: column;
-    overflow: hidden;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    min-width: var(--header-size);
-    cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--header-size);
+  cursor: pointer;
 }
 
 .toggle:checked~.show-all>.icon {
-    transform: rotate(-45deg);
-    min-height: var(--header-icons);
-    min-width: var(--header-icons);
+  transform: rotate(-45deg);
+  min-height: var(--header-icons);
+  min-width: var(--header-icons);
 }
 
 nav .toggle {
-    display: none;
+  display: none;
 }
 
 nav .logo {
-    width: var(--header-icons);
-    height: var(--header-icons);
+  width: var(--header-icons);
+  height: var(--header-icons);
 }
