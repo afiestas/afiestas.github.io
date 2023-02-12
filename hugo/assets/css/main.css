@@ -125,6 +125,8 @@ article {
   font-family: var(--metadata-font-family);
   font-size: var(--font-size-fluid-sm);
   font-weight: var(--secondary-font-weight);
+  position: relative;
+  top: calc(var(--header-margin) / -2)
 }
 
 article h3 {
