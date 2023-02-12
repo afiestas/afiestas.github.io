@@ -56,3 +56,13 @@
     animation: move-bg 12s linear infinite;
 }
 {{- end -}}
+
+.nav-icon.scheme-toggle {
+    mask-image: var(--nav-icon-color-scheme);
+    -webkit-mask-image: var(--nav-icon-color-scheme);
+}
+.nav.scheme-toggle:hover > * {
+    --accent-color-one: var(--nav-icon-color-scheme-primary);
+    --accent-color-two: var(--nav-icon-color-scheme-secondary);
+    animation: move-bg 12s linear infinite;
+}

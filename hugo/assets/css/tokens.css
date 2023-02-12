@@ -1,19 +1,13 @@
-:root {
+#color-scheme-wrapper {
     --max-page-layout: 88rem;
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
     --max-content-width: min(100%, var(--max-content-layout));
 
-    /* Generic palette */
-    --bg-color: #182029;
-    --bg-color-2: #32333f22;
-    --bg-color-light: #32333f22;
-    --primary-color: #fff;
+    /* Specific colors */
     --accent-color-one: #cc2b5eff;
     --accent-color-two: #753a88ff;
-
-    /* Specific colors */
     --link-color: var(--primary-color);
 
     --primary-font-family: 'League Spartan', sans-serif;
@@ -40,15 +34,47 @@
     --header-margin: var(--header-size);
     --header-icons: calc(var(--header-size) * 2);
     --header-font-size: var(--font-size-fluid-base);
+
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
+@media (prefers-color-scheme: dark) {
+    #color-scheme-wrapper {
+        --bg-color: #182029;
+        --bg-color-2: #32333f22;
+        --bg-color-light: #32333f22;
+        --primary-color: #fff;
+        --nav-icon-color-scheme: var(--nav-icon-sun);
+        --nav-icon-color-scheme-primary: #fffb00;
+        --nav-icon-color-scheme-secondary: #ffffef;
+    }
+
+    #color-scheme-toggle:checked ~ #color-scheme-wrapper {
         --bg-color: #FFF;
         --bg-color-2: #cacad022;
         --bg-color-light: #cacad022;
         --primary-color: #182029;
-        --accent-color-one: #cc2b5eff;
-        --accent-color-two: #753a88ff;
+        --nav-icon-color-scheme: var(--nav-icon-sun-off);
+        --nav-icon-color-scheme-primary: #3868c0;
+        --nav-icon-color-scheme-secondary: #544db4;
+    }
+}
+@media (prefers-color-scheme: light) {
+    #color-scheme-wrapper {
+        --bg-color: #FFF;
+        --bg-color-2: #cacad022;
+        --bg-color-light: #cacad022;
+        --primary-color: #182029;
+        --nav-icon-color-scheme: var(--nav-icon-sun-off);
+        --nav-icon-color-scheme-primary: #3868c0;
+        --nav-icon-color-scheme-secondary: #544db4;
+    }
+    #color-scheme-toggle:checked ~ #color-scheme-wrapper {
+        --bg-color: #182029;
+        --bg-color-2: #32333f22;
+        --bg-color-light: #32333f22;
+        --primary-color: #fff;
+        --nav-icon-color-scheme: var(--nav-icon-sun);
+        --nav-icon-color-scheme-primary: #fffb00;
+        --nav-icon-color-scheme-secondary: #ffffef;
     }
 }

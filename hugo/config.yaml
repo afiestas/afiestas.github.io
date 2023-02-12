@@ -121,7 +121,6 @@ menu:
   - <<: *in_link
   - <<: *mastodon_link
   - <<: *twitter_link
-  - <<: *darkmode_link
   showall:
   - <<: *show_all
   desc:

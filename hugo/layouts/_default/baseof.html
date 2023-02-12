@@ -2,10 +2,13 @@
 <html>
     {{- partial "head.html" . -}}
     <body>
-        <div class="global-container">
-            {{- partial "header.html" . -}}
-            {{- block "main" . }}{{- end }}
-            {{- partial "footer.html" . -}}
+        <input type="checkbox" id="color-scheme-toggle" aria-hidden="true" tabindex="-1" class="color-shceme-toggle"/>
+        <div id="color-scheme-wrapper">
+            <div class="global-container">
+                {{- partial "header.html" . -}}
+                {{- block "main" . }}{{- end }}
+                {{- partial "footer.html" . -}}
+            </div>
         </div>
     </body>
 </html>

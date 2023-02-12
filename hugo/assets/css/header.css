@@ -157,3 +157,7 @@ nav .logo {
   width: var(--header-icons);
   height: var(--header-icons);
 }
+
+.color-shceme-toggle {
+  display: none;
+}
