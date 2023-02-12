@@ -21,10 +21,10 @@
     color: transparent;
 }
 
-{{- $icons := slice -}}
+{{- $icons := dict -}}
 {{- range $menu := .Site.Menus -}}
     {{- range $icon := $menu -}}
-        {{- $icons = $icons | append $icon -}}
+        {{- $icons = merge $icons (dict $icon.Identifier $icon) -}}
     {{- end -}}
 {{- end -}}
 
