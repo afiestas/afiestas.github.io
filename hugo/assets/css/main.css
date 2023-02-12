@@ -129,11 +129,8 @@ article {
   top: calc(var(--header-margin) / -2)
 }
 
-article h3 {
-  cursor: pointer;
+main a {
   margin-right: auto;
-  transition: scale 0.3s;
-  transform-origin: left;
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -142,10 +139,17 @@ article h3 {
   -webkit-text-fill-color: transparent;
 }
 
-article h3:hover {
-  scale: 1.1;
+main a:hover {
   animation-iteration-count: 20;
   animation: move-bg 12s linear infinite;
+}
+
+.scale {
+  transition: scale 0.3s;
+  transform-origin: left;
+}
+.scale:hover {
+  scale: 1.1;
 }
 
 @keyframes move-bg {
