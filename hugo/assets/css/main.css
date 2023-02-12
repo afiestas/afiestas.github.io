@@ -129,6 +129,13 @@ article {
   top: calc(var(--header-margin) / -2)
 }
 
+.tags {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+}
+
 main a {
   margin-right: auto;
   background: linear-gradient(90deg,
