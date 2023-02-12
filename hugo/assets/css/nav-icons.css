@@ -29,10 +29,8 @@
 {{- end -}}
 
 :root {
-{{- range $icon := $icons -}}
-    {{ with resources.Get (print "icons/" $icon.Identifier ".svg") }}
-        --nav-icon-{{ path.BaseName .Name | safeCSS }}: url('data:image/svg+xml,{{ .Content }}');
-    {{- end -}}
+{{ range resources.Match "icons/*.svg" -}}
+    --nav-icon-{{ path.BaseName .Name | safeCSS }}: url('data:image/svg+xml,{{ .Content }}');
 {{ end }}
 }
 
