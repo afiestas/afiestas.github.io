@@ -17,17 +17,7 @@
     <h2 class="h2 section-article">Latest Articles</h2>
     <div class="posts">
         {{ range first 10 (where .Site.RegularPages "Section" "==" "posts") }}
-            <article>
-                <h2><a href="{{ .Permalink }}">{{ .Title }} </a></h2>
-                <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
-                <div class="summary">{{ .Summary }} </div>
-                <div>
-                    {{- range .GetTerms "categories" -}}
-                    <a class="tags" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
-                    {{ end -}}
-                </div>
-                <h3><a class="scale" href="{{ .Permalink }}">Read more</a></h3>
-            </article>
+            {{- partial "article-list.html" . -}}
         {{ end }}
         <a href="/posts"><h2 class="h2">See all</h2></a>
     </div>

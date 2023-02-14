@@ -3,15 +3,9 @@
 <main>
     <h2 class="h2 section-article">{{.Title}}</h2>
     <div class="posts">
-        {{ range .Pages }}
-            <article>
-                <h2>{{ .Title }} </h2>
-                <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
-                <div class="summary">{{ .Summary }} </div>
-                <div class="metadata">#linux #desktop #hidpi #X11</div>
-                <h3><a href="{{ .Permalink }}">Read more</a></h3>
-            </article>
-        {{ end }}
+        {{- range .Pages -}}
+            {{- partial "article-list.html" . -}}
+        {{- end -}}
         {{- if eq (len .Pages) 0 -}}
             WIP
         {{- end -}}

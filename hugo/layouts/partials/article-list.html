@@ -1,0 +1,11 @@
+<article>
+    <h2><a href="{{ .Permalink }}">{{ .Title }} </a></h2>
+    <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
+    <div class="summary">{{ .Summary }} </div>
+    <div>
+        {{- range .GetTerms "categories" -}}
+        <a class="tags" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+        {{ end -}}
+    </div>
+    <h3><a class="scale" href="{{ .Permalink }}">Read more</a></h3>
+</article>
