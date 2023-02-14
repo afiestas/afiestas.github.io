@@ -431,11 +431,6 @@ nav .logo {
   scrollbar-gutter: stable;
 }
 
-body {
-  min-width: 100%;
-  min-height: 100vh;
-}
-
 #color-scheme-wrapper {
   background-color: var(--bg-color);
   color: var(--primary-color);
@@ -443,6 +438,8 @@ body {
   flex-direction: column;
   align-items: center;
   transition: color 0.3s ease, background-color 0.3s ease;
+  min-width: 100%;
+  min-height: 100vh;
 }
 #color-scheme-wrapper header {
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -569,6 +566,10 @@ article {
   font-size: var(--font-size-fluid-sm);
   font-weight: var(--secondary-font-weight);
   opacity: 0.7;
+}
+
+.tags:hover {
+  opacity: 1;
 }
 
 main a:not(.nav) {
@@ -733,99 +734,103 @@ footer {
     </div>
     <h2 class="h2 section-article">Latest Articles</h2>
     <div class="posts">
-        
-            <article>
-                <h2><a href="/articles/almost-perfect-hidpi-on-linux/">Almost perfect HiDPI experience on Linux (Xorg) </a></h2>
-                <div class="metadata">Almost 6 years ago - 3 minutes</div>
-                <div class="summary">In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino&hellip;) got support for higher DPIs as well. </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/almost-perfect-hidpi-on-linux/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2><a href="/articles/open365-lets-declare-war-at-microsoft-and-google/">open365, let&#39;s declare war at Google and Microsoft </a></h2>
-                <div class="metadata">Almost 7 years ago - 2 minutes</div>
-                <div class="summary">Open365 is a public and/or private cloud designed to compete with the likes of Google Drive or Office365 by leveraging all the best free software out there.
+        <article>
+    <h2><a href="/articles/almost-perfect-hidpi-on-linux/">Almost perfect HiDPI experience on Linux (Xorg) </a></h2>
+    <div class="metadata">Almost 6 years ago - 3 minutes</div>
+    <div class="summary">In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino&hellip;) got support for higher DPIs as well. </div>
+    <div><a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        <a class="tags" href="/categories/kde/">#KDE</a>
+        <a class="tags" href="/categories/linux/">#Linux</a>
+        <a class="tags" href="/categories/desktop/">#Desktop</a>
+        </div>
+    <h3><a class="scale" href="/articles/almost-perfect-hidpi-on-linux/">Read more</a></h3>
+</article><article>
+    <h2><a href="/articles/open365-lets-declare-war-at-microsoft-and-google/">open365, let&#39;s declare war at Google and Microsoft </a></h2>
+    <div class="metadata">Almost 7 years ago - 2 minutes</div>
+    <div class="summary">Open365 is a public and/or private cloud designed to compete with the likes of Google Drive or Office365 by leveraging all the best free software out there.
 The service is designed to scale horizontally as well as to be resilient to components crashing or going crazy. In order to achieve this we have implemented a microservice architecure that communicate using a bus (rabbitmq) plus some other tricks so we can scale using commodity hardware horizontally. </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/open365-lets-declare-war-at-microsoft-and-google/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2><a href="/articles/where-have-i-been/">Where have I been? </a></h2>
-                <div class="metadata">Around 7 years ago - 1 minutes</div>
-                <div class="summary">I can&rsquo;t imagine anything worse than waking up every morning without any energy for going to work.
+    <div><a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        <a class="tags" href="/categories/kde/">#KDE</a>
+        <a class="tags" href="/categories/libreoffice/">#Libreoffice</a>
+        <a class="tags" href="/categories/seafile/">#seafile</a>
+        </div>
+    <h3><a class="scale" href="/articles/open365-lets-declare-war-at-microsoft-and-google/">Read more</a></h3>
+</article><article>
+    <h2><a href="/articles/where-have-i-been/">Where have I been? </a></h2>
+    <div class="metadata">Around 7 years ago - 1 minutes</div>
+    <div class="summary">I can&rsquo;t imagine anything worse than waking up every morning without any energy for going to work.
 The first time I heard that statement I was 17 and it made an impression on me. It made me think of how we use our limited time, which roughly is: 1/3 sleeping, 1/3 at work and 1/3 at what we call spare time. We can&rsquo;t control how much we need to sleep, but we can take a stance on the other two thirds (work and spare time). </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/where-have-i-been/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2><a href="/articles/for-community-free-of-trolls/">For community free of Trolls </a></h2>
-                <div class="metadata">Almost 9 years ago - 1 minutes</div>
-                <div class="summary">In light of the last comments containing insults and other attacks to members of our community I have decided to make a video blog explaining my thoughts on the issue.
+    <div><a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        <a class="tags" href="/categories/kde/">#KDE</a>
+        </div>
+    <h3><a class="scale" href="/articles/where-have-i-been/">Read more</a></h3>
+</article><article>
+    <h2><a href="/articles/for-community-free-of-trolls/">For community free of Trolls </a></h2>
+    <div class="metadata">Almost 9 years ago - 1 minutes</div>
+    <div class="summary">In light of the last comments containing insults and other attacks to members of our community I have decided to make a video blog explaining my thoughts on the issue.
 The video contains two separate topics:
 Explanation of why we can't tolerate this behavior Some ideas on the actual matter (Baloo) Please, watch the whole thing before commenting and I hope we all work together to push away the trolls in our community. </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/for-community-free-of-trolls/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2><a href="/articles/desktop-applications-of-tomorrow-i/">Desktop applications of tomorrow (I) </a></h2>
-                <div class="metadata">Almost 9 years ago - 3 minutes</div>
-                <div class="summary">This is the first of three posts where I am going to share my vision for the desktop apps of the short-term future.
+    <div><a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        <a class="tags" href="/categories/kde/">#KDE</a>
+        </div>
+    <h3><a class="scale" href="/articles/for-community-free-of-trolls/">Read more</a></h3>
+</article><article>
+    <h2><a href="/articles/desktop-applications-of-tomorrow-i/">Desktop applications of tomorrow (I) </a></h2>
+    <div class="metadata">Almost 9 years ago - 3 minutes</div>
+    <div class="summary">This is the first of three posts where I am going to share my vision for the desktop apps of the short-term future.
 When I am using my workstation or laptop I find myself spending most of my time in the browser, with it I do a lot of different tasks I used to be doing with many different native applications for example: listening to music, watching videos, chatting with friends, sending pictures. </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/desktop-applications-of-tomorrow-i/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2><a href="/articles/demand-a-kde-experience-from-your-distribution/">Demand a KDE Experience from your Distribution ! </a></h2>
-                <div class="metadata">Around 9 years ago - 2 minutes</div>
-                <div class="summary">If you are reading this blog you probably know how things work in the GNU/Linux Desktop, some people develop software and then some other people distribute that software. This usually works quite well since the people distributing the software (In this case KDE software) work with us, and together we make sure that the final product is awesome.
+    <div><a class="tags" href="/categories/kde/">#KDE</a>
+        <a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        </div>
+    <h3><a class="scale" href="/articles/desktop-applications-of-tomorrow-i/">Read more</a></h3>
+</article><article>
+    <h2><a href="/articles/demand-a-kde-experience-from-your-distribution/">Demand a KDE Experience from your Distribution ! </a></h2>
+    <div class="metadata">Around 9 years ago - 2 minutes</div>
+    <div class="summary">If you are reading this blog you probably know how things work in the GNU/Linux Desktop, some people develop software and then some other people distribute that software. This usually works quite well since the people distributing the software (In this case KDE software) work with us, and together we make sure that the final product is awesome.
 This system works as long as both, upstream (KDE) and downstream (Distributions) work together, but some times collaboration does not happen and problems appear. </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/demand-a-kde-experience-from-your-distribution/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2><a href="/articles/we-are-open-for-business-a-kde-hub-in-barcelona/">We are open for business (a KDE Hub in Barcelona) </a></h2>
-                <div class="metadata">Around 9 years ago - 1 minutes</div>
-                <div class="summary">Since January 2013 the BlueSystems office in Barcelona has been open for anybody related to KDE to join us, a great example has been Albert Vaca who has been coming to the office to work on his GSoC, some other examples are the mini Framework sprints that have been held in the office.
+    <div><a class="tags" href="/categories/kde/">#KDE</a>
+        <a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        </div>
+    <h3><a class="scale" href="/articles/demand-a-kde-experience-from-your-distribution/">Read more</a></h3>
+</article><article>
+    <h2><a href="/articles/we-are-open-for-business-a-kde-hub-in-barcelona/">We are open for business (a KDE Hub in Barcelona) </a></h2>
+    <div class="metadata">Around 9 years ago - 1 minutes</div>
+    <div class="summary">Since January 2013 the BlueSystems office in Barcelona has been open for anybody related to KDE to join us, a great example has been Albert Vaca who has been coming to the office to work on his GSoC, some other examples are the mini Framework sprints that have been held in the office.
 Now, we are happy to announce that the Office is finally ready to hold sprints up to 30 people, and our intention is to hold as many sprints/KDE Events as possible! </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/we-are-open-for-business-a-kde-hub-in-barcelona/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2><a href="/articles/bluedevil-2-0-rc1-a-k-a-bluez5-ready/">BlueDevil 2.0 RC1, (a.k.a BlueZ5 ready) </a></h2>
-                <div class="metadata">Around 9 years ago - 2 minutes</div>
-                <div class="summary">After months of discontinued work we are happy to announce BlueDevil 2.0 !
+    <div><a class="tags" href="/categories/kde/">#KDE</a>
+        <a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        </div>
+    <h3><a class="scale" href="/articles/we-are-open-for-business-a-kde-hub-in-barcelona/">Read more</a></h3>
+</article><article>
+    <h2><a href="/articles/bluedevil-2-0-rc1-a-k-a-bluez5-ready/">BlueDevil 2.0 RC1, (a.k.a BlueZ5 ready) </a></h2>
+    <div class="metadata">Around 9 years ago - 2 minutes</div>
+    <div class="summary">After months of discontinued work we are happy to announce BlueDevil 2.0 !
 The 2.0 version brings the same experience we can find in the 1.X series but using the new BlueZ5 stack which at least on our testing improves a lot the general stability and specially on sending/receiving/sharing files via Bluetooth.
 In this major version we have focused on rapidly adopting the new technology so we don't have many changes visible to the user, we have added though a few things we hope you will like. </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/bluedevil-2-0-rc1-a-k-a-bluez5-ready/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2><a href="/articles/we-need-a-design-hero/">We need a Design hero </a></h2>
-                <div class="metadata">Around 9 years ago - 2 minutes</div>
-                <div class="summary">Hello everybody.
+    <div><a class="tags" href="/categories/kde/">#KDE</a>
+        <a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        </div>
+    <h3><a class="scale" href="/articles/bluedevil-2-0-rc1-a-k-a-bluez5-ready/">Read more</a></h3>
+</article><article>
+    <h2><a href="/articles/we-need-a-design-hero/">We need a Design hero </a></h2>
+    <div class="metadata">Around 9 years ago - 2 minutes</div>
+    <div class="summary">Hello everybody.
 The Solid team that I am member of, focuses on all things hardware, a few examples of our efforts are: Bluedevil, KScreen, kde-colord, powerdevil, libsolid, plasma-nm...
 Since we are aware of how essential good hardware support is for having a good experience we try our best to deliver highly usable and simple interfaces that will enable any kind of user to unleash all the potential of their hardware. That is why usability is a top priority for us. </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/we-need-a-design-hero/">Read more</a></h3>
-            </article>
-        
-            <article>
-                <h2><a href="/articles/going-to-brno-for-a-week-of-awesome/">Going to Brno for a week of awesome. </a></h2>
-                <div class="metadata">Around 9 years ago - 2 minutes</div>
-                <div class="summary">Tomorrow David Edmunson, Vishesh Handa and I will be taking a plane from Barcelona with final destination Brno to meet for a pre-PIM sprint hackathon with the Czech KDE hackers (Lukáš Tinkl , Jan Grulich, Dan Vrátil, Martin Bříza, Martin Klapetek), is in this ocasions where one comes to appreciate that we can do our jobs from anywhere.
+    <div><a class="tags" href="/categories/kde/">#KDE</a>
+        <a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        </div>
+    <h3><a class="scale" href="/articles/we-need-a-design-hero/">Read more</a></h3>
+</article><article>
+    <h2><a href="/articles/going-to-brno-for-a-week-of-awesome/">Going to Brno for a week of awesome. </a></h2>
+    <div class="metadata">Around 9 years ago - 2 minutes</div>
+    <div class="summary">Tomorrow David Edmunson, Vishesh Handa and I will be taking a plane from Barcelona with final destination Brno to meet for a pre-PIM sprint hackathon with the Czech KDE hackers (Lukáš Tinkl , Jan Grulich, Dan Vrátil, Martin Bříza, Martin Klapetek), is in this ocasions where one comes to appreciate that we can do our jobs from anywhere.
 We decided to go this early (4 days before the actual sprint starts) because we all have to work on things with somebody close to the Brno RedHat office in a variety of topics: </div>
-                <div class="tags">#linux #desktop #hidpi #X11</div>
-                <h3><a class="scale" href="/articles/going-to-brno-for-a-week-of-awesome/">Read more</a></h3>
-            </article>
-        
+    <div><a class="tags" href="/categories/kde/">#KDE</a>
+        <a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        </div>
+    <h3><a class="scale" href="/articles/going-to-brno-for-a-week-of-awesome/">Read more</a></h3>
+</article>
         <a href="/posts"><h2 class="h2">See all</h2></a>
     </div>
 </main>

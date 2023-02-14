@@ -430,11 +430,6 @@ nav .logo {
   scrollbar-gutter: stable;
 }
 
-body {
-  min-width: 100%;
-  min-height: 100vh;
-}
-
 #color-scheme-wrapper {
   background-color: var(--bg-color);
   color: var(--primary-color);
@@ -442,6 +437,8 @@ body {
   flex-direction: column;
   align-items: center;
   transition: color 0.3s ease, background-color 0.3s ease;
+  min-width: 100%;
+  min-height: 100vh;
 }
 #color-scheme-wrapper header {
   transition: color 0.3s ease, background-color 0.3s ease;
@@ -568,6 +565,10 @@ article {
   font-size: var(--font-size-fluid-sm);
   font-weight: var(--secondary-font-weight);
   opacity: 0.7;
+}
+
+.tags:hover {
+  opacity: 1;
 }
 
 main a:not(.nav) {
@@ -710,15 +711,20 @@ footer {
       <a href="#" title="Show all">Show all</a>
     </label>
   </nav>
-</header>
-
-<main>
-    
-    <h2 class="section-article">Categories</h2>
-        WIP
-    
-</main>
-<footer></footer></div>
+</header><main>
+    <h2 class="h2 section-article">Linux</h2>
+    <div class="posts"><article>
+    <h2><a href="/articles/almost-perfect-hidpi-on-linux/">Almost perfect HiDPI experience on Linux (Xorg) </a></h2>
+    <div class="metadata">Almost 6 years ago - 3 minutes</div>
+    <div class="summary">In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino&hellip;) got support for higher DPIs as well. </div>
+    <div><a class="tags" href="/categories/software-libre/">#Software Libre</a>
+        <a class="tags" href="/categories/kde/">#KDE</a>
+        <a class="tags" href="/categories/linux/">#Linux</a>
+        <a class="tags" href="/categories/desktop/">#Desktop</a>
+        </div>
+    <h3><a class="scale" href="/articles/almost-perfect-hidpi-on-linux/">Read more</a></h3>
+</article></div>
+</main><footer></footer></div>
         </div>
     </body>
 </html>
