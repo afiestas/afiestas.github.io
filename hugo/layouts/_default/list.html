@@ -1,10 +1,9 @@
 {{ define "main" }}
 
 <main>
-    {{ if eq .CurrentSection.Name "Posts" }}
-    <h2 class="h2 section-article">Latest Articles</h2>
+    <h2 class="h2 section-article">{{.Title}}</h2>
     <div class="posts">
-        {{ range (where .Site.RegularPages "Section" "==" "posts") }}
+        {{ range .Pages }}
             <article>
                 <h2>{{ .Title }} </h2>
                 <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
@@ -13,10 +12,9 @@
                 <h3><a href="{{ .Permalink }}">Read more</a></h3>
             </article>
         {{ end }}
+        {{- if eq (len .Pages) 0 -}}
+            WIP
+        {{- end -}}
     </div>
-    {{ else }}
-    <h2 class="section-article">{{.CurrentSection.Name}}</h2>
-        WIP
-    {{ end }}
 </main>
 {{ end }}
