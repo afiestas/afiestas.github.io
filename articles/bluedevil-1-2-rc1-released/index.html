@@ -559,19 +559,23 @@ article {
   top: calc(var(--header-margin) / -2)
 }
 
-.tags {
+.text-secondary {
   font-family: var(--metadata-font-family);
   font-size: var(--font-size-fluid-sm);
   font-weight: var(--secondary-font-weight);
   opacity: 0.7;
 }
 
-.tags:hover {
+a.text-secondary:hover {
   opacity: 1;
 }
 
+.tags {
+  display: flex;
+  gap: var(--header-margin)
+}
+
 main a:not(.nav) {
-  margin-right: auto;
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;

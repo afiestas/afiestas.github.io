@@ -560,19 +560,23 @@ article {
   top: calc(var(--header-margin) / -2)
 }
 
-.tags {
+.text-secondary {
   font-family: var(--metadata-font-family);
   font-size: var(--font-size-fluid-sm);
   font-weight: var(--secondary-font-weight);
   opacity: 0.7;
 }
 
-.tags:hover {
+a.text-secondary:hover {
   opacity: 1;
 }
 
+.tags {
+  display: flex;
+  gap: var(--header-margin)
+}
+
 main a:not(.nav) {
-  margin-right: auto;
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -717,43 +721,43 @@ footer {
     <h2><a href="/categories/desktop/">Desktop </a></h2>
     <div class="metadata">Almost 6 years ago - 0 minutes</div>
     <div class="summary"> </div>
-    <div></div>
+    <div class="tags"></div>
     <h3><a class="scale" href="/categories/desktop/">Read more</a></h3>
 </article><article>
     <h2><a href="/categories/kde/">KDE </a></h2>
     <div class="metadata">Almost 6 years ago - 0 minutes</div>
     <div class="summary"> </div>
-    <div></div>
+    <div class="tags"></div>
     <h3><a class="scale" href="/categories/kde/">Read more</a></h3>
 </article><article>
     <h2><a href="/categories/linux/">Linux </a></h2>
     <div class="metadata">Almost 6 years ago - 0 minutes</div>
     <div class="summary"> </div>
-    <div></div>
+    <div class="tags"></div>
     <h3><a class="scale" href="/categories/linux/">Read more</a></h3>
 </article><article>
     <h2><a href="/categories/software-libre/">Software Libre </a></h2>
     <div class="metadata">Almost 6 years ago - 0 minutes</div>
     <div class="summary"> </div>
-    <div></div>
+    <div class="tags"></div>
     <h3><a class="scale" href="/categories/software-libre/">Read more</a></h3>
 </article><article>
     <h2><a href="/categories/libreoffice/">Libreoffice </a></h2>
     <div class="metadata">Almost 7 years ago - 0 minutes</div>
     <div class="summary"> </div>
-    <div></div>
+    <div class="tags"></div>
     <h3><a class="scale" href="/categories/libreoffice/">Read more</a></h3>
 </article><article>
     <h2><a href="/categories/seafile/">seafile </a></h2>
     <div class="metadata">Almost 7 years ago - 0 minutes</div>
     <div class="summary"> </div>
-    <div></div>
+    <div class="tags"></div>
     <h3><a class="scale" href="/categories/seafile/">Read more</a></h3>
 </article><article>
     <h2><a href="/categories/offtopic/">offtopic </a></h2>
     <div class="metadata">Around 13 years ago - 0 minutes</div>
     <div class="summary"> </div>
-    <div></div>
+    <div class="tags"></div>
     <h3><a class="scale" href="/categories/offtopic/">Read more</a></h3>
 </article></div>
 </main><footer></footer></div>
