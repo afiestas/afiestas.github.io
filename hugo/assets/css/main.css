@@ -3,11 +3,6 @@ html {
   scrollbar-gutter: stable;
 }
 
-body {
-  min-width: 100%;
-  min-height: 100vh;
-}
-
 #color-scheme-wrapper {
   background-color: var(--bg-color);
   color: var(--primary-color);
@@ -15,6 +10,8 @@ body {
   flex-direction: column;
   align-items: center;
   transition: color 0.3s ease, background-color 0.3s ease;
+  min-width: 100%;
+  min-height: 100vh;
 }
 #color-scheme-wrapper header {
   transition: color 0.3s ease, background-color 0.3s ease;
