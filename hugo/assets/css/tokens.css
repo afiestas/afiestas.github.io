@@ -38,7 +38,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    #color-scheme-wrapper {
+    body, #color-scheme-wrapper {
         --bg-color: #182029;
         --bg-color-2: #32333f22;
         --bg-color-light: #32333f22;
@@ -59,7 +59,7 @@
     }
 }
 @media (prefers-color-scheme: light) {
-    #color-scheme-wrapper {
+    body, #color-scheme-wrapper {
         --bg-color: #FFF;
         --bg-color-2: #cacad022;
         --bg-color-light: #cacad022;
