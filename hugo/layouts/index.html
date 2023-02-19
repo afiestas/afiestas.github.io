@@ -1,9 +1,13 @@
 {{ define "main" }}
 <main>
     <div class="whoami">
-        {{ $logo := resources.GetMatch "portrait.jpg" }}
         <div class="portrait">
-            <img class="pic" src="{{ $logo.RelPermalink }}">
+            <img class="pic"
+                src="https://cdn.afiestas.org/site/avatar-570x570.webp"
+                loading="eager"
+                sizes="15em"
+                srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w,
+                        https://cdn.afiestas.org/site/avatar-285x285.webp 285w">
         </div>
         <div class="description">
             <h1>Hi there! I'm Àlex 👋</h1>

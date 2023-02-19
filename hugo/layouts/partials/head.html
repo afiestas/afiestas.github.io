@@ -1,5 +1,8 @@
 <head>
     <title>{{ with .Title }}{{ humanize . }} | {{ end }}{{ .Site.Title }}</title>
+    {{- range (.Param "earlyhints") -}}
+        {{ printf `<link rel="preload" as="image" href="%s" imagesrcset=%q imagesizes="%s"/>` .default .sources .sizes | safeHTML }}
+    {{- end -}}
     {{- $logo := resources.GetMatch "logo.svg" -}}
     <link rel="icon" href="{{ $logo.RelPermalink }}" {{ $logo.MediaType | printf "type=%q"| safeHTMLAttr}}>
     {{ range .AlternativeOutputFormats -}}
