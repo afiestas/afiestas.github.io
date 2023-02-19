@@ -1,1 +1,6 @@
-<footer></footer>
+<footer>
+    <style>
+        {{- $schemaTransition := resources.Get "css/schema-transition.css" -}}
+        {{- $schemaTransition.Content | safeCSS -}}
+    </style>
+</footer>

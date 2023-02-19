@@ -1,0 +1,7 @@
+ #color-scheme-wrapper {
+     transition: color 0.3s ease, background-color 0.3s ease;
+ }
+
+ #color-scheme-wrapper header {
+     transition: color 0.3s ease, background-color 0.3s ease;
+ }
