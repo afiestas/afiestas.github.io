@@ -436,12 +436,8 @@ nav .logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: color 0.3s ease, background-color 0.3s ease;
   min-width: 100%;
   min-height: 100vh;
-}
-#color-scheme-wrapper header {
-  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 a {
@@ -739,7 +735,16 @@ The service is designed to scale horizontally as well as to be resilient to comp
         </div>
     <h3><a class="scale" href="/articles/open365-lets-declare-war-at-microsoft-and-google/">Read more</a></h3>
 </article></div>
-</main><footer></footer></div>
+</main><footer>
+    <style> #color-scheme-wrapper {
+     transition: color 0.3s ease, background-color 0.3s ease;
+ }
+
+ #color-scheme-wrapper header {
+     transition: color 0.3s ease, background-color 0.3s ease;
+ }
+</style>
+</footer></div>
         </div>
     </body>
 </html>

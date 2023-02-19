@@ -435,12 +435,8 @@ nav .logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: color 0.3s ease, background-color 0.3s ease;
   min-width: 100%;
   min-height: 100vh;
-}
-#color-scheme-wrapper header {
-  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 a {
@@ -740,7 +736,16 @@ footer {
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>
-<footer></footer></div>
+<footer>
+    <style> #color-scheme-wrapper {
+     transition: color 0.3s ease, background-color 0.3s ease;
+ }
+
+ #color-scheme-wrapper header {
+     transition: color 0.3s ease, background-color 0.3s ease;
+ }
+</style>
+</footer></div>
         </div>
     </body>
 </html>
