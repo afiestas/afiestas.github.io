@@ -1,5 +1,6 @@
 <head>
     <title>{{ with .Title }}{{ humanize . }} | {{ end }}{{ .Site.Title }}</title>
+    <link rel="preconnect" href="https://cdn.afiestas.org" />
     {{- range (.Param "earlyhints") -}}
         {{ printf `<link rel="preload" as="image" href="%s" imagesrcset=%q imagesizes="%s"/>` .default .sources .sizes | safeHTML }}
     {{- end -}}
