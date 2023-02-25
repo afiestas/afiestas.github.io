@@ -31,6 +31,8 @@ main .whoami {
   background-color: var(--bg-color-2);
   justify-content: center;
   flex-wrap: wrap;
+  padding: var(--header-margin);
+  gap: var(--header-icons);
 }
 
 main .whoami img {
@@ -41,7 +43,7 @@ main .whoami img {
 }
 
 main .whoami .description {
-  margin: calc(var(--header-margin));
+
   transition: max-width 0.3s ease-out 0s;
   flex-basis: 31ch;
   flex-grow: 2;
