@@ -39,6 +39,11 @@
     display: inline-block;
 }
 
+.nav > .name {
+    text-align: center;
+    width: 100%;
+}
+
 .nav:hover > * {
     scale: 1.1;
     background: linear-gradient(90deg,
@@ -465,17 +470,34 @@ main .whoami {
 }
 
 main .whoami .portrait {
-  display: flex;
-  align-items: center;
   margin-right: calc(var(--header-margin));
   margin: var(--header-margin);
+  width: calc(var(--header-margin) * 15);
+  height: calc(var(--header-margin) * 15);
+  align-self: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+main .whoami .portrait::before {
+  background: var(--profile-pic) no-repeat 0/100%;
+  content: "";
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  width: calc(100%);
+  height: calc(100%);
+  top: 0px;
+  right: 0px;
+  filter: blur(8px);
 }
 
 main .whoami .portrait .pic {
   border-radius: 50%;
-  width: calc(var(--header-margin) * 15);
-  height: calc(var(--header-margin) * 15);
-  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 main .whoami .description {
@@ -485,7 +507,7 @@ main .whoami .description {
   flex-grow: 2;
 }
 
-main .whoami .description .text > * {
+main .whoami .description .text>* {
   max-inline-size: 75ch;
   font-family: var(--content-font-family);
 }
@@ -595,6 +617,7 @@ main a:not(.nav):hover {
   transform-origin: left;
   display: inline-block;
 }
+
 .scale:hover {
   scale: 1.1;
 }
@@ -615,8 +638,7 @@ main a:not(.nav):hover {
 
 footer {
   padding: calc(var(--header-margin) * 4);
-}
-</style>
+}</style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark light">
 </head>
@@ -716,6 +738,13 @@ footer {
     </label>
   </nav>
 </header>
+
+
+<style>
+:root {
+    --profile-pic: url('data:media/webp;base64,UklGRnQBAABXRUJQVlA4IGgBAADwCACdASoPAA8AAAAAJZACdD2AOAA8qr9gPgRrAH0Z9IEeZfIvw7/IDPVcUz1Eb8YNc1/VfxV9o/NPqAfxT+O/1v8ruNV/VU+2buXygr7xAgD+/xoaBe/9XespUJfhq0N7VZvzdpn/wPVfH6YPPvY4ouN2ed0vlKxt4PjDRcv94m1nHNXyvJ+83OQbjYh5c/92n8N87ugSU3V4K5+aI2i+fXDkE93vmidM7L3sAKb/Nb2jR5P//q/woFXUS6Bqx2Ua/5RP96mUbnpr2ML+Goeq4hXuWiSO6GY4f8PP+3U4q+O7jGdKlA+dx/9gEF/sA+5eYjbJbRVepD5xv2suGnrBrWeMaWWrcSYI/WOwOo8vNNI2UHO2n6CUWF5MYv/6z7b/k8/xfXPZY8//3jRaSa/5/nx06tA2Do/rPjkrp5/4Zlqn/x2+Rv/Fr5B5n/+dB/z1Iv3vw154Skc0X4461d1azIJ4UvWWAAA=')
+}
+</style>
 <main>
     <div class="whoami">
         <div class="portrait">
@@ -724,7 +753,8 @@ footer {
                 loading="eager"
                 sizes="15em"
                 srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w,
-                        https://cdn.afiestas.org/site/avatar-285x285.webp 285w">
+                        https://cdn.afiestas.org/site/avatar-285x285.webp 285w"
+                alt=" ">
         </div>
         <div class="description">
             <h1>Hi there! I'm Àlex 👋</h1>
