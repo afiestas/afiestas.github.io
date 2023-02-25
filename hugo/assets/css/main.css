@@ -33,35 +33,11 @@ main .whoami {
   flex-wrap: wrap;
 }
 
-main .whoami .portrait {
-  margin-right: calc(var(--header-margin));
-  margin: var(--header-margin);
+main .whoami img {
   width: calc(var(--header-margin) * 15);
   height: calc(var(--header-margin) * 15);
+  border-radius: 50%;
   align-self: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-main .whoami .portrait::before {
-  background: var(--profile-pic) no-repeat 0/100%;
-  content: "";
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-  width: calc(100%);
-  height: calc(100%);
-  top: 0px;
-  right: 0px;
-  filter: blur(8px);
-}
-
-main .whoami .portrait .pic {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  position: relative;
 }
 
 main .whoami .description {

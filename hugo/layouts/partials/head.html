@@ -21,8 +21,9 @@
         {{- $resetCSS := resources.Get "css/reset.css" -}}
         {{- $tokensCSS := resources.Get "css/tokens.css" -}}
         {{- $headerCSS := resources.Get "css/header.css" -}}
+        {{- $utilsCSS := resources.Get "css/utils.css" -}}
         {{- $mainCSS := resources.Get "css/main.css" -}}
-        {{- $css := slice $resetCSS $tokensCSS $headerCSS $mainCSS | resources.Concat "main.css" -}}
+        {{- $css := slice $resetCSS $tokensCSS $headerCSS $utilsCSS $mainCSS | resources.Concat "main.css" -}}
         {{- $css.Content | safeCSS -}}
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
