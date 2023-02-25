@@ -433,6 +433,24 @@ nav .logo {
 
 .color-shceme-toggle {
   display: none;
+}/* Utils */
+img.lqip::after {
+    background: var(--img-lqip) no-repeat 0/100%;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+img.lqip {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
 }html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
@@ -457,8 +475,7 @@ a {
   min-width: var(--max-page-width);
   display: flex;
   flex-direction: column;
-  padding-right: var(--header-margin);
-  padding-left: var(--header-margin);
+  padding: 0 var(--header-margin);
 }
 
 main .whoami {
@@ -466,41 +483,19 @@ main .whoami {
   background-color: var(--bg-color-2);
   justify-content: center;
   flex-wrap: wrap;
+  padding: var(--header-margin);
+  gap: var(--header-icons);
 }
 
-main .whoami .portrait {
-  margin-right: calc(var(--header-margin));
-  margin: var(--header-margin);
+main .whoami img {
   width: calc(var(--header-margin) * 15);
   height: calc(var(--header-margin) * 15);
+  border-radius: 50%;
   align-self: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-main .whoami .portrait::before {
-  background: var(--profile-pic) no-repeat 0/100%;
-  content: "";
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-  width: calc(100%);
-  height: calc(100%);
-  top: 0px;
-  right: 0px;
-  filter: blur(8px);
-}
-
-main .whoami .portrait .pic {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-  position: relative;
 }
 
 main .whoami .description {
-  margin: calc(var(--header-margin));
+
   transition: max-width 0.3s ease-out 0s;
   flex-basis: 31ch;
   flex-grow: 2;
@@ -512,7 +507,6 @@ main .whoami .description .text>* {
 }
 
 main {
-  /* border: aliceblue dashed 0.1px;   */
   max-width: var(--max-content-width);
   min-width: var(--max-content-width);
   align-self: center;
