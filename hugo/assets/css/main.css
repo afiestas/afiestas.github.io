@@ -22,8 +22,7 @@ a {
   min-width: var(--max-page-width);
   display: flex;
   flex-direction: column;
-  padding-right: var(--header-margin);
-  padding-left: var(--header-margin);
+  padding: 0 var(--header-margin);
 }
 
 main .whoami {
