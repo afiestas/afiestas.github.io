@@ -53,7 +53,6 @@ main .whoami .description .text>* {
 }
 
 main {
-  /* border: aliceblue dashed 0.1px;   */
   max-width: var(--max-content-width);
   min-width: var(--max-content-width);
   align-self: center;
