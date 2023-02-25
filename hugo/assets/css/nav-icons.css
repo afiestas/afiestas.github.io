@@ -10,6 +10,11 @@
     display: inline-block;
 }
 
+.nav > .name {
+    text-align: center;
+    width: 100%;
+}
+
 .nav:hover > * {
     scale: 1.1;
     background: linear-gradient(90deg,
