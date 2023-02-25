@@ -1,4 +1,11 @@
 {{ define "main" }}
+{{ $foo := resources.GetRemote "https://cdn.afiestas.org/site/avatar-lqip.webp"}}
+{{ $encoded := $foo.Content | base64Encode}}
+<style>
+:root {
+    --profile-pic: url('data:media/webp;base64,{{$encoded}}')
+}
+</style>
 <main>
     <div class="whoami">
         <div class="portrait">
@@ -7,7 +14,8 @@
                 loading="eager"
                 sizes="15em"
                 srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w,
-                        https://cdn.afiestas.org/site/avatar-285x285.webp 285w">
+                        https://cdn.afiestas.org/site/avatar-285x285.webp 285w"
+                alt=" ">
         </div>
         <div class="description">
             <h1>Hi there! I'm Àlex 👋</h1>
