@@ -71,7 +71,7 @@ main .whoami .description {
   flex-grow: 2;
 }
 
-main .whoami .description .text > * {
+main .whoami .description .text>* {
   max-inline-size: 75ch;
   font-family: var(--content-font-family);
 }
@@ -181,6 +181,7 @@ main a:not(.nav):hover {
   transform-origin: left;
   display: inline-block;
 }
+
 .scale:hover {
   scale: 1.1;
 }
