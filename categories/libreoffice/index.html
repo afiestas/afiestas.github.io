@@ -276,8 +276,10 @@ iframe {
   padding-bottom: calc(var(--header-margin) * 1);
   background-color: var(--bg-color);
   /** we are using content-visibility which creates new stacks */
-  /** So we have to be sure that the header is first in the root stack*/
-  z-index: 1;
+  /** So we have to be sure that the header is first in the root stack */
+  /** We use 10 to give some room for other legit cases of z-index, for example */
+  /** To implement LQIP */
+  z-index: 10;
 }
 
 .flex-spacer {
