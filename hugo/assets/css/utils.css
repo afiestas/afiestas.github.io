@@ -9,8 +9,11 @@ img.lqip::after {
     top: 0px;
     right: 0px;
     filter: blur(8px);
+    z-index: 1;
 }
 
 img.lqip {
+    overflow: hidden;
     position: relative;
+    z-index: 2;
 }
