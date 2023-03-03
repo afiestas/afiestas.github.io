@@ -1,9 +1,9 @@
 {{ define "main" }}
-{{ $foo := resources.GetRemote "https://cdn.afiestas.org/site/avatar-lqip.webp"}}
-{{ $encoded := $foo.Content | base64Encode}}
+{{- $foo := resources.GetRemote "https://cdn.afiestas.org/site/avatar-lqip.webp" -}}
+{{- $encoded := printf "url('data:media/webp;base64,%s')" ($foo.Content | base64Encode) | safeCSS -}}
 <main>
     <div class="whoami">
-        <picture class="lqip" style="--img-lqip: url('data:media/webp;base64,{{$encoded}}')">
+        <picture class="lqip" style="--img-lqip: {{$encoded}};">
             <source srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w"/>
             <source srcset="https://cdn.afiestas.org/site/avatar-285x285.webp 285w"/>
             <img
