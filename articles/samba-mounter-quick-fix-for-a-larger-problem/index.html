@@ -435,7 +435,7 @@ nav .logo {
 .color-shceme-toggle {
   display: none;
 }/* Utils */
-img.lqip::after {
+.lqip::after {
     background: var(--img-lqip) no-repeat 0/100%;
     content: "";
     display: block;
@@ -444,14 +444,18 @@ img.lqip::after {
     height: 100%;
     top: 0px;
     right: 0px;
-    filter: blur(8px);
     z-index: 1;
+    filter: blur(8px);
 }
 
-img.lqip {
+.lqip>img {
+    z-index: 2;
+    position: relative;
+}
+
+.lqip {
     overflow: hidden;
     position: relative;
-    z-index: 2;
 }html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
@@ -488,7 +492,9 @@ main .whoami {
   gap: var(--header-icons);
 }
 
-main .whoami img {
+main .whoami picture,
+main .whoami picture::after,
+main .whoami picture>* {
   width: calc(var(--header-margin) * 15);
   height: calc(var(--header-margin) * 15);
   border-radius: 50%;
@@ -735,7 +741,7 @@ footer {
 <main>
     <article>
         <h2>Samba-mounter, quick fix for a larger problem </h2>
-        <div class="metadata">Around 10 years and a half ago - 4 minutes</div>
+        <div class="metadata">Almost 11 years ago - 4 minutes</div>
         <div class="summary"><p>There was a time, years ago when computer users only needed to keep all their files in one place, and occasionally make some backup to a CD or DVD. Then the mp3 players appeared and those users had to copy the music from the computer to the player usually via USB, that's all we needed we thought... well we were wrong :)</p>
 <p>The amount of devices we have and we <strong>use </strong>is increasing and so does the amount of data we manage, some may think that a regular non geek user has few files but if you take a closer look you will see that the average user actually has hundreds of pictures, hundreds of sounds, hundreds of films, dozens of documents... So we have to ask ourselves a question: Can we continue with the model of copying that data around? the answer is <strong>no</strong>.</p>
 <p>Motivated by that need users are starting to setup a central computer or a device such a NAS with the only propose of  storing data and make it available to any device that may need it such: cell phones, players, ebook readers, tv's, other computers etc. Some times that central place is not even a computer dedicated to do that job but instead the daily used computer, I'm specifically thinking on a laptop.</p>

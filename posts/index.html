@@ -436,7 +436,7 @@ nav .logo {
 .color-shceme-toggle {
   display: none;
 }/* Utils */
-img.lqip::after {
+.lqip::after {
     background: var(--img-lqip) no-repeat 0/100%;
     content: "";
     display: block;
@@ -445,14 +445,18 @@ img.lqip::after {
     height: 100%;
     top: 0px;
     right: 0px;
-    filter: blur(8px);
     z-index: 1;
+    filter: blur(8px);
 }
 
-img.lqip {
+.lqip>img {
+    z-index: 2;
+    position: relative;
+}
+
+.lqip {
     overflow: hidden;
     position: relative;
-    z-index: 2;
 }html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
@@ -489,7 +493,9 @@ main .whoami {
   gap: var(--header-icons);
 }
 
-main .whoami img {
+main .whoami picture,
+main .whoami picture::after,
+main .whoami picture>* {
   width: calc(var(--header-margin) * 15);
   height: calc(var(--header-margin) * 15);
   border-radius: 50%;
@@ -757,7 +763,7 @@ The service is designed to scale horizontally as well as to be resilient to comp
     <h3><a class="scale" href="/articles/open365-lets-declare-war-at-microsoft-and-google/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/where-have-i-been/">Where have I been? </a></h2>
-    <div class="metadata">Around 7 years ago - 1 minutes</div>
+    <div class="metadata">Around 7 years and a half ago - 1 minutes</div>
     <div class="summary">I can&rsquo;t imagine anything worse than waking up every morning without any energy for going to work.
 The first time I heard that statement I was 17 and it made an impression on me. It made me think of how we use our limited time, which roughly is: 1/3 sleeping, 1/3 at work and 1/3 at what we call spare time. We can&rsquo;t control how much we need to sleep, but we can take a stance on the other two thirds (work and spare time). </div>
     <div class="tags"><a class="text-secondary" href="/categories/software-libre/">#Software Libre</a>
@@ -992,7 +998,7 @@ From 11jun to 18jun we had an amazing sprint in a small town near Barcelona call
     <h3><a class="scale" href="/articles/desktop-desktop-and-desktop-sprint-in-pineda-de-mar-barcelona/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/akademy-es-2012-makes-everything-worth-it/">Akademy-es 2012, makes everything worth it </a></h2>
-    <div class="metadata">Around 10 years and a half ago - 2 minutes</div>
+    <div class="metadata">Almost 11 years ago - 2 minutes</div>
     <div class="summary">Most of you know me because of all the work I do on KDE in form of code: Kamoso, BlueDevil, Solid... It is the stuff I put on my blog so if you know my involvement in KDE because of my blog it is normal.
 Besides writing code, I'm starting to be involved in other areas all across our community, one of them is KDE-España.
 KDE-España is the legal representation of KDE in Spain, you can consider it as a sister of KDE e. </div>
@@ -1002,7 +1008,7 @@ KDE-España is the legal representation of KDE in Spain, you can consider it as 
     <h3><a class="scale" href="/articles/akademy-es-2012-makes-everything-worth-it/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/samba-mounter-quick-fix-for-a-larger-problem/">Samba-mounter, quick fix for a larger problem </a></h2>
-    <div class="metadata">Around 10 years and a half ago - 4 minutes</div>
+    <div class="metadata">Almost 11 years ago - 4 minutes</div>
     <div class="summary">There was a time, years ago when computer users only needed to keep all their files in one place, and occasionally make some backup to a CD or DVD. Then the mp3 players appeared and those users had to copy the music from the computer to the player usually via USB, that's all we needed we thought... well we were wrong :)
 The amount of devices we have and we use is increasing and so does the amount of data we manage, some may think that a regular non geek user has few files but if you take a closer look you will see that the average user actually has hundreds of pictures, hundreds of sounds, hundreds of films, dozens of documents. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1011,7 +1017,7 @@ The amount of devices we have and we use is increasing and so does the amount o
     <h3><a class="scale" href="/articles/samba-mounter-quick-fix-for-a-larger-problem/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/joining-the-blue/">Joining the Blue </a></h2>
-    <div class="metadata">Around 10 years and a half ago - 1 minutes</div>
+    <div class="metadata">Almost 11 years ago - 1 minutes</div>
     <div class="summary">I planned to announce this when it happened but got stuck with travels and work so it got delayed a bit (2 months :p).
 I'm glad to say that I will be sponsored by Blue Systems to work on various parts of the Workspace, so far we have defined two areas of work:
 Improve transparent file browsing (KIO) and make it available to all applications. Improve web and online services integration into the Workspace, by adding a single point of configuration. </div>
@@ -1080,7 +1086,7 @@ I have been moving from Madrid to BCN, cities which are around 650km away and th
     <h3><a class="scale" href="/articles/quick-status-update/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/bluedevil-1-0-6-1-1-3-1-2-2-and-1-3-rc1/">BlueDevil 1.0.6, 1.1.3, 1.2.2 and 1.3-rc1 </a></h2>
-    <div class="metadata">Around 11 years ago - 2 minutes</div>
+    <div class="metadata">Around 11 years and a half ago - 2 minutes</div>
     <div class="summary">This weekend I proposed myself to clean the BlueDevil's bug list, at the beginning of the weekend the list had 42 bugs (including wishes), at this moment it has 18.
 When I started the bug triage process, I realize that we had too much crashes so I decided to sit down and fix'em all, well I think I did and because of that we're releasing new versions for each branch including a new one (1. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1241,7 +1247,7 @@ You can "Put faces" to people, you're no longer talking to " </div>
     <h3><a class="scale" href="/articles/bits-of-platform11/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/i-cant-find-myself-though-i-can-be-anybody-else/">I can&#39;t find myself :/ though I can be anybody else </a></h2>
-    <div class="metadata">Around 11 years and a half ago - 1 minutes</div>
+    <div class="metadata">Almost 12 years ago - 1 minutes</div>
     <div class="summary">At the beginning of the Randa sprint (platform11, multimedia, kdevelop, nepomuk) we were given a badge so other people can see who we are and so on. One day (maybe two) after that, somebody started to exchange them until the point that I've been around 30different persons in 2 days xD.
 Yesterday I started to look for myself again since I like to keep this things but seems that nobody has it :/ maybe somebody throw me to the trash? </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1250,7 +1256,7 @@ Yesterday I started to look for myself again since I like to keep this things bu
     <h3><a class="scale" href="/articles/i-cant-find-myself-though-i-can-be-anybody-else/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/kamoso-2-0-velazquez-released/">Kamoso 2.0 Velázquez released </a></h2>
-    <div class="metadata">Around 11 years and a half ago - 1 minutes</div>
+    <div class="metadata">Almost 12 years ago - 1 minutes</div>
     <div class="summary">We're proud to announce the final version of Kamoso Velázquez, the KDE picture/video retriever !
 In this release we've focused all the effort on getting the most stable release possible, and so far we think that we've reached that goal until it's matching our expectatives. This version is more important than what it seems, with this release we're making a new technology switch towards QtGstreamer, a technology that we hope will allow us to offer a stable, consistent and scalable application. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1560,7 +1566,7 @@ This day was marked by the trip to Zermatt but not by the outward journey but by
     <h3><a class="scale" href="/articles/kde-multimedia-sprint-days-2-3-4-and-5/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/kde-multimedia-sprint-quicksand-day-1/">KDE Multimedia Sprint QuickSand, day 1 </a></h2>
-    <div class="metadata">Around 12 years and a half ago - 2 minutes</div>
+    <div class="metadata">Almost 13 years ago - 2 minutes</div>
     <div class="summary">For those who know what QuickSand is you may wonder &quot;What is the relationship between QuickSand and Multimedia/Edu?&quot; the answer to that question is quick and short, none :p but it is what I did today.
 What is QuickSand? QuickSand is an alternative interface for KRunner, it is integrated in KRunner (the code is inside KRunner), and since the major part of KDE users seems to like the default interface almost nobody knows his existence :p, but it actually exists and I can prove it! </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1600,7 +1606,7 @@ PulseAudio rocks, and since it rocks it will detect and configure the new device
     <h3><a class="scale" href="/articles/audio-and-input-support-in-kbluetooth/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/kbluetooth-freezeless-wizard/">KBluetooth freezeless Wizard:) </a></h2>
-    <div class="metadata">Almost 13 years ago - 1 minutes</div>
+    <div class="metadata">Around 13 years ago - 1 minutes</div>
     <div class="summary">I'm not a fussy user, I mean I don't really care so much about interfaces or usability (as an user of course, as a developer I try to do my best), wherever there is a terminal I feel like home in there. However, in the other hand, when I'm developing I need to feel comfortable with the environment, including the application I'm developing. It's for this reason that I've prioritized the GUI polishing of the wizard (the old one pissed me off every time I had to test something). </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
         <a class="text-secondary" href="/categories/software-libre/">#Software Libre</a>
@@ -1608,14 +1614,14 @@ PulseAudio rocks, and since it rocks it will detect and configure the new device
     <h3><a class="scale" href="/articles/kbluetooth-freezeless-wizard/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/feel-a-natural-flow-in-your-desktop-panel-at-the-top/">Feel a &#34;natural flow&#34; in your desktop (Panel at the top) </a></h2>
-    <div class="metadata">Almost 13 years ago - 3 minutes</div>
+    <div class="metadata">Around 13 years ago - 3 minutes</div>
     <div class="summary">As my friends know, I'm addicted to read KDE/Free Software/Open Source/etc.. blogs when taking my morning coffee, and what I'm going to explain is a good example of why I love it. Before continuing reading, be aware that I'm not an usability guy, I lack any kind of design or usability sense/knowledgement, In fact, I have been I'm using KDE for years and I never succeed to configure my desktop in a beautiful way (only by copying the others configs), so please keep that in your mind when you read this post. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
         </div>
     <h3><a class="scale" href="/articles/feel-a-natural-flow-in-your-desktop-panel-at-the-top/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/what-a-small-thing-what-a-great-improvement-configure-your-font-settings/">What a small thing. what a great improvement (configure your font settings) </a></h2>
-    <div class="metadata">Almost 13 years ago - 2 minutes</div>
+    <div class="metadata">Around 13 years ago - 2 minutes</div>
     <div class="summary">Hi there! no, this post is not about Kbluetooth nor KTuberling or any development/technical stuff, is more a user-like post, so common! keep reading this time :)
 A few days ago, I was in the office with ereslibre showing something to him (I don't remember what), when he noticed something in my desktop that he didn't liked, my fonts. I laughed quite a lot because I thought that it was a &quot;Yet Another Small Detail That Ereslibre Cares Of&quot;. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>

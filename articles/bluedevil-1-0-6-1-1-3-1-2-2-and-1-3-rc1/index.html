@@ -435,7 +435,7 @@ nav .logo {
 .color-shceme-toggle {
   display: none;
 }/* Utils */
-img.lqip::after {
+.lqip::after {
     background: var(--img-lqip) no-repeat 0/100%;
     content: "";
     display: block;
@@ -444,14 +444,18 @@ img.lqip::after {
     height: 100%;
     top: 0px;
     right: 0px;
-    filter: blur(8px);
     z-index: 1;
+    filter: blur(8px);
 }
 
-img.lqip {
+.lqip>img {
+    z-index: 2;
+    position: relative;
+}
+
+.lqip {
     overflow: hidden;
     position: relative;
-    z-index: 2;
 }html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
@@ -488,7 +492,9 @@ main .whoami {
   gap: var(--header-icons);
 }
 
-main .whoami img {
+main .whoami picture,
+main .whoami picture::after,
+main .whoami picture>* {
   width: calc(var(--header-margin) * 15);
   height: calc(var(--header-margin) * 15);
   border-radius: 50%;
@@ -735,7 +741,7 @@ footer {
 <main>
     <article>
         <h2>BlueDevil 1.0.6, 1.1.3, 1.2.2 and 1.3-rc1 </h2>
-        <div class="metadata">Around 11 years ago - 2 minutes</div>
+        <div class="metadata">Around 11 years and a half ago - 2 minutes</div>
         <div class="summary"><p>This weekend I proposed myself to clean the BlueDevil's <a title="BlueDevil bug list" href="https://bugs.kde.org/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=bluetooth" target="_blank">bug list</a>, at the beginning of the weekend the list had 42 bugs (including wishes), at this moment it has 18.</p>
 <p>When I started the bug triage process, I realize that we had too much crashes so I decided to sit down and fix'em all, well I think I did and because of that we're releasing new versions for each branch including a new one (1.3) which is the only one that includes a huge change in the KDE Daemon that fixes a bunch of crashes.</p>
 <p>Fixed in 1.0:</p>

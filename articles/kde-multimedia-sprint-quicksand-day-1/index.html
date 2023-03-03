@@ -435,7 +435,7 @@ nav .logo {
 .color-shceme-toggle {
   display: none;
 }/* Utils */
-img.lqip::after {
+.lqip::after {
     background: var(--img-lqip) no-repeat 0/100%;
     content: "";
     display: block;
@@ -444,14 +444,18 @@ img.lqip::after {
     height: 100%;
     top: 0px;
     right: 0px;
-    filter: blur(8px);
     z-index: 1;
+    filter: blur(8px);
 }
 
-img.lqip {
+.lqip>img {
+    z-index: 2;
+    position: relative;
+}
+
+.lqip {
     overflow: hidden;
     position: relative;
-    z-index: 2;
 }html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
@@ -488,7 +492,9 @@ main .whoami {
   gap: var(--header-icons);
 }
 
-main .whoami img {
+main .whoami picture,
+main .whoami picture::after,
+main .whoami picture>* {
   width: calc(var(--header-margin) * 15);
   height: calc(var(--header-margin) * 15);
   border-radius: 50%;
@@ -735,7 +741,7 @@ footer {
 <main>
     <article>
         <h2>KDE Multimedia Sprint QuickSand, day 1 </h2>
-        <div class="metadata">Around 12 years and a half ago - 2 minutes</div>
+        <div class="metadata">Almost 13 years ago - 2 minutes</div>
         <div class="summary"><p>For those who know what QuickSand is you may wonder &quot;What is the relationship between QuickSand and Multimedia/Edu?&quot; the answer to that question is quick and short, none :p but it is what I did today.</p>
 <p><strong>What is QuickSand? </strong></p>
 <p>QuickSand is an alternative interface for KRunner, it is integrated in KRunner (the code is inside KRunner), and since the major part of KDE users seems to like the default interface almost nobody knows his existence :p, but it actually exists and I can prove it!</p>

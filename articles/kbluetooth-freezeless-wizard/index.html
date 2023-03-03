@@ -435,7 +435,7 @@ nav .logo {
 .color-shceme-toggle {
   display: none;
 }/* Utils */
-img.lqip::after {
+.lqip::after {
     background: var(--img-lqip) no-repeat 0/100%;
     content: "";
     display: block;
@@ -444,14 +444,18 @@ img.lqip::after {
     height: 100%;
     top: 0px;
     right: 0px;
-    filter: blur(8px);
     z-index: 1;
+    filter: blur(8px);
 }
 
-img.lqip {
+.lqip>img {
+    z-index: 2;
+    position: relative;
+}
+
+.lqip {
     overflow: hidden;
     position: relative;
-    z-index: 2;
 }html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
@@ -488,7 +492,9 @@ main .whoami {
   gap: var(--header-icons);
 }
 
-main .whoami img {
+main .whoami picture,
+main .whoami picture::after,
+main .whoami picture>* {
   width: calc(var(--header-margin) * 15);
   height: calc(var(--header-margin) * 15);
   border-radius: 50%;
@@ -735,7 +741,7 @@ footer {
 <main>
     <article>
         <h2>KBluetooth freezeless Wizard:) </h2>
-        <div class="metadata">Almost 13 years ago - 1 minutes</div>
+        <div class="metadata">Around 13 years ago - 1 minutes</div>
         <div class="summary"><p>I'm not a fussy user, I mean I don't really care so much about interfaces or usability (as an user of course, as a developer I try to do my best), wherever there is a terminal I feel like home in there. However, in the other hand, when I'm developing I need to feel comfortable with the environment, including the application I'm developing. It's for this reason that I've prioritized the GUI polishing of the wizard (the old one pissed me off every time I had to test something).</p>
 <p>And well, this is the result, a freezeeless interface for KBluetooth-wizard.</p>
 <p><video width="600" height="350" controls="controls" tabindex="0" autobuffer="false" preload="metadata"><source type="video/ogg" src="https://cdn.afiestas.org/posts/2010/03/wizard-freezeless.ogv"></source></video></p>
