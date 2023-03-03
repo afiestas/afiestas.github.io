@@ -1,5 +1,5 @@
 /* Utils */
-img.lqip::after {
+.lqip::after {
     background: var(--img-lqip) no-repeat 0/100%;
     content: "";
     display: block;
@@ -8,12 +8,16 @@ img.lqip::after {
     height: 100%;
     top: 0px;
     right: 0px;
-    filter: blur(8px);
     z-index: 1;
+    filter: blur(8px);
 }
 
-img.lqip {
+.lqip>img {
+    z-index: 2;
+    position: relative;
+}
+
+.lqip {
     overflow: hidden;
     position: relative;
-    z-index: 2;
 }

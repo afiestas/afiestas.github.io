@@ -34,7 +34,9 @@ main .whoami {
   gap: var(--header-icons);
 }
 
-main .whoami img {
+main .whoami picture,
+main .whoami picture::after,
+main .whoami picture>* {
   width: calc(var(--header-margin) * 15);
   height: calc(var(--header-margin) * 15);
   border-radius: 50%;

@@ -3,14 +3,15 @@
 {{ $encoded := $foo.Content | base64Encode}}
 <main>
     <div class="whoami">
-            <img class="lqip"
+        <picture class="lqip" style="--img-lqip: url('data:media/webp;base64,{{$encoded}}')">
+            <source srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w"/>
+            <source srcset="https://cdn.afiestas.org/site/avatar-285x285.webp 285w"/>
+            <img
+                decoding="async"
                 src="https://cdn.afiestas.org/site/avatar-570x570.webp"
-                loading="eager"
-                sizes="15em"
-                srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w,
-                        https://cdn.afiestas.org/site/avatar-285x285.webp 285w"
-                alt=" "
-                style="--img-lqip: url('data:media/webp;base64,{{$encoded}}')">
+                loading="lazy"
+                sizes="15em"/>
+        </picture>
         <div class="description">
             <h1>Hi there! I'm Àlex 👋</h1>
             <div class="text">
