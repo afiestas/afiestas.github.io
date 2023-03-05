@@ -1,14 +1,5 @@
-{{- $spartanLatin := base64Encode (resources.Get "fonts/spartan-latin.woff2").Content -}}
 {{- $notoSans := base64Encode (resources.Get "fonts/noto-sans-mono.woff2").Content -}}
 {{- $radioCanada := base64Encode (resources.Get "fonts/radio-canada.woff2").Content -}}
-
-@font-face {
-    font-family: 'League Spartan';
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("data:text/css;base64,{{ $spartanLatin }}") format('woff2');
-}
 
 @font-face {
     font-family: 'Noto Sans Mono';
