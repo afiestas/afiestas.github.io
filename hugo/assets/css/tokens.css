@@ -35,6 +35,11 @@
     --header-icons: calc(var(--header-size) * 2);
     --header-font-size: var(--font-size-fluid-base);
 
+    /* Defaults */
+    font-family: var(--content-font-family);
+    line-height: var(--line-height-base);
+    font-size: var(--font-size-fluid-base);
+    font-weight: var(--regular-font-weight);
 }
 
 @media (prefers-color-scheme: dark) {

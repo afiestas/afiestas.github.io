@@ -2,13 +2,14 @@ header {
   position: sticky;
   top: calc(var(--header-margin) * -1);
   padding-top: calc(var(--header-margin) * 2);
-  padding-bottom: calc(var(--header-margin) * 1);
+  padding-bottom: var(--header-margin);
   background-color: var(--bg-color);
   /** we are using content-visibility which creates new stacks */
   /** So we have to be sure that the header is first in the root stack */
   /** We use 10 to give some room for other legit cases of z-index, for example */
   /** To implement LQIP */
   z-index: 10;
+  line-height: normal;
 }
 
 .flex-spacer {
@@ -16,8 +17,7 @@ header {
 }
 
 .nav-top-primary {
-  --active-indicator-size: 1ex;
-  font-family: var(--primary-font-family);
+  --active-indicator-size: 0.7ex;
   font-weight: var(--primary-font-weight);
   font-size: var(--header-font-size);
   width: 100%;
@@ -32,8 +32,9 @@ header {
   flex-wrap: wrap;
   overflow: hidden;
   width: 100%;
-  max-height: calc(var(--header-size) + var(--active-indicator-size));
-  gap: calc(var(--header-icons) - 1ex);
+  max-height: 1lh;
+  gap: 2em;
+
 }
 
 .toggle:checked~.links {
@@ -47,8 +48,9 @@ header {
 }
 
 .toggle:checked~.links>li {
-  width: var(--header-icons);
+  width: calc(var(--header-icons) * 1.5);
   align-items: center;
+  justify-content: center;
   margin-right: 0;
   margin-top: 0;
 }
@@ -68,14 +70,15 @@ header {
 .nav-top-primary li {
   text-decoration: none;
   list-style: none;
-  display: flex;
-  flex-flow: column;
   position: relative;
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  min-height: var(--font-size-fluid-md);
 }
 
 .nav-top-primary li.primary {
   margin-right: var(--active-indicator-size);
-  margin-top: var(--active-indicator-size);
 }
 
 .nav-top-primary li:first-child {
@@ -89,8 +92,8 @@ header {
   height: var(--active-indicator-size);
   border-radius: 100%;
   background-color: var(--accent-color-one);
-  top: calc(var(--active-indicator-size) * -1);
-  right: calc(var(--active-indicator-size) * -1)
+  top: 0;
+  right: -1ex;
 }
 
 .nav-top-primary li .icon {
