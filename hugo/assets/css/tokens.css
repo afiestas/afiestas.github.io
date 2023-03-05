@@ -10,7 +10,6 @@
     --accent-color-two: #753a88ff;
     --link-color: var(--primary-color);
 
-    --primary-font-family: 'League Spartan', sans-serif;
     --primary-font-weight: 600;
     --primary-font-size: var(--font-size-fluid-sm);
     --metadata-font-family: 'Noto Sans Mono', monospace;
@@ -29,6 +28,7 @@
     --line-height-sm: 1.5;
     --line-height-base: 1.6;
     --line-height-md: 1.7;
+    --max-line-width: 75ch;
 
     --header-size: var(--font-size-fluid-base);
     --header-margin: var(--header-size);
@@ -43,7 +43,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    body, #color-scheme-wrapper {
+
+    body,
+    #color-scheme-wrapper {
         --bg-color: #182029;
         --bg-color-2: #32333f22;
         --bg-color-light: #32333f22;
@@ -53,7 +55,7 @@
         --nav-icon-color-scheme-secondary: #ffffef;
     }
 
-    #color-scheme-toggle:checked ~ #color-scheme-wrapper {
+    #color-scheme-toggle:checked~#color-scheme-wrapper {
         --bg-color: #FFF;
         --bg-color-2: #cacad022;
         --bg-color-light: #cacad022;
@@ -63,8 +65,11 @@
         --nav-icon-color-scheme-secondary: #544db4;
     }
 }
+
 @media (prefers-color-scheme: light) {
-    body, #color-scheme-wrapper {
+
+    body,
+    #color-scheme-wrapper {
         --bg-color: #FFF;
         --bg-color-2: #cacad022;
         --bg-color-light: #cacad022;
@@ -73,7 +78,8 @@
         --nav-icon-color-scheme-primary: #3868c0;
         --nav-icon-color-scheme-secondary: #544db4;
     }
-    #color-scheme-toggle:checked ~ #color-scheme-wrapper {
+
+    #color-scheme-toggle:checked~#color-scheme-wrapper {
         --bg-color: #182029;
         --bg-color-2: #32333f22;
         --bg-color-light: #32333f22;

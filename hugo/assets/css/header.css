@@ -102,8 +102,8 @@ header {
   min-width: var(--font-size-fluid-md);
   transition: scale 0.3s;
   background: linear-gradient(90deg,
-          var(--primary-color),
-          var(--primary-color)) 0 0 / 400% 100%;
+      var(--primary-color),
+      var(--primary-color)) 0 0 / 400% 100%;
   -webkit-text-fill-color: transparent;
 }
 

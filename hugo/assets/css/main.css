@@ -20,17 +20,24 @@ a {
 .global-container {
   max-width: var(--max-page-width);
   min-width: var(--max-page-width);
+  padding: 0 var(--header-margin);
   display: flex;
   flex-direction: column;
-  padding: 0 var(--header-margin);
+  gap: var(--header-margin);
+}
+
+main {
+  max-width: var(--max-content-width);
+  min-width: var(--max-content-width);
+  align-self: center;
 }
 
 main .whoami {
-  display: flex;
+  padding: var(--header-margin);
   background-color: var(--bg-color-2);
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: var(--header-margin);
   gap: var(--header-icons);
 }
 
@@ -44,29 +51,27 @@ main .whoami picture>* {
 }
 
 main .whoami .description {
-
-  transition: max-width 0.3s ease-out 0s;
   flex-basis: 31ch;
   flex-grow: 2;
 }
 
 main .whoami .description .text>* {
-  max-inline-size: 75ch;
+  max-inline-size: var(--max-line-width);
   font-family: var(--content-font-family);
 }
 
-main {
-  max-width: var(--max-content-width);
-  min-width: var(--max-content-width);
-  align-self: center;
-  flex-grow: 1;
-  font-family: var(--primary-font-family);
-  line-height: var(--line-height-base);
-  font-size: var(--font-size-fluid-base);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: var(--header-size);
+main a:not(.nav) {
+  background: linear-gradient(90deg,
+      var(--primary-color),
+      var(--primary-color)) 0 0 / 400% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+main a:not(.nav):hover {
+  animation-iteration-count: 20;
+  animation: move-bg 12s linear infinite;
 }
 
 .h2 {
@@ -85,8 +90,8 @@ main {
 
 .posts {
   display: flex;
+  flex-direction: column;
   gap: calc(var(--header-margin) * 3);
-  flex-wrap: wrap;
 }
 
 article {
@@ -96,14 +101,13 @@ article {
   flex-direction: column;
   gap: var(--header-margin);
   font-family: var(--content-font-family);
-  max-width: 100%;
 }
 
 .summary {
   font-weight: var(--regular-font-weight);
   font-size: var(--font-size-fluid-base);
   line-height: var(--line-height-base);
-  max-inline-size: 75ch;
+  max-inline-size: var(--max-line-width);
 }
 
 .summary pre {
@@ -138,20 +142,6 @@ a.text-secondary:hover {
 .tags {
   display: flex;
   gap: var(--header-margin)
-}
-
-main a:not(.nav) {
-  background: linear-gradient(90deg,
-      var(--primary-color),
-      var(--primary-color)) 0 0 / 400% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-main a:not(.nav):hover {
-  animation-iteration-count: 20;
-  animation: move-bg 12s linear infinite;
 }
 
 .scale {
