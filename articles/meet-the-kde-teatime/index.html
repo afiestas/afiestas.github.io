@@ -24,14 +24,9 @@
     mask-position: center;
 }
 
-.nav > * {
+.nav > span {
     transition: scale 0.3s;
     display: inline-block;
-}
-
-.nav > .name {
-    text-align: center;
-    width: 100%;
 }
 
 .nav:hover > * {
@@ -282,7 +277,6 @@ iframe {
   /** We use 10 to give some room for other legit cases of z-index, for example */
   /** To implement LQIP */
   z-index: 10;
-  line-height: normal;
 }
 
 .flex-spacer {
@@ -305,14 +299,14 @@ iframe {
   flex-wrap: wrap;
   overflow: hidden;
   width: 100%;
-  max-height: 1lh;
+  height: var(--header-icons);
   gap: 2em;
 
 }
 
 .toggle:checked~.links {
   overflow: visible;
-  max-height: none;
+  height: auto;
   font-size: 0.8em;
 }
 
@@ -346,11 +340,6 @@ iframe {
   position: relative;
   display: flex;
   align-items: center;
-  line-height: normal;
-  min-height: var(--font-size-fluid-md);
-}
-
-.nav-top-primary li>a {
   height: 100%;
 }
 
@@ -741,7 +730,7 @@ footer {
 <main>
     <article>
         <h2>Meet the KDE TeaTime ! </h2>
-        <div class="metadata">Around 10 years ago - 1 minutes</div>
+        <div class="metadata">Around 10 years and a half ago - 1 minutes</div>
         <div class="summary"><p><img class="aligncenter" title="KDE TeaTime Logo" src="https://cdn.afiestas.org/posts/2012/11/ktt.png" alt="KDE TeaTime Logo" width="250" height="250" />For a few weeks now 3 other KDE hackers and I have been doing a videocast/podcast/show/thing about KDE. It is a completely unprofessional unprepared amateur show where we basically talk about a different topic every week without having any script, we say things as we think them. it Doesn't matter if they are politically correct or not.</p>
 <p>My main motivation for having this show is to open a door to the insides of KDE. This door is open both ways so the communication should and must be from Developers to Users and the other way around, so please participate !</p>
 <p>Some urls of interest:</p>

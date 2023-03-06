@@ -25,14 +25,9 @@
     mask-position: center;
 }
 
-.nav > * {
+.nav > span {
     transition: scale 0.3s;
     display: inline-block;
-}
-
-.nav > .name {
-    text-align: center;
-    width: 100%;
 }
 
 .nav:hover > * {
@@ -283,7 +278,6 @@ iframe {
   /** We use 10 to give some room for other legit cases of z-index, for example */
   /** To implement LQIP */
   z-index: 10;
-  line-height: normal;
 }
 
 .flex-spacer {
@@ -306,14 +300,14 @@ iframe {
   flex-wrap: wrap;
   overflow: hidden;
   width: 100%;
-  max-height: 1lh;
+  height: var(--header-icons);
   gap: 2em;
 
 }
 
 .toggle:checked~.links {
   overflow: visible;
-  max-height: none;
+  height: auto;
   font-size: 0.8em;
 }
 
@@ -347,11 +341,6 @@ iframe {
   position: relative;
   display: flex;
   align-items: center;
-  line-height: normal;
-  min-height: var(--font-size-fluid-md);
-}
-
-.nav-top-primary li>a {
   height: 100%;
 }
 
@@ -950,7 +939,7 @@ I had 2 objectives for this sprint, first get a few bugs that I discover while w
     <h3><a class="scale" href="/articles/results-from-my-first-kdepim-sprint-1/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/meet-the-kde-teatime/">Meet the KDE TeaTime ! </a></h2>
-    <div class="metadata">Around 10 years ago - 1 minutes</div>
+    <div class="metadata">Around 10 years and a half ago - 1 minutes</div>
     <div class="summary">For a few weeks now 3 other KDE hackers and I have been doing a videocast/podcast/show/thing about KDE. It is a completely unprofessional unprepared amateur show where we basically talk about a different topic every week without having any script, we say things as we think them. it Doesn't matter if they are politically correct or not.
 My main motivation for having this show is to open a door to the insides of KDE. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1534,7 +1523,7 @@ So we've develop a new Plugin for KDevelop which will give us direct access to w
     <h3><a class="scale" href="/articles/new-kdevelop-key-feature-plugin/">Read more</a></h3>
 </article><article>
     <h2><a href="/articles/kde-multimedia-sprint-days-2-3-4-and-5/">KDE Multimedia Sprint Days 2, 3, 4 and 5 </a></h2>
-    <div class="metadata">Around 12 years and a half ago - 2 minutes</div>
+    <div class="metadata">Almost 13 years ago - 2 minutes</div>
     <div class="summary">Day 2: Trip to Zermatt
 This day was marked by the trip to Zermatt but not by the outward journey but by the return one which I did (as the major part of the people) walking. We went through the forest crossing 2 rivers (well, jumping 2 rivers xD) and of course, talking about software, akademy, politics etc. By the night, a mysterious KHTML crash produced by gcc appeared in my laptop sadly I lost all the hacking time figuring out that gcc was the problem :( </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>

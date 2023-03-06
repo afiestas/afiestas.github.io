@@ -24,14 +24,9 @@
     mask-position: center;
 }
 
-.nav > * {
+.nav > span {
     transition: scale 0.3s;
     display: inline-block;
-}
-
-.nav > .name {
-    text-align: center;
-    width: 100%;
 }
 
 .nav:hover > * {
@@ -282,7 +277,6 @@ iframe {
   /** We use 10 to give some room for other legit cases of z-index, for example */
   /** To implement LQIP */
   z-index: 10;
-  line-height: normal;
 }
 
 .flex-spacer {
@@ -305,14 +299,14 @@ iframe {
   flex-wrap: wrap;
   overflow: hidden;
   width: 100%;
-  max-height: 1lh;
+  height: var(--header-icons);
   gap: 2em;
 
 }
 
 .toggle:checked~.links {
   overflow: visible;
-  max-height: none;
+  height: auto;
   font-size: 0.8em;
 }
 
@@ -346,11 +340,6 @@ iframe {
   position: relative;
   display: flex;
   align-items: center;
-  line-height: normal;
-  min-height: var(--font-size-fluid-md);
-}
-
-.nav-top-primary li>a {
   height: 100%;
 }
 
