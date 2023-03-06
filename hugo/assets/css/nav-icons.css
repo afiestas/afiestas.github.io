@@ -5,14 +5,9 @@
     mask-position: center;
 }
 
-.nav > * {
+.nav > span {
     transition: scale 0.3s;
     display: inline-block;
-}
-
-.nav > .name {
-    text-align: center;
-    width: 100%;
 }
 
 .nav:hover > * {
