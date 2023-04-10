@@ -27,8 +27,8 @@ title: Almost perfect HiDPI experience on Linux (Xorg)
 
 [![Awesome HiDPI on Xorg][2]][1]
 
-[1]: https://cdn.afiestas.org/posts/2017/02/hidpi_big.png
-[2]: https://cdn.afiestas.org/posts/2017/02/hidpi_small.png
+[1]: https://cdn.afiestas.org/posts/2017/02/hidpi-orig.png
+[2]: https://cdn.afiestas.org/posts/2017/02/hidpi.webp
 
 In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for
 a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most

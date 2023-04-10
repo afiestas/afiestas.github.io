@@ -1,0 +1,31 @@
+{{- $origImage := resources.GetRemote .Destination -}}
+{{- if not $origImage -}}
+{{- errorf "[BROKEN IMAGE] failed to fetch %q" .Destination -}}
+{{- end -}}
+
+{{- $imageVersions := slice "lqip" "1" "2" "3" "4" "5" -}}
+{{- $origUrl := urls.Parse .Destination -}}
+{{- $dirName := path.Dir $origUrl.Path -}}
+{{- $fileName := path.BaseName $origUrl.Path -}}
+{{- $fileExt := path.Ext $origUrl.Path -}}
+
+{{- $additionalVersions := slice -}}
+{{- range $version := $imageVersions -}}
+{{- $newUrl := printf "%s://%s%s/%s-%s%s" $origUrl.Scheme $origUrl.Host $dirName $fileName $version $fileExt -}}
+{{- $newImageVersion := resources.GetRemote $newUrl -}}
+{{- if not $newImageVersion -}}
+{{- warnf "[BROKEN IMAGE] failed to fetch %s" $newUrl -}}
+{{- break -}}
+{{- end -}}
+{{- $additionalVersions = $additionalVersions | append $newImageVersion -}}
+{{- end -}}
+
+{{- $lqip := "" -}}
+{{- with index $additionalVersions 0 -}}
+{{- $lqip = printf "url('data:media/webp;base64,%s')" (.Content | base64Encode) | safeCSS -}}
+{{- end -}}
+
+<picture {{with $lqip}}class="lqip"
+  style="--img-lqip: {{$lqip}}; aspect-ratio: {{ $origImage.Width }} / {{ $origImage.Height }};" {{end}}>
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
+</picture>
