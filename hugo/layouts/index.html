@@ -2,31 +2,29 @@
 {{- $foo := resources.GetRemote "https://cdn.afiestas.org/site/avatar-lqip.webp" -}}
 {{- $encoded := printf "url('data:media/webp;base64,%s')" ($foo.Content | base64Encode) | safeCSS -}}
 <main>
-    <div class="whoami">
+    <div class="whoami max-content">
         <picture class="lqip" style="--img-lqip: {{$encoded}};">
-            <source srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w"/>
-            <source srcset="https://cdn.afiestas.org/site/avatar-285x285.webp 285w"/>
-            <img
-                decoding="async"
-                src="https://cdn.afiestas.org/site/avatar-570x570.webp"
-                loading="lazy"
-                sizes="15em"/>
+            <source srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w" />
+            <source srcset="https://cdn.afiestas.org/site/avatar-285x285.webp 285w" />
+            <img decoding="async" src="https://cdn.afiestas.org/site/avatar-570x570.webp" loading="lazy" sizes="15em" />
         </picture>
         <div class="description">
             <h1>Hi there! I'm Àlex 👋</h1>
             <div class="text">
-            {{ with .Site.GetPage "description.md" }}
-                {{ .Content  }}
-            {{ end }}
+                {{ with .Site.GetPage "description.md" }}
+                {{ .Content }}
+                {{ end }}
             </div>
         </div>
     </div>
-    <h2 class="h2 section-article">Latest Articles</h2>
-    <div class="posts">
+    <h2 class="h2 section-article max-content">Latest Articles</h2>
+    <div class="posts max-content">
         {{ range first 10 (where .Site.RegularPages "Section" "==" "posts") }}
-            {{- partial "article-list.html" . -}}
+        {{- partial "article-list.html" . -}}
         {{ end }}
-        <a href="/posts"><h2 class="h2">See all</h2></a>
+        <a href="/posts">
+            <h2 class="h2">See all</h2>
+        </a>
     </div>
 </main>
 {{ end }}

@@ -27,9 +27,10 @@ a {
 }
 
 main {
-  max-width: var(--max-content-width);
-  min-width: var(--max-content-width);
-  align-self: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 main .whoami {
@@ -82,8 +83,6 @@ main a:not(.nav):hover {
 }
 
 .section-article {
-  flex-basis: 100%;
-  align-self: baseline;
   margin-top: calc(var(--header-margin) * 5);
   margin-bottom: calc(var(--header-margin) * 2);
 }

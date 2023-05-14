@@ -22,3 +22,13 @@
     position: relative;
     display: block;
 }
+
+.max-content {
+    max-width: var(--max-content-width);
+    min-width: var(--max-content-width);
+}
+
+.max-page {
+    max-width: var(--max-page-width);
+    min-width: var(--max-page-width);
+}
