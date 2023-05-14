@@ -68,6 +68,7 @@ header {
   position: relative;
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .nav-top li.primary {
