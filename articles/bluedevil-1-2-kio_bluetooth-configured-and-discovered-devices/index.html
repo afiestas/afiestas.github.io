@@ -568,6 +568,16 @@ article {
   max-inline-size: var(--max-line-width);
 }
 
+.summary a {
+  display: inline-block;
+  width: 100%;
+}
+
+.summary a span {
+  display: inline-block;
+  width: 100%;
+}
+
 .summary pre {
   overflow: auto;
 }
@@ -730,7 +740,7 @@ footer {
 <main>
     <article>
         <h2>[BlueDevil 1.2] kio_bluetooth configured and discovered devices </h2>
-        <div class="metadata">Around 11 years and a half ago - 2 minutes</div>
+        <div class="metadata">Almost 12 years ago - 2 minutes</div>
         <div class="summary"><p>After releasing stable versions (boooring) there is nothing better than publish new features, and it gets even better when those features are between the most requested/wanted.</p>
 <p>The feature I'm going to introduce may sound kinda useless for some people, but in all KDE software we offer different ways of doing things, so you can find which way integates better with your workflow.</p>
 <p>In BlueDevil 1.0 and 1.1 when you use the kio_bluetooth (bluetooh:// in your browser), what it did was start a bluetooth discovery, meaning that the only devices going to appear into the file browser were those who had the visible mode activated. This behavior is totally counterproductive since you have to: wait 10 seconds until the scan ends and/or turn on the visibility in your device. Well you won't have to do this anymore.</p>

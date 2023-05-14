@@ -568,6 +568,16 @@ article {
   max-inline-size: var(--max-line-width);
 }
 
+.summary a {
+  display: inline-block;
+  width: 100%;
+}
+
+.summary a span {
+  display: inline-block;
+  width: 100%;
+}
+
 .summary pre {
   overflow: auto;
 }
@@ -730,8 +740,10 @@ footer {
 <main>
     <article>
         <h2>Almost perfect HiDPI experience on Linux (Xorg) </h2>
-        <div class="metadata">Almost 6 years ago - 3 minutes</div>
-        <div class="summary"><p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/hidpi_big.png" target="_blank" rel="noopener"><span><img src="https://cdn.afiestas.org/posts/2017/02/hidpi_small.png" alt="Awesome HiDPI on Xorg"></span></a></p>
+        <div class="metadata">Around 6 years ago - 3 minutes</div>
+        <div class="summary"><p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/hidpi-orig.png" target="_blank" rel="noopener"><span><picture >
+  <img src="https://cdn.afiestas.org/posts/2017/02/hidpi.webp" alt="Awesome HiDPI on Xorg"  />
+</picture></span></a></p>
 <p>In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for
 a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most
 applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino&hellip;) got support for higher DPIs as well.</p>
@@ -741,9 +753,13 @@ they used to, how much bigger depends on the screen pixel density which, for exa
 bigger.</p>
 <p>This means that applications rendered for HiDPI look huge on normal screens:</p>
 <h4 id="hidpi-file-dialog-on-regular-screen">HiDPI File dialog on regular screen</h4>
-<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png" target="_blank" rel="noopener"><span><img src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Open dialog looking huge"></span></a></p>
+<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png" target="_blank" rel="noopener"><span><picture >
+  <img src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Open dialog looking huge"  />
+</picture></span></a></p>
 <h4 id="scaled-hidpi-file-dialog-on-regular-screen">Scaled HiDPI File dialog on regular screen</h4>
-<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png" target="_blank" rel="noopener"><span><img src="https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png" alt="Open dialog looking ok"></span></a></p>
+<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png" target="_blank" rel="noopener"><span><picture >
+  <img src="https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png" alt="Open dialog looking ok"  />
+</picture></span></a></p>
 <p>Here is where the internet seems to tell you that there is nothing to do but wait until Wayland arrives and saves us all
 (I can’t wait for that btw) but that’s actually not true, X can do it.</p>
 <p>XRandR allows us to apply transformations on the outputs, like for example rotation, and it also allows us to scale the screens.
