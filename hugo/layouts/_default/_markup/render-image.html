@@ -12,12 +12,14 @@
 {{- $additionalVersions := slice -}}
 {{- range $version := $imageVersions -}}
 {{- $newUrl := printf "%s://%s%s/%s-%s%s" $origUrl.Scheme $origUrl.Host $dirName $fileName $version $fileExt -}}
-{{- $newImageVersion := resources.GetRemote $newUrl -}}
-{{- if not $newImageVersion -}}
-{{- warnf "[BROKEN IMAGE] failed to fetch %s" $newUrl -}}
+{{- with resources.GetRemote $newUrl -}}
+{{- with .Err -}}
+{{- warnf "[BROKEN IMAGE] failed to fetch %s Error: %s" $newUrl . -}}
 {{- break -}}
+{{- else -}}
+{{- $additionalVersions = $additionalVersions | append . -}}
 {{- end -}}
-{{- $additionalVersions = $additionalVersions | append $newImageVersion -}}
+{{- end -}}
 {{- end -}}
 
 {{- $lqip := "" -}}
