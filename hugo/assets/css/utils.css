@@ -12,7 +12,7 @@
     filter: blur(8px);
 }
 
-.lqip>img {
+.lqip > img {
     z-index: 2;
     position: relative;
 }
@@ -31,4 +31,8 @@
 .max-page {
     max-width: var(--max-page-width);
     min-width: var(--max-page-width);
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
 }

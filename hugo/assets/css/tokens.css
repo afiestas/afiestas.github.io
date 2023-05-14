@@ -58,7 +58,7 @@
         --nav-icon-color-scheme-secondary: #ffffef;
     }
 
-    #color-scheme-toggle:checked~#color-scheme-wrapper {
+    #color-scheme-toggle:checked ~ #color-scheme-wrapper {
         --bg-color: #FFF;
         --bg-color-2: #cacad022;
         --bg-color-light: #cacad022;
@@ -82,7 +82,7 @@
         --nav-icon-color-scheme-secondary: #544db4;
     }
 
-    #color-scheme-toggle:checked~#color-scheme-wrapper {
+    #color-scheme-toggle:checked ~ #color-scheme-wrapper {
         --bg-color: #182029;
         --bg-color-2: #32333f22;
         --bg-color-light: #32333f22;

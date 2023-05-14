@@ -44,7 +44,7 @@ main .whoami {
 
 main .whoami picture,
 main .whoami picture::after,
-main .whoami picture>* {
+main .whoami picture > * {
   width: calc(var(--header-margin) * 15);
   height: calc(var(--header-margin) * 15);
   border-radius: 50%;
@@ -56,7 +56,7 @@ main .whoami .description {
   flex-grow: 2;
 }
 
-main .whoami .description .text>* {
+main .whoami .description .text > * {
   max-inline-size: var(--max-line-width);
   font-family: var(--content-font-family);
 }
