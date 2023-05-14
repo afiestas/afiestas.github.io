@@ -178,7 +178,12 @@ iframe {
     max-inline-size: 100%;
     block-size: auto;
 }
-#color-scheme-wrapper {
+
+li,
+ul {
+    text-decoration: none;
+    list-style: none;
+}#color-scheme-wrapper {
     --max-page-layout: 88rem;
     --max-content-layout: 75rem;
     /* Generic layout */
@@ -210,10 +215,13 @@ iframe {
     --line-height-md: 1.7;
     --max-line-width: 75ch;
 
-    --header-size: var(--font-size-fluid-base);
-    --header-margin: var(--header-size);
-    --header-icons: calc(var(--header-size) * 2);
-    --header-font-size: var(--font-size-fluid-base);
+    --unit-base: var(--font-size-fluid-base);
+    --unit-md: var(--font-size-fluid-md);
+
+    --spacing-base: var(--unit-base);
+    --header-size: var(--unit-base);
+    --header-margin: var(--spacing-base);
+    --header-icons: calc(var(--unit-base) * 2);
 
     /* Defaults */
     font-family: var(--content-font-family);
@@ -285,10 +293,9 @@ iframe {
   flex-grow: 10;
 }
 
-.nav-top-primary {
+.nav-top {
   --active-indicator-size: 0.7ex;
   font-weight: var(--primary-font-weight);
-  font-size: var(--header-font-size);
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -296,14 +303,13 @@ iframe {
   gap: var(--header-icons);
 }
 
-.nav-top-primary .links {
+.nav-top .links {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
   width: 100%;
   height: var(--header-icons);
   gap: 2em;
-
 }
 
 .toggle:checked~.links {
@@ -336,24 +342,22 @@ iframe {
   color: var(--accent-color-one);
 }
 
-.nav-top-primary li {
-  text-decoration: none;
-  list-style: none;
+.nav-top li {
   position: relative;
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.nav-top-primary li.primary {
+.nav-top li.primary {
   margin-right: var(--active-indicator-size);
 }
 
-.nav-top-primary li:first-child {
+.nav-top li:first-child {
   margin-left: var(--active-indicator-size);
 }
 
-.nav-top-primary li.primary.active::after {
+.nav-top li.primary.active::after {
   content: "";
   position: absolute;
   width: var(--active-indicator-size);
@@ -364,10 +368,10 @@ iframe {
   right: -1ex;
 }
 
-.nav-top-primary li .icon {
+.nav-top li .icon {
   background-color: var(--primary-color);
-  min-height: var(--font-size-fluid-md);
-  min-width: var(--font-size-fluid-md);
+  min-height: var(--unit-md);
+  min-width: var(--unit-md);
   transition: scale 0.3s;
   background: linear-gradient(90deg,
       var(--primary-color),
@@ -375,7 +379,7 @@ iframe {
   -webkit-text-fill-color: transparent;
 }
 
-.nav-top-primary li.primary .icon {
+.nav-top li.primary .icon {
   display: none;
 }
 
@@ -386,7 +390,7 @@ iframe {
   margin-bottom: 0.7em;
 }
 
-.nav-top-primary li.secondary .name {
+.nav-top li.secondary .name {
   display: none;
 }
 
@@ -396,8 +400,8 @@ iframe {
 
 .show-all .icon {
   background-color: var(--primary-color);
-  min-height: var(--font-size-fluid-md);
-  min-width: var(--font-size-fluid-md);
+  min-height: var(--unit-md);
+  min-width: var(--unit-md);
   transition: transform .2s ease-in-out;
 }
 
@@ -409,7 +413,6 @@ iframe {
   display: flex;
   flex-flow: column;
   overflow: hidden;
-  height: 100%;
   justify-content: center;
   align-items: center;
   min-width: var(--header-size);
@@ -458,6 +461,16 @@ nav .logo {
     overflow: hidden;
     position: relative;
     display: block;
+}
+
+.max-content {
+    max-width: var(--max-content-width);
+    min-width: var(--max-content-width);
+}
+
+.max-page {
+    max-width: var(--max-page-width);
+    min-width: var(--max-page-width);
 }html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
@@ -480,16 +493,17 @@ a {
 .global-container {
   max-width: var(--max-page-width);
   min-width: var(--max-page-width);
-  padding: 0 var(--header-margin);
+  padding: 0 var(--spacing-base);
   display: flex;
   flex-direction: column;
-  gap: var(--header-margin);
+  gap: var(--spacing-base);
 }
 
 main {
-  max-width: var(--max-content-width);
-  min-width: var(--max-content-width);
-  align-self: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 main .whoami {
@@ -542,8 +556,6 @@ main a:not(.nav):hover {
 }
 
 .section-article {
-  flex-basis: 100%;
-  align-self: baseline;
   margin-top: calc(var(--header-margin) * 5);
   margin-bottom: calc(var(--header-margin) * 2);
 }
@@ -648,8 +660,8 @@ footer {
         <input type="checkbox" id="color-scheme-toggle" aria-hidden="true" tabindex="-1" class="color-shceme-toggle"/>
         <div id="color-scheme-wrapper">
             <div class="global-container"><header>
-  <nav class="nav-top-primary">
-    <input type="checkbox" id="more" aria-hidden="true" tabindex="-1" class="toggle"/>
+  <nav class="nav-top">
+    <input type="checkbox" id="more" aria-hidden="true" tabindex="-1" class="toggle" />
     <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="200" height="200" viewBox="0 0 52.917 52.917"><defs><linearGradient id="a"><stop offset="0" style="stop-color:#753a88;stop-opacity:1"/><stop offset="1" style="stop-color:#cc2b5e;stop-opacity:1"/></linearGradient><linearGradient id="b"><stop offset="0" style="stop-color:#cc2b5e;stop-opacity:1"/><stop offset="1" style="stop-color:#753a88;stop-opacity:1"/></linearGradient><linearGradient xlink:href="#a" id="c" x1="68.822" x2="111.951" y1="91.965" y2="91.965" gradientTransform="translate(-87.78 -94.549) scale(1.27549)" gradientUnits="userSpaceOnUse" spreadMethod="pad"/><linearGradient xlink:href="#b" id="d" x1="68.822" x2="111.951" y1="91.965" y2="91.965" gradientTransform="translate(-87.78 -94.549) scale(1.27549)" gradientUnits="userSpaceOnUse" spreadMethod="pad"/></defs><g style="display:inline"><g style="font-size:64.7947px;line-height:1.25;display:inline;fill:url(#c);stroke-width:.337472"><path d="m18.985 14.134-2.315 3.818 6.4 10.66 2.33-3.852zm-4.507 7.43L0 45.43h12.893l7.981-13.191ZM27.473.075 21.06 10.7l18.336 30.324 2.722 4.406H55.01z" aria-label="À" style="font-family:Quantum;-inkscape-font-specification:Quantum;display:inline;fill:url(#d)" transform="matrix(.96194 0 0 1.16442 0 -.086)"/></g></g></svg>
     <ul class="links">
       
@@ -739,31 +751,27 @@ footer {
     </label>
   </nav>
 </header><main>
-    <div class="whoami">
+    <div class="whoami max-content">
         <picture class="lqip" style="--img-lqip: url(&#39;data:media/webp;base64,UklGRnQBAABXRUJQVlA4IGgBAADwCACdASoPAA8AAAAAJZACdD2AOAA8qr9gPgRrAH0Z9IEeZfIvw7/IDPVcUz1Eb8YNc1/VfxV9o/NPqAfxT&#43;O/1v8ruNV/VU&#43;2buXygr7xAgD&#43;/xoaBe/9XespUJfhq0N7VZvzdpn/wPVfH6YPPvY4ouN2ed0vlKxt4PjDRcv94m1nHNXyvJ&#43;83OQbjYh5c/92n8N87ugSU3V4K5&#43;aI2i&#43;fXDkE93vmidM7L3sAKb/Nb2jR5P//q/woFXUS6Bqx2Ua/5RP96mUbnpr2ML&#43;Goeq4hXuWiSO6GY4f8PP&#43;3U4q&#43;O7jGdKlA&#43;dx/9gEF/sA&#43;5eYjbJbRVepD5xv2suGnrBrWeMaWWrcSYI/WOwOo8vNNI2UHO2n6CUWF5MYv/6z7b/k8/xfXPZY8//3jRaSa/5/nx06tA2Do/rPjkrp5/4Zlqn/x2&#43;Rv/Fr5B5n/&#43;dB/z1Iv3vw154Skc0X4461d1azIJ4UvWWAAA=&#39;);">
-            <source srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w"/>
-            <source srcset="https://cdn.afiestas.org/site/avatar-285x285.webp 285w"/>
-            <img
-                decoding="async"
-                src="https://cdn.afiestas.org/site/avatar-570x570.webp"
-                loading="lazy"
-                sizes="15em"/>
+            <source srcset="https://cdn.afiestas.org/site/avatar-570x570.webp 570w" />
+            <source srcset="https://cdn.afiestas.org/site/avatar-285x285.webp 285w" />
+            <img decoding="async" src="https://cdn.afiestas.org/site/avatar-570x570.webp" loading="lazy" sizes="15em" />
         </picture>
         <div class="description">
             <h1>Hi there! I'm Àlex 👋</h1>
             <div class="text">
-            
+                
                 <p>I consider myself a Hacker, I have lot&rsquo;s of fun while working on different problems, not matter if they are computer based or not</p>
 <p>I used to work a lot on free software stuff, these days though I play CTO at a startup</p>
 <p>In this small corner of the internet I write my: findings, thoughts and musings just so I will not forget tomorrow</p>
 <p>You can also find me in: <a class="nav mastodon" href="https://fosstodon.org/@afiestas" target="_blank" rel="noopener"><span>Mastodon</span></a>, <a class="nav birdsite" href="https://twitter.com/afiestas" target="_blank" rel="noopener"><span>Twitter</span></a>, <a class="nav in" href="https://www.linkedin.com/in/afiestas/" target="_blank" rel="noopener"><span>Linkedin</span></a> and <a class="nav gh" href="https://github.com/afiestas/" target="_blank" rel="noopener"><span>Github</span></a>.</p>
 
-            
+                
             </div>
         </div>
     </div>
-    <h2 class="h2 section-article">Latest Articles</h2>
-    <div class="posts">
+    <h2 class="h2 section-article max-content">Latest Articles</h2>
+    <div class="posts max-content">
         <article>
     <h2><a href="/articles/almost-perfect-hidpi-on-linux/">Almost perfect HiDPI experience on Linux (Xorg) </a></h2>
     <div class="metadata">Around 6 years ago - 3 minutes</div>
@@ -861,7 +869,9 @@ We decided to go this early (4 days before the actual sprint starts) because we 
         </div>
     <h3><a class="scale" href="/articles/going-to-brno-for-a-week-of-awesome/">Read more</a></h3>
 </article>
-        <a href="/posts"><h2 class="h2">See all</h2></a>
+        <a href="/posts">
+            <h2 class="h2">See all</h2>
+        </a>
     </div>
 </main>
 <footer>

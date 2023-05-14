@@ -177,7 +177,12 @@ iframe {
     max-inline-size: 100%;
     block-size: auto;
 }
-#color-scheme-wrapper {
+
+li,
+ul {
+    text-decoration: none;
+    list-style: none;
+}#color-scheme-wrapper {
     --max-page-layout: 88rem;
     --max-content-layout: 75rem;
     /* Generic layout */
@@ -209,10 +214,13 @@ iframe {
     --line-height-md: 1.7;
     --max-line-width: 75ch;
 
-    --header-size: var(--font-size-fluid-base);
-    --header-margin: var(--header-size);
-    --header-icons: calc(var(--header-size) * 2);
-    --header-font-size: var(--font-size-fluid-base);
+    --unit-base: var(--font-size-fluid-base);
+    --unit-md: var(--font-size-fluid-md);
+
+    --spacing-base: var(--unit-base);
+    --header-size: var(--unit-base);
+    --header-margin: var(--spacing-base);
+    --header-icons: calc(var(--unit-base) * 2);
 
     /* Defaults */
     font-family: var(--content-font-family);
@@ -284,10 +292,9 @@ iframe {
   flex-grow: 10;
 }
 
-.nav-top-primary {
+.nav-top {
   --active-indicator-size: 0.7ex;
   font-weight: var(--primary-font-weight);
-  font-size: var(--header-font-size);
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -295,14 +302,13 @@ iframe {
   gap: var(--header-icons);
 }
 
-.nav-top-primary .links {
+.nav-top .links {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
   width: 100%;
   height: var(--header-icons);
   gap: 2em;
-
 }
 
 .toggle:checked~.links {
@@ -335,24 +341,22 @@ iframe {
   color: var(--accent-color-one);
 }
 
-.nav-top-primary li {
-  text-decoration: none;
-  list-style: none;
+.nav-top li {
   position: relative;
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-.nav-top-primary li.primary {
+.nav-top li.primary {
   margin-right: var(--active-indicator-size);
 }
 
-.nav-top-primary li:first-child {
+.nav-top li:first-child {
   margin-left: var(--active-indicator-size);
 }
 
-.nav-top-primary li.primary.active::after {
+.nav-top li.primary.active::after {
   content: "";
   position: absolute;
   width: var(--active-indicator-size);
@@ -363,10 +367,10 @@ iframe {
   right: -1ex;
 }
 
-.nav-top-primary li .icon {
+.nav-top li .icon {
   background-color: var(--primary-color);
-  min-height: var(--font-size-fluid-md);
-  min-width: var(--font-size-fluid-md);
+  min-height: var(--unit-md);
+  min-width: var(--unit-md);
   transition: scale 0.3s;
   background: linear-gradient(90deg,
       var(--primary-color),
@@ -374,7 +378,7 @@ iframe {
   -webkit-text-fill-color: transparent;
 }
 
-.nav-top-primary li.primary .icon {
+.nav-top li.primary .icon {
   display: none;
 }
 
@@ -385,7 +389,7 @@ iframe {
   margin-bottom: 0.7em;
 }
 
-.nav-top-primary li.secondary .name {
+.nav-top li.secondary .name {
   display: none;
 }
 
@@ -395,8 +399,8 @@ iframe {
 
 .show-all .icon {
   background-color: var(--primary-color);
-  min-height: var(--font-size-fluid-md);
-  min-width: var(--font-size-fluid-md);
+  min-height: var(--unit-md);
+  min-width: var(--unit-md);
   transition: transform .2s ease-in-out;
 }
 
@@ -408,7 +412,6 @@ iframe {
   display: flex;
   flex-flow: column;
   overflow: hidden;
-  height: 100%;
   justify-content: center;
   align-items: center;
   min-width: var(--header-size);
@@ -457,6 +460,16 @@ nav .logo {
     overflow: hidden;
     position: relative;
     display: block;
+}
+
+.max-content {
+    max-width: var(--max-content-width);
+    min-width: var(--max-content-width);
+}
+
+.max-page {
+    max-width: var(--max-page-width);
+    min-width: var(--max-page-width);
 }html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
@@ -479,16 +492,17 @@ a {
 .global-container {
   max-width: var(--max-page-width);
   min-width: var(--max-page-width);
-  padding: 0 var(--header-margin);
+  padding: 0 var(--spacing-base);
   display: flex;
   flex-direction: column;
-  gap: var(--header-margin);
+  gap: var(--spacing-base);
 }
 
 main {
-  max-width: var(--max-content-width);
-  min-width: var(--max-content-width);
-  align-self: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 main .whoami {
@@ -541,8 +555,6 @@ main a:not(.nav):hover {
 }
 
 .section-article {
-  flex-basis: 100%;
-  align-self: baseline;
   margin-top: calc(var(--header-margin) * 5);
   margin-bottom: calc(var(--header-margin) * 2);
 }
@@ -647,8 +659,8 @@ footer {
         <input type="checkbox" id="color-scheme-toggle" aria-hidden="true" tabindex="-1" class="color-shceme-toggle"/>
         <div id="color-scheme-wrapper">
             <div class="global-container"><header>
-  <nav class="nav-top-primary">
-    <input type="checkbox" id="more" aria-hidden="true" tabindex="-1" class="toggle"/>
+  <nav class="nav-top">
+    <input type="checkbox" id="more" aria-hidden="true" tabindex="-1" class="toggle" />
     <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="200" height="200" viewBox="0 0 52.917 52.917"><defs><linearGradient id="a"><stop offset="0" style="stop-color:#753a88;stop-opacity:1"/><stop offset="1" style="stop-color:#cc2b5e;stop-opacity:1"/></linearGradient><linearGradient id="b"><stop offset="0" style="stop-color:#cc2b5e;stop-opacity:1"/><stop offset="1" style="stop-color:#753a88;stop-opacity:1"/></linearGradient><linearGradient xlink:href="#a" id="c" x1="68.822" x2="111.951" y1="91.965" y2="91.965" gradientTransform="translate(-87.78 -94.549) scale(1.27549)" gradientUnits="userSpaceOnUse" spreadMethod="pad"/><linearGradient xlink:href="#b" id="d" x1="68.822" x2="111.951" y1="91.965" y2="91.965" gradientTransform="translate(-87.78 -94.549) scale(1.27549)" gradientUnits="userSpaceOnUse" spreadMethod="pad"/></defs><g style="display:inline"><g style="font-size:64.7947px;line-height:1.25;display:inline;fill:url(#c);stroke-width:.337472"><path d="m18.985 14.134-2.315 3.818 6.4 10.66 2.33-3.852zm-4.507 7.43L0 45.43h12.893l7.981-13.191ZM27.473.075 21.06 10.7l18.336 30.324 2.722 4.406H55.01z" aria-label="À" style="font-family:Quantum;-inkscape-font-specification:Quantum;display:inline;fill:url(#d)" transform="matrix(.96194 0 0 1.16442 0 -.086)"/></g></g></svg>
     <ul class="links">
       
