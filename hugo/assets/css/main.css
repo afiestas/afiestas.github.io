@@ -20,10 +20,10 @@ a {
 .global-container {
   max-width: var(--max-page-width);
   min-width: var(--max-page-width);
-  padding: 0 var(--header-margin);
+  padding: 0 var(--spacing-base);
   display: flex;
   flex-direction: column;
-  gap: var(--header-margin);
+  gap: var(--spacing-base);
 }
 
 main {

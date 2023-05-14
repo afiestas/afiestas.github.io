@@ -15,10 +15,9 @@ header {
   flex-grow: 10;
 }
 
-.nav-top-primary {
+.nav-top {
   --active-indicator-size: 0.7ex;
   font-weight: var(--primary-font-weight);
-  font-size: var(--header-font-size);
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -26,14 +25,13 @@ header {
   gap: var(--header-icons);
 }
 
-.nav-top-primary .links {
+.nav-top .links {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
   width: 100%;
   height: var(--header-icons);
   gap: 2em;
-
 }
 
 .toggle:checked~.links {
@@ -66,24 +64,21 @@ header {
   color: var(--accent-color-one);
 }
 
-.nav-top-primary li {
-  text-decoration: none;
-  list-style: none;
+.nav-top li {
   position: relative;
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
-.nav-top-primary li.primary {
+.nav-top li.primary {
   margin-right: var(--active-indicator-size);
 }
 
-.nav-top-primary li:first-child {
+.nav-top li:first-child {
   margin-left: var(--active-indicator-size);
 }
 
-.nav-top-primary li.primary.active::after {
+.nav-top li.primary.active::after {
   content: "";
   position: absolute;
   width: var(--active-indicator-size);
@@ -94,10 +89,10 @@ header {
   right: -1ex;
 }
 
-.nav-top-primary li .icon {
+.nav-top li .icon {
   background-color: var(--primary-color);
-  min-height: var(--font-size-fluid-md);
-  min-width: var(--font-size-fluid-md);
+  min-height: var(--unit-md);
+  min-width: var(--unit-md);
   transition: scale 0.3s;
   background: linear-gradient(90deg,
       var(--primary-color),
@@ -105,7 +100,7 @@ header {
   -webkit-text-fill-color: transparent;
 }
 
-.nav-top-primary li.primary .icon {
+.nav-top li.primary .icon {
   display: none;
 }
 
@@ -116,7 +111,7 @@ header {
   margin-bottom: 0.7em;
 }
 
-.nav-top-primary li.secondary .name {
+.nav-top li.secondary .name {
   display: none;
 }
 
@@ -126,8 +121,8 @@ header {
 
 .show-all .icon {
   background-color: var(--primary-color);
-  min-height: var(--font-size-fluid-md);
-  min-width: var(--font-size-fluid-md);
+  min-height: var(--unit-md);
+  min-width: var(--unit-md);
   transition: transform .2s ease-in-out;
 }
 
@@ -139,7 +134,6 @@ header {
   display: flex;
   flex-flow: column;
   overflow: hidden;
-  height: 100%;
   justify-content: center;
   align-items: center;
   min-width: var(--header-size);

@@ -34,3 +34,9 @@ iframe {
     max-inline-size: 100%;
     block-size: auto;
 }
+
+li,
+ul {
+    text-decoration: none;
+    list-style: none;
+}

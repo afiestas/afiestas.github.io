@@ -30,10 +30,13 @@
     --line-height-md: 1.7;
     --max-line-width: 75ch;
 
-    --header-size: var(--font-size-fluid-base);
-    --header-margin: var(--header-size);
-    --header-icons: calc(var(--header-size) * 2);
-    --header-font-size: var(--font-size-fluid-base);
+    --unit-base: var(--font-size-fluid-base);
+    --unit-md: var(--font-size-fluid-md);
+
+    --spacing-base: var(--unit-base);
+    --header-size: var(--unit-base);
+    --header-margin: var(--spacing-base);
+    --header-icons: calc(var(--unit-base) * 2);
 
     /* Defaults */
     font-family: var(--content-font-family);
