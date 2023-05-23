@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        <input type="checkbox" id="color-scheme-toggle" aria-hidden="true" tabindex="-1" class="color-shceme-toggle"/>
-        <div id="color-scheme-wrapper">
-            <div class="global-container">
-                {{- partial "header.html" . -}}
-                {{- block "main" . }}{{- end }}
-                {{- partial "footer.html" . -}}
-            </div>
+{{- partial "head.html" . -}}
+
+<body>
+    <input type="checkbox" id="color-scheme-toggle" aria-hidden="true" tabindex="-1" class="color-shceme-toggle" />
+    <div id="color-scheme-wrapper">
+        <div class="global-container max-page">
+            {{- partial "header.html" . -}}
+            {{- block "main" . }}{{- end }}
+            {{- partial "footer.html" . -}}
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

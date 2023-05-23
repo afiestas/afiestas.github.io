@@ -36,3 +36,7 @@
 .flow > * + * {
     margin-top: var(--flow-space, 1em);
 }
+
+.max-line {
+    max-inline-size: var(--max-line-width);
+}
