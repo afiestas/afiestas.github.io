@@ -8,9 +8,9 @@
             <source srcset="https://cdn.afiestas.org/site/avatar-285x285.webp 285w" />
             <img decoding="async" src="https://cdn.afiestas.org/site/avatar-570x570.webp" loading="lazy" sizes="15em" />
         </picture>
-        <div class="description">
+        <div class="description flow max-line">
             <h1>Hi there! I'm Àlex 👋</h1>
-            <div class="text">
+            <div class="flow">
                 {{ with .Site.GetPage "description.md" }}
                 {{ .Content }}
                 {{ end }}

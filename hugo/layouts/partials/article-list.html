@@ -1,7 +1,7 @@
-<article>
+<article class="flow">
     <h2><a href="{{ .Permalink }}">{{ .Title }} </a></h2>
-    <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
-    <div class="summary">{{ .Summary }} </div>
+    <div class="metadata text-secondary">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
+    <div class="max-line">{{ .Summary }} </div>
     <div class="tags">
         {{- range .GetTerms "categories" -}}
         <a class="text-secondary" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
