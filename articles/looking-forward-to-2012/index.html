@@ -241,7 +241,7 @@ ul {
         --nav-icon-color-scheme-secondary: #ffffef;
     }
 
-    #color-scheme-toggle:checked~#color-scheme-wrapper {
+    #color-scheme-toggle:checked ~ #color-scheme-wrapper {
         --bg-color: #FFF;
         --bg-color-2: #cacad022;
         --bg-color-light: #cacad022;
@@ -265,7 +265,7 @@ ul {
         --nav-icon-color-scheme-secondary: #544db4;
     }
 
-    #color-scheme-toggle:checked~#color-scheme-wrapper {
+    #color-scheme-toggle:checked ~ #color-scheme-wrapper {
         --bg-color: #182029;
         --bg-color-2: #32333f22;
         --bg-color-light: #32333f22;
@@ -310,17 +310,17 @@ ul {
   gap: 2em;
 }
 
-.toggle:checked~.links {
+.toggle:checked ~ .links {
   overflow: visible;
   height: auto;
   font-size: 0.8em;
 }
 
-.toggle:checked~.links>.flex-spacer {
+.toggle:checked ~ .links > .flex-spacer {
   display: none;
 }
 
-.toggle:checked~.links>li {
+.toggle:checked ~ .links > li {
   width: calc(var(--header-icons) * 1.5);
   align-items: center;
   justify-content: center;
@@ -328,15 +328,15 @@ ul {
   margin-top: 0;
 }
 
-.toggle:checked~.links>li.primary.active::after {
+.toggle:checked ~ .links > li.primary.active::after {
   display: none;
 }
 
-.toggle:checked~.links>li.primary.active .icon {
+.toggle:checked ~ .links > li.primary.active .icon {
   background-color: var(--accent-color-one);
 }
 
-.toggle:checked~.links>li.primary.active .name {
+.toggle:checked ~ .links > li.primary.active .name {
   color: var(--accent-color-one);
 }
 
@@ -381,7 +381,7 @@ ul {
   display: none;
 }
 
-.toggle:checked~.links li .icon {
+.toggle:checked ~ .links li .icon {
   display: block;
   min-height: var(--header-icons);
   min-width: var(--header-icons);
@@ -392,7 +392,7 @@ ul {
   display: none;
 }
 
-.toggle:checked~.links li.secondary .name {
+.toggle:checked ~ .links li.secondary .name {
   display: block;
 }
 
@@ -417,7 +417,7 @@ ul {
   cursor: pointer;
 }
 
-.toggle:checked~.show-all>.icon {
+.toggle:checked ~ .show-all > .icon {
   transform: rotate(-45deg);
   min-height: var(--header-icons);
   min-width: var(--header-icons);
@@ -450,7 +450,7 @@ nav .logo {
     filter: blur(8px);
 }
 
-.lqip>img {
+.lqip > img {
     z-index: 2;
     position: relative;
 }
@@ -469,9 +469,21 @@ nav .logo {
 .max-page {
     max-width: var(--max-page-width);
     min-width: var(--max-page-width);
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+}
+
+.max-line {
+    max-inline-size: var(--max-line-width);
 }html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
+}
+
+a {
+  color: var(--link-color);
 }
 
 #color-scheme-wrapper {
@@ -484,13 +496,7 @@ nav .logo {
   min-height: 100vh;
 }
 
-a {
-  color: var(--link-color);
-}
-
 .global-container {
-  max-width: var(--max-page-width);
-  min-width: var(--max-page-width);
   padding: 0 var(--spacing-base);
   display: flex;
   flex-direction: column;
@@ -505,7 +511,7 @@ main {
 }
 
 main .whoami {
-  padding: var(--header-margin);
+  padding: var(--spacing-base);
   background-color: var(--bg-color-2);
   display: flex;
   justify-content: center;
@@ -515,9 +521,9 @@ main .whoami {
 
 main .whoami picture,
 main .whoami picture::after,
-main .whoami picture>* {
-  width: calc(var(--header-margin) * 15);
-  height: calc(var(--header-margin) * 15);
+main .whoami picture > * {
+  width: calc(var(--unit-base) * 15);
+  height: calc(var(--unit-base) * 15);
   border-radius: 50%;
   align-self: center;
 }
@@ -525,11 +531,6 @@ main .whoami picture>* {
 main .whoami .description {
   flex-basis: 31ch;
   flex-grow: 2;
-}
-
-main .whoami .description .text>* {
-  max-inline-size: var(--max-line-width);
-  font-family: var(--content-font-family);
 }
 
 main a:not(.nav) {
@@ -554,58 +555,42 @@ main a:not(.nav):hover {
 }
 
 .section-article {
-  margin-top: calc(var(--header-margin) * 5);
-  margin-bottom: calc(var(--header-margin) * 2);
+  margin-top: calc(var(--spacing-base) * 5);
+  margin-bottom: calc(var(--spacing-base) * 2);
 }
 
 .posts {
   display: flex;
   flex-direction: column;
-  gap: calc(var(--header-margin) * 3);
+  gap: calc(var(--spacing-base) * 3);
 }
 
 article {
   content-visibility: auto;
-  flex-basis: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--header-margin);
-  font-family: var(--content-font-family);
 }
 
-.summary {
-  font-weight: var(--regular-font-weight);
-  font-size: var(--font-size-fluid-base);
-  line-height: var(--line-height-base);
-  max-inline-size: var(--max-line-width);
-}
-
-.summary a {
+.content a {
   display: inline-block;
   width: 100%;
 }
 
-.summary a span {
+.content a span {
   display: inline-block;
   width: 100%;
 }
 
-.summary pre {
+.content pre {
   overflow: auto;
 }
 
-.summary iframe {
+.content iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
 }
 
 .metadata {
-  font-family: var(--metadata-font-family);
-  font-size: var(--font-size-fluid-sm);
-  font-weight: var(--secondary-font-weight);
-  position: relative;
-  top: calc(var(--header-margin) / -2)
+  --flow-space: 0.1em;
 }
 
 .text-secondary {
@@ -655,9 +640,9 @@ footer {
     <meta name="color-scheme" content="dark light">
 </head>
 <body>
-        <input type="checkbox" id="color-scheme-toggle" aria-hidden="true" tabindex="-1" class="color-shceme-toggle"/>
-        <div id="color-scheme-wrapper">
-            <div class="global-container"><header>
+    <input type="checkbox" id="color-scheme-toggle" aria-hidden="true" tabindex="-1" class="color-shceme-toggle" />
+    <div id="color-scheme-wrapper">
+        <div class="global-container max-page"><header>
   <nav class="nav-top">
     <input type="checkbox" id="more" aria-hidden="true" tabindex="-1" class="toggle" />
     <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="200" height="200" viewBox="0 0 52.917 52.917"><defs><linearGradient id="a"><stop offset="0" style="stop-color:#753a88;stop-opacity:1"/><stop offset="1" style="stop-color:#cc2b5e;stop-opacity:1"/></linearGradient><linearGradient id="b"><stop offset="0" style="stop-color:#cc2b5e;stop-opacity:1"/><stop offset="1" style="stop-color:#753a88;stop-opacity:1"/></linearGradient><linearGradient xlink:href="#a" id="c" x1="68.822" x2="111.951" y1="91.965" y2="91.965" gradientTransform="translate(-87.78 -94.549) scale(1.27549)" gradientUnits="userSpaceOnUse" spreadMethod="pad"/><linearGradient xlink:href="#b" id="d" x1="68.822" x2="111.951" y1="91.965" y2="91.965" gradientTransform="translate(-87.78 -94.549) scale(1.27549)" gradientUnits="userSpaceOnUse" spreadMethod="pad"/></defs><g style="display:inline"><g style="font-size:64.7947px;line-height:1.25;display:inline;fill:url(#c);stroke-width:.337472"><path d="m18.985 14.134-2.315 3.818 6.4 10.66 2.33-3.852zm-4.507 7.43L0 45.43h12.893l7.981-13.191ZM27.473.075 21.06 10.7l18.336 30.324 2.722 4.406H55.01z" aria-label="À" style="font-family:Quantum;-inkscape-font-specification:Quantum;display:inline;fill:url(#d)" transform="matrix(.96194 0 0 1.16442 0 -.086)"/></g></g></svg>
@@ -752,8 +737,8 @@ footer {
 <main>
     <article>
         <h2>Looking forward to 2012 </h2>
-        <div class="metadata">Around 11 years ago - 1 minutes</div>
-        <div class="summary"><p>I'm sure 2012 is going to be an amazing year for Free Software and of course for the KDE community, a lot is happening within our community and we have just started the year ! Just to mention a few from the top of my mind: Calligra getting closer, Plasma Active2, 4.8 release, Frameworks 5, OwnCloud 3, Spark... I can go on for a while :) As every six month or so, here is the list of what I'm planing to work on:</p>
+        <div class="metadata">Around 11 years and a half ago - 1 minutes</div>
+        <div class="content max-line"><p>I'm sure 2012 is going to be an amazing year for Free Software and of course for the KDE community, a lot is happening within our community and we have just started the year ! Just to mention a few from the top of my mind: Calligra getting closer, Plasma Active2, 4.8 release, Frameworks 5, OwnCloud 3, Spark... I can go on for a while :) As every six month or so, here is the list of what I'm planing to work on:</p>
 <ul>
 <li>AppMenu KRunner (you will see it tomorrow)</li>
 <li>Finish <a href="http://community.kde.org/Solid/Projects/DisplayManagement/Design">new RandR supoprt </a></li>
@@ -778,6 +763,7 @@ footer {
  }
 </style>
 </footer></div>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
