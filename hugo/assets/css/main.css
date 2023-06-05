@@ -90,24 +90,19 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
 }
 
 .metadata {

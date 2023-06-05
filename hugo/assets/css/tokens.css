@@ -3,7 +3,11 @@
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -43,6 +47,8 @@
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -40,3 +40,9 @@
 .max-line {
     max-inline-size: var(--max-line-width);
 }
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+

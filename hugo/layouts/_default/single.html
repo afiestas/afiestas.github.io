@@ -1,9 +1,9 @@
 {{ define "main" }}
 <main>
-    <article>
+    <article class="flow center">
         <h2>{{ .Title }} </h2>
-        <div class="metadata">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
-        <div class="content max-line">{{ .Content }} </div>
+        <div class="metadata text-secondary">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
+        {{ .Content }}
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>
