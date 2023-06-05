@@ -82,16 +82,24 @@ you have a ported version [here](https://raw.githubusercontent.com/afiestas/xorg
 Although with this patch the experience is already way better since the applications will look correctly on all screens Qt has a few bugs
 that will create weird glitches specially by placing windows where they don’t belong.
 
-#### Drunk comboboxes
+<figure>
+  <iframe src='https://gfycat.com/ifr/NegativeReadyBluebird' frameborder='0' scrolling='no' allowfullscreen></iframe>
+  <figcaption>Drunk comboboxes</figcaption>
+</figure>
+<figure>
+  <iframe src='https://gfycat.com/ifr/MilkyTanFallowdeer' frameborder='0' scrolling='no' allowfullscreen></iframe>
+  <figcaption>Dipsie comboboxes</figcaption>
+</figure>
 
-<iframe src='https://gfycat.com/ifr/NegativeReadyBluebird' frameborder='0' scrolling='no' allowfullscreen></iframe>
-<iframe src='https://gfycat.com/ifr/MilkyTanFallowdeer' frameborder='0' scrolling='no' allowfullscreen></iframe>
+<figure>
+  <iframe src='https://gfycat.com/ifr/SlushyUnitedGrison' frameborder='0' scrolling='no' allowfullscreen></iframe>
+  <figcaption>Shy tooltips</figcaption>
+</figure>
 
-#### Shy tooltips
-<iframe src='https://gfycat.com/ifr/SlushyUnitedGrison' frameborder='0' scrolling='no' allowfullscreen></iframe>
-
-#### Jumpy Drag And Drop
-<iframe src='https://gfycat.com/ifr/DemandingFairBettong' frameborder='0' scrolling='no' allowfullscreen></iframe>
+<figure>
+  <iframe src='https://gfycat.com/ifr/DemandingFairBettong' frameborder='0' scrolling='no' allowfullscreen></iframe>
+  <figcaption>Jumpy Drag And Drop</figcaption>
+</figure>
 
 I have been working on 3 patches that solve most of these at least in my day to day use.
 
