@@ -1,6 +1,14 @@
 {{ define "main" }}
-{{- $foo := resources.GetRemote "https://cdn.afiestas.org/site/avatar-lqip.webp" -}}
-{{- $encoded := printf "url('data:media/webp;base64,%s')" ($foo.Content | base64Encode) | safeCSS -}}
+
+{{- $encoded := "" -}}
+{{- $imageUrl := "https://cdn.afiestas.org/site/avatar-lqip.webp" -}}
+{{- with resources.GetRemote $imageUrl -}}
+{{- with .Err -}}
+{{- warnf "[BROKEN IMAGE] failed to fetch %s Error: %s" $imageUrl . -}}
+{{- else -}}
+{{- $encoded = printf "url('data:media/webp;base64,%s')" (.Content | base64Encode) | safeCSS -}}
+{{- end -}}
+{{- end -}}
 <main>
     <div class="whoami max-content">
         <picture class="lqip" style="--img-lqip: {{$encoded}};">
