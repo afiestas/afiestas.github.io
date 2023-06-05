@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Kamoso is alive! </h2>
-        <div class="metadata">Around 12 years and a half ago - 1 minutes</div>
-        <div class="content max-line"><p>After months of being almost a dead-zombie project now the Kamoso development has been resumed, we can say that it is in better shape than ever!&nbsp;Motivated by the QtGstreamer project, Aleix and I decided to port Kamoso to it and see how it goes (it has been the perfect excuse to revive the project). So far we didn't regret the change. Besides the technology switch (we we're kind of ok with libvlc), the change has given to us new forces to work on the project, let's see what we've got so far:
+        <div class="metadata text-secondary">Around 12 years and a half ago - 1 minutes</div>
+        <p>After months of being almost a dead-zombie project now the Kamoso development has been resumed, we can say that it is in better shape than ever!&nbsp;Motivated by the QtGstreamer project, Aleix and I decided to port Kamoso to it and see how it goes (it has been the perfect excuse to revive the project). So far we didn't regret the change. Besides the technology switch (we we're kind of ok with libvlc), the change has given to us new forces to work on the project, let's see what we've got so far:
 <div><br></div>
 <div>Current features:</div>
 <div>
@@ -774,7 +803,7 @@ footer {
 <div><br><br /> <video width="600" height="350" controls="controls" tabindex="0" autobuffer="false" preload="metadata"><source type="video/ogg" src="https://cdn.afiestas.org/posts/2010/11/kamoso2.ogv"></source><br />
 </video></div>
 <div>Cya and Happy Hacking!</div>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

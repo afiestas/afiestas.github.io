@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>WebAccounts, making social/cloud easier </h2>
-        <div class="metadata">Almost 11 years ago - 2 minutes</div>
-        <div class="content max-line"><p>This blogpost was written 2 months ago, mind that !</p>
+        <div class="metadata text-secondary">Almost 11 years ago - 2 minutes</div>
+        <p>This blogpost was written 2 months ago, mind that !</p>
 <p>As you may know, for the last months I have been working on BlueSystems, one of my main projects has been creating a working prototype of "WebAccounts".</p>
 <p><strong>What is WebAccounts?<br />
 </strong>It is a centralize place where both, users and applications can configure accounts related to various social/cloud services such twitter, identi.ca, google, facebook, dropbox, owncloud, ftp servers...</p>
@@ -772,7 +801,7 @@ footer {
 <p> <a href="https://vimeo.com/49618818/download?t=1347908606&v=117908346&s=c7f4bb2323b727387d94c44067990dfe">Direct Link</a></p>
 <p><strong></strong><strong>Future?</strong></p>
 <p>Big part of WebAcounts future is going to be discussed at Akademy2012, where I hope to trace a roadmap together with the rest of people interested on it so we can push this concept further.</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

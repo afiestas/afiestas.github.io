@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Yet Another Delayed FOSDEM Entry </h2>
-        <div class="metadata">Around 13 years ago - 2 minutes</div>
-        <div class="content max-line"><p>With a week of delay (almost) is time to write my sum up of FOSDEM, which by the way was my first one.</p>
+        <div class="metadata text-secondary">Around 13 years ago - 2 minutes</div>
+        <p>With a week of delay (almost) is time to write my sum up of FOSDEM, which by the way was my first one.</p>
 <p><strong>Friday 05/02/2010:</strong></p>
 <p>Wake up at 3:00 AM to take a cab to go to Barajas airport, I have to say that Gate 2 is uglier than the Gate 2 of El prat airport (and smaller), but one point in favor is that it was full of power sources :p</p>
 <p>Once in Brussels, Kiko, Victor and Oscar were waiting for me, I got some stress because of the airport distribution, is like labyrinth! Then usual route in that kind of travels, Breakfast-&gt;Hotel-&gt;Launch-&gt;FOSDEM beer event. A well, between Launch and FOSDEM we went to Brussels MIDI to met Aleix pol (apol).</p>
@@ -755,7 +784,7 @@ footer {
 <p>Cya!</p>
 <p>=-=-=-=-=<br />
 <em>Powered by <strong><a href="http://blogilo.gnufolks.org/">Blogilo</a></strong></em></p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

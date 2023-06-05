@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Akademy-es 2012, makes everything worth it </h2>
-        <div class="metadata">Almost 11 years ago - 2 minutes</div>
-        <div class="content max-line"><p>Most of you know me because of all the work I do on KDE in form of code: Kamoso, BlueDevil, Solid... It is the stuff I put on my blog so if you know my involvement in KDE because of my blog it is normal.</p>
+        <div class="metadata text-secondary">Around 11 years ago - 2 minutes</div>
+        <p>Most of you know me because of all the work I do on KDE in form of code: Kamoso, BlueDevil, Solid... It is the stuff I put on my blog so if you know my involvement in KDE because of my blog it is normal.</p>
 <p>Besides writing code, I'm starting to be involved in other areas all across our community, one of them is KDE-España.</p>
 <p>KDE-España is the legal representation of KDE in Spain, you can consider it as a sister of KDE e.V but only for the local community. One of the activities we do is the Akademy-es, a gathering of users and developers that happens every year in a different city of the country, so far we have had: Barcelona, Saragossa, Coruña, Bilbao, Barcelona, Saragossa (again :p) and sure more to come.</p>
 <p>You may think these events are less important than writing software and that I shouldn't waste my time there. I say you are <strong>wrong </strong>and that at least they are equally important.</p>
@@ -746,7 +775,7 @@ footer {
 <p>So I'd like to encourage you to organize Akademy's or smaller events on whatever city/country you live in, building a strong local community is crucial for keeping this global ship alive.</p>
 <p style="text-align: center;"><a href="https://cdn.afiestas.org/posts/2012/06/group_picture.jpg" target="_blank"><img class="aligncenter" title="Akademy-es 2012 Group Picture" src="https://cdn.afiestas.org/posts/2012/06/group_picture_small.jpg" alt="" width="600" height="399" /></a></p>
 <p style="text-align: center;">Can't wit for Akademy-es 2013 :)</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

@@ -175,7 +175,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -187,7 +188,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -227,6 +232,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -478,7 +485,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -570,24 +584,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -895,7 +924,7 @@ List of unique changes in 1.3 final:
     <h3><a class="scale" href="/articles/bluedevil-1-3-released/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/kscreen-0-1-alpha-released/">KScreen 0.1-alpha released ! </a></h2>
-    <div class="metadata text-secondary">Around 10 years ago - 1 minutes</div>
+    <div class="metadata text-secondary">Around 10 years and a half ago - 1 minutes</div>
     <div class="max-line">We are really glad to announce the first release of KScreen, the new way of managing screens in Plasma Desktop !
 This release comes with two main components, the System Settings module which will let you configure and arrange your screens in any way you desire, and the KDED module which will remember and restore configurations whenever it is needed.
 We have decided to release now since we have fixed pretty much all the bugs reported by our early adopters (special thanks and hugs to them) so we feel that it is about time we let power users test it so we can fix any bug that may still exists. </div>
@@ -994,7 +1023,7 @@ From 11jun to 18jun we had an amazing sprint in a small town near Barcelona call
     <h3><a class="scale" href="/articles/desktop-desktop-and-desktop-sprint-in-pineda-de-mar-barcelona/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/akademy-es-2012-makes-everything-worth-it/">Akademy-es 2012, makes everything worth it </a></h2>
-    <div class="metadata text-secondary">Almost 11 years ago - 2 minutes</div>
+    <div class="metadata text-secondary">Around 11 years ago - 2 minutes</div>
     <div class="max-line">Most of you know me because of all the work I do on KDE in form of code: Kamoso, BlueDevil, Solid... It is the stuff I put on my blog so if you know my involvement in KDE because of my blog it is normal.
 Besides writing code, I'm starting to be involved in other areas all across our community, one of them is KDE-España.
 KDE-España is the legal representation of KDE in Spain, you can consider it as a sister of KDE e. </div>
@@ -1004,7 +1033,7 @@ KDE-España is the legal representation of KDE in Spain, you can consider it as 
     <h3><a class="scale" href="/articles/akademy-es-2012-makes-everything-worth-it/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/samba-mounter-quick-fix-for-a-larger-problem/">Samba-mounter, quick fix for a larger problem </a></h2>
-    <div class="metadata text-secondary">Almost 11 years ago - 4 minutes</div>
+    <div class="metadata text-secondary">Around 11 years ago - 4 minutes</div>
     <div class="max-line">There was a time, years ago when computer users only needed to keep all their files in one place, and occasionally make some backup to a CD or DVD. Then the mp3 players appeared and those users had to copy the music from the computer to the player usually via USB, that's all we needed we thought... well we were wrong :)
 The amount of devices we have and we use is increasing and so does the amount of data we manage, some may think that a regular non geek user has few files but if you take a closer look you will see that the average user actually has hundreds of pictures, hundreds of sounds, hundreds of films, dozens of documents. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1013,7 +1042,7 @@ The amount of devices we have and we use is increasing and so does the amount o
     <h3><a class="scale" href="/articles/samba-mounter-quick-fix-for-a-larger-problem/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/joining-the-blue/">Joining the Blue </a></h2>
-    <div class="metadata text-secondary">Almost 11 years ago - 1 minutes</div>
+    <div class="metadata text-secondary">Around 11 years ago - 1 minutes</div>
     <div class="max-line">I planned to announce this when it happened but got stuck with travels and work so it got delayed a bit (2 months :p).
 I'm glad to say that I will be sponsored by Blue Systems to work on various parts of the Workspace, so far we have defined two areas of work:
 Improve transparent file browsing (KIO) and make it available to all applications. Improve web and online services integration into the Workspace, by adding a single point of configuration. </div>
@@ -1131,7 +1160,7 @@ This happens only when using a kernel with two digits uname such 3.0-ARCH for ex
     <h3><a class="scale" href="/articles/two-annoying-bugs-fixed-in-kdirwatch-and-kuiserver/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/next-in-bluedevil/">Next in BlueDevil </a></h2>
-    <div class="metadata text-secondary">Around 11 years and a half ago - 3 minutes</div>
+    <div class="metadata text-secondary">Almost 12 years ago - 3 minutes</div>
     <div class="max-line">Hi there!
 These last tree weeks have been crazy, apart from being busy sorting things out where I work, I have been doing an strict diet + sport to see if I can get rid of my extra weight, so far I'm not less Àlex than I was tree weeks ago, exactly 10Kg less (22 pounds says google...). Well stop of talking about myself, let's talk about BlueDevil!
 BlueDevil 1.2: </div>
@@ -1233,7 +1262,7 @@ Webcam: Kamoso 2.0 has been released, and with it rock solid support to do the b
     <h3><a class="scale" href="/articles/summary-of-last-6-months/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/bits-of-platform11/">Bits of Platform11 </a></h2>
-    <div class="metadata text-secondary">Almost 12 years ago - 2 minutes</div>
+    <div class="metadata text-secondary">Around 12 years ago - 2 minutes</div>
     <div class="max-line">Tomorrow we will be all leaving towards our respective homes and platform11 will be formally done, though the work is far to be finished. In this blogspot I'm not going to talk about that though :p
 I'm going to talk about how important these events are beyond the technical expects and what I'm going to say applies to my experience in this sprint.
 You can "Put faces" to people, you're no longer talking to " </div>
@@ -1243,7 +1272,7 @@ You can "Put faces" to people, you're no longer talking to " </div>
     <h3><a class="scale" href="/articles/bits-of-platform11/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/i-cant-find-myself-though-i-can-be-anybody-else/">I can&#39;t find myself :/ though I can be anybody else </a></h2>
-    <div class="metadata text-secondary">Almost 12 years ago - 1 minutes</div>
+    <div class="metadata text-secondary">Around 12 years ago - 1 minutes</div>
     <div class="max-line">At the beginning of the Randa sprint (platform11, multimedia, kdevelop, nepomuk) we were given a badge so other people can see who we are and so on. One day (maybe two) after that, somebody started to exchange them until the point that I've been around 30different persons in 2 days xD.
 Yesterday I started to look for myself again since I like to keep this things but seems that nobody has it :/ maybe somebody throw me to the trash? </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1252,7 +1281,7 @@ Yesterday I started to look for myself again since I like to keep this things bu
     <h3><a class="scale" href="/articles/i-cant-find-myself-though-i-can-be-anybody-else/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/kamoso-2-0-velazquez-released/">Kamoso 2.0 Velázquez released </a></h2>
-    <div class="metadata text-secondary">Almost 12 years ago - 1 minutes</div>
+    <div class="metadata text-secondary">Around 12 years ago - 1 minutes</div>
     <div class="max-line">We're proud to announce the final version of Kamoso Velázquez, the KDE picture/video retriever !
 In this release we've focused all the effort on getting the most stable release possible, and so far we think that we've reached that goal until it's matching our expectatives. This version is more important than what it seems, with this release we're making a new technology switch towards QtGstreamer, a technology that we hope will allow us to offer a stable, consistent and scalable application. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1337,7 +1366,7 @@ The full changelog is: Added support for Bluetooth 2.1 (SSP pairing) Do not pair
     <h3><a class="scale" href="/articles/bluedevil-1-0-2-released/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/what-is-kamoso/">What is Kamoso </a></h2>
-    <div class="metadata text-secondary">Around 12 years ago - 2 minutes</div>
+    <div class="metadata text-secondary">Around 12 years and a half ago - 2 minutes</div>
     <div class="max-line">A lot of people has been asking me (or complaining) what is Kamoso and what we intend to do with it, so I've decided to use a blog post to explain it. Short Description:
 Kamoso is an application for taking Pictures and Videos using any webcam.
 Long Description:
@@ -1348,7 +1377,7 @@ Kamoso is an application between two worlds, "Multimedia" and "Toys". While its 
     <h3><a class="scale" href="/articles/what-is-kamoso/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/first-version-of-kamoso-2-0-velazquez-released/">First version of Kamoso 2.0 (Velázquez) released </a></h2>
-    <div class="metadata text-secondary">Around 12 years ago - 1 minutes</div>
+    <div class="metadata text-secondary">Around 12 years and a half ago - 1 minutes</div>
     <div class="max-line">After few months of work, we're glad to announce the availability of Kamoso 2.0-alpha2.
 Despite of being an alpha version, it has demostrated to perform quite stable in all the test we did during the alpha1 (this was a private release), in fact judging by the feedback we got
 this version is way more stable than 1.0.5, so give it a try!
@@ -1466,7 +1495,7 @@ Fix a crash in the file receiver Fix a crash in the KDED Cleaned audio UUID's (l
     <h3><a class="scale" href="/articles/bluedevil-1-0rc4-released/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/delays-delays-delays/">Delays delays delays :( </a></h2>
-    <div class="metadata text-secondary">Around 12 years and a half ago - 1 minutes</div>
+    <div class="metadata text-secondary">Almost 13 years ago - 1 minutes</div>
     <div class="max-line">Hi there
 As you may have noticed, BlueDevil RC4 is not out (yet), and there is a reason for that.
 We're mainly 2 developers working on it, ereslibre and myself. Ereslibre is studying hard because he has like 5 exams in 2 weeks, and I'm looking for a new place to live downtown (still in Madrid), so those things are stealing our KDE hacking time :(
@@ -1553,7 +1582,7 @@ So we've develop a new Plugin for KDevelop which will give us direct access to w
     <h3><a class="scale" href="/articles/new-kdevelop-key-feature-plugin/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/kde-multimedia-sprint-days-2-3-4-and-5/">KDE Multimedia Sprint Days 2, 3, 4 and 5 </a></h2>
-    <div class="metadata text-secondary">Almost 13 years ago - 2 minutes</div>
+    <div class="metadata text-secondary">Around 13 years ago - 2 minutes</div>
     <div class="max-line">Day 2: Trip to Zermatt
 This day was marked by the trip to Zermatt but not by the outward journey but by the return one which I did (as the major part of the people) walking. We went through the forest crossing 2 rivers (well, jumping 2 rivers xD) and of course, talking about software, akademy, politics etc. By the night, a mysterious KHTML crash produced by gcc appeared in my laptop sadly I lost all the hacking time figuring out that gcc was the problem :( </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1562,7 +1591,7 @@ This day was marked by the trip to Zermatt but not by the outward journey but by
     <h3><a class="scale" href="/articles/kde-multimedia-sprint-days-2-3-4-and-5/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/kde-multimedia-sprint-quicksand-day-1/">KDE Multimedia Sprint QuickSand, day 1 </a></h2>
-    <div class="metadata text-secondary">Almost 13 years ago - 2 minutes</div>
+    <div class="metadata text-secondary">Around 13 years ago - 2 minutes</div>
     <div class="max-line">For those who know what QuickSand is you may wonder &quot;What is the relationship between QuickSand and Multimedia/Edu?&quot; the answer to that question is quick and short, none :p but it is what I did today.
 What is QuickSand? QuickSand is an alternative interface for KRunner, it is integrated in KRunner (the code is inside KRunner), and since the major part of KDE users seems to like the default interface almost nobody knows his existence :p, but it actually exists and I can prove it! </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1665,7 +1694,7 @@ With the last release I added a crash when receiving files, I gare say it was no
     <h3><a class="scale" href="/articles/kbluetooth-0-4-1/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/im-going-to-fosdem-too/">I&#39;m going to FOSDEM too! </a></h2>
-    <div class="metadata text-secondary">Around 13 years ago - 1 minutes</div>
+    <div class="metadata text-secondary">Around 13 years and a half ago - 1 minutes</div>
     <div class="max-line">Seems that this year a lot of KDE hackers will go to FOSDEM and I won't be an exception :)!
 I have not defined my roadmap (yet), but at least I'll have a couple of meeting regarding the future of KBluetooth, and sooner than you think I'll come back with great news about Bluetooth+KDE.
 If you're in the FOSDEM and you have doubts or ideas about Bluetooth+KDE ping to me I'll be around *KDE* stuff in there. </div>
@@ -1675,7 +1704,7 @@ If you're in the FOSDEM and you have doubts or ideas about Bluetooth+KDE ping to
     <h3><a class="scale" href="/articles/im-going-to-fosdem-too/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/kbluetooth-0-4-is-here/">Kbluetooth 0.4 is here! </a></h2>
-    <div class="metadata text-secondary">Around 13 years ago - 2 minutes</div>
+    <div class="metadata text-secondary">Around 13 years and a half ago - 2 minutes</div>
     <div class="max-line">Months ago, I started to take care of a forgotten piece of KDE, kde-bluetooth. After a lot of work and an almost clean the bugtrack of bugs, I'm proud to announce KBluetooth 0.4!
 These are the highlights:
 The official name is now &quot;KBluetooth&quot;. A lot of crashes have been fixed, KBluetooth should not crash now. File transfer (send/receive) reported to work for everybody with any kind of device. Improved the input pairing (Almost all devices working). </div>
@@ -1685,7 +1714,7 @@ The official name is now &quot;KBluetooth&quot;. A lot of crashes have been fixe
     <h3><a class="scale" href="/articles/kbluetooth-0-4-is-here/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/resuming-my-adventure-in-kde/">Resuming my adventure in KDE </a></h2>
-    <div class="metadata text-secondary">Around 13 years ago - 1 minutes</div>
+    <div class="metadata text-secondary">Around 13 years and a half ago - 1 minutes</div>
     <div class="max-line">Hi!
 Is time to resume my adventure in the lands of KDE, I had to stop it because of work, I'm creating a new business together with ereslibre and edulix and we are kind of busy.
 Returning to the topic, in this second part of the adventure I'm not going to change my focus, so I'll continue hacking on kbluetooth, kamoso and ktuberling.
@@ -1744,7 +1773,7 @@ Two days ago at morning, I was very bored I don't remember exactly why, so I dec
     <h3><a class="scale" href="/articles/kopete-developtment-1/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/up-and-running-again/">Up and running again. </a></h2>
-    <div class="metadata text-secondary">Around 13 years and a half ago - 3 minutes</div>
+    <div class="metadata text-secondary">Almost 14 years ago - 3 minutes</div>
     <div class="max-line">Hi everyone!
 After a few days of "non-computer" I'm back with the batteries charged at 100% :) and with a small list of things to be done in the next days. This is the list:
 Reach kamoso 1.0 version (I hope in 1week max):

@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Desktop, Desktop and Desktop, Sprint in Pineda de Mar (Barcelona) </h2>
-        <div class="metadata">Almost 11 years ago - 3 minutes</div>
-        <div class="content max-line"><p>First of all, excuse the super late release of this post, I have been super busy up to the point where I couldn't use 15min to spellcheck this post, now I had to adapt it a little bit, change times etc.</p>
+        <div class="metadata text-secondary">Almost 11 years ago - 3 minutes</div>
+        <p>First of all, excuse the super late release of this post, I have been super busy up to the point where I couldn't use 15min to spellcheck this post, now I had to adapt it a little bit, change times etc.</p>
 <p>From 11jun to 18jun we had an amazing sprint in a small town near Barcelona called Pineda de Mar. This sprint was organized to gather all the developers highly motivated in move the <strong>Desktop </strong>forward, including those working in areas not strictly related to what the user sees or not strictly known as part of the desktop. We had a week of fun and work lead (as usual :p) by Kevin Ottens.<br />
 We had endless discussions about our weak and strong spots , hacked a little bit (some more than others), played table tennis (Yay for the Southern European team vs the British Empire), and enjoyed good quality food done mostly by Dario Freddi (let the italians cook we say) though more people worked in the kitched to prepare delicious disesh (Kevin, Sebas, Clemens, Marco Martin, Lluis Eskerda...).</p>
 <p>It is hard to describe what the environment of a sprint is like, just imagine that you are with your best friends a whole week doing what you love only stopping for eating and having fun. In this case KDE is the people and what we love is our software, full week non-distractions equals super productivity of all kinds. It is hard to summarize the whole week, but these are my personal highlights of the sprint:</p>
@@ -763,7 +792,7 @@ We had endless discussions about our weak and strong spots , hacked a little bit
 <p>Photos taken by Martin Klapetek</p>
 <p>I hope you could see a glimpse of how intense a sprint is lived and how useful they are.</p>
 <p>Bye !</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>First version of Kamoso 2.0 (Velázquez) released </h2>
-        <div class="metadata">Around 12 years ago - 1 minutes</div>
-        <div class="content max-line"><p>After few months of work, we're glad to announce the availability of Kamoso 2.0-alpha2.</p>
+        <div class="metadata text-secondary">Around 12 years and a half ago - 1 minutes</div>
+        <p>After few months of work, we're glad to announce the availability of Kamoso 2.0-alpha2.</p>
 <p>Despite of being an alpha version, it has demostrated to perform quite stable in all the test we did during the alpha1 (this was a private release), in fact judging by the feedback we got</p>
 <p>this version is way more stable than 1.0.5, so give it a try!</p>
 <p>Changelog:</p>
@@ -767,7 +796,7 @@ footer {
 <p><video width="600" height="350" controls="controls" tabindex="0"> <source type="video/ogg" src="https://cdn.afiestas.org/posts/2011/02/kamoso-2.ogv"></source></video><a href="https://cdn.afiestas.org/posts/2011/02/kamoso-2.ogv">Direct Link</a></p>
 <p>=-=-=-=-=<br />
 <em>Powered by </em><a href="http://blogilo.gnufolks.org/"><strong><em>Blogilo</em></strong></a></p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Going to Brno for a week of awesome. </h2>
-        <div class="metadata">Around 9 years and a half ago - 2 minutes</div>
-        <div class="content max-line"><p>Tomorrow <a href="http://www.sharpley.org.uk/" target="_blank">David Edmunson</a>, <a href="http://vhanda.in/blog/" target="_blank">Vishesh Handa</a> and I will be taking a plane from Barcelona with final destination Brno to meet for a pre-PIM sprint hackathon with the Czech KDE hackers (<a href="http://ltinkl.blogspot.com/" target="_blank">Lukáš Tinkl </a>,  <a href="http://grulja.wordpress.com/" target="_blank">Jan Grulich</a>, <a href="http://www.progdan.cz/" target="_blank">Dan Vrátil</a>, <a href="http://martinbriza.wordpress.com/2013/10/12/you-wont-need-polkit-anymore/" target="_blank">Martin Bříza</a>, <a href="http://martys.typepad.com/" target="_blank">Martin Klapetek</a>), is in this ocasions where one comes to appreciate that we can do our jobs from anywhere.</p>
+        <div class="metadata text-secondary">Around 9 years and a half ago - 2 minutes</div>
+        <p>Tomorrow <a href="http://www.sharpley.org.uk/" target="_blank">David Edmunson</a>, <a href="http://vhanda.in/blog/" target="_blank">Vishesh Handa</a> and I will be taking a plane from Barcelona with final destination Brno to meet for a pre-PIM sprint hackathon with the Czech KDE hackers (<a href="http://ltinkl.blogspot.com/" target="_blank">Lukáš Tinkl </a>,  <a href="http://grulja.wordpress.com/" target="_blank">Jan Grulich</a>, <a href="http://www.progdan.cz/" target="_blank">Dan Vrátil</a>, <a href="http://martinbriza.wordpress.com/2013/10/12/you-wont-need-polkit-anymore/" target="_blank">Martin Bříza</a>, <a href="http://martys.typepad.com/" target="_blank">Martin Klapetek</a>), is in this ocasions where one comes to appreciate that we can do our jobs from anywhere.</p>
 <p>We decided to go this early (4 days before the actual sprint starts) because we all have to work on things with somebody close to the Brno RedHat office in a variety of topics:</p>
 <ul>
 <li>Working on PowerDevil for Plasma2 (at least Lukáš and I)</li>
@@ -753,7 +782,7 @@ footer {
 <p>If you haven't noticed, all those things have nothing to do with PIM! So it is a perfect time to introduce a new concept in KDE, the pre-sprint hackathons !</p>
 <p>Even though I hate being on the road, I can't wait to arrive to Brno and start this week, I'm sure it is going to be ton of fun and a lot of new things will come out of it.</p>
 <p>Cheers !</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,17 +764,17 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>One less thing that can put your laptop in danger </h2>
-        <div class="metadata">Around 11 years ago - 2 minutes</div>
-        <div class="content max-line"><p>A few months ago it almost happened to me. It was horrible. I was traumatized. I wonder, how can that happend in 2011? why me? why to my laptop?</p>
+        <div class="metadata text-secondary">Around 11 years ago - 2 minutes</div>
+        <p>A few months ago it almost happened to me. It was horrible. I was traumatized. I wonder, how can that happend in 2011? why me? why to my laptop?</p>
 <p>It was a worm afternoon in Madrid, the meeting I attended was so intensive I didn't get to login into the KDE Plasma Workspace session but instead I let the laptop on the KDM login page. Once the session finished I closed my laptop and put it in my bag full of battery.</p>
 <p>I'm not sure about the amount of time, but probably between 3 to 4 hours later I arrived home, opened my backpack and there it was, I found my laptop burning, hot as hell I even had to grab a cloth to open the lid and move the laptop to some place cool. From that day my new battery went form 98% of capacity to 90.</p>
 <p>That night, I  sent an email to some KDE mailist asking for this issue, until today nothing has been done to fix it.</p>
 <p>I don't want anybody to pass from the same I went through, that's why now with lightdm-kde the computer will suspend if the lid is closed.</p>
 <p>Next thing I want to do is show the battery remaining somewhere and suspend the computer after 2 minutes of idle time.</p>
 <p>With that, lightdm-kde will have great power management support.</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>BlueDevil 1.0.7, 1.1.4, 1.2.3 and 1.3-rc2 bug fixing frenezy ! </h2>
-        <div class="metadata">Around 11 years ago - 2 minutes</div>
-        <div class="content max-line"><p>Finally I have had the energy and the time to hunt the damn crashes that have been affecting BlueDevil since the beginning, fixing them has been relatively easy, be able to reproduce them instead has been quite time exhausting.</p>
+        <div class="metadata text-secondary">Around 11 years ago - 2 minutes</div>
+        <p>Finally I have had the energy and the time to hunt the damn crashes that have been affecting BlueDevil since the beginning, fixing them has been relatively easy, be able to reproduce them instead has been quite time exhausting.</p>
 <p>Once I fixed all those damn crashes I proceeded to do bug triage and managed to fix all of the confirmed bugs, or said in another way BlueDevil is virtually bug free <a title="Bug list of BlueDevil" href="http://goo.gl/WIeTz" target="_blank">bug list</a> :)</p>
 <p>There are still a <a title="iPhone bug 1" href="https://bugs.kde.org/show_bug.cgi?id=285637">couple </a>of bugs with <a title="iPhone bug 2" href="https://bugs.kde.org/show_bug.cgi?id=287195">iPhones</a>, but I will need one of those to be able to confirm and fix the issues. Any donation?</p>
 <p>The changelog looks as follow:</p>
@@ -778,7 +807,7 @@ sha256sum: db6735d5a66634ce5d761c70df4ad7c4f39295ac4a6f9b59bcc25777dc720dd5</p>
 <p>Cheers !</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

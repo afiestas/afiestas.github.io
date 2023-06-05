@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>I don&#39;t like why, but I&#39;m the new maintainer of KTuberling </h2>
-        <div class="metadata">Around 13 years and a half ago - 1 minutes</div>
-        <div class="content max-line"><p>As everybody should know by now, tsdgeos is moving to another city (Dublin) and of course is getting a new job. Is because of this job that Albert is not able to continue with his collaboration with anything that have to be with games. Life sometimes has this unintended consequences :/</p>
+        <div class="metadata text-secondary">Around 13 years and a half ago - 1 minutes</div>
+        <p>As everybody should know by now, tsdgeos is moving to another city (Dublin) and of course is getting a new job. Is because of this job that Albert is not able to continue with his collaboration with anything that have to be with games. Life sometimes has this unintended consequences :/</p>
 <p>So well, as you know, I created a patch some month/weeks ago which adds a small feature to KTuberling (will be available in kde 4.5). Since I like the code, and I'm a "friend? :p" of tsdgeos I proposed myself to Albert to continue with KTuberling at least until he can go back to his *games* duties :p</p>
 <p>So, this is my roadmap for KTuberling in KDE SC (KSC?, I don't like the new branding sorry ._.) 4.5:</p>
 <p>1. Support to switch between playgrounds using easier way<br />
@@ -746,7 +775,7 @@ footer {
 3. Add Get Hot New Stuff  (in discussion)</p>
 <p>If you have any ideas please, drop a bug to bugs.kde.org so we can evaluate it.</p>
 <p>Cya!</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

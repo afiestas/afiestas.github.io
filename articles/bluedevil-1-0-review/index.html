@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>BlueDevil 1.0 Review </h2>
-        <div class="metadata">Almost 13 years ago - 3 minutes</div>
-        <div class="content max-line"><p><strong>First, a little bit of historyFirst, a little bit of history</strong></p>
+        <div class="metadata text-secondary">Almost 13 years ago - 3 minutes</div>
+        <p><strong>First, a little bit of historyFirst, a little bit of history</strong></p>
 <p>It Seems that was yesterday when a year ago in the Gran Canaria Desktop Summit, Victor sent a file to me through Bluetooth and kdebluetooth saved it in a hidden folder, the file is still there "~/.kbluetooth4/Vídeo003.3gp". That fact is what made me decide to use my spare time working on kdebluetooth.</p>
 <p>After months of work in kbluetooth (the kdebluetooth fork I did), it started to work, but that spent hours made me realize that the kbluetooth never would be stable, it is a clear example of spaghetti code. Because of that, we started a new project called BlueDevil. If you're wondering about the name, Edulix came with it while working on the daemon, and it is based on PowerDevil (the name).</p>
 <p>After a few fridays working on it, suddenly a Spanish company sent an email to me, asking for help to develop a Qt library to deal with BlueZ. A couple of emails (and beers) later, they hired us (ufocoders) to write the library, the first big step towards a real BlueDevil was done.</p>
@@ -808,7 +837,7 @@ Receive files from other devices is supported and totally integrated with the sy
 <p>Finally, we'll be releasing one RC each week until we consider BlueDevil stable enough, so the next release will be Friday 4<br />
 </br><br />
 if you wish to help in the development of BlueDevil, you can contact us in irc.freenode.net #solid and in the kde-hardware-devel mailist.</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

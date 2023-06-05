@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>BlueDevil: Changing the way we work </h2>
-        <div class="metadata">Around 10 years ago - 4 minutes</div>
-        <div class="content max-line"><p><strong>In short:<br />
+        <div class="metadata text-secondary">Around 10 years ago - 4 minutes</div>
+        <p><strong>In short:<br />
 </strong>From now on we will be maintaining only one release instead of 4. We are going to focus on 1.3 and try to fix all remaining <a title="Bluedevil's bugs" href="https://bugs.kde.org/buglist.cgi?list_id=562341&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor&amp;bug_severity=task&amp;query_format=advanced&amp;bug_status=UNCONFIRMED&amp;bug_status=CONFIRMED&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_status=NEEDSINFO&amp;bug_status=VERIFIED&amp;component=bluetooth&amp;component=bluetooth-daemon&amp;component=bluetooth-kcm&amp;component=bluetooth-kio-bt&amp;component=bluetooth-kio-obex&amp;component=bluetooth-systray&amp;component=bluetooth-wizard&amp;product=solid" target="_blank">bugs</a>, then we will work on implementing some of the reported <a title="Bluedevil's wishes" href="https://bugs.kde.org/buglist.cgi?list_id=562342&amp;bug_severity=wishlist&amp;query_format=advanced&amp;bug_status=UNCONFIRMED&amp;bug_status=CONFIRMED&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_status=NEEDSINFO&amp;bug_status=VERIFIED&amp;component=bluetooth&amp;component=bluetooth-daemon&amp;component=bluetooth-kcm&amp;component=bluetooth-kio-bt&amp;component=bluetooth-kio-obex&amp;component=bluetooth-systray&amp;component=bluetooth-wizard&amp;product=solid" target="_blank">wishes</a> and release 1.4. Once that happens we will only maintain 1.4.</p>
 <p><strong>Explanation:<br />
 </strong>Since BlueDevil was released we have been updating all stable versions, which means:</p>
@@ -764,7 +793,7 @@ footer {
 </strong>I find it quite sad that after all this years going the extra mile so distributions can have a good Bluetooth experience, <a href="http://lists.kde.org/?l=kde-core-devel&amp;m=135689474501509&amp;w=4" target="_blank">nobody stepped up</a> to maintain stable releases. I guess this means that we are doing the right thing after all.</p>
 <p>So, if your distribution is not shipping the latest BlueDevil version or it is not upgrading to it ask them to do so!</p>
 <p>If after this blog post somebody feels like taking the job of maintaining the stable releases please, kde-hardware-devel@kde.org is your list !</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

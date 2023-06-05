@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Demand a KDE Experience from your Distribution ! </h2>
-        <div class="metadata">Around 9 years and a half ago - 2 minutes</div>
-        <div class="content max-line"><p>If you are reading this blog you probably know how things work in the GNU/Linux Desktop, some people <strong>develop</strong> software and then some <strong>other</strong> people <strong>distribute</strong> that software. This usually works quite well since the people distributing the software (In this case KDE software) work with us, and together we make sure that the final product is awesome.</p>
+        <div class="metadata text-secondary">Around 9 years and a half ago - 2 minutes</div>
+        <p>If you are reading this blog you probably know how things work in the GNU/Linux Desktop, some people <strong>develop</strong> software and then some <strong>other</strong> people <strong>distribute</strong> that software. This usually works quite well since the people distributing the software (In this case KDE software) work with us, and together we make sure that the final product is awesome.</p>
 <p>This system works as long as both, upstream (KDE) and downstream (Distributions) work together, but some times collaboration does not happen and problems appear. In those cases the experience that the user gets is not the experience we designed from KDE.</p>
 <p>This is quite similar to what happens in the Android world, <a title="HTC sense wikipedia page" href="http://en.wikipedia.org/wiki/HTC_Sense" target="_blank">HTC</a>/<a title="Touchwiz interface" href="http://en.wikipedia.org/wiki/Touchwiz" target="_blank">Samsung</a>/<a title="LG custom GUI" href="http://en.wikipedia.org/wiki/Optimus_UI" target="_blank">LG</a> do their own versions of it containing a different set of applications, configurations, services, etc. Google then releases what their think <a title="AOSP site" href="http://source.android.com/" target="_blank">Android should be</a>. In the same way Kubuntu/Opensuse/Fredora/Chakra do what they think is correct when it comes to updates, default applications, modify our software etc, meaning that in most cases the software is delivered in a different way from what we envision.</p>
 <p>This is why I want you to demand to your distribution to offer a full KDE Experience, this means:</p>
@@ -753,7 +782,7 @@ footer {
 <p>While we work on setting up those bits of infrastructure there are things you can already demand from your distributions - minor upgrades, no patching, or making all pre-releases available.</p>
 <p><a href="https://cdn.afiestas.org/posts/2013/12/44428971.jpg"><img class="aligncenter size-full wp-image-786" alt="" src="https://cdn.afiestas.org/posts/2013/12/44428971.jpg" width="400" height="400" /></a></p>
 <p>&nbsp;</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

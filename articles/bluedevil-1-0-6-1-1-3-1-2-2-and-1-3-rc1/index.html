@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>BlueDevil 1.0.6, 1.1.3, 1.2.2 and 1.3-rc1 </h2>
-        <div class="metadata">Around 11 years and a half ago - 2 minutes</div>
-        <div class="content max-line"><p>This weekend I proposed myself to clean the BlueDevil's <a title="BlueDevil bug list" href="https://bugs.kde.org/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=bluetooth" target="_blank">bug list</a>, at the beginning of the weekend the list had 42 bugs (including wishes), at this moment it has 18.</p>
+        <div class="metadata text-secondary">Around 11 years and a half ago - 2 minutes</div>
+        <p>This weekend I proposed myself to clean the BlueDevil's <a title="BlueDevil bug list" href="https://bugs.kde.org/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=bluetooth" target="_blank">bug list</a>, at the beginning of the weekend the list had 42 bugs (including wishes), at this moment it has 18.</p>
 <p>When I started the bug triage process, I realize that we had too much crashes so I decided to sit down and fix'em all, well I think I did and because of that we're releasing new versions for each branch including a new one (1.3) which is the only one that includes a huge change in the KDE Daemon that fixes a bunch of crashes.</p>
 <p>Fixed in 1.0:</p>
 <ul>
@@ -766,7 +795,7 @@ footer {
 </div>
 <div>Tarballs can be download from <a title="Stable1.0.6 tarball" href="http://download.kde.org/download.php?url=stable/bluedevil/1.0.6/src/bluedevil-1.0.6.tar.bz2" target="_blank">1.0</a>, <a title="Stable 1.1.3 release" href="http://download.kde.org/download.php?url=stable/bluedevil/1.1.3/src/bluedevil-1.1.3.tar.bz2" target="_blank">1.1</a>, <a title="Stable 1.2.2" href="http://download.kde.org/download.php?url=stable/bluedevil/1.2.2/src/bluedevil-1.0.6.tar.bz2" target="_blank">1.2</a> and <a title="Unstable 1.3-rc1" href="http://download.kde.org/download.php?url=unstable/bluedevil/1.3-rc1/src/bluedevil-1.3-rc1.tar.bz2" target="_blank">1.3</a></div>
 </div>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

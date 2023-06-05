@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Meet the KDE TeaTime ! </h2>
-        <div class="metadata">Around 10 years and a half ago - 1 minutes</div>
-        <div class="content max-line"><p><img class="aligncenter" title="KDE TeaTime Logo" src="https://cdn.afiestas.org/posts/2012/11/ktt.png" alt="KDE TeaTime Logo" width="250" height="250" />For a few weeks now 3 other KDE hackers and I have been doing a videocast/podcast/show/thing about KDE. It is a completely unprofessional unprepared amateur show where we basically talk about a different topic every week without having any script, we say things as we think them. it Doesn't matter if they are politically correct or not.</p>
+        <div class="metadata text-secondary">Around 10 years and a half ago - 1 minutes</div>
+        <p><img class="aligncenter" title="KDE TeaTime Logo" src="https://cdn.afiestas.org/posts/2012/11/ktt.png" alt="KDE TeaTime Logo" width="250" height="250" />For a few weeks now 3 other KDE hackers and I have been doing a videocast/podcast/show/thing about KDE. It is a completely unprofessional unprepared amateur show where we basically talk about a different topic every week without having any script, we say things as we think them. it Doesn't matter if they are politically correct or not.</p>
 <p>My main motivation for having this show is to open a door to the insides of KDE. This door is open both ways so the communication should and must be from Developers to Users and the other way around, so please participate !</p>
 <p>Some urls of interest:</p>
 <ul>
@@ -762,7 +791,7 @@ footer {
 <div>So, join us and have a good time!</div>
 </div>
 <p>&nbsp;</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

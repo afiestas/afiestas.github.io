@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>KDE Multimedia Sprint Days 2, 3, 4 and 5 </h2>
-        <div class="metadata">Almost 13 years ago - 2 minutes</div>
-        <div class="content max-line"><p><strong>Day 2: Trip to Zermatt</strong></p>
+        <div class="metadata text-secondary">Around 13 years ago - 2 minutes</div>
+        <p><strong>Day 2: Trip to Zermatt</strong></p>
 <p>This day was marked by the trip to Zermatt but not by the outward journey but by the return one which I did (as the major part of the people) walking. We went through the forest crossing 2 rivers (well, jumping 2 rivers xD) and of course, talking about software, akademy, politics etc. By the night, a mysterious KHTML crash produced by gcc appeared in my laptop sadly I lost all the hacking time figuring out that gcc was the problem :(</p>
 <p><strong>Day 3: Kamoso meets j-b (aka vlc man)</strong></p></p>
 <p>I don't remember exactly when we introduced Kamoso to j-b, but I do remember that I got stunned because seems that we did it quite well (the usage of libvlc and libvlccore). After a couple of minutes we fixed like 3 kamoso bugs (thanks to j-b). </p>
@@ -746,7 +775,7 @@ footer {
 <p><strong>Day 4 and 5: Kamoso hacking and rediscovering vlc</strong></p>
 <p>In the following days I concentrated all my efforts in 2 topics: port kamoso to vlc 1.1 and stabilization. The port was rather straight, I got the basic features (display and get pictures) working without many problems. Then once I had the base working with vlc 1.1 I started to fix crashes, I was able to smash all of them but one, anyway that one is fixed now (Thanks to the vlc people).</p>
 <p>Additionally, to fix some bugs I needed the help of the vlc community, j-b pointed me to the guy we had to talk with to fix some problems we had with the audio recording, there was where I realized the healthy community that is behind vlc, which is not only a good project but it is also a good community</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

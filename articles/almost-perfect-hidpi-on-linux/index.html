@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,13 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Almost perfect HiDPI experience on Linux (Xorg) </h2>
-        <div class="metadata">Around 6 years ago - 3 minutes</div>
-        <div class="content max-line"><p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/hidpi-orig.png" target="_blank" rel="noopener"><span><picture >
-  <img src="https://cdn.afiestas.org/posts/2017/02/hidpi.webp" alt="Awesome HiDPI on Xorg"  />
-</picture></span></a></p>
-<p>In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for
+        <div class="metadata text-secondary">Around 6 years ago - 3 minutes</div>
+        <p>In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for
 a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most
 applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino&hellip;) got support for higher DPIs as well.</p>
 <p>This would have meant perfect support for HiDPI on linux already in 2015 or so but we are missing one important thing which is supporting
@@ -749,14 +775,22 @@ both HiDPI and normal DPI screens at the same time. In order to support HiDPI sc
 they used to, how much bigger depends on the screen pixel density which, for example, in the case of my laptop is from 1.75 to 2 times
 bigger.</p>
 <p>This means that applications rendered for HiDPI look huge on normal screens:</p>
-<h4 id="hidpi-file-dialog-on-regular-screen">HiDPI File dialog on regular screen</h4>
-<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png" target="_blank" rel="noopener"><span><picture >
-  <img src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Open dialog looking huge"  />
-</picture></span></a></p>
-<h4 id="scaled-hidpi-file-dialog-on-regular-screen">Scaled HiDPI File dialog on regular screen</h4>
-<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png" target="_blank" rel="noopener"><span><picture >
-  <img src="https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png" alt="Open dialog looking ok"  />
-</picture></span></a></p>
+<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png" target="_blank" rel="noopener"><span><figure>
+  <picture >
+    <img style="--aspect-ratio:  1.78; --aspect-distance: 0.26;"
+      width="680" height="382" src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Scaled Open file dialog looking huge in a low density scren"
+       />
+  </picture>
+  <figcaption>Scaled Open file dialog looking huge in a low density scren</figcaption>
+</figure></span></a></p>
+<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png" target="_blank" rel="noopener"><span><figure>
+  <picture >
+    <img style="--aspect-ratio:  1.78; --aspect-distance: 0.26;"
+      width="680" height="382" src="https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png" alt="Scaled Open file dialog looking proportionally correct on a high density screen"
+       />
+  </picture>
+  <figcaption>Scaled Open file dialog looking proportionally correct on a high density screen</figcaption>
+</figure></span></a></p>
 <p>Here is where the internet seems to tell you that there is nothing to do but wait until Wayland arrives and saves us all
 (I can’t wait for that btw) but that’s actually not true, X can do it.</p>
 <p>XRandR allows us to apply transformations on the outputs, like for example rotation, and it also allows us to scale the screens.
@@ -767,6 +801,14 @@ the image to the monitor. So we have effectively turned our normal density scree
 <p>This is an example of how the xrandr command line looks like:</p>
 <pre tabindex="0"><code>xrandr --output eDP1 --auto --output DP1 --auto --scale 2x2 --right-of eDP1
 </code></pre><p>This will set DP1 to the default mode, scale it by 2 and place it at the right of the HiDPI laptop screen (eDP1).</p>
+<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/hidpi-orig.png" target="_blank" rel="noopener"><span><figure>
+  <picture >
+    <img style="--aspect-ratio:  3.26; --aspect-distance: 0.75;"
+      width="2740" height="841" src="https://cdn.afiestas.org/posts/2017/02/hidpi.webp" alt="Awesome HiDPI on Xorg"
+       />
+  </picture>
+  <figcaption>Awesome HiDPI on Xorg</figcaption>
+</figure></span></a></p>
 <p><em>Wow</em>! <em>Awesome</em>! This is so cool! Why is everybody not doing this? Where is the catch? \
 Mostly because of one bug: \
 <a class="nav home" href="https://bugs.freedesktop.org/show_bug.cgi?id=39949" target="_blank" rel="noopener"><span>https://bugs.freedesktop.org/show_bug.cgi?id=39949</span></a></p>
@@ -776,13 +818,22 @@ which is shipped by default in some distributions but it has never been integrat
 you have a ported version <a class="nav home" href="https://raw.githubusercontent.com/afiestas/xorg-server-patches/master/cursor.patch" target="_blank" rel="noopener"><span>here</span></a>.</p>
 <p>Although with this patch the experience is already way better since the applications will look correctly on all screens Qt has a few bugs
 that will create weird glitches specially by placing windows where they don’t belong.</p>
-<h4 id="drunk-comboboxes">Drunk comboboxes</h4>
-<iframe src='https://gfycat.com/ifr/NegativeReadyBluebird' frameborder='0' scrolling='no' allowfullscreen></iframe>
-<iframe src='https://gfycat.com/ifr/MilkyTanFallowdeer' frameborder='0' scrolling='no' allowfullscreen></iframe>
-<h4 id="shy-tooltips">Shy tooltips</h4>
-<iframe src='https://gfycat.com/ifr/SlushyUnitedGrison' frameborder='0' scrolling='no' allowfullscreen></iframe>
-<h4 id="jumpy-drag-and-drop">Jumpy Drag And Drop</h4>
-<iframe src='https://gfycat.com/ifr/DemandingFairBettong' frameborder='0' scrolling='no' allowfullscreen></iframe>
+<figure>
+  <iframe src='https://gfycat.com/ifr/NegativeReadyBluebird' frameborder='0' scrolling='no' allowfullscreen></iframe>
+  <figcaption>Drunk comboboxes</figcaption>
+</figure>
+<figure>
+  <iframe src='https://gfycat.com/ifr/MilkyTanFallowdeer' frameborder='0' scrolling='no' allowfullscreen></iframe>
+  <figcaption>Dipsie comboboxes</figcaption>
+</figure>
+<figure>
+  <iframe src='https://gfycat.com/ifr/SlushyUnitedGrison' frameborder='0' scrolling='no' allowfullscreen></iframe>
+  <figcaption>Shy tooltips</figcaption>
+</figure>
+<figure>
+  <iframe src='https://gfycat.com/ifr/DemandingFairBettong' frameborder='0' scrolling='no' allowfullscreen></iframe>
+  <figcaption>Jumpy Drag And Drop</figcaption>
+</figure>
 <p>I have been working on 3 patches that solve most of these at least in my day to day use.</p>
 <p>These two still need to be reviewed and might not get accepted:
 <a class="nav home" href="https://codereview.qt-project.org/#/c/182207/" target="_blank" rel="noopener"><span>https://codereview.qt-project.org/#/c/182207/</span></a>
@@ -790,7 +841,7 @@ that will create weird glitches specially by placing windows where they don’t 
 <p>This one seems to be on track to be merged (Drag and Drop):
 <a class="nav home" href="https://codereview.qt-project.org/#/c/182391/" target="_blank" rel="noopener"><span>https://codereview.qt-project.org/#/c/182391/</span></a></p>
 <p>With all this patches the HiDPI experience in any modern Linux distro is as good as in macOS and the best part is that we do not have to wait until Wayland.</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

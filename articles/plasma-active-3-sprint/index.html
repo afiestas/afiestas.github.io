@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Plasma Active 3 sprint </h2>
-        <div class="metadata">Around 11 years ago - 4 minutes</div>
-        <div class="content max-line"><p>A few days ago I attended to the PA3 sprint in Darmstadt, as always I enjoyed a few days with my friends not only working but also taking beers, going dinner etc. I have had a really good time there as I always do when KDE is in the formula.</p>
+        <div class="metadata text-secondary">Around 11 years ago - 4 minutes</div>
+        <p>A few days ago I attended to the PA3 sprint in Darmstadt, as always I enjoyed a few days with my friends not only working but also taking beers, going dinner etc. I have had a really good time there as I always do when KDE is in the formula.</p>
 <p>As far as I know this is the first PA sprint where a lot of community members external to the project attended, this is really great for opening the project to other areas of KDE, such Solid or KDEdu.  My work focus were:</p>
 <p><strong>Getting to know the inside of the project<br />
 </strong>Every project structure is different even between close projects such PowerDevil and BlueDevil. In the case of PA there are a few big differences that have to be taken into account:</p>
@@ -797,7 +826,7 @@ Social / Sharing / shiny stuff in KDE software</strong></div>
 </div>
 <div></div>
 <div><strong>This post was written on Match 14, information can be outdated.</strong></div>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

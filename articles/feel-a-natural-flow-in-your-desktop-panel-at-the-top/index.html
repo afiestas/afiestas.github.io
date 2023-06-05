@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Feel a &#34;natural flow&#34; in your desktop (Panel at the top) </h2>
-        <div class="metadata">Around 13 years ago - 3 minutes</div>
-        <div class="content max-line"><p>As my friends know, I'm addicted to read KDE/Free Software/Open Source/etc.. blogs when taking my morning coffee, and what I'm going to explain is a good example of why I love it. </p></p>
+        <div class="metadata text-secondary">Around 13 years ago - 3 minutes</div>
+        <p>As my friends know, I'm addicted to read KDE/Free Software/Open Source/etc.. blogs when taking my morning coffee, and what I'm going to explain is a good example of why I love it. </p></p>
 <p>Before continuing reading, be aware that I'm not an usability guy, I lack any kind of design or usability sense/knowledgement, In fact, I have been I'm using KDE for years and I never succeed to configure my desktop in a beautiful way (only by copying the others configs), so please keep that in your mind when you read this post.</p></p>
 <p>A few days ago, Celeste wrote an excellent paper about &quot;Tabs in the Taskbar&quot;. After reading it I decided to move my panel to the top of my main screen. The result has exceeded my expectations. What I got is more than a better relationship between the panel and the applications, what I got is something I've named a &quot;Natural flow&quot;, let me try to explain what I mean.</p></p>
 <p>The first thing I noticed after placing the panel at the top of the screen was that I forced less my eyes. Because of my work, I need to be aware of the notifications (kmail), but at the same time I'm usually writing code so I'm never watching the bottom of the screen, in fact if there is a part of the screen that I totally ignore it is the bottom, so move my eyes to that part of the screen every time I got a notification was painful.</p></p>
@@ -747,7 +776,7 @@ footer {
 <p>That's all! keep the panel at the top a day and decide where you like it more.</p></p>
 <p>Ps: Please, do not flame in the comments, the objective of this entry is to share my experience with other people not to start an usability flame or something like that. Usability is a complex subject, and I ignore all of it.</p>
 <p>=-=-=-=-=<br/><i>Powered by <b><a href='http://blogilo.gnufolks.org/'>Blogilo</a></b></i></p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

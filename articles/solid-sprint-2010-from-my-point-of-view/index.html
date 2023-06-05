@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Solid Sprint 2010, from my Point Of View </h2>
-        <div class="metadata">Around 12 years and a half ago - 6 minutes</div>
-        <div class="content max-line"><p>Almost 1 week has passed since Solid Sprint took place, and I'm already waiting for the next event, where I can hack side by side with KDE hackers from all the world again (Maybe in the Meego conference?). It was a short sprint but intense, productive and funny, on where we discussed and worked on some different topics. Let's began from the start.</p>
+        <div class="metadata text-secondary">Around 12 years and a half ago - 6 minutes</div>
+        <p>Almost 1 week has passed since Solid Sprint took place, and I'm already waiting for the next event, where I can hack side by side with KDE hackers from all the world again (Maybe in the Meego conference?). It was a short sprint but intense, productive and funny, on where we discussed and worked on some different topics. Let's began from the start.</p>
 <p><strong>Organisation</strong>:</p>
 <p>The organisation of a small Sprint doesn't require a huge amount of time (at least didn't this one) basically the tasks to do are:</p>
 <ol>
@@ -775,7 +804,7 @@ footer {
 <p>This is pretty much all, I hope this post help you (reader) to realize how important these sprints are for us, and by extension how important the donations are.</p>
 <p><a title="Join the game link" href="http://jointhegame.kde.org/" target="_blank">Join the game!</a></p>
 <p><a href="http://www.flickr.com/photos/vizzzion/5048391846/sizes/l/in/set-72157624950127005/"><img class="alignnone" title="Solid Team" src="https://cdn.afiestas.org/posts/2010/10/5048391846_d4da10eb69_b.jpg" alt="Solid Team" width="600" height="400" /></a></p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>

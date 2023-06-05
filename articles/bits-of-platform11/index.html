@@ -174,7 +174,8 @@ img,
 video,
 iframe {
     max-inline-size: 100%;
-    block-size: auto;
+    width: 100%;
+    height: auto;
 }
 
 li,
@@ -186,7 +187,11 @@ ul {
     --max-content-layout: 75rem;
     /* Generic layout */
     --max-page-width: min(100%, var(--max-page-layout));
+    --content-width: 55rem;
     --max-content-width: min(100%, var(--max-content-layout));
+    /* max-content-layout - content-width */
+    --content-distance: 20rem;
+    --content-distance: calc(var(--max-content-layout) - var(--content-width));
 
     /* Specific colors */
     --accent-color-one: #cc2b5eff;
@@ -226,6 +231,8 @@ ul {
     line-height: var(--line-height-base);
     font-size: var(--font-size-fluid-base);
     font-weight: var(--regular-font-weight);
+
+    --max-text-width: var(--max-line-width);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -477,7 +484,14 @@ nav .logo {
 
 .max-line {
     max-inline-size: var(--max-line-width);
-}html {
+}
+
+.center > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -569,24 +583,39 @@ article {
   content-visibility: auto;
 }
 
-.content a {
-  display: inline-block;
-  width: 100%;
-}
-
-.content a span {
-  display: inline-block;
-  width: 100%;
-}
-
-.content pre {
-  overflow: auto;
-}
-
-.content iframe {
+article iframe {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   width: 100%;
+}
+
+article > * {
+  max-width: var(--content-width);
+}
+
+article figure:has(* > picture) {
+  max-width: unset;
+  text-align: center;
+}
+
+article * > img {
+  --use-distance: var(--aspect-distance, 0);
+  --extra-width: calc(var(--use-distance) * var(--content-distance));
+  max-width: calc(var(--content-width) + var(--extra-width));
+}
+
+figcaption {
+  font-family: var(--metadata-font-family);
+  font-size: var(--font-size-fluid-sm);
+  font-weight: var(--secondary-font-weight);
+  opacity: 0.7;
+  text-align: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
 }
 
 .metadata {
@@ -735,10 +764,10 @@ footer {
   </nav>
 </header>
 <main>
-    <article>
+    <article class="flow center">
         <h2>Bits of Platform11 </h2>
-        <div class="metadata">Almost 12 years ago - 2 minutes</div>
-        <div class="content max-line"><p>Tomorrow we will be all leaving towards our respective homes and platform11 will be formally done, though the work is far to be finished. In this blogspot I'm not going to talk about that though :p</p>
+        <div class="metadata text-secondary">Around 12 years ago - 2 minutes</div>
+        <p>Tomorrow we will be all leaving towards our respective homes and platform11 will be formally done, though the work is far to be finished. In this blogspot I'm not going to talk about that though :p</p>
 <p>I'm going to talk about how important these events are beyond the technical expects and what I'm going to say applies to my experience in this sprint.</p>
 <ul>
 <li>You can "Put faces" to people, you're no longer talking to "dfaure" or "apachelloger" or... you're talking to a person, you know how they're and more or less how they think, and that makes the communication much more efficient.</li>
@@ -750,7 +779,7 @@ footer {
 <p>So, to sump up:</p>
 <p>Sprints are NOT only about core, are also about People and because of that, they're extremely important for the health of KDE.</p>
 <p>Thanks you all that make possible to organize such events, and particularly thanks for <a title="Join The Game" href="http://jointhegame.kde.org/" target="_blank">Joining the game</a>!</p>
- </div>
+
         <div class="metadata">#linux #desktop #hidpi #X11</div>
     </article>
 </main>
