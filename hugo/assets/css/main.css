@@ -105,6 +105,12 @@ article figure:has(* > picture) {
   text-align: center;
 }
 
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
+}
+
 .metadata {
   --flow-space: 0.1em;
 }
