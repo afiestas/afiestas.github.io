@@ -25,11 +25,6 @@ title: Almost perfect HiDPI experience on Linux (Xorg)
 
 ---
 
-[![Awesome HiDPI on Xorg][2]][1]
-
-[1]: https://cdn.afiestas.org/posts/2017/02/hidpi-orig.png
-[2]: https://cdn.afiestas.org/posts/2017/02/hidpi.webp
-
 In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for
 a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most
 applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino...) got support for higher DPIs as well.
@@ -41,16 +36,12 @@ bigger.
 
 This means that applications rendered for HiDPI look huge on normal screens:
 
-#### HiDPI File dialog on regular screen
-
-[![Open dialog looking huge][4]][3]
+[![Scaled Open file dialog looking huge in a low density scren][4]][3]
 
 [3]: https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png
 [4]: https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png
 
-#### Scaled HiDPI File dialog on regular screen
-
-[![Open dialog looking ok][6]][5]
+[![Scaled Open file dialog looking proportionally correct on a high density screen][6]][5]
 
 [5]: https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png
 [6]: https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png
@@ -72,6 +63,11 @@ xrandr --output eDP1 --auto --output DP1 --auto --scale 2x2 --right-of eDP1
 ```
 
 This will set DP1 to the default mode, scale it by 2 and place it at the right of the HiDPI laptop screen (eDP1).
+
+[![Awesome HiDPI on Xorg][2]][1]
+
+[1]: https://cdn.afiestas.org/posts/2017/02/hidpi-orig.png
+[2]: https://cdn.afiestas.org/posts/2017/02/hidpi.webp
 
 _Wow_! _Awesome_! This is so cool! Why is everybody not doing this? Where is the catch? \\
 Mostly because of one bug: \\

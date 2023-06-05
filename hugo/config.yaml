@@ -2,6 +2,11 @@ languageCode: en-us
 title: Àlex Fiestas's blog
 markup:
   goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
+        wrapStandAloneImageWithinParagraph: false
     renderer:
       unsafe: true
 module:

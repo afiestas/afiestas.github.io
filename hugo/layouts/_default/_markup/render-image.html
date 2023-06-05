@@ -26,8 +26,15 @@
 {{- with index $additionalVersions 0 -}}
 {{- $lqip = printf "url('data:media/webp;base64,%s')" (.Content | base64Encode) | safeCSS -}}
 {{- end -}}
+{{- $aspectRatio := (div (float $origImage.Width) $origImage.Height) -}}
+{{- $rd := sub 4 1 -}}
+{{- $nd := printf "%.2f" (div (sub $aspectRatio 1) $rd) -}}
 
-<picture {{with $lqip}}class="lqip"
-  style="--img-lqip: {{$lqip}}; aspect-ratio: {{ $origImage.Width }} / {{ $origImage.Height }};" {{end}}>
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}" {{ end }} />
-</picture>
+<figure>
+  <picture {{with $lqip}}class="lqip" style="--img-lqip: {{$lqip}};" {{end}}>
+    <img style="--aspect-ratio: {{printf " %.2f" $aspectRatio}}; --aspect-distance: {{$nd}};"
+      width="{{$origImage.Width}}" height="{{$origImage.Height}}" src="{{ .Destination | safeURL }}" alt="{{ .Text }}"
+      {{ with .Title}} title="{{ . }}" {{ end }} />
+  </picture>
+  <figcaption>{{ .Text }}</figcaption>
+</figure>
