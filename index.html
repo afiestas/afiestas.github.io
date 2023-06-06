@@ -549,7 +549,7 @@ main .whoami .description {
   flex-grow: 2;
 }
 
-main a:not(.nav) {
+main a:not(.nav, .notext) {
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -558,7 +558,7 @@ main a:not(.nav) {
   -webkit-text-fill-color: transparent;
 }
 
-main a:not(.nav):hover {
+main a:not(.nav, .notext):hover {
   animation-iteration-count: 20;
   animation: move-bg 12s linear infinite;
 }
@@ -595,15 +595,27 @@ article > * {
   max-width: var(--content-width);
 }
 
-article figure:has(* > picture) {
+article figure:has(picture, * > picture) {
   max-width: unset;
   text-align: center;
 }
 
-article * > img {
-  --use-distance: var(--aspect-distance, 0);
-  --extra-width: calc(var(--use-distance) * var(--content-distance));
-  max-width: calc(var(--content-width) + var(--extra-width));
+article figure {
+  text-align: center;
+}
+
+article figure a {
+  display: inline-block;
+}
+
+article * > img,
+picture {
+  max-width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+  width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+}
+
+picture {
+  display: block;
 }
 
 figcaption {

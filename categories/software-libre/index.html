@@ -548,7 +548,7 @@ main .whoami .description {
   flex-grow: 2;
 }
 
-main a:not(.nav) {
+main a:not(.nav, .notext) {
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -557,7 +557,7 @@ main a:not(.nav) {
   -webkit-text-fill-color: transparent;
 }
 
-main a:not(.nav):hover {
+main a:not(.nav, .notext):hover {
   animation-iteration-count: 20;
   animation: move-bg 12s linear infinite;
 }
@@ -594,15 +594,27 @@ article > * {
   max-width: var(--content-width);
 }
 
-article figure:has(* > picture) {
+article figure:has(picture, * > picture) {
   max-width: unset;
   text-align: center;
 }
 
-article * > img {
-  --use-distance: var(--aspect-distance, 0);
-  --extra-width: calc(var(--use-distance) * var(--content-distance));
-  max-width: calc(var(--content-width) + var(--extra-width));
+article figure {
+  text-align: center;
+}
+
+article figure a {
+  display: inline-block;
+}
+
+article * > img,
+picture {
+  max-width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+  width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+}
+
+picture {
+  display: block;
 }
 
 figcaption {
@@ -1079,7 +1091,7 @@ As far as I know this is the first PA sprint where a lot of community members ex
     <h3><a class="scale" href="/articles/plasma-active-3-sprint/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/appmenu-runner-meet-the-kde-hud/">AppMenu Runner, meet the KDE&#39;s HUD </a></h2>
-    <div class="metadata text-secondary">Around 11 years ago - 2 minutes</div>
+    <div class="metadata text-secondary">Around 11 years and a half ago - 2 minutes</div>
     <div class="max-line">A few days ago Mark Shuttleworth announced the HUD menu, a Unity dialog that lets you trigger menu actions in the focused application like:
 look for bookmarks, change your IM status execute an action contained in the menu bar. This kind of features as well of how they are executed may sound familiar to you dear Plasma Worksapce user... Exactly! I'm referring to our beloved KRunner! KRunner can do a lot of stuff in both global and active application scope (though it tends to offer more global features) , just to mention a few: Math, Bookmarks, Files, Calendar, Contacts, Emails, Devices, Change IM Status, Recent documents. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1143,7 +1155,7 @@ That took us a few hours, good thing is that now all we have in front of us is h
     <h3><a class="scale" href="/articles/forge-2011-day-1/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/two-annoying-bugs-fixed-in-kdirwatch-and-kuiserver/">Two annoying bugs fixed in KDirWatch and kuiserver </a></h2>
-    <div class="metadata text-secondary">Around 11 years and a half ago - 1 minutes</div>
+    <div class="metadata text-secondary">Almost 12 years ago - 1 minutes</div>
     <div class="max-line">Just a quick announce for the interested parties (distributions and advanced users).
 Yesterday I pushed a couple of fixes that fix annoying bugs and because of that I belive that you may want to backport them to 4.6.5 or even to 4.7.1 if you don't want or you can't wait until 4.7.2.
 Folder contents are not refreshing:
@@ -1655,7 +1667,7 @@ Wake up at 3:00 AM to take a cab to go to Barajas airport, I have to say that Ga
     <h3><a class="scale" href="/articles/yet-another-delayed-fosdem-entry/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/kbluetooth-0-4-1/">KBluetooth 0.4.1 </a></h2>
-    <div class="metadata text-secondary">Around 13 years ago - 1 minutes</div>
+    <div class="metadata text-secondary">Around 13 years and a half ago - 1 minutes</div>
     <div class="max-line">In 0.4 release I asked to the distributions to update they packages, some of them did and some of then not, but the best of all is that I got a lot of feedback from the packagers, and here comes the payment for that feedback :)
 With the last release I added a crash when receiving files, I gare say it was not my fault, the KBluetooth code is a mess and I can't fix it without rewrite it from scratch (thing that I'll explain hopefully in 2 days). </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
@@ -1724,7 +1736,7 @@ Well, the next week I'll take a break of all my duties (work/kde/free software) 
     <h3><a class="scale" href="/articles/ktuberling-small-contribution/">Read more</a></h3>
 </article><article class="flow">
     <h2><a href="/articles/kopete-developtment-1/">Kopete hacking session #1 </a></h2>
-    <div class="metadata text-secondary">Around 13 years and a half ago - 1 minutes</div>
+    <div class="metadata text-secondary">Almost 14 years ago - 1 minutes</div>
     <div class="max-line">Hi everybody!
 Two days ago at morning, I was very bored I don't remember exactly why, so I decided to hack a bit on Kopete, which is imho the KDE application which needs more love. I was wondering what I can add to it and after a few ideas I decided to implement the idea apol gave to me some days ago, be able to take pictures from the webcam, and set it as an avatar. </div>
     <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>

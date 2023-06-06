@@ -547,7 +547,7 @@ main .whoami .description {
   flex-grow: 2;
 }
 
-main a:not(.nav) {
+main a:not(.nav, .notext) {
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -556,7 +556,7 @@ main a:not(.nav) {
   -webkit-text-fill-color: transparent;
 }
 
-main a:not(.nav):hover {
+main a:not(.nav, .notext):hover {
   animation-iteration-count: 20;
   animation: move-bg 12s linear infinite;
 }
@@ -593,15 +593,27 @@ article > * {
   max-width: var(--content-width);
 }
 
-article figure:has(* > picture) {
+article figure:has(picture, * > picture) {
   max-width: unset;
   text-align: center;
 }
 
-article * > img {
-  --use-distance: var(--aspect-distance, 0);
-  --extra-width: calc(var(--use-distance) * var(--content-distance));
-  max-width: calc(var(--content-width) + var(--extra-width));
+article figure {
+  text-align: center;
+}
+
+article figure a {
+  display: inline-block;
+}
+
+article * > img,
+picture {
+  max-width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+  width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+}
+
+picture {
+  display: block;
 }
 
 figcaption {
@@ -766,7 +778,7 @@ footer {
 <main>
     <article class="flow center">
         <h2>Kopete hacking session #1 </h2>
-        <div class="metadata text-secondary">Around 13 years and a half ago - 1 minutes</div>
+        <div class="metadata text-secondary">Almost 14 years ago - 1 minutes</div>
         <p>Hi everybody!</p>
 <p>Two days ago at morning, I was very bored I don't remember exactly why, so I decided to hack a bit on Kopete, which is imho the KDE application which needs more love. I was wondering what I can add to it and after a few ideas I decided to implement the idea apol gave to me some days ago, be able to take pictures from the webcam, and set it as an avatar.</p>
 <p>Well, this is the result after 1 hour of work (It was only 1h mainly because of kdevelop, it rocks!):<br />

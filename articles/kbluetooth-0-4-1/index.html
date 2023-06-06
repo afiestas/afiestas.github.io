@@ -547,7 +547,7 @@ main .whoami .description {
   flex-grow: 2;
 }
 
-main a:not(.nav) {
+main a:not(.nav, .notext) {
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -556,7 +556,7 @@ main a:not(.nav) {
   -webkit-text-fill-color: transparent;
 }
 
-main a:not(.nav):hover {
+main a:not(.nav, .notext):hover {
   animation-iteration-count: 20;
   animation: move-bg 12s linear infinite;
 }
@@ -593,15 +593,27 @@ article > * {
   max-width: var(--content-width);
 }
 
-article figure:has(* > picture) {
+article figure:has(picture, * > picture) {
   max-width: unset;
   text-align: center;
 }
 
-article * > img {
-  --use-distance: var(--aspect-distance, 0);
-  --extra-width: calc(var(--use-distance) * var(--content-distance));
-  max-width: calc(var(--content-width) + var(--extra-width));
+article figure {
+  text-align: center;
+}
+
+article figure a {
+  display: inline-block;
+}
+
+article * > img,
+picture {
+  max-width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+  width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+}
+
+picture {
+  display: block;
 }
 
 figcaption {
@@ -766,7 +778,7 @@ footer {
 <main>
     <article class="flow center">
         <h2>KBluetooth 0.4.1 </h2>
-        <div class="metadata text-secondary">Around 13 years ago - 1 minutes</div>
+        <div class="metadata text-secondary">Around 13 years and a half ago - 1 minutes</div>
         <p>In 0.4 release I asked to the distributions to update they packages, some of them did and some of then not, but the best of all is that I got a lot of feedback from the packagers, and here comes the payment for that feedback :)</p>
 <p>With the last release I added a crash when receiving files, I gare say it was not my fault, the KBluetooth code is a mess and I can't fix it without rewrite it from scratch (thing that I'll explain hopefully in 2 days).</p>
 <p>Small roadmap for 0.4 version:</p>

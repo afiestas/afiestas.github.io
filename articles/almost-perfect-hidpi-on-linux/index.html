@@ -547,7 +547,7 @@ main .whoami .description {
   flex-grow: 2;
 }
 
-main a:not(.nav) {
+main a:not(.nav, .notext) {
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -556,7 +556,7 @@ main a:not(.nav) {
   -webkit-text-fill-color: transparent;
 }
 
-main a:not(.nav):hover {
+main a:not(.nav, .notext):hover {
   animation-iteration-count: 20;
   animation: move-bg 12s linear infinite;
 }
@@ -593,15 +593,27 @@ article > * {
   max-width: var(--content-width);
 }
 
-article figure:has(* > picture) {
+article figure:has(picture, * > picture) {
   max-width: unset;
   text-align: center;
 }
 
-article * > img {
-  --use-distance: var(--aspect-distance, 0);
-  --extra-width: calc(var(--use-distance) * var(--content-distance));
-  max-width: calc(var(--content-width) + var(--extra-width));
+article figure {
+  text-align: center;
+}
+
+article figure a {
+  display: inline-block;
+}
+
+article * > img,
+picture {
+  max-width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+  width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
+}
+
+picture {
+  display: block;
 }
 
 figcaption {
@@ -775,22 +787,16 @@ both HiDPI and normal DPI screens at the same time. In order to support HiDPI sc
 they used to, how much bigger depends on the screen pixel density which, for example, in the case of my laptop is from 1.75 to 2 times
 bigger.</p>
 <p>This means that applications rendered for HiDPI look huge on normal screens:</p>
-<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png" target="_blank" rel="noopener"><span><figure>
-  <picture >
-    <img style="--aspect-ratio:  1.78; --aspect-distance: 0.26;"
-      width="680" height="382" src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Scaled Open file dialog looking huge in a low density scren"
+<p><figure style="max-width: initial" class="center"><a class="notext" href="https://cdn.afiestas.org/posts/2017/02/external_noscale-orig.png"><picture  style="aspect-ratio: 1920 / 1080; --ud: 0.26; ">
+    <img width="1920" height="1080" src="https://cdn.afiestas.org/posts/2017/02/external_noscale.png" alt="Scaled Open file dialog looking huge in a low density screen"
        />
   </picture>
-  <figcaption>Scaled Open file dialog looking huge in a low density scren</figcaption>
-</figure></span></a></p>
-<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png" target="_blank" rel="noopener"><span><figure>
-  <picture >
-    <img style="--aspect-ratio:  1.78; --aspect-distance: 0.26;"
-      width="680" height="382" src="https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png" alt="Scaled Open file dialog looking proportionally correct on a high density screen"
+  <figcaption>Scaled Open file dialog looking huge in a low density screen</figcaption></a></figure>
+<figure style="max-width: initial" class="center"><picture  style="aspect-ratio: 680 / 382; --ud: 0.26; ">
+    <img width="680" height="382" src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Scaled Open file dialog looking proportionally correct on a high density screen"
        />
   </picture>
-  <figcaption>Scaled Open file dialog looking proportionally correct on a high density screen</figcaption>
-</figure></span></a></p>
+  <figcaption>Scaled Open file dialog looking proportionally correct on a high density screen</figcaption></figure></p>
 <p>Here is where the internet seems to tell you that there is nothing to do but wait until Wayland arrives and saves us all
 (I can’t wait for that btw) but that’s actually not true, X can do it.</p>
 <p>XRandR allows us to apply transformations on the outputs, like for example rotation, and it also allows us to scale the screens.
@@ -801,14 +807,11 @@ the image to the monitor. So we have effectively turned our normal density scree
 <p>This is an example of how the xrandr command line looks like:</p>
 <pre tabindex="0"><code>xrandr --output eDP1 --auto --output DP1 --auto --scale 2x2 --right-of eDP1
 </code></pre><p>This will set DP1 to the default mode, scale it by 2 and place it at the right of the HiDPI laptop screen (eDP1).</p>
-<p><a class="nav home" href="https://cdn.afiestas.org/posts/2017/02/hidpi-orig.png" target="_blank" rel="noopener"><span><figure>
-  <picture >
-    <img style="--aspect-ratio:  3.26; --aspect-distance: 0.75;"
-      width="2740" height="841" src="https://cdn.afiestas.org/posts/2017/02/hidpi.webp" alt="Awesome HiDPI on Xorg"
+<p><figure style="max-width: initial" class="center"><picture class="lqip" style="aspect-ratio: 2740 / 841; --ud: 0.75; --img-lqip: url(&#39;data:media/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAACQBACdASofAAoAPtFotFooJiUkMAgBABoAAnR/ACV2kDJuRDZ7Ce2unOv9PkAA&#43;XrGcZbJjFDS4dKWd2njr8bUE4x0dm8LA/ZMvSRTUpWaK/D9UnwVGIEK68EcY/OMoCwTT0i&#43;ni5ev4RWodc1nDxIYNSPfhqe2CPWFqpA94Lx0GkSL&#43;Nt73ysSL6dzs2Hchy3AAAA&#39;);">
+    <img width="2740" height="841" src="https://cdn.afiestas.org/posts/2017/02/hidpi.webp" alt="Awesome HiDPI on Xorg"
        />
   </picture>
-  <figcaption>Awesome HiDPI on Xorg</figcaption>
-</figure></span></a></p>
+  <figcaption>Awesome HiDPI on Xorg</figcaption></figure></p>
 <p><em>Wow</em>! <em>Awesome</em>! This is so cool! Why is everybody not doing this? Where is the catch? \
 Mostly because of one bug: \
 <a class="nav home" href="https://bugs.freedesktop.org/show_bug.cgi?id=39949" target="_blank" rel="noopener"><span>https://bugs.freedesktop.org/show_bug.cgi?id=39949</span></a></p>
