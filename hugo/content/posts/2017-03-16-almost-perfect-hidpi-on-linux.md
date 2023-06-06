@@ -36,15 +36,11 @@ bigger.
 
 This means that applications rendered for HiDPI look huge on normal screens:
 
-[![Scaled Open file dialog looking huge in a low density scren][4]][3]
+![Scaled Open file dialog looking huge in a low density screen][3]
+![Scaled Open file dialog looking proportionally correct on a high density screen][4]
 
-[3]: https://cdn.afiestas.org/posts/2017/02/external_noscale_big.png
+[3]: https://cdn.afiestas.org/posts/2017/02/external_noscale.png
 [4]: https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png
-
-[![Scaled Open file dialog looking proportionally correct on a high density screen][6]][5]
-
-[5]: https://cdn.afiestas.org/posts/2017/02/external_scaled_big.png
-[6]: https://cdn.afiestas.org/posts/2017/02/external_scaled_small.png
 
 Here is where the internet seems to tell you that there is nothing to do but wait until Wayland arrives and saves us all
 (I can’t wait for that btw) but that’s actually not true, X can do it.
@@ -64,9 +60,8 @@ xrandr --output eDP1 --auto --output DP1 --auto --scale 2x2 --right-of eDP1
 
 This will set DP1 to the default mode, scale it by 2 and place it at the right of the HiDPI laptop screen (eDP1).
 
-[![Awesome HiDPI on Xorg][2]][1]
+![Awesome HiDPI on Xorg][2]
 
-[1]: https://cdn.afiestas.org/posts/2017/02/hidpi-orig.png
 [2]: https://cdn.afiestas.org/posts/2017/02/hidpi.webp
 
 _Wow_! _Awesome_! This is so cool! Why is everybody not doing this? Where is the catch? \\

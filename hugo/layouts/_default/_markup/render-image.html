@@ -1,40 +1,49 @@
 {{- $origImage := resources.GetRemote .Destination -}}
 {{- if not $origImage -}}
-{{- errorf "[BROKEN IMAGE] failed to fetch %q" .Destination -}}
+{{- errorf "[BROKEN ORIG IMAGE] failed to fetch %q" .Destination -}}
 {{- end -}}
 
-{{- $imageVersions := slice "lqip" "1" "2" "3" "4" "5" -}}
+{{- $imageVersions := slice "lqip" "orig" "1" "2" "3" "4" "5" -}}
 {{- $origUrl := urls.Parse .Destination -}}
 {{- $dirName := path.Dir $origUrl.Path -}}
 {{- $fileName := path.BaseName $origUrl.Path -}}
 {{- $fileExt := path.Ext $origUrl.Path -}}
 
+{{- $lqip := "" -}}
+{{- $orig := "" -}}
 {{- $additionalVersions := slice -}}
 {{- range $version := $imageVersions -}}
-{{- $newUrl := printf "%s://%s%s/%s-%s%s" $origUrl.Scheme $origUrl.Host $dirName $fileName $version $fileExt -}}
-{{- with resources.GetRemote $newUrl -}}
-{{- with .Err -}}
-{{- warnf "[BROKEN IMAGE] failed to fetch %s Error: %s" $newUrl . -}}
-{{- break -}}
-{{- else -}}
-{{- $additionalVersions = $additionalVersions | append . -}}
-{{- end -}}
-{{- end -}}
+  {{- $newUrl := printf "%s://%s%s/%s-%s%s" $origUrl.Scheme $origUrl.Host $dirName $fileName $version $fileExt -}}
+  {{- with resources.GetRemote $newUrl -}}
+    {{- with .Err -}}
+      {{- warnf "[BROKEN IMAGE] failed to fetch %s Error: %s" $newUrl . -}}
+      {{- break -}}
+    {{- else -}}
+      {{- if eq $version "lqip" -}}
+        {{- $lqip = printf "url('data:media/webp;base64,%s')" (.Content | base64Encode) | safeCSS -}}
+      {{- end -}}
+      {{- if eq $version "orig" -}}
+        {{- $orig = $newUrl -}}
+      {{- end -}}
+      {{- $additionalVersions = $additionalVersions | append . -}}
+    {{- end -}}
+  {{- end -}}
 {{- end -}}
 
-{{- $lqip := "" -}}
-{{- with index $additionalVersions 0 -}}
-{{- $lqip = printf "url('data:media/webp;base64,%s')" (.Content | base64Encode) | safeCSS -}}
-{{- end -}}
 {{- $aspectRatio := (div (float $origImage.Width) $origImage.Height) -}}
 {{- $rd := sub 4 1 -}}
 {{- $nd := printf "%.2f" (div (sub $aspectRatio 1) $rd) -}}
 
-<figure>
-  <picture {{with $lqip}}class="lqip" style="--img-lqip: {{$lqip}};" {{end}}>
-    <img style="--aspect-ratio: {{printf " %.2f" $aspectRatio}}; --aspect-distance: {{$nd}};"
-      width="{{$origImage.Width}}" height="{{$origImage.Height}}" src="{{ .Destination | safeURL }}" alt="{{ .Text }}"
+<figure style="max-width: initial" class="center">
+  {{- with $orig -}}
+    <a class="notext" href="{{$orig}}">
+  {{- end -}}
+  <picture {{with $lqip}}class="lqip"{{end}} style="aspect-ratio: {{$origImage.Width}} / {{$origImage.Height}}; --ud: {{$nd}}; {{with $lqip}}--img-lqip: {{$lqip}};{{end}}">
+    <img width="{{$origImage.Width}}" height="{{$origImage.Height}}" src="{{ .Destination | safeURL }}" alt="{{ .Text }}"
       {{ with .Title}} title="{{ . }}" {{ end }} />
   </picture>
   <figcaption>{{ .Text }}</figcaption>
+  {{- with $orig -}}
+    </a>
+  {{- end -}}
 </figure>
