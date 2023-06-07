@@ -62,7 +62,7 @@ This will set DP1 to the default mode, scale it by 2 and place it at the right o
 
 ![Awesome HiDPI on Xorg][2]
 
-[2]: https://cdn.afiestas.org/posts/2017/02/hidpi.webp
+[2]: https://cdn.afiestas.org/posts/2017/02/hidpi.png
 
 _Wow_! _Awesome_! This is so cool! Why is everybody not doing this? Where is the catch? \\
 Mostly because of one bug: \\
