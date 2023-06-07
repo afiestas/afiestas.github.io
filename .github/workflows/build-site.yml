@@ -13,3 +13,4 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           args: --gc --cleanDestinationDir
           siteDir: hugo
+          hugoVersion: 0.113.0
