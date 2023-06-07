@@ -16,7 +16,8 @@ module:
 permalinks:
   posts: /articles/:slug/
 security:
-  mediaTypes: ["^image/avif$"]
+  http:
+    mediaTypes: ["^image/avif$"]
 outputFormats:
   RSS:
     baseName: "feed"
