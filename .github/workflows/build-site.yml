@@ -8,7 +8,7 @@ jobs:
         with:
           submodules: true
       - name: Hugo build
-        uses: afiestas/hugo-gh-pages@master
+        uses: chabad360/hugo-gh-pages@master
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           args: --gc --cleanDestinationDir
