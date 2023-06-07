@@ -11,8 +11,8 @@ markup:
       unsafe: true
 module:
   mounts:
-  - source: assets
-    target: assets
+    - source: assets
+      target: assets
 permalinks:
   posts: /articles/:slug/
 security:
@@ -21,117 +21,117 @@ outputFormats:
   RSS:
     baseName: "feed"
 link:
-- feed: &feed_link
-    identifier: feed
-    name: Feed
-    title: feed
-    url: "/feed.xml"
-    weight: -900
-    params:
-      color1: 'rgb(250, 144, 58)'
-      color2: 'rgb(226, 40, 7)'
-- github: &gh_link
-    identifier: gh
-    name: Github
-    title: Github
-    url: https://github.com/afiestas/
-    weight: -800
-    params:
-      color1: "#4078c0"
-      color2: "#6e40c9"
-- linkedin: &in_link
-    identifier: in
-    name: Linkedin
-    title: Linkedin
-    url: https://www.linkedin.com/in/afiestas/
-    weight: -700
-    params:
-      color1: "#6fe0ff"
-      color2: "#0077B5"
-- mastodon: &mastodon_link
-    identifier: mastodon
-    name: Mastodon
-    title: Mastodon
-    url: https://fosstodon.org/@afiestas
-    weight: -600
-    params:
-      color1: "#858AFA"
-      color2: "#563ACC"
-- twitter: &twitter_link
-    identifier: birdsite
-    name: Twitter
-    title: Twitter
-    url: https://twitter.com/afiestas
-    weight: -500
-    params:
-      color1: "#9fd5f9"
-      color2: "#1D9BF0"
-- darkmode: &darkmode_link
-    identifier: darkmode
-    name: dark
-    title: dark
-    pageref: "/"
-    weight: -400
--  search: &search_link
-    identifier: search
-    name: Search
-    title: Search
-    pageref: /blog
-    weight: -300
+  - feed: &feed_link
+      identifier: feed
+      name: Feed
+      title: feed
+      url: "/feed.xml"
+      weight: -900
+      params:
+        color1: "rgb(250, 144, 58)"
+        color2: "rgb(226, 40, 7)"
+  - github: &gh_link
+      identifier: gh
+      name: Github
+      title: Github
+      url: https://github.com/afiestas/
+      weight: -800
+      params:
+        color1: "#4078c0"
+        color2: "#6e40c9"
+  - linkedin: &in_link
+      identifier: in
+      name: Linkedin
+      title: Linkedin
+      url: https://www.linkedin.com/in/afiestas/
+      weight: -700
+      params:
+        color1: "#6fe0ff"
+        color2: "#0077B5"
+  - mastodon: &mastodon_link
+      identifier: mastodon
+      name: Mastodon
+      title: Mastodon
+      url: https://fosstodon.org/@afiestas
+      weight: -600
+      params:
+        color1: "#858AFA"
+        color2: "#563ACC"
+  - twitter: &twitter_link
+      identifier: birdsite
+      name: Twitter
+      title: Twitter
+      url: https://twitter.com/afiestas
+      weight: -500
+      params:
+        color1: "#9fd5f9"
+        color2: "#1D9BF0"
+  - darkmode: &darkmode_link
+      identifier: darkmode
+      name: dark
+      title: dark
+      pageref: "/"
+      weight: -400
+  - search: &search_link
+      identifier: search
+      name: Search
+      title: Search
+      pageref: /blog
+      weight: -300
 page_links:
-- home: &home_link
-    identifier: home
-    name: Home
-    title: Home
-    pageref: "/"
-    weight: -900
-- blog: &blog_link
-    identifier: blog
-    name: Blog
-    title: Posts and musings
-    pageref: /posts/
-    weight: -800
-- project: &project_link
-    identifier: projects
-    name: Projects
-    title: List of projects
-    pageref: /projects/
-    weight: -700
-- recipes: &recipes_link
-    identifier: recipes
-    name: Recipes
-    title: List of recipes
-    pageref: /recipes/
-    weight: -600
-- experiences: &experience_link
-    identifier: experience
-    name: Experience
-    title: Professional experience
-    pageref: /experiences
-    weight: -500
-- showall: &show_all
-    identifier: menu
-    name: Show All
-    title: Shows the entire menu
-    pageref: "#showall"
-    weight: 0
+  - home: &home_link
+      identifier: home
+      name: Home
+      title: Home
+      pageref: "/"
+      weight: -900
+  - blog: &blog_link
+      identifier: blog
+      name: Blog
+      title: Posts and musings
+      pageref: /posts/
+      weight: -800
+  - project: &project_link
+      identifier: projects
+      name: Projects
+      title: List of projects
+      pageref: /projects/
+      weight: -700
+  - recipes: &recipes_link
+      identifier: recipes
+      name: Recipes
+      title: List of recipes
+      pageref: /recipes/
+      weight: -600
+  - experiences: &experience_link
+      identifier: experience
+      name: Experience
+      title: Professional experience
+      pageref: /experiences
+      weight: -500
+  - showall: &show_all
+      identifier: menu
+      name: Show All
+      title: Shows the entire menu
+      pageref: "#showall"
+      weight: 0
 menu:
   primary:
-  - <<: *home_link
-  - <<: *blog_link
-  - <<: *project_link
-  - <<: *recipes_link
-  - <<: *experience_link
+    - <<: *home_link
+    - <<: *blog_link
+    - <<: *project_link
+    - <<: *recipes_link
+    - <<: *experience_link
   secondary:
-  - <<: *feed_link
-  - <<: *gh_link
-  - <<: *in_link
-  - <<: *mastodon_link
-  - <<: *twitter_link
+    - <<: *feed_link
+    - <<: *gh_link
+    - <<: *in_link
+    - <<: *mastodon_link
+    - <<: *twitter_link
   showall:
-  - <<: *show_all
+    - <<: *show_all
   desc:
-  - <<: *mastodon_link
-  - <<: *twitter_link
-  - <<: *in_link
-  - <<: *gh_link
+    - <<: *mastodon_link
+    - <<: *twitter_link
+    - <<: *in_link
+    - <<: *gh_link
