@@ -88,6 +88,7 @@ main a:not(.nav, .notext):hover {
 
 article {
   content-visibility: auto;
+  width: 100%;
 }
 
 article iframe {
@@ -101,7 +102,6 @@ article > * {
 }
 
 article figure:has(picture, * > picture) {
-  max-width: unset;
   text-align: center;
 }
 
@@ -109,18 +109,8 @@ article figure {
   text-align: center;
 }
 
-article figure a {
-  display: inline-block;
-}
-
-article * > img,
-picture {
+article figure {
   max-width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
-  width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
-}
-
-picture {
-  display: block;
 }
 
 figcaption {
