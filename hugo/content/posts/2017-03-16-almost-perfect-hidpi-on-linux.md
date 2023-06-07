@@ -40,7 +40,7 @@ This means that applications rendered for HiDPI look huge on normal screens:
 ![Scaled Open file dialog looking proportionally correct on a high density screen][4]
 
 [3]: https://cdn.afiestas.org/posts/2017/02/external_noscale.png
-[4]: https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png
+[4]: https://cdn.afiestas.org/posts/2017/02/external_scaled.png
 
 Here is where the internet seems to tell you that there is nothing to do but wait until Wayland arrives and saves us all
 (I can’t wait for that btw) but that’s actually not true, X can do it.
