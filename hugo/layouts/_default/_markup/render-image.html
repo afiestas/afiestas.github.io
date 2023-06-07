@@ -4,7 +4,7 @@
 {{- errorf "[BROKEN ORIG IMAGE] failed to fetch %q" .Destination -}}
 {{- end -}}
 
-{{- $imageVersions := slice "1" "2" -}}
+{{- $imageVersions := slice "1" "2" "3" "4" "5" -}}
 {{- $extensions := slice "webp" "avif" -}}
 {{- $origUrl := urls.Parse .Destination -}}
 {{- $dirName := path.Dir $origUrl.Path -}}
@@ -48,10 +48,16 @@
     <a class="notext" href="{{$origImageUrl}}">
   {{- end -}}
     <picture {{with $lqip}}class="lqip picture"{{end}} style="aspect-ratio: {{$origImage.Width}} / {{$origImage.Height}}; {{with $lqip}}--img-lqip: {{$lqip}};{{end}}">
+      {{- $webp := slice -}}
+      {{- $avif := slice -}}
       {{- range $url, $version := $additionalVersions -}}
-        <source srcset="{{ replaceRE `\.webp$` ".avif" $url 1 }}" width="{{$version.Width}}" height="{{$version.Height}}" type="image/avif" />
-        <source srcset="{{$url}}" width="{{$version.Width}}" height="{{$version.Height}}" type="{{$version.MediaType}}" />
+        {{- $avif = $avif | append (printf "%s %dw" (replaceRE `\.webp$` ".avif" $url 1) $version.Width) -}}
+        {{- $webp = $webp | append (printf "%s %dw" $url $version.Width) -}}
       {{- end -}}
+      {{- $img := delimit $avif "," -}}
+      <source srcset="{{$img | safeHTMLAttr}}" sizes="(max-width: 75rem) calc(100vw - 2rem), 65rem" type="image/avif"/>
+      {{- $img = delimit $webp "," -}}
+      <source srcset="{{$img | safeHTMLAttr}}" sizes="(max-width: 75rem) calc(100vw - 2rem), 65rem" type="image/webp"/>
       <img width="{{$origImage.Width}}" height="{{$origImage.Height}}" src="{{ .Destination | safeURL }}" alt="{{ .Text }}"
         {{ with .Title}} title="{{ . }}" {{ end }} />
     </picture>
