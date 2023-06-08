@@ -581,6 +581,7 @@ main a:not(.nav, .notext):hover {
 
 article {
   content-visibility: auto;
+  width: 100%;
 }
 
 article iframe {
@@ -594,7 +595,6 @@ article > * {
 }
 
 article figure:has(picture, * > picture) {
-  max-width: unset;
   text-align: center;
 }
 
@@ -602,18 +602,8 @@ article figure {
   text-align: center;
 }
 
-article figure a {
-  display: inline-block;
-}
-
-article * > img,
-picture {
+article figure {
   max-width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
-  width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
-}
-
-picture {
-  display: block;
 }
 
 figcaption {
@@ -787,15 +777,15 @@ both HiDPI and normal DPI screens at the same time. In order to support HiDPI sc
 they used to, how much bigger depends on the screen pixel density which, for example, in the case of my laptop is from 1.75 to 2 times
 bigger.</p>
 <p>This means that applications rendered for HiDPI look huge on normal screens:</p>
-<p><figure style="max-width: initial" class="center"><a class="notext" href="https://cdn.afiestas.org/posts/2017/02/external_noscale-orig.png"><picture  style="aspect-ratio: 1920 / 1080; --ud: 0.26; ">
-    <img width="1920" height="1080" src="https://cdn.afiestas.org/posts/2017/02/external_noscale.png" alt="Scaled Open file dialog looking huge in a low density screen"
-       />
-  </picture>
+<p><figure style="--ud: 0.26;" class="center"><a class="notext" href="https://cdn.afiestas.org/posts/2017/02/external_noscale.png"><picture class="lqip picture" style="aspect-ratio: 1920 / 1080; --img-lqip: url(&#39;data:media/webp;base64,UklGRogAAABXRUJQVlA4IHwAAADQBACdASofABEAPzWAvFOvKCaisBgMAeAmiWYAuy/WFAASEnO6eBR6DlLEgrh0AAD&#43;e9vmnyNsG2IPhHSwwxZfVurdaboNWbq49OumX1OkuI11OVUFysHZjrxqhr5eQVnGwBq8OUC4dgbG&#43;psJU1NTPH8hw7kM4GXQAAAA&#39;);"><source srcset="https://cdn.afiestas.org/posts/2017/02/external_noscale-1.avif" width="1920" height="1080" type="image/avif" />
+        <source srcset="https://cdn.afiestas.org/posts/2017/02/external_noscale-1.webp" width="1920" height="1080" type="image/webp" /><source srcset="https://cdn.afiestas.org/posts/2017/02/external_noscale-2.avif" width="960" height="540" type="image/avif" />
+        <source srcset="https://cdn.afiestas.org/posts/2017/02/external_noscale-2.webp" width="960" height="540" type="image/webp" /><img width="1920" height="1080" src="https://cdn.afiestas.org/posts/2017/02/external_noscale.png" alt="Scaled Open file dialog looking huge in a low density screen"
+         />
+    </picture>
   <figcaption>Scaled Open file dialog looking huge in a low density screen</figcaption></a></figure>
-<figure style="max-width: initial" class="center"><picture  style="aspect-ratio: 680 / 382; --ud: 0.26; ">
-    <img width="680" height="382" src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Scaled Open file dialog looking proportionally correct on a high density screen"
-       />
-  </picture>
+<figure style="--ud: 0.26;" class="center"><picture  style="aspect-ratio: 680 / 382; "><img width="680" height="382" src="https://cdn.afiestas.org/posts/2017/02/external_noscale_small.png" alt="Scaled Open file dialog looking proportionally correct on a high density screen"
+         />
+    </picture>
   <figcaption>Scaled Open file dialog looking proportionally correct on a high density screen</figcaption></figure></p>
 <p>Here is where the internet seems to tell you that there is nothing to do but wait until Wayland arrives and saves us all
 (I can’t wait for that btw) but that’s actually not true, X can do it.</p>
@@ -807,11 +797,12 @@ the image to the monitor. So we have effectively turned our normal density scree
 <p>This is an example of how the xrandr command line looks like:</p>
 <pre tabindex="0"><code>xrandr --output eDP1 --auto --output DP1 --auto --scale 2x2 --right-of eDP1
 </code></pre><p>This will set DP1 to the default mode, scale it by 2 and place it at the right of the HiDPI laptop screen (eDP1).</p>
-<p><figure style="max-width: initial" class="center"><picture class="lqip" style="aspect-ratio: 2740 / 841; --ud: 0.75; --img-lqip: url(&#39;data:media/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAACQBACdASofAAoAPtFotFooJiUkMAgBABoAAnR/ACV2kDJuRDZ7Ce2unOv9PkAA&#43;XrGcZbJjFDS4dKWd2njr8bUE4x0dm8LA/ZMvSRTUpWaK/D9UnwVGIEK68EcY/OMoCwTT0i&#43;ni5ev4RWodc1nDxIYNSPfhqe2CPWFqpA94Lx0GkSL&#43;Nt73ysSL6dzs2Hchy3AAAA&#39;);">
-    <img width="2740" height="841" src="https://cdn.afiestas.org/posts/2017/02/hidpi.webp" alt="Awesome HiDPI on Xorg"
-       />
-  </picture>
-  <figcaption>Awesome HiDPI on Xorg</figcaption></figure></p>
+<p><figure style="--ud: 0.75;" class="center"><a class="notext" href="https://cdn.afiestas.org/posts/2017/02/hidpi.webp"><picture class="lqip picture" style="aspect-ratio: 2740 / 841; --img-lqip: url(&#39;data:media/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAACQBACdASofAAoAPtFotFooJiUkMAgBABoAAnR/ACV2kDJuRDZ7Ce2unOv9PkAA&#43;XrGcZbJjFDS4dKWd2njr8bUE4x0dm8LA/ZMvSRTUpWaK/D9UnwVGIEK68EcY/OMoCwTT0i&#43;ni5ev4RWodc1nDxIYNSPfhqe2CPWFqpA94Lx0GkSL&#43;Nt73ysSL6dzs2Hchy3AAAA&#39;);"><source srcset="https://cdn.afiestas.org/posts/2017/02/hidpi-1.avif" width="1370" height="420" type="image/avif" />
+        <source srcset="https://cdn.afiestas.org/posts/2017/02/hidpi-1.webp" width="1370" height="420" type="image/webp" /><source srcset="https://cdn.afiestas.org/posts/2017/02/hidpi-2.avif" width="685" height="210" type="image/avif" />
+        <source srcset="https://cdn.afiestas.org/posts/2017/02/hidpi-2.webp" width="685" height="210" type="image/webp" /><img width="2740" height="841" src="https://cdn.afiestas.org/posts/2017/02/hidpi.webp" alt="Awesome HiDPI on Xorg"
+         />
+    </picture>
+  <figcaption>Awesome HiDPI on Xorg</figcaption></a></figure></p>
 <p><em>Wow</em>! <em>Awesome</em>! This is so cool! Why is everybody not doing this? Where is the catch? \
 Mostly because of one bug: \
 <a class="nav home" href="https://bugs.freedesktop.org/show_bug.cgi?id=39949" target="_blank" rel="noopener"><span>https://bugs.freedesktop.org/show_bug.cgi?id=39949</span></a></p>

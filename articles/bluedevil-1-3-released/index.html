@@ -581,6 +581,7 @@ main a:not(.nav, .notext):hover {
 
 article {
   content-visibility: auto;
+  width: 100%;
 }
 
 article iframe {
@@ -594,7 +595,6 @@ article > * {
 }
 
 article figure:has(picture, * > picture) {
-  max-width: unset;
   text-align: center;
 }
 
@@ -602,18 +602,8 @@ article figure {
   text-align: center;
 }
 
-article figure a {
-  display: inline-block;
-}
-
-article * > img,
-picture {
+article figure {
   max-width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
-  width: calc(var(--content-width) + var(--ud, 0) * var(--content-distance));
-}
-
-picture {
-  display: block;
 }
 
 figcaption {
@@ -778,7 +768,7 @@ footer {
 <main>
     <article class="flow center">
         <h2>BlueDevil 1.3 released </h2>
-        <div class="metadata text-secondary">Around 10 years ago - 1 minutes</div>
+        <div class="metadata text-secondary">Around 10 years and a half ago - 1 minutes</div>
         <p>Belated release announcement of the last and most stable BlueDevil release:</p>
 <p>List of unique changes in 1.3 final:</p>
 <ul>
