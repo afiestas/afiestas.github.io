@@ -1,8 +1,5 @@
 {{- $class := "" -}}
 {{- $link := . -}}
-{{- if strings.HasPrefix $link.Destination .Page.Site.BaseURL -}}
-    {{- $class = "home" -}}
-{{- end -}}
 {{- range $menu := .Page.Site.Menus -}}
     {{- range $entry := $menu -}}
         {{- if eq $entry.URL $link.Destination -}}
