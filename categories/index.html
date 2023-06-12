@@ -26,12 +26,10 @@
 }
 
 .nav > span {
-    transition: scale 0.3s;
     display: inline-block;
 }
 
 .nav:hover > * {
-    scale: 1.1;
     background: linear-gradient(90deg,
             var(--primary-color),
             var(--primary-color)) 0 0 / 400% 100%;
@@ -378,7 +376,6 @@ ul {
   background-color: var(--primary-color);
   min-height: var(--unit-md);
   min-width: var(--unit-md);
-  transition: scale 0.3s;
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -492,7 +489,13 @@ nav .logo {
     margin-left: auto;
 }
 
-html {
+.scale {
+    transition: scale var(--scale-time, 0.3s);
+}
+
+.scale:hover {
+    scale: var(--scale, 1.1);
+}html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -549,11 +552,10 @@ main .whoami .description {
 }
 
 main a:not(.nav, .notext) {
-  background: linear-gradient(90deg,
+  background: linear-gradient(var(--accent-color-one), var(--accent-color-one)) 0 100% / 400% 2px repeat no-repeat, linear-gradient(90deg,
       var(--primary-color),
-      var(--primary-color)) 0 0 / 400% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
+      var(--primary-color)) 0 100% / 400% 100% repeat;
+  -webkit-background-clip: border-box, text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -641,27 +643,17 @@ a.text-secondary:hover {
   gap: var(--header-margin)
 }
 
-.scale {
-  transition: scale 0.3s;
-  transform-origin: left;
-  display: inline-block;
-}
-
-.scale:hover {
-  scale: 1.1;
-}
-
 @keyframes move-bg {
   0% {
-    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
+    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one)), linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
   }
 
   50% {
-    background-position: 400% 0;
+    background-position: 400% 100%, 400% 100%;
   }
 
   100% {
-    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
+    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one)), linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
   }
 }
 
@@ -681,86 +673,86 @@ footer {
     <ul class="links">
       
       
-        <li class="primary">
-          <a href="/" class="nav home" title="Home">
-            <div class="nav-icon home icon"></div>
-            <span class="name">Home</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/" class="nav home scale" title="Home">
+          <div class="nav-icon home icon"></div>
+          <span class="name">Home</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/posts/" class="nav blog" title="Posts and musings">
-            <div class="nav-icon blog icon"></div>
-            <span class="name">Blog</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/posts/" class="nav blog scale" title="Posts and musings">
+          <div class="nav-icon blog icon"></div>
+          <span class="name">Blog</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/projects/" class="nav projects" title="List of projects">
-            <div class="nav-icon projects icon"></div>
-            <span class="name">Projects</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/projects/" class="nav projects scale" title="List of projects">
+          <div class="nav-icon projects icon"></div>
+          <span class="name">Projects</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/recipes/" class="nav recipes" title="List of recipes">
-            <div class="nav-icon recipes icon"></div>
-            <span class="name">Recipes</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/recipes/" class="nav recipes scale" title="List of recipes">
+          <div class="nav-icon recipes icon"></div>
+          <span class="name">Recipes</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/experiences/" class="nav experience" title="Professional experience">
-            <div class="nav-icon experience icon"></div>
-            <span class="name">Experience</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/experiences/" class="nav experience scale" title="Professional experience">
+          <div class="nav-icon experience icon"></div>
+          <span class="name">Experience</span>
+        </a>
+      </li>
       
       <span class="flex-spacer"></span>
       
-        <li class="secondary">
-          <a href="/feed.xml" class="nav feed" title="feed">
-            <div class="nav-icon feed icon"></div>
-            <span class="name">Feed</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://github.com/afiestas/" class="nav gh" title="Github">
-            <div class="nav-icon gh icon"></div>
-            <span class="name">Github</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://www.linkedin.com/in/afiestas/" class="nav in" title="Linkedin">
-            <div class="nav-icon in icon"></div>
-            <span class="name">Linkedin</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://fosstodon.org/@afiestas" class="nav mastodon" title="Mastodon">
-            <div class="nav-icon mastodon icon"></div>
-            <span class="name">Mastodon</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://twitter.com/afiestas" class="nav birdsite" title="Twitter">
-            <div class="nav-icon birdsite icon"></div>
-            <span class="name">Twitter</span>
-          </a>
-        </li>
+      <li class="secondary">
+        <a href="/feed.xml" class="nav feed scale" title="feed">
+          <div class="nav-icon feed icon"></div>
+          <span class="name">Feed</span>
+        </a>
+      </li>
       
       <li class="secondary">
-        <label for="color-scheme-toggle" class="nav scheme-toggle">
+        <a href="https://github.com/afiestas/" class="nav gh scale" title="Github">
+          <div class="nav-icon gh icon"></div>
+          <span class="name">Github</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <a href="https://www.linkedin.com/in/afiestas/" class="nav in scale" title="Linkedin">
+          <div class="nav-icon in icon"></div>
+          <span class="name">Linkedin</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <a href="https://fosstodon.org/@afiestas" class="nav mastodon scale" title="Mastodon">
+          <div class="nav-icon mastodon icon"></div>
+          <span class="name">Mastodon</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <a href="https://twitter.com/afiestas" class="nav birdsite scale" title="Twitter">
+          <div class="nav-icon birdsite icon"></div>
+          <span class="name">Twitter</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <label for="color-scheme-toggle" class="nav scheme-toggle scale">
           <div class="nav-icon scheme-toggle icon"></div>
           <span class="name">Lights</span>
         </label>
       </li>
     </ul>
-    <label for="more" aria-hidden="true" class="show-all">
+    <label for="more" aria-hidden="true" class="show-all scale">
       <div class="nav-icon menu icon"></div>
       <a href="#" title="Show all">Show all</a>
     </label>
@@ -768,47 +760,47 @@ footer {
 </header><main>
     <h2 class="h2 section-article">Categories</h2>
     <div class="posts"><article class="flow">
-    <h2><a href="/categories/desktop/">Desktop </a></h2>
+    <h2><a class="nav home" href="/categories/desktop/"><span>Desktop</span></a></h2>
     <div class="metadata text-secondary">Around 6 years ago - 0 minutes</div>
     <div class="max-line"> </div>
     <div class="tags"></div>
-    <h3><a class="scale" href="/categories/desktop/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/categories/desktop/"><span>Read more</span></a></h3>
 </article><article class="flow">
-    <h2><a href="/categories/kde/">KDE </a></h2>
+    <h2><a class="nav home" href="/categories/kde/"><span>KDE</span></a></h2>
     <div class="metadata text-secondary">Around 6 years ago - 0 minutes</div>
     <div class="max-line"> </div>
     <div class="tags"></div>
-    <h3><a class="scale" href="/categories/kde/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/categories/kde/"><span>Read more</span></a></h3>
 </article><article class="flow">
-    <h2><a href="/categories/linux/">Linux </a></h2>
+    <h2><a class="nav home" href="/categories/linux/"><span>Linux</span></a></h2>
     <div class="metadata text-secondary">Around 6 years ago - 0 minutes</div>
     <div class="max-line"> </div>
     <div class="tags"></div>
-    <h3><a class="scale" href="/categories/linux/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/categories/linux/"><span>Read more</span></a></h3>
 </article><article class="flow">
-    <h2><a href="/categories/software-libre/">Software Libre </a></h2>
+    <h2><a class="nav home" href="/categories/software-libre/"><span>Software Libre</span></a></h2>
     <div class="metadata text-secondary">Around 6 years ago - 0 minutes</div>
     <div class="max-line"> </div>
     <div class="tags"></div>
-    <h3><a class="scale" href="/categories/software-libre/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/categories/software-libre/"><span>Read more</span></a></h3>
 </article><article class="flow">
-    <h2><a href="/categories/libreoffice/">Libreoffice </a></h2>
+    <h2><a class="nav home" href="/categories/libreoffice/"><span>Libreoffice</span></a></h2>
     <div class="metadata text-secondary">Around 7 years ago - 0 minutes</div>
     <div class="max-line"> </div>
     <div class="tags"></div>
-    <h3><a class="scale" href="/categories/libreoffice/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/categories/libreoffice/"><span>Read more</span></a></h3>
 </article><article class="flow">
-    <h2><a href="/categories/seafile/">seafile </a></h2>
+    <h2><a class="nav home" href="/categories/seafile/"><span>seafile</span></a></h2>
     <div class="metadata text-secondary">Around 7 years ago - 0 minutes</div>
     <div class="max-line"> </div>
     <div class="tags"></div>
-    <h3><a class="scale" href="/categories/seafile/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/categories/seafile/"><span>Read more</span></a></h3>
 </article><article class="flow">
-    <h2><a href="/categories/offtopic/">offtopic </a></h2>
+    <h2><a class="nav home" href="/categories/offtopic/"><span>offtopic</span></a></h2>
     <div class="metadata text-secondary">Around 13 years and a half ago - 0 minutes</div>
     <div class="max-line"> </div>
     <div class="tags"></div>
-    <h3><a class="scale" href="/categories/offtopic/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/categories/offtopic/"><span>Read more</span></a></h3>
 </article></div>
 </main><footer>
     <style> #color-scheme-wrapper {

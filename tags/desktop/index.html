@@ -26,12 +26,10 @@
 }
 
 .nav > span {
-    transition: scale 0.3s;
     display: inline-block;
 }
 
 .nav:hover > * {
-    scale: 1.1;
     background: linear-gradient(90deg,
             var(--primary-color),
             var(--primary-color)) 0 0 / 400% 100%;
@@ -378,7 +376,6 @@ ul {
   background-color: var(--primary-color);
   min-height: var(--unit-md);
   min-width: var(--unit-md);
-  transition: scale 0.3s;
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -492,7 +489,13 @@ nav .logo {
     margin-left: auto;
 }
 
-html {
+.scale {
+    transition: scale var(--scale-time, 0.3s);
+}
+
+.scale:hover {
+    scale: var(--scale, 1.1);
+}html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -549,11 +552,10 @@ main .whoami .description {
 }
 
 main a:not(.nav, .notext) {
-  background: linear-gradient(90deg,
+  background: linear-gradient(var(--accent-color-one), var(--accent-color-one)) 0 100% / 400% 2px repeat no-repeat, linear-gradient(90deg,
       var(--primary-color),
-      var(--primary-color)) 0 0 / 400% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
+      var(--primary-color)) 0 100% / 400% 100% repeat;
+  -webkit-background-clip: border-box, text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -641,27 +643,17 @@ a.text-secondary:hover {
   gap: var(--header-margin)
 }
 
-.scale {
-  transition: scale 0.3s;
-  transform-origin: left;
-  display: inline-block;
-}
-
-.scale:hover {
-  scale: 1.1;
-}
-
 @keyframes move-bg {
   0% {
-    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
+    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one)), linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
   }
 
   50% {
-    background-position: 400% 0;
+    background-position: 400% 100%, 400% 100%;
   }
 
   100% {
-    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
+    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one)), linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
   }
 }
 
@@ -681,86 +673,86 @@ footer {
     <ul class="links">
       
       
-        <li class="primary">
-          <a href="/" class="nav home" title="Home">
-            <div class="nav-icon home icon"></div>
-            <span class="name">Home</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/" class="nav home scale" title="Home">
+          <div class="nav-icon home icon"></div>
+          <span class="name">Home</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/posts/" class="nav blog" title="Posts and musings">
-            <div class="nav-icon blog icon"></div>
-            <span class="name">Blog</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/posts/" class="nav blog scale" title="Posts and musings">
+          <div class="nav-icon blog icon"></div>
+          <span class="name">Blog</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/projects/" class="nav projects" title="List of projects">
-            <div class="nav-icon projects icon"></div>
-            <span class="name">Projects</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/projects/" class="nav projects scale" title="List of projects">
+          <div class="nav-icon projects icon"></div>
+          <span class="name">Projects</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/recipes/" class="nav recipes" title="List of recipes">
-            <div class="nav-icon recipes icon"></div>
-            <span class="name">Recipes</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/recipes/" class="nav recipes scale" title="List of recipes">
+          <div class="nav-icon recipes icon"></div>
+          <span class="name">Recipes</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/experiences/" class="nav experience" title="Professional experience">
-            <div class="nav-icon experience icon"></div>
-            <span class="name">Experience</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/experiences/" class="nav experience scale" title="Professional experience">
+          <div class="nav-icon experience icon"></div>
+          <span class="name">Experience</span>
+        </a>
+      </li>
       
       <span class="flex-spacer"></span>
       
-        <li class="secondary">
-          <a href="/feed.xml" class="nav feed" title="feed">
-            <div class="nav-icon feed icon"></div>
-            <span class="name">Feed</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://github.com/afiestas/" class="nav gh" title="Github">
-            <div class="nav-icon gh icon"></div>
-            <span class="name">Github</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://www.linkedin.com/in/afiestas/" class="nav in" title="Linkedin">
-            <div class="nav-icon in icon"></div>
-            <span class="name">Linkedin</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://fosstodon.org/@afiestas" class="nav mastodon" title="Mastodon">
-            <div class="nav-icon mastodon icon"></div>
-            <span class="name">Mastodon</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://twitter.com/afiestas" class="nav birdsite" title="Twitter">
-            <div class="nav-icon birdsite icon"></div>
-            <span class="name">Twitter</span>
-          </a>
-        </li>
+      <li class="secondary">
+        <a href="/feed.xml" class="nav feed scale" title="feed">
+          <div class="nav-icon feed icon"></div>
+          <span class="name">Feed</span>
+        </a>
+      </li>
       
       <li class="secondary">
-        <label for="color-scheme-toggle" class="nav scheme-toggle">
+        <a href="https://github.com/afiestas/" class="nav gh scale" title="Github">
+          <div class="nav-icon gh icon"></div>
+          <span class="name">Github</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <a href="https://www.linkedin.com/in/afiestas/" class="nav in scale" title="Linkedin">
+          <div class="nav-icon in icon"></div>
+          <span class="name">Linkedin</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <a href="https://fosstodon.org/@afiestas" class="nav mastodon scale" title="Mastodon">
+          <div class="nav-icon mastodon icon"></div>
+          <span class="name">Mastodon</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <a href="https://twitter.com/afiestas" class="nav birdsite scale" title="Twitter">
+          <div class="nav-icon birdsite icon"></div>
+          <span class="name">Twitter</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <label for="color-scheme-toggle" class="nav scheme-toggle scale">
           <div class="nav-icon scheme-toggle icon"></div>
           <span class="name">Lights</span>
         </label>
       </li>
     </ul>
-    <label for="more" aria-hidden="true" class="show-all">
+    <label for="more" aria-hidden="true" class="show-all scale">
       <div class="nav-icon menu icon"></div>
       <a href="#" title="Show all">Show all</a>
     </label>
@@ -768,15 +760,15 @@ footer {
 </header><main>
     <h2 class="h2 section-article">desktop</h2>
     <div class="posts"><article class="flow">
-    <h2><a href="/articles/almost-perfect-hidpi-on-linux/">Almost perfect HiDPI experience on Linux (Xorg) </a></h2>
+    <h2><a class="nav home" href="/articles/almost-perfect-hidpi-on-linux/"><span>Almost perfect HiDPI experience on Linux (Xorg)</span></a></h2>
     <div class="metadata text-secondary">Around 6 years ago - 3 minutes</div>
     <div class="max-line">In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for a single HiDPI display was quite alright with KDE4 and a few tweaks here and there. Months later Qt5 got native HiDPI support and most applications switched from GTK2 to GTK3 and finally the outliers (chromium based apps, godot, arduino&hellip;) got support for higher DPIs as well. </div>
-    <div class="tags"><a class="text-secondary" href="/categories/software-libre/">#Software Libre</a>
-        <a class="text-secondary" href="/categories/kde/">#KDE</a>
-        <a class="text-secondary" href="/categories/linux/">#Linux</a>
-        <a class="text-secondary" href="/categories/desktop/">#Desktop</a>
+    <div class="tags"><a class="text-secondary nav home" href="/categories/software-libre/"><span>#Software Libre</span></a>
+        <a class="text-secondary nav home" href="/categories/kde/"><span>#KDE</span></a>
+        <a class="text-secondary nav home" href="/categories/linux/"><span>#Linux</span></a>
+        <a class="text-secondary nav home" href="/categories/desktop/"><span>#Desktop</span></a>
         </div>
-    <h3><a class="scale" href="/articles/almost-perfect-hidpi-on-linux/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/articles/almost-perfect-hidpi-on-linux/"><span>Read more</span></a></h3>
 </article></div>
 </main><footer>
     <style> #color-scheme-wrapper {

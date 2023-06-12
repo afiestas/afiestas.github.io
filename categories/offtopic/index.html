@@ -26,12 +26,10 @@
 }
 
 .nav > span {
-    transition: scale 0.3s;
     display: inline-block;
 }
 
 .nav:hover > * {
-    scale: 1.1;
     background: linear-gradient(90deg,
             var(--primary-color),
             var(--primary-color)) 0 0 / 400% 100%;
@@ -378,7 +376,6 @@ ul {
   background-color: var(--primary-color);
   min-height: var(--unit-md);
   min-width: var(--unit-md);
-  transition: scale 0.3s;
   background: linear-gradient(90deg,
       var(--primary-color),
       var(--primary-color)) 0 0 / 400% 100%;
@@ -492,7 +489,13 @@ nav .logo {
     margin-left: auto;
 }
 
-html {
+.scale {
+    transition: scale var(--scale-time, 0.3s);
+}
+
+.scale:hover {
+    scale: var(--scale, 1.1);
+}html {
   color-scheme: dark light;
   scrollbar-gutter: stable;
 }
@@ -549,11 +552,10 @@ main .whoami .description {
 }
 
 main a:not(.nav, .notext) {
-  background: linear-gradient(90deg,
+  background: linear-gradient(var(--accent-color-one), var(--accent-color-one)) 0 100% / 400% 2px repeat no-repeat, linear-gradient(90deg,
       var(--primary-color),
-      var(--primary-color)) 0 0 / 400% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
+      var(--primary-color)) 0 100% / 400% 100% repeat;
+  -webkit-background-clip: border-box, text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -641,27 +643,17 @@ a.text-secondary:hover {
   gap: var(--header-margin)
 }
 
-.scale {
-  transition: scale 0.3s;
-  transform-origin: left;
-  display: inline-block;
-}
-
-.scale:hover {
-  scale: 1.1;
-}
-
 @keyframes move-bg {
   0% {
-    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
+    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one)), linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
   }
 
   50% {
-    background-position: 400% 0;
+    background-position: 400% 100%, 400% 100%;
   }
 
   100% {
-    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
+    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one)), linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
   }
 }
 
@@ -681,86 +673,86 @@ footer {
     <ul class="links">
       
       
-        <li class="primary">
-          <a href="/" class="nav home" title="Home">
-            <div class="nav-icon home icon"></div>
-            <span class="name">Home</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/" class="nav home scale" title="Home">
+          <div class="nav-icon home icon"></div>
+          <span class="name">Home</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/posts/" class="nav blog" title="Posts and musings">
-            <div class="nav-icon blog icon"></div>
-            <span class="name">Blog</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/posts/" class="nav blog scale" title="Posts and musings">
+          <div class="nav-icon blog icon"></div>
+          <span class="name">Blog</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/projects/" class="nav projects" title="List of projects">
-            <div class="nav-icon projects icon"></div>
-            <span class="name">Projects</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/projects/" class="nav projects scale" title="List of projects">
+          <div class="nav-icon projects icon"></div>
+          <span class="name">Projects</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/recipes/" class="nav recipes" title="List of recipes">
-            <div class="nav-icon recipes icon"></div>
-            <span class="name">Recipes</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/recipes/" class="nav recipes scale" title="List of recipes">
+          <div class="nav-icon recipes icon"></div>
+          <span class="name">Recipes</span>
+        </a>
+      </li>
       
-        <li class="primary">
-          <a href="/experiences/" class="nav experience" title="Professional experience">
-            <div class="nav-icon experience icon"></div>
-            <span class="name">Experience</span>
-          </a>
-        </li>
+      <li class="primary">
+        <a href="/experiences/" class="nav experience scale" title="Professional experience">
+          <div class="nav-icon experience icon"></div>
+          <span class="name">Experience</span>
+        </a>
+      </li>
       
       <span class="flex-spacer"></span>
       
-        <li class="secondary">
-          <a href="/feed.xml" class="nav feed" title="feed">
-            <div class="nav-icon feed icon"></div>
-            <span class="name">Feed</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://github.com/afiestas/" class="nav gh" title="Github">
-            <div class="nav-icon gh icon"></div>
-            <span class="name">Github</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://www.linkedin.com/in/afiestas/" class="nav in" title="Linkedin">
-            <div class="nav-icon in icon"></div>
-            <span class="name">Linkedin</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://fosstodon.org/@afiestas" class="nav mastodon" title="Mastodon">
-            <div class="nav-icon mastodon icon"></div>
-            <span class="name">Mastodon</span>
-          </a>
-        </li>
-      
-        <li class="secondary">
-          <a href="https://twitter.com/afiestas" class="nav birdsite" title="Twitter">
-            <div class="nav-icon birdsite icon"></div>
-            <span class="name">Twitter</span>
-          </a>
-        </li>
+      <li class="secondary">
+        <a href="/feed.xml" class="nav feed scale" title="feed">
+          <div class="nav-icon feed icon"></div>
+          <span class="name">Feed</span>
+        </a>
+      </li>
       
       <li class="secondary">
-        <label for="color-scheme-toggle" class="nav scheme-toggle">
+        <a href="https://github.com/afiestas/" class="nav gh scale" title="Github">
+          <div class="nav-icon gh icon"></div>
+          <span class="name">Github</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <a href="https://www.linkedin.com/in/afiestas/" class="nav in scale" title="Linkedin">
+          <div class="nav-icon in icon"></div>
+          <span class="name">Linkedin</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <a href="https://fosstodon.org/@afiestas" class="nav mastodon scale" title="Mastodon">
+          <div class="nav-icon mastodon icon"></div>
+          <span class="name">Mastodon</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <a href="https://twitter.com/afiestas" class="nav birdsite scale" title="Twitter">
+          <div class="nav-icon birdsite icon"></div>
+          <span class="name">Twitter</span>
+        </a>
+      </li>
+      
+      <li class="secondary">
+        <label for="color-scheme-toggle" class="nav scheme-toggle scale">
           <div class="nav-icon scheme-toggle icon"></div>
           <span class="name">Lights</span>
         </label>
       </li>
     </ul>
-    <label for="more" aria-hidden="true" class="show-all">
+    <label for="more" aria-hidden="true" class="show-all scale">
       <div class="nav-icon menu icon"></div>
       <a href="#" title="Show all">Show all</a>
     </label>
@@ -768,37 +760,37 @@ footer {
 </header><main>
     <h2 class="h2 section-article">offtopic</h2>
     <div class="posts"><article class="flow">
-    <h2><a href="/articles/in-paris-until-02112009/">In Paris until 02/11/2009 </a></h2>
+    <h2><a class="nav home" href="/articles/in-paris-until-02112009/"><span>In Paris until 02/11/2009</span></a></h2>
     <div class="metadata text-secondary">Around 13 years and a half ago - 1 minutes</div>
     <div class="max-line">As maybe you have noticed I'm kinda offline these days, this is because I'm in Paris in some sort of holidays. While I'm here my internet/code hours will be reduced to the mornings, from 10:00 to 14:00 (local hour), I'm using the rest of the day for walking trough those beautiful streets.
 Well, this is it at the moment, tomorrow I'll announce something in this blog, something that lot of people has been waiting for :p </div>
-    <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
-        <a class="text-secondary" href="/categories/offtopic/">#offtopic</a>
-        <a class="text-secondary" href="/categories/software-libre/">#Software Libre</a>
+    <div class="tags"><a class="text-secondary nav home" href="/categories/kde/"><span>#KDE</span></a>
+        <a class="text-secondary nav home" href="/categories/offtopic/"><span>#offtopic</span></a>
+        <a class="text-secondary nav home" href="/categories/software-libre/"><span>#Software Libre</span></a>
         </div>
-    <h3><a class="scale" href="/articles/in-paris-until-02112009/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/articles/in-paris-until-02112009/"><span>Read more</span></a></h3>
 </article><article class="flow">
-    <h2><a href="/articles/up-and-running-again/">Up and running again. </a></h2>
+    <h2><a class="nav home" href="/articles/up-and-running-again/"><span>Up and running again.</span></a></h2>
     <div class="metadata text-secondary">Almost 14 years ago - 3 minutes</div>
     <div class="max-line">Hi everyone!
 After a few days of "non-computer" I'm back with the batteries charged at 100% :) and with a small list of things to be done in the next days. This is the list:
 Reach kamoso 1.0 version (I hope in 1week max):
 Kamoso is the codename for a project I'm doing with Aleix pol (apol) and in theory with ereslibre (he's kinda offline), is a Photobooth/Cheese clone, written in Qt/C++. </div>
-    <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
-        <a class="text-secondary" href="/categories/offtopic/">#offtopic</a>
-        <a class="text-secondary" href="/categories/software-libre/">#Software Libre</a>
+    <div class="tags"><a class="text-secondary nav home" href="/categories/kde/"><span>#KDE</span></a>
+        <a class="text-secondary nav home" href="/categories/offtopic/"><span>#offtopic</span></a>
+        <a class="text-secondary nav home" href="/categories/software-libre/"><span>#Software Libre</span></a>
         </div>
-    <h3><a class="scale" href="/articles/up-and-running-again/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/articles/up-and-running-again/"><span>Read more</span></a></h3>
 </article><article class="flow">
-    <h2><a href="/articles/ok-so-here-we-go/">Ok so, here we go! </a></h2>
+    <h2><a class="nav home" href="/articles/ok-so-here-we-go/"><span>Ok so, here we go!</span></a></h2>
     <div class="metadata text-secondary">Almost 14 years ago - 3 minutes</div>
     <div class="max-line">My name is Alejandro Fiestas, and I have a problem... I'm a addicted to the free software. People could ask, why? what the software libre give to you? I'm not sure but I've some theories :)
 The software libre gives to me the motivation I need to jump of the bed each morning thinking: come on Àlex! you've code to write! or come on Àlex, you've a community to help, to talk with, to work with! </div>
-    <div class="tags"><a class="text-secondary" href="/categories/kde/">#KDE</a>
-        <a class="text-secondary" href="/categories/offtopic/">#offtopic</a>
-        <a class="text-secondary" href="/categories/software-libre/">#Software Libre</a>
+    <div class="tags"><a class="text-secondary nav home" href="/categories/kde/"><span>#KDE</span></a>
+        <a class="text-secondary nav home" href="/categories/offtopic/"><span>#offtopic</span></a>
+        <a class="text-secondary nav home" href="/categories/software-libre/"><span>#Software Libre</span></a>
         </div>
-    <h3><a class="scale" href="/articles/ok-so-here-we-go/">Read more</a></h3>
+    <h3><a class="scale nav home" href="/articles/ok-so-here-we-go/"><span>Read more</span></a></h3>
 </article></div>
 </main><footer>
     <style> #color-scheme-wrapper {
