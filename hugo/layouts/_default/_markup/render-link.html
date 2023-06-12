@@ -1,5 +1,8 @@
-{{- $class := "home" -}}
+{{- $class := "" -}}
 {{- $link := . -}}
+{{- if strings.HasPrefix $link.Destination .Page.Site.BaseURL -}}
+    {{- $class = "home" -}}
+{{- end -}}
 {{- range $menu := .Page.Site.Menus -}}
     {{- range $entry := $menu -}}
         {{- if eq $entry.URL $link.Destination -}}
@@ -7,4 +10,5 @@
         {{- end -}}
     {{- end -}}
 {{- end -}}
-<a class="nav {{$class}}" href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "https" }} target="_blank" rel="noopener"{{ end }}><span>{{ .Text | safeHTML }}</span></a>
+
+<a {{with $class}}class="nav {{.}}"{{end}} href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "https" }} target="_blank" rel="noopener"{{ end }}><span>{{ .Text | safeHTML }}</span></a>

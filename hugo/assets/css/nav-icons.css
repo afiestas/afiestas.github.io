@@ -6,12 +6,10 @@
 }
 
 .nav > span {
-    transition: scale 0.3s;
     display: inline-block;
 }
 
 .nav:hover > * {
-    scale: 1.1;
     background: linear-gradient(90deg,
             var(--primary-color),
             var(--primary-color)) 0 0 / 400% 100%;

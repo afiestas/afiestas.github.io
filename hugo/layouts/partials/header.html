@@ -7,30 +7,31 @@
     <ul class="links">
       {{ $currentPage := . }}
       {{ range .Site.Menus.primary }}
-        <li class="primary{{if or ($currentPage.IsMenuCurrent "primary" .) ($currentPage.HasMenuCurrent "primary" .) }} active{{end}}">
-          <a href="{{ .URL }}" class="nav {{.Identifier}}" title="{{ .Title }}">
-            <div class="nav-icon {{ .Identifier }} icon"></div>
-            <span class="name">{{ .Name }}</span>
-          </a>
-        </li>
+      <li class="primary{{if or ($currentPage.IsMenuCurrent " primary" .) ($currentPage.HasMenuCurrent "primary" .) }}
+        active{{end}}">
+        <a href="{{ .URL }}" class="nav {{.Identifier}} scale" title="{{ .Title }}">
+          <div class="nav-icon {{ .Identifier }} icon"></div>
+          <span class="name">{{ .Name }}</span>
+        </a>
+      </li>
       {{ end }}
       <span class="flex-spacer"></span>
       {{ range .Site.Menus.secondary }}
-        <li class="secondary">
-          <a href="{{ .URL }}" class="nav {{.Identifier}}" title="{{ .Title }}">
-            <div class="nav-icon {{ .Identifier }} icon"></div>
-            <span class="name">{{ .Name }}</span>
-          </a>
-        </li>
+      <li class="secondary">
+        <a href="{{ .URL }}" class="nav {{.Identifier}} scale" title="{{ .Title }}">
+          <div class="nav-icon {{ .Identifier }} icon"></div>
+          <span class="name">{{ .Name }}</span>
+        </a>
+      </li>
       {{ end }}
       <li class="secondary">
-        <label for="color-scheme-toggle" class="nav scheme-toggle">
+        <label for="color-scheme-toggle" class="nav scheme-toggle scale">
           <div class="nav-icon scheme-toggle icon"></div>
           <span class="name">Lights</span>
         </label>
       </li>
     </ul>
-    <label for="more" aria-hidden="true" class="show-all">
+    <label for="more" aria-hidden="true" class="show-all scale">
       <div class="nav-icon menu icon"></div>
       <a href="#" title="Show all">Show all</a>
     </label>

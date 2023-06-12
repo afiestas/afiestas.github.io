@@ -1,11 +1,11 @@
 <article class="flow">
-    <h2><a href="{{ .Permalink }}">{{ .Title }} </a></h2>
+    <h2><a class="nav home" href="{{ .Permalink }}"><span>{{ .Title }}</span></a></h2>
     <div class="metadata text-secondary">{{ partial "timeago.html" . }} - {{ .ReadingTime }} minutes</div>
     <div class="max-line">{{ .Summary }} </div>
     <div class="tags">
         {{- range .GetTerms "categories" -}}
-        <a class="text-secondary" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+        <a class="text-secondary nav home" href="{{ .RelPermalink }}"><span>#{{ .LinkTitle }}</span></a>
         {{ end -}}
     </div>
-    <h3><a class="scale" href="{{ .Permalink }}">Read more</a></h3>
+    <h3><a class="scale nav home" href="{{ .Permalink }}"><span>Read more</span></a></h3>
 </article>

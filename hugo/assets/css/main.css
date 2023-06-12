@@ -55,11 +55,10 @@ main .whoami .description {
 }
 
 main a:not(.nav, .notext) {
-  background: linear-gradient(90deg,
+  background: linear-gradient(var(--accent-color-one), var(--accent-color-one)) 0 100% / 400% 2px repeat no-repeat, linear-gradient(90deg,
       var(--primary-color),
-      var(--primary-color)) 0 0 / 400% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
+      var(--primary-color)) 0 100% / 400% 100% repeat;
+  -webkit-background-clip: border-box, text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -147,27 +146,17 @@ a.text-secondary:hover {
   gap: var(--header-margin)
 }
 
-.scale {
-  transition: scale 0.3s;
-  transform-origin: left;
-  display: inline-block;
-}
-
-.scale:hover {
-  scale: 1.1;
-}
-
 @keyframes move-bg {
   0% {
-    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
+    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one)), linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
   }
 
   50% {
-    background-position: 400% 0;
+    background-position: 400% 100%, 400% 100%;
   }
 
   100% {
-    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
+    background-image: linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one)), linear-gradient(90deg, var(--accent-color-one), var(--accent-color-two), var(--accent-color-one));
   }
 }
 

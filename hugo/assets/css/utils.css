@@ -46,3 +46,10 @@
     margin-left: auto;
 }
 
+.scale {
+    transition: scale var(--scale-time, 0.3s);
+}
+
+.scale:hover {
+    scale: var(--scale, 1.1);
+}
