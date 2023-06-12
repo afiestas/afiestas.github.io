@@ -65,8 +65,8 @@ This will set DP1 to the default mode, scale it by 2 and place it at the right o
 [2]: https://cdn.afiestas.org/posts/2017/02/hidpi.png
 
 _Wow_! _Awesome_! This is so cool! Why is everybody not doing this? Where is the catch? \\
-Mostly because of one bug: \\
-<https://bugs.freedesktop.org/show_bug.cgi?id=39949>
+Mostly because of one bug:
+https://bugs.freedesktop.org/show_bug.cgi?id=39949
 
 If you read through the bug entry you will find a [patch](https://bugs.freedesktop.org/attachment.cgi?id=94929) created by Chris Wilson in 2014
 which is shipped by default in some distributions but it has never been integrated into master.
@@ -99,10 +99,10 @@ that will create weird glitches specially by placing windows where they don’t 
 I have been working on 3 patches that solve most of these at least in my day to day use.
 
 These two still need to be reviewed and might not get accepted:
-<https://codereview.qt-project.org/#/c/182207/>
-<https://codereview.qt-project.org/#/c/182392/>
+- <https://codereview.qt-project.org/#/c/182207/>
+- <https://codereview.qt-project.org/#/c/182392/>
 
-This one seems to be on track to be merged (Drag and Drop):
+This one seems to be on track to be merged (Drag and Drop):\
 <https://codereview.qt-project.org/#/c/182391/>
 
 With all this patches the HiDPI experience in any modern Linux distro is as good as in macOS and the best part is that we do not have to wait until Wayland.
