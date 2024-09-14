@@ -1,13 +1,13 @@
 <head>
     <title>{{ with .Title }}{{ humanize . }} | {{ end }}{{ .Site.Title }}</title>
-    <link rel="preconnect" href="https://cdn.afiestas.org" />
+    <link rel="preconnect" href="https://cdn.afiestas.org">
     {{- range (.Param "earlyhints") -}}
-        {{ printf `<link rel="preload" as="image" href="%s" imagesrcset=%q imagesizes="%s"/>` .default .sources .sizes | safeHTML }}
+        {{ printf `<link rel="preload" as="image" href="%s" imagesrcset=%q imagesizes="%s">` .default .sources .sizes | safeHTML }}
     {{- end -}}
     {{- $logo := resources.GetMatch "logo.svg" -}}
     <link rel="icon" href="{{ $logo.RelPermalink }}" {{ $logo.MediaType | printf "type=%q"| safeHTMLAttr}}>
     {{ range .AlternativeOutputFormats -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" >` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
     <style data-what="fonts">
         {{- $fontz := resources.Get "css/fonts.css" | resources.ExecuteAsTemplate "css/fonts.css" . -}}

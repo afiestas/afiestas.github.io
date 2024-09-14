@@ -1,6 +1,6 @@
 <header>
   <nav class="nav-top">
-    <input type="checkbox" id="more" aria-hidden="true" tabindex="-1" class="toggle" />
+    <input type="checkbox" id="more" aria-hidden="true" tabindex="-1" class="toggle">
     {{ $logo := resources.GetMatch "logo.svg" }}
     {{- $encoded := printf "data:image/svg+xml,%s" $logo.Content | safeURL -}}
     {{ $logo.Content | safeHTML}}
