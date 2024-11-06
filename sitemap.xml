@@ -3,12 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/</loc>
-    <lastmod>2017-03-16T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
   </url><url>
-    <loc>/articles/almost-perfect-hidpi-on-linux/</loc>
-    <lastmod>2017-03-16T00:00:00+00:00</lastmod>
+    <loc>/tags/amqp/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/tags/data/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/categories/data/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/tags/datapipeline/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/tags/devops/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/tags/kafka/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/articles/kafka-not-your-message-bus-heres-why/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/tags/rabbitmq/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2018-02-01T22:31:59+00:00</lastmod>
+  </url><url>
+    <loc>/articles/almost-perfect-hidpi-on-linux/</loc>
     <lastmod>2017-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/desktop/</loc>
@@ -32,16 +62,10 @@
     <loc>/categories/linux/</loc>
     <lastmod>2017-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2017-03-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/software-libre/</loc>
     <lastmod>2017-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/software-libre/</loc>
-    <lastmod>2017-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2017-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/android/</loc>

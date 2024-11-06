@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RabbitMQ on Àlex Fiestas&#39;s blog</title>
+    <link>/tags/rabbitmq/</link>
+    <description>Recent content in RabbitMQ on Àlex Fiestas&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Feb 2018 22:31:59 +0000</lastBuildDate><atom:link href="/tags/rabbitmq/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kafka is Not Your Message Bus—Here’s Why</title>
+      <link>/articles/kafka-not-your-message-bus-heres-why/</link>
+      <pubDate>Thu, 01 Feb 2018 22:31:59 +0000</pubDate>
+      
+      <guid>/articles/kafka-not-your-message-bus-heres-why/</guid>
+      <description>Kafka is awesome. Its unique approach to log aggregation and messaging allows it to scale to Gbs/s while persisting every message (hence the &amp;ldquo;log aggregation&amp;rdquo; part).
+But, like everything in engineering, building Kafka required a series of deliberate trade-offs. The choices made by the LinkedIn team were pivotal in creating something fundamentally different from traditional messaging systems like RabbitMQ. Had they chosen differently, Kafka might look much closer to RabbitMQ than it does today.</description>
+    </item>
+    
+  </channel>
+</rss>
