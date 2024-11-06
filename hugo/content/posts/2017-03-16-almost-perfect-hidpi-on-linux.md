@@ -10,8 +10,8 @@ categories:
   - KDE
   - Linux
   - Desktop
-date: "2017-03-16T00:00:00Z"
-published: true
+date: '2017-03-16T00:00:00Z'
+published: '2017-03-16T00:00:00Z'
 tags:
   - kde
   - software libre
@@ -20,9 +20,8 @@ tags:
   - hidpi
 aliases:
   - /almost-perfect-hidpi-on-linux
-slug: "almost-perfect-hidpi-on-linux"
+slug: almost-perfect-hidpi-on-linux
 title: Almost perfect HiDPI experience on Linux (Xorg)
-
 ---
 
 In 2013 I bought a Macbook Pro 13” which came with a HiDPI display (also known as retina display). Already back then the support for

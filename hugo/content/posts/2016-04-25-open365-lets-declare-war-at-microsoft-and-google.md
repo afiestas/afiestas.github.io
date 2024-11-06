@@ -6,23 +6,22 @@ author:
   last_name: Fiestas
   login: afiestas
 categories:
-- Software Libre
-- KDE
-- Libreoffice
-- seafile
-date: "2016-04-25T00:00:00Z"
-published: true
+  - Software Libre
+  - KDE
+  - Libreoffice
+  - seafile
+date: '2016-04-25T00:00:00Z'
+published: '2016-04-25T00:00:00Z'
 tags:
-- kde
-- android
-- software libre
-- libreoffice
-- kontact
+  - kde
+  - android
+  - software libre
+  - libreoffice
+  - kontact
 aliases:
   - /open365-lets-declare-war-at-microsoft-and-google
-slug: "open365-lets-declare-war-at-microsoft-and-google"
-title: open365, let's declare war at Google and Microsoft
-
+slug: open365-lets-declare-war-at-microsoft-and-google
+title: 'open365, let''s declare war at Google and Microsoft'
 ---
 
 [Open365](https://open365.io/) is a public and/or private cloud designed to compete with the likes

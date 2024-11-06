@@ -6,17 +6,15 @@ author:
   last_name: Fiestas
   login: afiestas
 categories:
-- Software Libre
-- KDE
-date: "2015-11-04T00:00:00Z"
-published: true
-status: publish
+  - Software Libre
+  - KDE
+date: '2015-11-04T00:00:00Z'
+published: '2015-11-04T00:00:00Z'
 tags: []
 aliases:
   - /where-have-i-been
-slug: "where-have-i-been"
+slug: where-have-i-been
 title: Where have I been?
-
 ---
 
 > I can't imagine anything worse than waking up every morning without any energy for going to work.
